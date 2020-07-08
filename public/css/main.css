@@ -1,5 +1,5 @@
 * {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 main {
@@ -87,7 +87,7 @@ header {
   font-weight: bolder;
   font-size: 70px;
   letter-spacing: 6px;
-  margin-left: 120px;
+  margin-left: 140px;
 }
 
 .block-text p {
@@ -103,7 +103,7 @@ header {
   top: 93%;
   margin: auto;
   border-radius: 50px;
-  box-shadow: 3px 3px 20px 3px #999;
+  box-shadow: 2px 2px 25px 0 #B38211;
 }
 
 .choice-block .choice-content {
@@ -142,13 +142,14 @@ header {
   height: 100%;
   left: 0;
   top: 0;
-  background-color: #FFF;
+  background-color: #EDBA47;
   z-index: 9;
+  transition: all ease-in-out 0.4s;
 }
 
 .choice-block .choice-content .select .modal-options-wrapper .modal-options {
   position: relative;
-  padding-top: 30%;
+  padding-top: calc(20% + 200px);
 }
 
 .choice-block .choice-content .select .modal-options-wrapper .modal-options .modal-options-close {
@@ -181,11 +182,12 @@ header {
 .choice-block .choice-content .select .modal-options-wrapper .modal-options .options .option {
   cursor: pointer;
   padding-bottom: 2px;
+  border-bottom: 1px solid #CCC;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .modal-options .options .option:hover,
 .choice-block .choice-content .select .modal-options-wrapper .modal-options .options .selected {
-  border-bottom: 1px solid #CCC;
+  color: #B1B1B1;
+  border-bottom: none;
 }
 
 .choice-block .choice-content .action button {
@@ -475,11 +477,15 @@ input[type=number] {
   .sell-wrapper .sell-parameters {
     width: 20%;
   }
+
+  .main-logo .logo-img {
+    left: 34vw;
+  }
 }
 
 @media screen and (max-width: 1580px) {
   .main-logo .logo-img {
-    left: 34vw;
+    left: 33vw;
   }
 
   .sell-wrapper .sell-block {
@@ -492,10 +498,6 @@ input[type=number] {
 }
 
 @media screen and (max-width: 1495px) {
-  .main-logo .logo-img {
-    left: 33vw;
-  }
-
   .sell-wrapper .sell-parameters {
     font-size: 18px;
   }
@@ -517,9 +519,15 @@ input[type=number] {
   }
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1480px) {
   .main-logo .logo-img {
     left: 32vw;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .main-logo .logo-img {
+    left: 31vw;
   }
 }
 
@@ -530,10 +538,6 @@ input[type=number] {
 }
 
 @media screen and (max-width: 1310px) {
-  .main-logo .logo-img {
-    left: 31vw;
-  }
-
   .sell-wrapper .sell-block {
     width: 100%;
   }
@@ -544,21 +548,41 @@ input[type=number] {
   }
 }
 
-@media screen and (max-width: 1240px) {
+@media screen and (max-width: 1340px) {
   .main-logo .logo-img {
     left: 30vw;
   }
 }
 
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1240px) {
   .main-logo .logo-img {
     width: 110px;
   }
 }
 
-@media screen and (max-width: 1135px) {
+@media screen and (max-width: 1215px) {
   .main-logo .logo-img {
     width: 100px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .choice-block .choice-content .select .modal-options-wrapper .modal-options {
+    padding-top: calc(20% + 235px);
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  .main-logo .logo-img {
+    width: 90px;
+  }
+
+  .block-text .block-title {
+    font-size: 62px;
+  }
+
+  .block-text p {
+    margin-top: 20px;
   }
 }
 
@@ -568,27 +592,11 @@ input[type=number] {
   }
 }
 
-@media screen and (max-width: 1080px) {
-  .main-logo .logo-img {
-    width: 90px;
-  }
-}
-
 @media screen and (max-width: 1040px) {
-  .block-text .block-title {
-    font-size: 62px;
-  }
-
-  .block-text p {
-    margin-top: 20px;
-  }
-
   .sell-wrapper .sell-block .sell-content {
     padding: 60px 20px;
   }
-}
 
-@media screen and (max-width: 970px) {
   .main-logo .logo-img {
     left: 29vw;
   }
@@ -596,37 +604,49 @@ input[type=number] {
   .block-text p {
     font-size: 18px;
   }
+}
 
-  .sell-wrapper .sell-block .sell-content .sell-cards .card {
-    width: 45%;
+@media screen and (max-width: 991px) {
+  .choice-block .choice-content .select .modal-options-wrapper .modal-options {
+    padding-top: calc(20% + 280px);
   }
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 970px) {
+  .sell-wrapper .sell-block .sell-content .sell-cards .card {
+    width: 45%;
+  }
+
   .main-logo .logo-img {
     left: 28vw;
   }
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 930px) {
   .main-logo .logo-img {
     left: 27vw;
   }
+}
 
+@media screen and (max-width: 890px) {
   .choice-block {
     width: 100%;
   }
-}
 
-@media screen and (max-width: 840px) {
   .main-logo .logo-img {
     left: 26vw;
   }
 }
 
-@media screen and (max-width: 815px) {
+@media screen and (max-width: 850px) {
   .main-logo .logo-img {
     left: 24vw;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .main-logo .logo-img {
+    left: 22vw;
   }
 }
 
@@ -637,18 +657,22 @@ input[type=number] {
 }
 
 @media screen and (max-width: 745px) {
-  .main-logo .logo-img {
-    left: 22vw;
-  }
-
   .choice-block .choice-content {
     font-size: 45px;
   }
-}
 
-@media screen and (max-width: 695px) {
+  .choice-block .choice-content .select .modal-options-wrapper .modal-options {
+    padding-top: calc(20% + 310px);
+  }
+
   .main-logo .logo-img {
     left: 20vw;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .main-logo .logo-img {
+    left: 17vw;
   }
 }
 
@@ -658,39 +682,39 @@ input[type=number] {
   }
 }
 
-@media screen and (max-width: 645px) {
-  .main-logo .logo-img {
-    left: 17vw;
-  }
-}
-
 @media screen and (max-width: 620px) {
   .sell-wrapper .sell-block .sell-content .sell-content-title {
     font-size: 22px;
   }
-}
 
-@media screen and (max-width: 590px) {
   .main-logo .logo-img {
     left: 14vw;
   }
+}
 
+@media screen and (max-width: 590px) {
   .choice-block .choice-content {
     font-size: 35px;
   }
+
+  .choice-block .choice-content .select .modal-options-wrapper .modal-options {
+    padding-top: calc(20% + 295px);
+  }
 }
 
-@media screen and (max-width: 545px) {
+@media screen and (max-width: 575px) {
   .main-logo .logo-img {
     left: 10vw;
   }
 }
 
-@media screen and (max-width: 485px) {
+@media screen and (max-width: 515px) {
   .main-logo .logo-img {
     left: 6vw;
   }
+}
 
+@media screen and (max-width: 485px) {
   .choice-block .choice-content {
     font-size: 30px;
   }
@@ -700,17 +724,19 @@ input[type=number] {
   }
 }
 
-@media screen and (max-width: 445px) {
+@media screen and (max-width: 465px) {
   .main-logo .logo-img {
     left: 2vw;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
   .main-logo .logo-img {
     left: 0;
   }
+}
 
+@media screen and (max-width: 400px) {
   .choice-block .choice-content {
     font-size: 25px;
   }
@@ -724,7 +750,7 @@ input[type=number] {
   }
 }
 
-@media screen and (max-width: 385px) {
+@media screen and (max-width: 415px) {
   .main-logo .logo-img {
     width: 80px;
   }
@@ -738,7 +764,7 @@ input[type=number] {
   }
 }
 
-@media screen and (max-width: 355px) {
+@media screen and (max-width: 365px) {
   .main-logo .logo-img {
     width: 70px;
   }
@@ -749,7 +775,7 @@ input[type=number] {
   }
 }
 
-@media screen and (max-width: 340px) {
+@media screen and (max-width: 360px) {
   .block-text .block-title {
     font-size: 44px;
     margin-left: 85px;
@@ -757,6 +783,16 @@ input[type=number] {
 
   .block-text p {
     font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .block-text .block-title {
+    font-size: 40px;
+  }
+
+  .block-text p {
+    font-size: 15px;
   }
 
   .choice-block .choice-content {

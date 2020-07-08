@@ -120,22 +120,40 @@ $(function () {
     $('.main-logo p').animate({
       opacity: 1
     });
-  }, 2200);
+  }, 1500);
+
+  function modalOptionsHide() {
+    var optionsWrapper = $('.modal-options-wrapper');
+    $('.modal-options').animate({
+      opacity: 0
+    });
+    optionsWrapper.css('background-color', '#EDBA47').hide(600);
+  }
+
+  function modalOptionsShow() {
+    $('.modal-options').animate({
+      opacity: 1
+    });
+    $('.modal-options-wrapper').show(400).css('background-color', '#D9D9D9');
+  }
+
   $('.chosen').click(function () {
-    $('.modal-options-wrapper').fadeIn();
+    modalOptionsShow();
   });
   $('.modal-options-close').click(function () {
-    $('.modal-options-wrapper').fadeOut();
+    modalOptionsHide();
   });
   $('.options .option').click(function () {
     if (!$(this).hasClass('selected')) {
       var optionText = $(this).text();
+      var selectedText = $('.selected span').text();
       var dataBgColor = $(this).data('type');
       $('main').removeClass();
       $('main').addClass(dataBgColor);
       $('.chosen span').text(optionText);
       $('.options .option.selected span').text(optionText);
-      $('.modal-options-wrapper').fadeOut();
+      $(this).text(selectedText);
+      modalOptionsHide();
     }
   });
   $('#sell').click(function () {
