@@ -2,6 +2,7 @@
 
 * {
     font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 main {
     width: 100%;
@@ -102,7 +103,7 @@ header {
 
     .choice-content {
         padding: 120px 0;
-        font-weight: bolder;
+        font-weight: 600;
         font-size: 50px;
 
         .wanna-sell {
