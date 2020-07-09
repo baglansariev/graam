@@ -92,6 +92,7 @@ header {
 
 .block-text p {
   font-size: 20px;
+  font-weight: 500;
   margin-top: 30px;
 }
 
@@ -103,7 +104,7 @@ header {
   top: 93%;
   margin: auto;
   border-radius: 50px;
-  box-shadow: 2px 2px 25px 0 #B38211;
+  box-shadow: 2px 2px 25px 0 #A2A2A2;
 }
 
 .choice-block .choice-content {
@@ -119,9 +120,13 @@ header {
 .choice-block .choice-content .wanna-sell input[type=number] {
   width: 140px;
   border: 1px solid #CCC;
-  padding: 5px;
+  padding: 5px 15px;
   margin: 0 5px;
   border-radius: 10px;
+}
+
+.choice-block .choice-content .wanna-sell input[type=number]:focus {
+  outline: none;
 }
 
 .choice-block .choice-content .select {
@@ -149,13 +154,13 @@ header {
 
 .choice-block .choice-content .select .modal-options-wrapper .modal-options {
   position: relative;
-  padding-top: calc(20% + 200px);
+  padding-top: 22%;
 }
 
 .choice-block .choice-content .select .modal-options-wrapper .modal-options .modal-options-close {
   position: absolute;
-  right: 0;
-  top: 20%;
+  right: 40px;
+  top: 60px;
   width: 60px;
   height: 60px;
   cursor: pointer;
@@ -167,8 +172,8 @@ header {
   top: 0;
   display: block;
   width: 50px;
-  height: 3px;
-  background-color: #CCC;
+  height: 5px;
+  background-color: #000;
 }
 
 .choice-block .choice-content .select .modal-options-wrapper .modal-options .modal-options-close span:first-of-type {
@@ -181,12 +186,18 @@ header {
 
 .choice-block .choice-content .select .modal-options-wrapper .modal-options .options .option {
   cursor: pointer;
+}
+
+.choice-block .choice-content .select .modal-options-wrapper .modal-options .options .option span {
   padding-bottom: 2px;
   border-bottom: 1px solid #CCC;
 }
 
 .choice-block .choice-content .select .modal-options-wrapper .modal-options .options .selected {
   color: #B1B1B1;
+}
+
+.choice-block .choice-content .select .modal-options-wrapper .modal-options .options .selected span {
   border-bottom: none;
 }
 
@@ -196,6 +207,7 @@ header {
   color: #FFF;
   text-transform: uppercase;
   font-size: 30px;
+  font-weight: 500;
   padding: 10px 30px;
   border-radius: 10px;
   transition: all ease 0.4s;
@@ -224,6 +236,7 @@ header {
   padding-top: 40px;
   color: #FFF;
   font-size: 20px;
+  font-weight: 500;
 }
 
 .sell-wrapper .sell-parameters .wanna-sell span:first-of-type {
@@ -241,6 +254,10 @@ header {
   text-align: right;
   font-weight: bold;
   margin-right: 5px;
+}
+
+.sell-wrapper .sell-parameters .wanna-sell input:focus {
+  outline: none;
 }
 
 .sell-wrapper .sell-parameters .select {
@@ -321,16 +338,18 @@ header {
 .sell-wrapper .sell-block .sell-content .sell-cards .card {
   width: 32%;
   min-width: 302px;
+  max-width: 375px;
   min-height: 550px;
   margin-bottom: 20px;
   margin-right: 10px;
   padding: 40px;
-  border-radius: 12%;
+  border-radius: 75px;
   border: 1px solid #CCC;
 }
 
 .sell-wrapper .sell-block .sell-content .sell-cards .card .card-title {
-  margin-bottom: 50px;
+  margin-bottom: 35px;
+  min-height: 90px;
 }
 
 .sell-wrapper .sell-block .sell-content .sell-cards .card .card-title .card-logo {
@@ -382,6 +401,7 @@ header {
 .sell-wrapper .sell-block .sell-content .sell-cards .card .card-actions a {
   color: #000;
   font-size: 22px;
+  font-weight: 500;
   text-align: center;
   letter-spacing: 1px;
 }
@@ -395,6 +415,7 @@ header {
   padding-left: 0;
   color: #B1B1B1;
   font-size: 23px;
+  font-weight: 500;
   letter-spacing: 1px;
 }
 
@@ -445,6 +466,26 @@ input[type=number] {
 
 ::-webkit-resizer {
   background-color: transparent;
+}
+
+::-webkit-input-placeholder {
+  color: #CCC;
+}
+
+::-moz-placeholder {
+  color: #CCC;
+}
+
+/* Firefox 19+ */
+
+:-moz-placeholder {
+  color: #CCC;
+}
+
+/* Firefox 18- */
+
+:-ms-input-placeholder {
+  color: #CCC;
 }
 
 @media screen and (max-width: 1830px) {
@@ -566,12 +607,6 @@ input[type=number] {
   }
 }
 
-@media screen and (max-width: 1199px) {
-  .choice-block .choice-content .select .modal-options-wrapper .modal-options {
-    padding-top: calc(20% + 235px);
-  }
-}
-
 @media screen and (max-width: 1160px) {
   .main-logo .logo-img {
     width: 90px;
@@ -603,12 +638,6 @@ input[type=number] {
 
   .block-text p {
     font-size: 18px;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .choice-block .choice-content .select .modal-options-wrapper .modal-options {
-    padding-top: calc(20% + 280px);
   }
 }
 
@@ -661,10 +690,6 @@ input[type=number] {
     font-size: 45px;
   }
 
-  .choice-block .choice-content .select .modal-options-wrapper .modal-options {
-    padding-top: calc(20% + 310px);
-  }
-
   .main-logo .logo-img {
     left: 20vw;
   }
@@ -695,10 +720,6 @@ input[type=number] {
 @media screen and (max-width: 590px) {
   .choice-block .choice-content {
     font-size: 35px;
-  }
-
-  .choice-block .choice-content .select .modal-options-wrapper .modal-options {
-    padding-top: calc(20% + 295px);
   }
 }
 

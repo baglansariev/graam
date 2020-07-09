@@ -134,7 +134,7 @@ $(function () {
     $('.modal-options').animate({
       opacity: 1
     });
-    $('.modal-options-wrapper').show(400).css('background-color', '#D9D9D9');
+    $('.modal-options-wrapper').show(400).css('background-color', '#FFF');
   }
 
   $('.chosen').click(function () {
@@ -145,14 +145,14 @@ $(function () {
   });
   $('.options .option').click(function () {
     if (!$(this).hasClass('selected')) {
-      var optionText = $(this).text();
+      var optionText = $(this).find('span').text();
       var selectedText = $('.selected span').text();
       var dataBgColor = $(this).data('type');
       $('main').removeClass();
       $('main').addClass(dataBgColor);
       $('.chosen span').text(optionText);
       $('.options .option.selected span').text(optionText);
-      $(this).text(selectedText);
+      $(this).find('span').text(selectedText);
       modalOptionsHide();
     }
   });

@@ -35,7 +35,7 @@ $(function () {
 
     function modalOptionsShow() {
         $('.modal-options').animate({opacity: 1});
-        $('.modal-options-wrapper').show(400).css('background-color', '#D9D9D9');
+        $('.modal-options-wrapper').show(400).css('background-color', '#FFF');
     }
 
     $('.chosen').click(function () {
@@ -47,7 +47,7 @@ $(function () {
     
     $('.options .option').click(function () {
         if (!$(this).hasClass('selected')) {
-            let optionText = $(this).text();
+            let optionText = $(this).find('span').text();
             let selectedText = $('.selected span').text();
             let dataBgColor = $(this).data('type');
 
@@ -56,7 +56,7 @@ $(function () {
 
             $('.chosen span').text(optionText);
             $('.options .option.selected span').text(optionText);
-            $(this).text(selectedText);
+            $(this).find('span').text(selectedText);
             modalOptionsHide();
         }
     });

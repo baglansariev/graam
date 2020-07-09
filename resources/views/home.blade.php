@@ -20,7 +20,7 @@
         <div class="choice-content d-flex justify-content-center align-items-center flex-column">
             <div class="wanna-sell">
                 <span>Хочу продать</span>
-                <input type="number" class="sell-weight">
+                <input type="number" class="sell-weight" placeholder="10">
                 <span>г</span>
             </div>
             <div class="select">
@@ -29,24 +29,24 @@
                     <i class="fas fa-sort-down"></i>
                 </div>
                 <div class="modal-options-wrapper">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="modal-options d-flex justify-content-center align-items-center">
-                                    <div class="modal-options-close">
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                    <div class="options">
-                                        <div class="option selected">
-                                            <span>золото 585</span> пробы
-                                            <i class="fas fa-sort-up"></i>
-                                        </div>
-                                        <div class="option" data-type="gold">золото 999</div>
-                                        <div class="option" data-type="silver">серебро 999</div>
-                                        <div class="option" data-type="silver">серебро 925</div>
-                                    </div>
-                                </div>
+                    <div class="modal-options d-flex justify-content-center align-items-center">
+                        <div class="modal-options-close">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="options">
+                            <div class="option selected">
+                                <span>золото 585</span> пробы
+                                <i class="fas fa-sort-up"></i>
+                            </div>
+                            <div class="option" data-type="gold">
+                                <span>золото 999</span>
+                            </div>
+                            <div class="option" data-type="silver">
+                                <span>серебро 999</span>
+                            </div>
+                            <div class="option" data-type="silver">
+                                <span>серебро 925</span>
                             </div>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
             <div class="parameter-block d-flex align-items-start flex-column">
                 <div class="wanna-sell">
                     <span>Хочу продать</span>
-                    <input type="number" class="sell-weight">
+                    <input type="number" class="sell-weight" placeholder="10">
                     <span>г</span>
                 </div>
                 <div class="select">
@@ -92,7 +92,7 @@
         <div class="sell-block">
             <div class="sell-content d-flex flex-column align-items-center">
                 <div class="sell-content-title text-center">
-                    <p class="d-flex align-items-center flex-wrap">Продать <span>быстро</span><i class="fas fa-times"></i> и <span>дорого</span><i class="fas fa-times"></i> через:</p>
+                    <p class="d-flex align-items-center justify-content-center flex-wrap">Продать <span>быстро</span><i class="fas fa-times"></i> и <span>дорого</span><i class="fas fa-times"></i> через:</p>
                 </div>
                 <div class="sell-cards d-flex justify-content-around">
                     <div class="card">

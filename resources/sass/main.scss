@@ -82,6 +82,7 @@ header {
     }
     p {
         font-size: 20px;
+        font-weight: 500;
         margin-top: 30px;
     }
 }
@@ -95,9 +96,9 @@ header {
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
-    -webkit-box-shadow: 2px 2px 25px 0 #B38211;
-    -moz-box-shadow: 2px 2px 25px 0 #B38211;
-    box-shadow: 2px 2px 25px 0 #B38211;
+    -webkit-box-shadow: 2px 2px 25px 0 $blockShadow;
+    -moz-box-shadow: 2px 2px 25px 0 $blockShadow;
+    box-shadow: 2px 2px 25px 0 $blockShadow;
 
     .choice-content {
         padding: 120px 0;
@@ -110,11 +111,14 @@ header {
             input[type=number] {
                 width: 140px;
                 border: 1px solid $borderGray;
-                padding: 5px;
+                padding: 5px 15px;
                 margin: 0 5px;
                 -webkit-border-radius: 10px;
                 -moz-border-radius: 10px;
                 border-radius: 10px;
+            }
+            input[type=number]:focus {
+                outline: none;
             }
         }
         .select {
@@ -145,12 +149,12 @@ header {
 
                 .modal-options {
                     position: relative;
-                    padding-top: calc(20% + 200px);
+                    padding-top: 22%;
 
                     .modal-options-close {
                         position: absolute;
-                        right: 0;
-                        top: 20%;
+                        right: 40px;
+                        top: 60px;
                         width: 60px;
                         height: 60px;
                         cursor: pointer;
@@ -161,8 +165,8 @@ header {
                             top: 0;
                             display: block;
                             width: 50px;
-                            height: 3px;
-                            background-color: $borderGray;
+                            height: 5px;
+                            background-color: $black;
                         }
                         span:first-of-type {
                             transform: rotateZ(45deg);
@@ -175,12 +179,18 @@ header {
                     .options {
                         .option {
                             cursor: pointer;
-                            padding-bottom: 2px;
-                            border-bottom: 1px solid $borderGray;
+
+                            span {
+                                padding-bottom: 2px;
+                                border-bottom: 1px solid $borderGray;
+                            }
                         }
                         .selected {
                             color: $borderGray2;
-                            border-bottom: none;
+
+                            span {
+                                border-bottom: none;
+                            }
                         }
                     }
                 }
@@ -193,6 +203,7 @@ header {
                 color: $white;
                 text-transform: uppercase;
                 font-size: 30px;
+                font-weight: 500;
                 padding: 10px 30px;
                 -webkit-border-radius: 10px;
                 -moz-border-radius: 10px;
@@ -226,6 +237,7 @@ header {
         padding-top: 40px;
         color: $white;
         font-size: 20px;
+        font-weight: 500;
 
         .wanna-sell {
             span:first-of-type {
@@ -244,6 +256,9 @@ header {
                 text-align: right;
                 font-weight: bold;
                 margin-right: 5px;
+            }
+            input:focus {
+                outline: none;
             }
         }
         .select {
@@ -321,17 +336,19 @@ header {
                 .card {
                     width: 32%;
                     min-width: 302px;
+                    max-width: 375px;
                     min-height: 550px;
                     margin-bottom: 20px;
                     margin-right: 10px;
                     padding: 40px;
-                    -webkit-border-radius: 10%;
-                    -moz-border-radius: 10%;
-                    border-radius: 12%;
+                    -webkit-border-radius: 75px;
+                    -moz-border-radius: 75px;
+                    border-radius: 75px;
                     border: 1px solid $borderGray;
 
                     .card-title {
-                        margin-bottom: 50px;
+                        margin-bottom: 35px;
+                        min-height: 90px;
 
                         .card-logo {
                             width: 50px;
@@ -378,6 +395,7 @@ header {
                         a {
                             color: $black;
                             font-size: 22px;
+                            font-weight: 500;
                             text-align: center;
                             letter-spacing: 1px;
                         }
@@ -391,6 +409,7 @@ header {
                             padding-left: 0;
                             color: $borderGray2;
                             font-size: 23px;
+                            font-weight: 500;
                             letter-spacing: 1px;
 
                             li {
@@ -423,6 +442,11 @@ input[type=number] {
 ::-webkit-scrollbar-thumb { height: 50px; background-color: transparent; border-radius: 3px;}
 ::-webkit-scrollbar-corner { background-color: transparent;}
 ::-webkit-resizer { background-color: transparent;}
+
+::-webkit-input-placeholder {color: $borderGray;}
+::-moz-placeholder          {color: $borderGray;}/* Firefox 19+ */
+:-moz-placeholder           {color: $borderGray;}/* Firefox 18- */
+:-ms-input-placeholder      {color: $borderGray;}
 
 
 @media screen and (max-width: 1830px) {
@@ -558,11 +582,6 @@ input[type=number] {
         }
     }
 }
-@media screen and (max-width: 1199px) {
-    .choice-block .choice-content .select .modal-options-wrapper .modal-options {
-        padding-top: calc(20% + 235px);
-    }
-}
 @media screen and (max-width: 1160px) {
     .main-logo {
         .logo-img {
@@ -596,11 +615,6 @@ input[type=number] {
         p {
             font-size: 18px;
         }
-    }
-}
-@media screen and (max-width: 991px) {
-    .choice-block .choice-content .select .modal-options-wrapper .modal-options {
-        padding-top: calc(20% + 280px);
     }
 }
 @media screen and (max-width: 970px) {
@@ -653,10 +667,6 @@ input[type=number] {
     .choice-block {
         .choice-content {
             font-size: 45px;
-
-            .select .modal-options-wrapper .modal-options {
-                padding-top: calc(20% + 310px);
-            }
         }
     }
     .main-logo {
@@ -691,10 +701,6 @@ input[type=number] {
     .choice-block {
         .choice-content {
             font-size: 35px;
-
-            .select .modal-options-wrapper .modal-options {
-                padding-top: calc(20% + 295px);
-            }
         }
     }
 }
