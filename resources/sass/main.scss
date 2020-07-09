@@ -1,5 +1,8 @@
 @import "colors";
 
+@font-face {
+    src: url("/public/fonts/Monsterrat/Montserrat-Medium.ttf") format('ttf');
+}
 * {
     font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
