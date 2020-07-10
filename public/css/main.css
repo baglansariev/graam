@@ -136,8 +136,24 @@ header {
 .choice-block .choice-content .select .chosen {
   cursor: pointer;
   margin-bottom: 30%;
+  position: relative;
+}
+
+.choice-block .choice-content .select .chosen .fa-sort-down {
+  font-size: 40px;
+}
+
+.choice-block .choice-content .select .chosen:hover {
+  color: #EDBA47;
+}
+
+.choice-block .choice-content .select .chosen::after {
+  content: "";
+  position: absolute;
+  width: 92%;
   border-bottom: 1px solid #CCC;
-  padding-bottom: 10px;
+  left: 0;
+  bottom: 0;
 }
 
 .choice-block .choice-content .select .modal-options-wrapper {
@@ -152,12 +168,13 @@ header {
   transition: all ease-in-out 0.4s;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .modal-options {
+.choice-block .choice-content .select .modal-options-wrapper .options-block {
+  width: 100%;
+  height: 100%;
   position: relative;
-  padding-top: 22%;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .modal-options .modal-options-close {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close {
   position: absolute;
   right: 40px;
   top: 60px;
@@ -166,7 +183,7 @@ header {
   cursor: pointer;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .modal-options .modal-options-close span {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close span {
   position: absolute;
   left: 0;
   top: 0;
@@ -176,29 +193,42 @@ header {
   background-color: #000;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .modal-options .modal-options-close span:first-of-type {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close span:first-of-type {
   transform: rotateZ(45deg);
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .modal-options .modal-options-close span:last-of-type {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close span:last-of-type {
   transform: rotateZ(-45deg);
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .modal-options .options .option {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
+  margin: 0 auto;
+  position: absolute;
+  top: 20%;
+  width: 80%;
+  height: 100%;
+  padding-top: 235px;
+}
+
+.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .option {
   cursor: pointer;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .modal-options .options .option span {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .option span {
   padding-bottom: 2px;
   border-bottom: 1px solid #CCC;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .modal-options .options .selected {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected {
   color: #B1B1B1;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .modal-options .options .selected span {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected span {
   border-bottom: none;
+}
+
+.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
+  font-size: 40px;
 }
 
 .choice-block .choice-content .action button {
@@ -215,8 +245,7 @@ header {
 }
 
 .choice-block .choice-content .action button:hover {
-  background-color: #CCC;
-  color: #000;
+  color: #EDBA47;
 }
 
 .sell-wrapper {
@@ -690,6 +719,10 @@ input[type=number] {
     font-size: 45px;
   }
 
+  .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
+    padding-top: 230px;
+  }
+
   .main-logo .logo-img {
     left: 20vw;
   }
@@ -721,6 +754,19 @@ input[type=number] {
   .choice-block .choice-content {
     font-size: 35px;
   }
+
+  .choice-block .choice-content .select .chosen .fa-sort-down {
+    font-size: 30px;
+  }
+
+  .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
+    padding-top: 215px;
+  }
+
+  .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
+    font-size: 30px;
+    margin-top: 10px;
+  }
 }
 
 @media screen and (max-width: 575px) {
@@ -738,6 +784,10 @@ input[type=number] {
 @media screen and (max-width: 485px) {
   .choice-block .choice-content {
     font-size: 30px;
+  }
+
+  .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
+    padding-top: 205px;
   }
 
   .choice-block .choice-content .action button {
@@ -760,6 +810,10 @@ input[type=number] {
 @media screen and (max-width: 400px) {
   .choice-block .choice-content {
     font-size: 25px;
+  }
+
+  .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
+    padding-top: 200px;
   }
 
   .choice-block .choice-content .action button {
@@ -818,6 +872,10 @@ input[type=number] {
 
   .choice-block .choice-content {
     font-size: 20px;
+  }
+
+  .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
+    padding-top: 190px;
   }
 
   .choice-block .choice-content .action button {

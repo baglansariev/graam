@@ -29,24 +29,30 @@
                     <i class="fas fa-sort-down"></i>
                 </div>
                 <div class="modal-options-wrapper">
-                    <div class="modal-options d-flex justify-content-center align-items-center">
+                    <div class="options-block d-flex justify-content-center">
                         <div class="modal-options-close">
                             <span></span>
                             <span></span>
                         </div>
-                        <div class="options">
-                            <div class="option selected">
-                                <span>золото 585</span> пробы
-                                <i class="fas fa-sort-up"></i>
-                            </div>
-                            <div class="option" data-type="gold">
-                                <span>золото 999</span>
-                            </div>
-                            <div class="option" data-type="silver">
-                                <span>серебро 999</span>
-                            </div>
-                            <div class="option" data-type="silver">
-                                <span>серебро 925</span>
+                        <div class="options-content d-flex align-items-center flex-column">
+                            <div class="modal-options">
+                                <div class="select">
+                                    <div class="options">
+                                        <div class="option selected">
+                                            <span>золото 585</span> пробы
+                                            <i class="fas fa-sort-up"></i>
+                                        </div>
+                                        <div class="option" data-type="gold">
+                                            <span>золото 999</span>
+                                        </div>
+                                        <div class="option" data-type="silver">
+                                            <span>серебро 999</span>
+                                        </div>
+                                        <div class="option" data-type="silver">
+                                            <span>серебро 925</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
