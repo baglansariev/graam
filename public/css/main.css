@@ -1,4 +1,5 @@
 @font-face {
+  font-family: "Montserrat", sans-serif;
   src: url("/public/fonts/Monsterrat/Montserrat-Medium.ttf") format("ttf");
   src: url("/public/fonts/Monsterrat/Montserrat-Regular.ttf") format("ttf");
   src: url("/public/fonts/Monsterrat/Montserrat-Bold.ttf") format("ttf");
