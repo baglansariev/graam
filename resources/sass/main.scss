@@ -19,9 +19,21 @@ main {
 }
 .gold {
     background-color: $goldBackground;
+
+    .choice-block {
+        -webkit-box-shadow: 2px 2px 25px 0 $blockShadowGold;
+        -moz-box-shadow: 2px 2px 25px 0 $blockShadowGold;
+        box-shadow: 2px 2px 25px 0 $blockShadowGold;
+    }
 }
 .silver {
     background-color: $silverBackground;
+
+    .choice-block {
+        -webkit-box-shadow: 2px 2px 25px 0 $blockShadow;
+        -moz-box-shadow: 2px 2px 25px 0 $blockShadow;
+        box-shadow: 2px 2px 25px 0 $blockShadow;
+    }
 }
 header {
     padding-bottom: 50px;
@@ -104,9 +116,6 @@ header {
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
-    -webkit-box-shadow: 2px 2px 25px 0 $blockShadow;
-    -moz-box-shadow: 2px 2px 25px 0 $blockShadow;
-    box-shadow: 2px 2px 25px 0 $blockShadow;
 
     .choice-content {
         padding: 120px 0;
@@ -127,6 +136,7 @@ header {
             }
             input[type=number]:focus {
                 outline: none;
+                border-color: $black;
             }
         }
         .select {
@@ -217,6 +227,9 @@ header {
                                         border-bottom: 1px solid $borderGray;
                                     }
                                 }
+                                div:not(.selected):hover {
+                                    color: $goldBackground;
+                                }
                                 .selected {
                                     color: $borderGray2;
 
@@ -296,6 +309,7 @@ header {
             }
             input:focus {
                 outline: none;
+                border-color: $white;
             }
         }
         .select {
@@ -303,6 +317,10 @@ header {
             padding-bottom: 5px;
             margin-top: 10px;
             border-bottom: 1px solid $goldenBorder;
+
+            .chosen:hover {
+                color: $goldenBorder;
+            }
         }
         .currency-block {
             .currencies {
@@ -428,6 +446,9 @@ header {
                             -webkit-border-radius: 10px;
                             -moz-border-radius: 10px;
                             border-radius: 10px;
+                        }
+                        button:hover {
+                            color: $goldBackground;
                         }
                         a {
                             color: $black;
@@ -817,6 +838,7 @@ input[type=number] {
             }
             .wanna-sell input[type=number] {
                 width: 100px;
+                text-align: right;
             }
         }
     }

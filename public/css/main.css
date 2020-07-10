@@ -13,8 +13,16 @@ main {
   background-color: #EDBA47;
 }
 
+.gold .choice-block {
+  box-shadow: 2px 2px 25px 0 #AC7D11;
+}
+
 .silver {
   background-color: #D9D9D9;
+}
+
+.silver .choice-block {
+  box-shadow: 2px 2px 25px 0 #A2A2A2;
 }
 
 header {
@@ -104,7 +112,6 @@ header {
   top: 93%;
   margin: auto;
   border-radius: 50px;
-  box-shadow: 2px 2px 25px 0 #A2A2A2;
 }
 
 .choice-block .choice-content {
@@ -127,6 +134,7 @@ header {
 
 .choice-block .choice-content .wanna-sell input[type=number]:focus {
   outline: none;
+  border-color: #000;
 }
 
 .choice-block .choice-content .select {
@@ -219,6 +227,10 @@ header {
   border-bottom: 1px solid #CCC;
 }
 
+.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options div:not(.selected):hover {
+  color: #EDBA47;
+}
+
 .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected {
   color: #B1B1B1;
 }
@@ -287,6 +299,7 @@ header {
 
 .sell-wrapper .sell-parameters .wanna-sell input:focus {
   outline: none;
+  border-color: #FFF;
 }
 
 .sell-wrapper .sell-parameters .select {
@@ -294,6 +307,10 @@ header {
   padding-bottom: 5px;
   margin-top: 10px;
   border-bottom: 1px solid #D29332;
+}
+
+.sell-wrapper .sell-parameters .select .chosen:hover {
+  color: #D29332;
 }
 
 .sell-wrapper .sell-parameters .currency-block .currencies {
@@ -425,6 +442,10 @@ header {
   margin-bottom: 15px;
   font-size: 21px;
   border-radius: 10px;
+}
+
+.sell-wrapper .sell-block .sell-content .sell-cards .card .card-actions button:hover {
+  color: #EDBA47;
 }
 
 .sell-wrapper .sell-block .sell-content .sell-cards .card .card-actions a {
@@ -822,6 +843,7 @@ input[type=number] {
 
   .choice-block .choice-content .wanna-sell input[type=number] {
     width: 100px;
+    text-align: right;
   }
 }
 
