@@ -125,18 +125,26 @@ $(function () {
   }, 1500);
 
   function modalOptionsHide() {
-    var optionsWrapper = $('.modal-options-wrapper');
-    $('.modal-options').animate({
+    $('.options-content').animate({
       opacity: 0
+    }, function () {
+      $('.modal-options-wrapper').css({
+        'background-color': '#EDBA47',
+        'transition': 'none'
+      }).fadeOut(1000);
     });
-    optionsWrapper.css('background-color', '#EDBA47').hide(600);
   }
 
   function modalOptionsShow() {
-    $('.modal-options').animate({
-      opacity: 1
+    $('.modal-options-wrapper').fadeIn(function () {
+      $('.options-content').animate({
+        opacity: 1
+      });
+      $(this).css({
+        'transition': 'all ease 1s',
+        'background-color': '#fff'
+      });
     });
-    $('.modal-options-wrapper').show(400).css('background-color', '#FFF');
   }
 
   $('.chosen').click(function () {

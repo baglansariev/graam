@@ -28,14 +28,23 @@ $(function () {
     }, 1500);
 
     function modalOptionsHide() {
-        let optionsWrapper = $('.modal-options-wrapper');
-        $('.modal-options').animate({opacity: 0});
-        optionsWrapper.css('background-color', '#EDBA47').hide(600);
+        $('.options-content').animate({opacity: 0}, function () {
+            $('.modal-options-wrapper').css({
+                'background-color' : '#EDBA47',
+                'transition' : 'none',
+            }).fadeOut(1000);
+        });
     }
 
     function modalOptionsShow() {
-        $('.modal-options').animate({opacity: 1});
-        $('.modal-options-wrapper').show(400).css('background-color', '#FFF');
+        $('.modal-options-wrapper').fadeIn(function () {
+            $('.options-content').animate({opacity: 1});
+            $(this).css({
+                'transition' : 'all ease 1s',
+                'background-color' : '#fff',
+            });
+        });
+
     }
 
     $('.chosen').click(function () {
