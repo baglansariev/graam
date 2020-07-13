@@ -258,7 +258,7 @@ header {
   color: #FFF;
   text-transform: uppercase;
   font-size: 30px;
-  font-weight: 600;
+  font-weight: bold !important;
   padding: 10px 30px;
   border-radius: 10px;
   transition: all ease 0.4s;
@@ -401,7 +401,6 @@ header {
   margin-right: 10px;
   border-radius: 75px;
   border: 1px solid #CCC;
-  background-color: #F6F6F4;
 }
 
 .sell-wrapper .sell-block .sell-content .sell-cards .card .card-wrapper {
