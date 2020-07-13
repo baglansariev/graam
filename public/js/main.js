@@ -172,7 +172,7 @@ $(function () {
       $('.sell-parameters').animate({
         opacity: 1
       }, 500);
-      $('.card-wrapper').animate({
+      $('.card').animate({
         opacity: 1
       }, 500);
     }, 1500);

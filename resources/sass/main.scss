@@ -400,15 +400,9 @@ header {
                     -moz-border-radius: 75px;
                     border-radius: 75px;
                     border: 1px solid $borderGray;
+                    padding: 40px;
+                    opacity: 0;
 
-                    .card-wrapper {
-                        padding: 40px;
-                        opacity: 0;
-                        background-color: $white;
-                        -webkit-border-radius: 75px;
-                        -moz-border-radius: 75px;
-                        border-radius: 75px;
-                    }
 
                     .card-title {
                         margin-bottom: 35px;

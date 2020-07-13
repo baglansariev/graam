@@ -401,13 +401,8 @@ header {
   margin-right: 10px;
   border-radius: 75px;
   border: 1px solid #CCC;
-}
-
-.sell-wrapper .sell-block .sell-content .sell-cards .card .card-wrapper {
   padding: 40px;
   opacity: 0;
-  background-color: #FFF;
-  border-radius: 75px;
 }
 
 .sell-wrapper .sell-block .sell-content .sell-cards .card .card-title {
