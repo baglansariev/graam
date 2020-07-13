@@ -76,7 +76,7 @@ $(function () {
 
         setTimeout(function () {
             $('.sell-parameters').animate({opacity: 1}, 500);
-            $('.card').animate({opacity: 1}, 500);
+            $('.sell-cards, .sell-content-title').animate({opacity: 1}, 500);
         }, 1500);
     });
     $('.sell-weight').change(function () {

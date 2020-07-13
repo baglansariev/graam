@@ -86,37 +86,133 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/main.js":
-/*!******************************!*\
-  !*** ./resources/js/main.js ***!
-  \******************************/
+/***/ "./resources/js/custom.js":
+/*!********************************!*\
+  !*** ./resources/js/custom.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'C:\\xampp\\htdocs\\graam.loc\\resources\\js\\main.js'");
+$(function () {
+  var percent = setInterval(function () {
+    var percentage = $('.progress-block span').text();
+    $('.progress-block span').text(parseInt(percentage) + 1);
+    var percentage2 = $('.progress-block span').text();
+
+    if (parseInt(percentage2) === 100) {
+      clearInterval(percent);
+    }
+  }, 10);
+  setTimeout(function () {
+    $('.logo-img').animate({
+      left: 5 + '%',
+      top: -5 + '%',
+      width: 70 + 'px'
+    }, 800);
+    $('.main-block').animate({
+      opacity: 0
+    });
+    $('.choice-block').animate({
+      top: 13 + '%'
+    }, 800).animate({
+      top: 20 + '%'
+    }, 300);
+  }, 1500);
+  setTimeout(function () {
+    $('.main-logo p').animate({
+      opacity: 1
+    });
+  }, 1500);
+
+  function modalOptionsHide() {
+    $('.options-content').animate({
+      opacity: 0
+    }, function () {
+      $('.modal-options-wrapper').css({
+        'background-color': '#EDBA47',
+        'transition': 'none'
+      }).fadeOut(1000);
+    });
+  }
+
+  function modalOptionsShow() {
+    $('.modal-options-wrapper').fadeIn(function () {
+      $('.options-content').animate({
+        opacity: 1
+      });
+      $(this).css({
+        'transition': 'all ease 1s',
+        'background-color': '#fff'
+      });
+    });
+  }
+
+  $('.chosen').click(function () {
+    modalOptionsShow();
+  });
+  $('.modal-options-close').click(function () {
+    modalOptionsHide();
+  });
+  $('.options .option').click(function () {
+    if (!$(this).hasClass('selected')) {
+      var optionText = $(this).find('span').text();
+      var selectedText = $('.selected span').text();
+      var dataBgColor = $(this).data('type');
+      $('main').removeClass();
+      $('main').addClass(dataBgColor);
+      $('.chosen span').text(optionText);
+      $('.options .option.selected span').text(optionText);
+      $(this).find('span').text(selectedText);
+      modalOptionsHide();
+    }
+  });
+  $('#sell').click(function () {
+    $('.choice-block').animate({
+      top: 100 + '%'
+    }, 1000);
+    $('.sell-wrapper').css('display', 'flex');
+    $('.sell-content').animate({
+      marginTop: 105 + 'px'
+    }, 1500).animate({
+      marginTop: 142 + 'px'
+    }, 300);
+    setTimeout(function () {
+      $('.sell-parameters').animate({
+        opacity: 1
+      }, 500);
+      $('.sell-cards, .sell-content-title').animate({
+        opacity: 1
+      }, 500);
+    }, 1500);
+  });
+  $('.sell-weight').change(function () {
+    var inputVal = $(this).val();
+    $('.sell-weight').val(inputVal);
+  });
+});
 
 /***/ }),
 
-/***/ "./resources/sass/main.scss":
-/*!**********************************!*\
-  !*** ./resources/sass/main.scss ***!
-  \**********************************/
+/***/ "./resources/sass/custom.scss":
+/*!************************************!*\
+  !*** ./resources/sass/custom.scss ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open 'C:\\xampp\\htdocs\\graam.loc\\resources\\sass\\main.scss'\n    at C:\\xampp\\htdocs\\graam.loc\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at C:\\xampp\\htdocs\\graam.loc\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\xampp\\htdocs\\graam.loc\\node_modules\\loader-runner\\lib\\LoaderRunner.js:203:19\n    at C:\\xampp\\htdocs\\graam.loc\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:85:15\n    at processTicksAndRejections (internal/process/task_queues.js:79:11)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
 /***/ 0:
-/*!***************************************************************!*\
-  !*** multi ./resources/js/main.js ./resources/sass/main.scss ***!
-  \***************************************************************/
+/*!*******************************************************************!*\
+  !*** multi ./resources/js/custom.js ./resources/sass/custom.scss ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\graam.loc\resources\js\main.js */"./resources/js/main.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\graam.loc\resources\sass\main.scss */"./resources/sass/main.scss");
+__webpack_require__(/*! C:\xampp\htdocs\graam.loc\resources\js\custom.js */"./resources/js/custom.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\graam.loc\resources\sass\custom.scss */"./resources/sass/custom.scss");
 
 
 /***/ })

@@ -347,7 +347,7 @@ header {
         display: inline;
         width: 72%;
         position: relative;
-        overflow: scroll;
+        overflow-y: scroll;
         padding: 0 25px;
 
         .sell-content {
@@ -365,6 +365,7 @@ header {
                 font-size: 40px;
                 letter-spacing: 2px;
                 margin-bottom: 30px;
+                opacity: 0;
 
                 p {
                     font-weight: bolder;
@@ -385,6 +386,7 @@ header {
             .sell-cards {
                 width: 100%;
                 flex-wrap: wrap;
+                opacity: 0;
 
                 .card {
                     width: 32%;
@@ -398,7 +400,6 @@ header {
                     border-radius: 75px;
                     border: 1px solid $borderGray;
                     padding: 40px;
-                    opacity: 0;
 
 
                     .card-title {
