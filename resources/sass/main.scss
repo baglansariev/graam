@@ -1,15 +1,7 @@
 @import "colors";
 
-//@font-face {
-//    font-family: 'Montserrat', sans-serif;
-//    src: url("/public/fonts/Monsterrat/Montserrat-Medium.ttf") format('ttf');
-//    src: url("/public/fonts/Monsterrat/Montserrat-Regular.ttf") format('ttf');
-//    src: url("/public/fonts/Monsterrat/Montserrat-Bold.ttf") format('ttf');
-//    src: url("/public/fonts/Monsterrat/Montserrat-ExtraBold.ttf") format('ttf');
-//}
 * {
     font-family: 'Montserrat', sans-serif;
-    //-webkit-font-smoothing: antialiased;
 }
 main {
     width: 100%;
@@ -20,7 +12,7 @@ main {
 .gold {
     background-color: $goldBackground;
 
-    .choice-block {
+    .choice-block, .sell-content {
         -webkit-box-shadow: 2px 2px 25px 0 $blockShadowGold;
         -moz-box-shadow: 2px 2px 25px 0 $blockShadowGold;
         box-shadow: 2px 2px 25px 0 $blockShadowGold;
@@ -29,7 +21,7 @@ main {
 .silver {
     background-color: $silverBackground;
 
-    .choice-block {
+    .choice-block, .sell-content {
         -webkit-box-shadow: 2px 2px 25px 0 $blockShadow;
         -moz-box-shadow: 2px 2px 25px 0 $blockShadow;
         box-shadow: 2px 2px 25px 0 $blockShadow;
@@ -147,8 +139,13 @@ header {
                 margin-bottom: 30%;
                 position: relative;
 
+                span {
+                    margin-right: 12px;
+                }
+
                 .fa-sort-down {
                     font-size: 40px;
+                    margin: 16px 0 0 5px;
                 }
             }
             .chosen:hover {
@@ -235,10 +232,12 @@ header {
 
                                     span {
                                         border-bottom: none;
+                                        margin-right: 12px;
                                     }
 
                                     .fa-sort-up {
                                         font-size: 40px;
+                                        margin: 16px 0 0 5px;
                                     }
                                 }
                             }
@@ -254,7 +253,7 @@ header {
                 color: $white;
                 text-transform: uppercase;
                 font-size: 30px;
-                font-weight: 500;
+                font-weight: 600;
                 padding: 10px 30px;
                 -webkit-border-radius: 10px;
                 -moz-border-radius: 10px;
@@ -282,12 +281,13 @@ header {
 
     .sell-parameters {
         display: inline;
-        width: 30%;
+        width: 28%;
         margin-top: 142px;
         padding-top: 40px;
         color: $white;
         font-size: 20px;
         font-weight: 500;
+        opacity: 0;
 
         .wanna-sell {
             span:first-of-type {
@@ -348,9 +348,10 @@ header {
     }
     .sell-block {
         display: inline;
-        width: 70%;
+        width: 72%;
         position: relative;
         overflow: scroll;
+        padding: 0 25px;
 
         .sell-content {
             margin-top: 100%;
@@ -395,11 +396,20 @@ header {
                     min-height: 550px;
                     margin-bottom: 20px;
                     margin-right: 10px;
-                    padding: 40px;
                     -webkit-border-radius: 75px;
                     -moz-border-radius: 75px;
                     border-radius: 75px;
                     border: 1px solid $borderGray;
+                    background-color: $cardBackground;
+
+                    .card-wrapper {
+                        padding: 40px;
+                        opacity: 0;
+                        background-color: $white;
+                        -webkit-border-radius: 75px;
+                        -moz-border-radius: 75px;
+                        border-radius: 75px;
+                    }
 
                     .card-title {
                         margin-bottom: 35px;
@@ -658,7 +668,13 @@ input[type=number] {
 @media screen and (max-width: 1110px) {
     .sell-wrapper {
         padding: 0;
+
+     .sell-block {
+         padding: 0;
+     }
+
     }
+
 }
 @media screen and (max-width: 1040px) {
     .sell-wrapper .sell-block .sell-content {
@@ -726,8 +742,16 @@ input[type=number] {
         .choice-content {
             font-size: 45px;
 
-            .select .modal-options-wrapper .options-block .options-content {
-                padding-top: 230px;
+            .select {
+                .chosen .fa-sort-down {
+                    font-size: 35px;
+                }
+                .modal-options-wrapper .options-block .options-content {
+                    .modal-options .options .selected .fa-sort-up {
+                        font-size: 35px;
+                    }
+                    padding-top: 230px;
+                }
             }
         }
     }
@@ -768,6 +792,7 @@ input[type=number] {
 
                 .chosen .fa-sort-down {
                     font-size: 30px;
+                    margin-top: 10px;
                 }
                 .modal-options-wrapper .options-block .options-content {
                     padding-top: 215px;
@@ -800,8 +825,16 @@ input[type=number] {
         .choice-content {
             font-size: 30px;
 
-            .select .modal-options-wrapper .options-block .options-content {
-                padding-top: 205px;
+            .select {
+                .chosen .fa-sort-down {
+                    font-size: 25px;
+                }
+                .modal-options-wrapper .options-block .options-content {
+                    .modal-options .options .selected .fa-sort-up {
+                        font-size: 25px;
+                    }
+                    padding-top: 205px;
+                }
             }
 
             .action button {
@@ -829,15 +862,23 @@ input[type=number] {
         .choice-content {
             font-size: 25px;
 
-            .select .modal-options-wrapper .options-block .options-content {
-                padding-top: 200px;
+            .select {
+                .chosen .fa-sort-down {
+                    font-size: 18px;
+                }
+                .modal-options-wrapper .options-block .options-content {
+                    .modal-options .options .selected .fa-sort-up {
+                        font-size: 18px;
+                    }
+                    padding-top: 200px;
+                }
             }
 
             .action button {
                 font-size: 18px;
             }
             .wanna-sell input[type=number] {
-                width: 100px;
+                width: 80px;
                 text-align: right;
             }
         }
@@ -895,8 +936,16 @@ input[type=number] {
         .choice-content {
             font-size: 20px;
 
-            .select .modal-options-wrapper .options-block .options-content {
-                padding-top: 190px;
+            .select {
+                .chosen .fa-sort-down {
+                    margin-top: 5px;
+                }
+                .modal-options-wrapper .options-block .options-content {
+                    .modal-options .options .selected .fa-sort-up {
+                        margin-top: 5px;
+                    }
+                    padding-top: 190px;
+                }
             }
 
             .action button {

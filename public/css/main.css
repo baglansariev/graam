@@ -13,7 +13,8 @@ main {
   background-color: #EDBA47;
 }
 
-.gold .choice-block {
+.gold .choice-block,
+.gold .sell-content {
   box-shadow: 2px 2px 25px 0 #AC7D11;
 }
 
@@ -21,7 +22,8 @@ main {
   background-color: #D9D9D9;
 }
 
-.silver .choice-block {
+.silver .choice-block,
+.silver .sell-content {
   box-shadow: 2px 2px 25px 0 #A2A2A2;
 }
 
@@ -147,8 +149,13 @@ header {
   position: relative;
 }
 
+.choice-block .choice-content .select .chosen span {
+  margin-right: 12px;
+}
+
 .choice-block .choice-content .select .chosen .fa-sort-down {
   font-size: 40px;
+  margin: 16px 0 0 5px;
 }
 
 .choice-block .choice-content .select .chosen:hover {
@@ -237,10 +244,12 @@ header {
 
 .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected span {
   border-bottom: none;
+  margin-right: 12px;
 }
 
 .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
   font-size: 40px;
+  margin: 16px 0 0 5px;
 }
 
 .choice-block .choice-content .action button {
@@ -249,7 +258,7 @@ header {
   color: #FFF;
   text-transform: uppercase;
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 600;
   padding: 10px 30px;
   border-radius: 10px;
   transition: all ease 0.4s;
@@ -272,12 +281,13 @@ header {
 
 .sell-wrapper .sell-parameters {
   display: inline;
-  width: 30%;
+  width: 28%;
   margin-top: 142px;
   padding-top: 40px;
   color: #FFF;
   font-size: 20px;
   font-weight: 500;
+  opacity: 0;
 }
 
 .sell-wrapper .sell-parameters .wanna-sell span:first-of-type {
@@ -339,9 +349,10 @@ header {
 
 .sell-wrapper .sell-block {
   display: inline;
-  width: 70%;
+  width: 72%;
   position: relative;
   overflow: scroll;
+  padding: 0 25px;
 }
 
 .sell-wrapper .sell-block .sell-content {
@@ -388,9 +399,16 @@ header {
   min-height: 550px;
   margin-bottom: 20px;
   margin-right: 10px;
-  padding: 40px;
   border-radius: 75px;
   border: 1px solid #CCC;
+  background-color: #F6F6F4;
+}
+
+.sell-wrapper .sell-block .sell-content .sell-cards .card .card-wrapper {
+  padding: 40px;
+  opacity: 0;
+  background-color: #FFF;
+  border-radius: 75px;
 }
 
 .sell-wrapper .sell-block .sell-content .sell-cards .card .card-title {
@@ -675,6 +693,10 @@ input[type=number] {
   .sell-wrapper {
     padding: 0;
   }
+
+  .sell-wrapper .sell-block {
+    padding: 0;
+  }
 }
 
 @media screen and (max-width: 1040px) {
@@ -740,8 +762,16 @@ input[type=number] {
     font-size: 45px;
   }
 
+  .choice-block .choice-content .select .chosen .fa-sort-down {
+    font-size: 35px;
+  }
+
   .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
     padding-top: 230px;
+  }
+
+  .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
+    font-size: 35px;
   }
 
   .main-logo .logo-img {
@@ -778,6 +808,7 @@ input[type=number] {
 
   .choice-block .choice-content .select .chosen .fa-sort-down {
     font-size: 30px;
+    margin-top: 10px;
   }
 
   .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
@@ -807,8 +838,16 @@ input[type=number] {
     font-size: 30px;
   }
 
+  .choice-block .choice-content .select .chosen .fa-sort-down {
+    font-size: 25px;
+  }
+
   .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
     padding-top: 205px;
+  }
+
+  .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
+    font-size: 25px;
   }
 
   .choice-block .choice-content .action button {
@@ -833,8 +872,16 @@ input[type=number] {
     font-size: 25px;
   }
 
+  .choice-block .choice-content .select .chosen .fa-sort-down {
+    font-size: 18px;
+  }
+
   .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
     padding-top: 200px;
+  }
+
+  .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
+    font-size: 18px;
   }
 
   .choice-block .choice-content .action button {
@@ -842,7 +889,7 @@ input[type=number] {
   }
 
   .choice-block .choice-content .wanna-sell input[type=number] {
-    width: 100px;
+    width: 80px;
     text-align: right;
   }
 }
@@ -896,8 +943,16 @@ input[type=number] {
     font-size: 20px;
   }
 
+  .choice-block .choice-content .select .chosen .fa-sort-down {
+    margin-top: 5px;
+  }
+
   .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
     padding-top: 190px;
+  }
+
+  .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
+    margin-top: 5px;
   }
 
   .choice-block .choice-content .action button {
