@@ -290,6 +290,11 @@ header {
   opacity: 0;
 }
 
+.sell-wrapper .sell-parameters .wanna-sell {
+  /* Firefox 19+ */
+  /* Firefox 18- */
+}
+
 .sell-wrapper .sell-parameters .wanna-sell span:first-of-type {
   display: block;
   margin-bottom: 10px;
@@ -310,6 +315,22 @@ header {
 .sell-wrapper .sell-parameters .wanna-sell input:focus {
   outline: none;
   border-color: #FFF;
+}
+
+.sell-wrapper .sell-parameters .wanna-sell input::-webkit-input-placeholder {
+  color: #FFF;
+}
+
+.sell-wrapper .sell-parameters .wanna-sell input::-moz-placeholder {
+  color: #FFF;
+}
+
+.sell-wrapper .sell-parameters .wanna-sell input:-moz-placeholder {
+  color: #FFF;
+}
+
+.sell-wrapper .sell-parameters .wanna-sell input:-ms-input-placeholder {
+  color: #FFF;
 }
 
 .sell-wrapper .sell-parameters .select {

@@ -108,15 +108,15 @@ $(function () {
       left: 5 + '%',
       top: -5 + '%',
       width: 70 + 'px'
-    }, 800);
+    }, 600);
     $('.main-block').animate({
       opacity: 0
     });
     $('.choice-block').animate({
       top: 13 + '%'
-    }, 800).animate({
+    }, 600).animate({
       top: 20 + '%'
-    }, 300);
+    }, 200);
   }, 1500);
   setTimeout(function () {
     $('.main-logo p').animate({
@@ -169,20 +169,22 @@ $(function () {
   $('#sell').click(function () {
     $('.choice-block').animate({
       top: 100 + '%'
-    }, 1000);
-    $('.sell-wrapper').css('display', 'flex');
-    $('.sell-content').animate({
-      marginTop: 105 + 'px'
-    }, 1500).animate({
-      marginTop: 142 + 'px'
-    }, 300);
+    }, 600);
+    setTimeout(function () {
+      $('.sell-wrapper').css('display', 'flex');
+      $('.sell-content').animate({
+        marginTop: 105 + 'px'
+      }, 900).animate({
+        marginTop: 142 + 'px'
+      }, 300);
+    }, 350);
     setTimeout(function () {
       $('.sell-parameters').animate({
         opacity: 1
-      }, 500);
+      }, 400);
       $('.sell-cards, .sell-content-title').animate({
         opacity: 1
-      }, 500);
+      }, 400);
     }, 1500);
   });
   $('.sell-weight').change(function () {

@@ -308,6 +308,10 @@ header {
                 outline: none;
                 border-color: $white;
             }
+            input::-webkit-input-placeholder {color: $white;}
+            input::-moz-placeholder          {color: $white;}/* Firefox 19+ */
+            input:-moz-placeholder           {color: $white;}/* Firefox 18- */
+            input:-ms-input-placeholder      {color: $white;}
         }
         .select {
             cursor: pointer;
