@@ -296,7 +296,7 @@ header {
 }
 
 .sell-wrapper .sell-parameters .wanna-sell input {
-  border: 1px solid #D29332;
+  border: 1px solid #FFF;
   width: 60px;
   padding: 5px;
   background-color: transparent;
@@ -316,7 +316,7 @@ header {
   cursor: pointer;
   padding-bottom: 5px;
   margin-top: 10px;
-  border-bottom: 1px solid #D29332;
+  border-bottom: 1px solid #FFF;
 }
 
 .sell-wrapper .sell-parameters .select .chosen:hover {

@@ -292,7 +292,7 @@ header {
                 margin-bottom: 10px;
             }
             input {
-                border: 1px solid $goldenBorder;
+                border: 1px solid $white;
                 width: 60px;
                 padding: 5px;
                 background-color: transparent;
@@ -313,7 +313,7 @@ header {
             cursor: pointer;
             padding-bottom: 5px;
             margin-top: 10px;
-            border-bottom: 1px solid $goldenBorder;
+            border-bottom: 1px solid $white;
 
             .chosen:hover {
                 color: $goldenBorder;
