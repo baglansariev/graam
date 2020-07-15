@@ -195,6 +195,17 @@ $(function () {
 
 /***/ }),
 
+/***/ "./resources/sass/app.scss":
+/*!*********************************!*\
+  !*** ./resources/sass/app.scss ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/custom.scss":
 /*!************************************!*\
   !*** ./resources/sass/custom.scss ***!
@@ -207,14 +218,15 @@ $(function () {
 /***/ }),
 
 /***/ 0:
-/*!*******************************************************************!*\
-  !*** multi ./resources/js/custom.js ./resources/sass/custom.scss ***!
-  \*******************************************************************/
+/*!*********************************************************************************************!*\
+  !*** multi ./resources/js/custom.js ./resources/sass/custom.scss ./resources/sass/app.scss ***!
+  \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\xampp\htdocs\graam.loc\resources\js\custom.js */"./resources/js/custom.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\graam.loc\resources\sass\custom.scss */"./resources/sass/custom.scss");
+__webpack_require__(/*! C:\xampp\htdocs\graam.loc\resources\sass\custom.scss */"./resources/sass/custom.scss");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\graam.loc\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
