@@ -362,7 +362,7 @@ header {
 }
 
 .sell-wrapper .sell-parameters .currency-block .currencies li .fa-sort-up {
-  color: #D29332;
+  color: #FFF;
   margin-right: 2px;
 }
 
@@ -373,7 +373,7 @@ header {
 
 .sell-wrapper .sell-parameters .currency-block .note {
   font-size: 18px;
-  color: #D29332;
+  color: #FFF;
 }
 
 .sell-wrapper .sell-block {
