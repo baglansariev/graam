@@ -124,6 +124,7 @@ header {
 
 .choice-block .choice-content .wanna-sell {
   margin-bottom: 30px;
+  min-width: 600px;
 }
 
 .choice-block .choice-content .wanna-sell input[type=number] {
@@ -141,6 +142,7 @@ header {
 
 .choice-block .choice-content .select {
   position: relative;
+  min-width: 600px;
 }
 
 .choice-block .choice-content .select .chosen {
@@ -351,6 +353,12 @@ header {
 
 .sell-wrapper .sell-parameters .currency-block .currencies li {
   margin-bottom: 10px;
+  display: flex;
+}
+
+.sell-wrapper .sell-parameters .currency-block .currencies li span {
+  min-width: 25%;
+  display: block;
 }
 
 .sell-wrapper .sell-parameters .currency-block .currencies li .fa-sort-up {
@@ -359,7 +367,7 @@ header {
 }
 
 .sell-wrapper .sell-parameters .currency-block .currencies li span:first-of-type {
-  margin-right: 30px;
+  margin-right: 10px;
   font-weight: bolder;
 }
 
@@ -761,6 +769,16 @@ input[type=number] {
   }
 }
 
+@media screen and (max-width: 830px) {
+  .choice-block .choice-content .wanna-sell {
+    min-width: 550px;
+  }
+
+  .choice-block .choice-content .select {
+    min-width: 550px;
+  }
+}
+
 @media screen and (max-width: 790px) {
   .main-logo .logo-img {
     left: 22vw;
@@ -776,6 +794,14 @@ input[type=number] {
 @media screen and (max-width: 745px) {
   .choice-block .choice-content {
     font-size: 45px;
+  }
+
+  .choice-block .choice-content .wanna-sell {
+    min-width: 500px;
+  }
+
+  .choice-block .choice-content .select {
+    min-width: 500px;
   }
 
   .choice-block .choice-content .select .chosen .fa-sort-down {
@@ -820,6 +846,14 @@ input[type=number] {
 @media screen and (max-width: 590px) {
   .choice-block .choice-content {
     font-size: 35px;
+  }
+
+  .choice-block .choice-content .wanna-sell {
+    min-width: 400px;
+  }
+
+  .choice-block .choice-content .select {
+    min-width: 400px;
   }
 
   .choice-block .choice-content .select .chosen .fa-sort-down {
@@ -871,6 +905,16 @@ input[type=number] {
   }
 }
 
+@media screen and (max-width: 475px) {
+  .choice-block .choice-content .wanna-sell {
+    min-width: 350px;
+  }
+
+  .choice-block .choice-content .select {
+    min-width: 350px;
+  }
+}
+
 @media screen and (max-width: 465px) {
   .main-logo .logo-img {
     left: 2vw;
@@ -886,6 +930,14 @@ input[type=number] {
 @media screen and (max-width: 400px) {
   .choice-block .choice-content {
     font-size: 25px;
+  }
+
+  .choice-block .choice-content .wanna-sell {
+    min-width: 300px;
+  }
+
+  .choice-block .choice-content .select {
+    min-width: 300px;
   }
 
   .choice-block .choice-content .select .chosen .fa-sort-down {
@@ -957,6 +1009,14 @@ input[type=number] {
 
   .choice-block .choice-content {
     font-size: 20px;
+  }
+
+  .choice-block .choice-content .wanna-sell {
+    min-width: 250px;
+  }
+
+  .choice-block .choice-content .select {
+    min-width: 250px;
   }
 
   .choice-block .choice-content .select .chosen .fa-sort-down {

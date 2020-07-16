@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="de1ef396-0742-42ab-a62c-92c882808a54" name="graam_root" url="http://5.101.119.123/phpmyadmin">
-        <fileTransfer host="5.101.119.123" port="22" rootFolder="/var/www/sites" accessType="SFTP">
+        <fileTransfer host="5.101.119.123" port="22" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

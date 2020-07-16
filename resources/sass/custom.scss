@@ -116,6 +116,7 @@ header {
 
         .wanna-sell {
             margin-bottom: 30px;
+            min-width: 600px;
 
             input[type=number] {
                 width: 140px;
@@ -133,6 +134,7 @@ header {
         }
         .select {
             position: relative;
+            min-width: 600px;
 
             .chosen {
                 cursor: pointer;
@@ -330,13 +332,19 @@ header {
 
                 li {
                     margin-bottom: 10px;
+                    display: flex;
+
+                    span {
+                        min-width: 25%;
+                        display: block;
+                    }
 
                     .fa-sort-up {
                         color: $goldenBorder;
                         margin-right: 2px;
                     }
                     span:first-of-type {
-                        margin-right: 30px;
+                        margin-right: 10px;
                         font-weight: bolder;
                     }
                 }
@@ -720,6 +728,16 @@ input[type=number] {
         }
     }
 }
+@media screen and (max-width: 830px) {
+    .choice-block .choice-content {
+        .wanna-sell {
+            min-width: 550px;
+        }
+        .select {
+            min-width: 550px;
+        }
+    }
+}
 @media screen and (max-width: 790px) {
     .main-logo {
         .logo-img {
@@ -737,7 +755,12 @@ input[type=number] {
         .choice-content {
             font-size: 45px;
 
+            .wanna-sell {
+                min-width: 500px;
+            }
             .select {
+                min-width: 500px;
+
                 .chosen .fa-sort-down {
                     font-size: 35px;
                 }
@@ -783,7 +806,11 @@ input[type=number] {
         .choice-content {
             font-size: 35px;
 
+            .wanna-sell {
+                min-width: 400px;
+            }
             .select {
+                min-width: 400px;
 
                 .chosen .fa-sort-down {
                     font-size: 30px;
@@ -838,6 +865,18 @@ input[type=number] {
         }
     }
 }
+@media screen and (max-width: 475px) {
+    .choice-block {
+        .choice-content {
+            .wanna-sell {
+                min-width: 350px;
+            }
+            .select {
+                min-width: 350px;
+            }
+        }
+    }
+}
 @media screen and (max-width: 465px) {
     .main-logo {
         .logo-img {
@@ -857,7 +896,12 @@ input[type=number] {
         .choice-content {
             font-size: 25px;
 
+            .wanna-sell {
+                min-width: 300px;
+            }
             .select {
+                min-width: 300px;
+
                 .chosen .fa-sort-down {
                     font-size: 18px;
                 }
@@ -931,7 +975,12 @@ input[type=number] {
         .choice-content {
             font-size: 20px;
 
+            .wanna-sell {
+                min-width: 250px;
+            }
             .select {
+                min-width: 250px;
+
                 .chosen .fa-sort-down {
                     margin-top: 5px;
                 }
