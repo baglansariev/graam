@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\User\ManagerController;
 
 class RegisterController extends Controller
 {
@@ -69,5 +71,13 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function registered(Request $request, $user)
+    {
+        $manager = new ManagerController();
+        $manager_data = $manager->setManager($user->id);
+
+        $user->update(['manager_id' => $manager_data['manager_id']]);
     }
 }
