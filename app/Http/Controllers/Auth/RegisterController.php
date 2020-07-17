@@ -75,9 +75,9 @@ class RegisterController extends Controller
 
     public function registered(Request $request, $user)
     {
+        // Привязка менеджера к пользователю
         $manager = new ManagerController();
         $manager_data = $manager->setManager($user->id);
-
         $user->update(['manager_id' => $manager_data['manager_id']]);
     }
 }
