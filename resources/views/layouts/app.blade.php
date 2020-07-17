@@ -58,49 +58,58 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-sm-12">
-                        <div class="card">
-                            <div class="card-header d-flex justify-content-between align-items-center">
-                                <span>Личный кабинет</span>
+        @guest()
+            <main class="py-4">
+                <div class="container">
+                    @yield('content', 'Default Content')
+                </div>
+            </main>
+        @else
+            <main class="py-4">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <span>Личный кабинет</span>
 
-                                @auth
-                                    <div class="dropdown show user-menu">
-                                        <a id="dropdownMenuLink" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            {{ Auth::user()->email }} <span class="caret"></span>
-                                        </a>
+                                    @auth
+                                        <div class="dropdown show user-menu">
+                                            <a id="dropdownMenuLink" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                {{ Auth::user()->email }} <span class="caret"></span>
+                                            </a>
 
-                                        <ul class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="dropdownMenuLink">
-                                            <li class="nav-item">
-                                                <a href="{{ route('home') }}" class="dropdown-item">Личный кабинет</a>
-                                                <a href="{{ route('details.index') }}" class="dropdown-item">Личные данные</a>
-                                                <a href="{{ route('documents.index') }}" class="dropdown-item">Документы</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                                   onclick="event.preventDefault();
+                                            <ul class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="dropdownMenuLink">
+                                                <li class="nav-item">
+                                                    <a href="{{ route('home') }}" class="dropdown-item">Личный кабинет</a>
+                                                    <a href="{{ route('details.index') }}" class="dropdown-item">Личные данные</a>
+                                                    <a href="{{ route('documents.index') }}" class="dropdown-item">Документы</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                                       onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                                    Выход
-                                                </a>
+                                                        Выход
+                                                    </a>
 
-                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                    @csrf
-                                                </form>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                @endauth
-                            </div>
-                            <div class="card-body">
-                                @yield('content')
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                        @csrf
+                                                    </form>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    @endauth
+                                </div>
+                                <div class="card-body">
+                                    @yield('content')
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </main>
+            </main>
+        @endguest
+
     </div>
 
     <script>
