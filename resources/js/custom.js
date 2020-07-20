@@ -28,22 +28,24 @@ $(function () {
     }, 1500);
 
     function modalOptionsHide() {
-        $('.options-content').animate({opacity: 0}, function () {
-            $('.modal-options-wrapper').css({
-                'background-color' : '#EDBA47',
-                'transition' : 'none',
-            }).fadeOut(1000);
-        });
+        // $('.options-content').animate({opacity: 0}, function () {
+            // $('.modal-options-wrapper').css({
+            //     'background-color' : '#EDBA47',
+            //     'transition' : 'none',
+            // }).fadeOut(1000);
+        // });
+        $('.modal-options-wrapper').fadeOut();
     }
 
     function modalOptionsShow() {
-        $('.modal-options-wrapper').fadeIn(function () {
-            $('.options-content').animate({opacity: 1});
-            $(this).css({
-                'transition' : 'all ease 1s',
-                'background-color' : '#fff',
-            });
-        });
+        // $('.modal-options-wrapper').fadeIn(function () {
+        //     $('.options-content').animate({opacity: 1});
+        //     $(this).css({
+        //         'transition' : 'all ease 1s',
+        //         'background-color' : '#fff',
+        //     });
+        // });
+        $('.modal-options-wrapper').fadeIn();
 
     }
 
