@@ -19,12 +19,14 @@ Auth::routes();
 Route::get('/test', 'Helpers\ApiTesterController@index');
 Route::get('/test', 'Helpers\ApiTesterController@index');
 
-Route::prefix('admin')->group(function () {
-    Route::get('/home', 'Admin\HomeController@index')->name('home');
+Route::middleware('auth')->group(function() {
+    Route::prefix('admin')->group(function () {
+        Route::get('/home', 'Admin\HomeController@index')->name('home');
 
-    Route::prefix('user')->group(function () {
-        Route::resource('documents', 'User\DocumentsController');
-        Route::resource('details', 'User\DetailsController');
-        Route::resource('deals', 'User\DealController');
+        Route::prefix('user')->group(function () {
+            Route::resource('documents', 'User\DocumentsController');
+            Route::resource('details', 'User\DetailsController');
+            Route::resource('deals', 'User\DealController');
+        });
     });
 });
