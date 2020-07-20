@@ -84,6 +84,7 @@
                                                     <a href="{{ route('home') }}" class="dropdown-item">Личный кабинет</a>
                                                     <a href="{{ route('details.index') }}" class="dropdown-item">Личные данные</a>
                                                     <a href="{{ route('documents.index') }}" class="dropdown-item">Документы</a>
+                                                    <a href="{{ route('deals.index') }}" class="dropdown-item">Сделки</a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a class="dropdown-item" href="{{ route('logout') }}"

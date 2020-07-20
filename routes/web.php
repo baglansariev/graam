@@ -25,5 +25,6 @@ Route::prefix('admin')->group(function () {
     Route::prefix('user')->group(function () {
         Route::resource('documents', 'User\DocumentsController');
         Route::resource('details', 'User\DetailsController');
+        Route::resource('deals', 'User\DealController');
     });
 });

@@ -11,7 +11,7 @@
         {
             return new Client([
                 'base_uri' => $this->crm_client_api_url,
-                'timeout' => 2,
+                'timeout' => 5,
             ]);
         }
 
