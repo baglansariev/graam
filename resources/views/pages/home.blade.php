@@ -25,7 +25,7 @@
             </div>
             <div class="select">
                 <div class="chosen d-flex">
-                    <span>золото 585</span> пробы
+                    <span data-name="gold" data-type="585">золото 585</span> пробы
                     <i class="fas fa-sort-down"></i>
                 </div>
                 <div class="modal-options-wrapper">
@@ -42,13 +42,13 @@
                                             <span>золото 585</span> пробы
                                             <i class="fas fa-sort-up"></i>
                                         </div>
-                                        <div class="option" data-type="gold">
+                                        <div class="option" data-name="gold" data-type="999">
                                             <span>золото 999</span>
                                         </div>
-                                        <div class="option" data-type="silver">
+                                        <div class="option" data-name="silver" data-type="999">
                                             <span>серебро 999</span>
                                         </div>
-                                        <div class="option" data-type="silver">
+                                        <div class="option" data-name="silver" data-type="925">
                                             <span>серебро 925</span>
                                         </div>
                                     </div>
@@ -72,7 +72,7 @@
                     <span>г</span>
                 </div>
                 <div class="select">
-                    <div class="chosen">
+                    <div class="selected left-chosen">
                         <span>золото 585</span> пр.
                         <i class="fas fa-sort-down"></i>
                     </div>
@@ -81,17 +81,17 @@
             <div class="currency-block d-flex flex-column">
                 <ul class="currencies">
                     <li class="">
-                        <span><i class="fas fa-sort-up"></i> 69.39</span>
+                        <span><i class="fas fa-sort-up"></i> {{ $currency['dollar']['value'] }}</span>
                         <span>$ USD</span>
                     </li>
                     <li class="">
-                        <span><i class="fas fa-sort-up"></i> 3930.78</span>
+                        <span><i class="fas fa-sort-up"></i> {{ $currency['gold']['value'] }}</span>
                         <span>золото</span>
                     </li>
                 </ul>
                 <p class="note">
                     курсы актуальны <br>
-                    на 24.06.2020 21:00
+                    на {{ date('d.m.Y H:i') }}
                 </p>
             </div>
         </div>
@@ -100,188 +100,7 @@
                 <div class="sell-content-title text-center">
                     <p class="d-flex align-items-center justify-content-center flex-wrap">Продать <span>быстро</span><i class="fas fa-times"></i> и <span>дорого</span><i class="fas fa-times"></i> через:</p>
                 </div>
-                <div class="sell-cards d-flex justify-content-around">
-                    <div class="card">
-                        <div class="card-wrapper">
-                            <div class="card-title d-flex align-items-center">
-                                <img src="{{ asset('images/graam_logo.png') }}" alt="" class="card-logo">
-                                <p>Первый ювелирный</p>
-                            </div>
-                            <div class="card-offer">
-                                <div class="price">
-                                    109 000 ₽
-                                </div>
-                                <div class="time">
-                                    через 3 дня
-                                </div>
-                            </div>
-                            <div class="card-actions d-flex flex-column justify-content-center">
-                                <button type="button">Позвонить</button>
-                                <a href="">
-                                    <i class="fab fa-telegram-plane"></i>
-                                    <span>Написать в телеграм</span>
-                                </a>
-                            </div>
-                            <div class="card-details">
-                                <ul>
-                                    <li>Наличный и б/н расчет</li>
-                                    <li>Транспортировка входит в цену</li>
-                                    <li>Фиксация цены</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-wrapper">
-                            <div class="card-title d-flex align-items-center">
-                                <img src="{{ asset('images/graam_logo.png') }}" alt="" class="card-logo">
-                                <p>Новосибирский аффинажный завод</p>
-                            </div>
-                            <div class="card-offer">
-                                <div class="price">
-                                    125 000 ₽
-                                </div>
-                                <div class="time">
-                                    через 14 дней
-                                </div>
-                            </div>
-                            <div class="card-actions d-flex flex-column justify-content-center">
-                                <button type="button">Позвонить</button>
-                                <a href="">
-                                    <i class="fab fa-telegram-plane"></i>
-                                    <span>Написать в телеграм</span>
-                                </a>
-                            </div>
-                            <div class="card-details">
-                                <ul>
-                                    <li>Наличный и б/н расчет</li>
-                                    <li>Транспортировка входит в цену</li>
-                                    <li>Фиксация цены</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-wrapper">
-                            <div class="card-title d-flex align-items-center">
-                                <img src="{{ asset('images/graam_logo.png') }}" alt="" class="card-logo">
-                                <p>Красцветмет</p>
-                            </div>
-                            <div class="card-offer">
-                                <div class="price">
-                                    122 000 ₽
-                                </div>
-                                <div class="time">
-                                    через 14 дней
-                                </div>
-                            </div>
-                            <div class="card-actions d-flex flex-column justify-content-center">
-                                <button type="button">Позвонить</button>
-                                <a href="">
-                                    <i class="fab fa-telegram-plane"></i>
-                                    <span>Написать в телеграм</span>
-                                </a>
-                            </div>
-                            <div class="card-details">
-                                <ul>
-                                    <li>Наличный и б/н расчет</li>
-                                    <li>Транспортировка входит в цену</li>
-                                    <li>Фиксация цены</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-wrapper">
-                            <div class="card-title d-flex align-items-center">
-                                <img src="{{ asset('images/graam_logo.png') }}" alt="" class="card-logo">
-                                <p>Первый ювелирный</p>
-                            </div>
-                            <div class="card-offer">
-                                <div class="price">
-                                    109 000 ₽
-                                </div>
-                                <div class="time">
-                                    через 3 дня
-                                </div>
-                            </div>
-                            <div class="card-actions d-flex flex-column justify-content-center">
-                                <button type="button">Позвонить</button>
-                                <a href="">
-                                    <i class="fab fa-telegram-plane"></i>
-                                    <span>Написать в телеграм</span>
-                                </a>
-                            </div>
-                            <div class="card-details">
-                                <ul>
-                                    <li>Наличный и б/н расчет</li>
-                                    <li>Транспортировка входит в цену</li>
-                                    <li>Фиксация цены</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-wrapper">
-                            <div class="card-title d-flex align-items-center">
-                                <img src="{{ asset('images/graam_logo.png') }}" alt="" class="card-logo">
-                                <p>Новосибирский аффинажный завод</p>
-                            </div>
-                            <div class="card-offer">
-                                <div class="price">
-                                    125 000 ₽
-                                </div>
-                                <div class="time">
-                                    через 14 дней
-                                </div>
-                            </div>
-                            <div class="card-actions d-flex flex-column justify-content-center">
-                                <button type="button">Позвонить</button>
-                                <a href="">
-                                    <i class="fab fa-telegram-plane"></i>
-                                    <span>Написать в телеграм</span>
-                                </a>
-                            </div>
-                            <div class="card-details">
-                                <ul>
-                                    <li>Наличный и б/н расчет</li>
-                                    <li>Транспортировка входит в цену</li>
-                                    <li>Фиксация цены</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-wrapper">
-                            <div class="card-title d-flex align-items-center">
-                                <img src="{{ asset('images/graam_logo.png') }}" alt="" class="card-logo">
-                                <p>Красцветмет</p>
-                            </div>
-                            <div class="card-offer">
-                                <div class="price">
-                                    122 000 ₽
-                                </div>
-                                <div class="time">
-                                    через 14 дней
-                                </div>
-                            </div>
-                            <div class="card-actions d-flex flex-column justify-content-center">
-                                <button type="button">Позвонить</button>
-                                <a href="">
-                                    <i class="fab fa-telegram-plane"></i>
-                                    <span>Написать в телеграм</span>
-                                </a>
-                            </div>
-                            <div class="card-details">
-                                <ul>
-                                    <li>Наличный и б/н расчет</li>
-                                    <li>Транспортировка входит в цену</li>
-                                    <li>Фиксация цены</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="sell-cards d-flex justify-content-around"></div>
             </div>
         </div>
     </div>

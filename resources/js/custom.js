@@ -49,7 +49,7 @@ $(function () {
 
     }
 
-    $('.chosen').click(function () {
+    $('.chosen, .left-chosen').click(function () {
         modalOptionsShow();
     });
     $('.modal-options-close').click(function () {
@@ -59,15 +59,21 @@ $(function () {
     $('.options .option').click(function () {
         if (!$(this).hasClass('selected')) {
             let optionText = $(this).find('span').text();
-            let selectedText = $('.selected span').text();
-            let dataBgColor = $(this).data('type');
+            let optionType = $(this).data('type');
+            let optionName = $(this).data('name');
+
+
+            let chosen = $('.chosen span');
+            chosen.data('name', optionName).data('type', optionType);
+            let chosenText = chosen.text();
+
+            $(this).find('span').text(chosenText);
+            chosen.text(optionText);
+            $('.selected span').text(optionText);
 
             $('main').removeClass();
-            $('main').addClass(dataBgColor);
+            $('main').addClass(optionName);
 
-            $('.chosen span').text(optionText);
-            $('.options .option.selected span').text(optionText);
-            $(this).find('span').text(selectedText);
             modalOptionsHide();
         }
     });
@@ -87,5 +93,26 @@ $(function () {
         let inputVal = $(this).val();
 
         $('.sell-weight').val(inputVal);
+    });
+
+    // /ajax/offers/product/gold/585/100
+    $('#sell').click(function () {
+        let chosen  = $('.chosen span');
+        let name    = chosen.data('name');
+        let type    = chosen.data('type');
+        let weight  = $('.sell-weight').val();
+        if (!weight) weight = 10;
+
+        $.ajax({
+            url: '/ajax/offers/product/' + name + '/' + type + '/' + weight,
+            type: 'GET',
+            dataType: 'html',
+            success: function (result) {
+                $('.sell-cards').html(result);
+            },
+            error: function (result) {
+                console.log(result);
+            }
+        });
     });
 });

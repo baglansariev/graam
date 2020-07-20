@@ -145,7 +145,7 @@ $(function () {
     $('.modal-options-wrapper').fadeIn();
   }
 
-  $('.chosen').click(function () {
+  $('.chosen, .left-chosen').click(function () {
     modalOptionsShow();
   });
   $('.modal-options-close').click(function () {
@@ -154,13 +154,16 @@ $(function () {
   $('.options .option').click(function () {
     if (!$(this).hasClass('selected')) {
       var optionText = $(this).find('span').text();
-      var selectedText = $('.selected span').text();
-      var dataBgColor = $(this).data('type');
+      var optionType = $(this).data('type');
+      var optionName = $(this).data('name');
+      var chosen = $('.chosen span');
+      chosen.data('name', optionName).data('type', optionType);
+      var chosenText = chosen.text();
+      $(this).find('span').text(chosenText);
+      chosen.text(optionText);
+      $('.selected span').text(optionText);
       $('main').removeClass();
-      $('main').addClass(dataBgColor);
-      $('.chosen span').text(optionText);
-      $('.options .option.selected span').text(optionText);
-      $(this).find('span').text(selectedText);
+      $('main').addClass(optionName);
       modalOptionsHide();
     }
   });
@@ -188,6 +191,25 @@ $(function () {
   $('.sell-weight').change(function () {
     var inputVal = $(this).val();
     $('.sell-weight').val(inputVal);
+  }); // /ajax/offers/product/gold/585/100
+
+  $('#sell').click(function () {
+    var chosen = $('.chosen span');
+    var name = chosen.data('name');
+    var type = chosen.data('type');
+    var weight = $('.sell-weight').val();
+    if (!weight) weight = 10;
+    $.ajax({
+      url: '/ajax/offers/product/' + name + '/' + type + '/' + weight,
+      type: 'GET',
+      dataType: 'html',
+      success: function success(result) {
+        $('.sell-cards').html(result);
+      },
+      error: function error(result) {
+        console.log(result);
+      }
+    });
   });
 });
 

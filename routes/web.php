@@ -30,3 +30,7 @@ Route::middleware('auth')->group(function() {
         });
     });
 });
+
+Route::prefix('ajax')->group(function () {
+    Route::get('offers/product/{name}/{type}/{weight}', 'Ajax\OffersController@getOffers');
+});
