@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserDocument;
+use App\Models\DocumentCategory;
 
 class DocumentsController extends Controller
 {
@@ -24,8 +25,9 @@ class DocumentsController extends Controller
     public function index()
     {
         $data = [
-            'documents' => Auth::user()->documents(),
-            'user' => Auth::user(),
+            'document_categories'   => DocumentCategory::all(),
+            'user_docs'             => Auth::user()->documents(),
+            'user'             => Auth::user(),
         ];
         return view('admin.user.documents.index', $data);
     }
@@ -38,7 +40,7 @@ class DocumentsController extends Controller
     public function create()
     {
         $data = [
-            'doc_names' => $this->getDocNamesList(),
+            'doc_categories' => DocumentCategory::all(),
         ];
         return view('admin.user.documents.create', $data);
     }
@@ -51,18 +53,21 @@ class DocumentsController extends Controller
      */
     public function store(Request $request)
     {
-        $file               = $request->file('document');
-        $fileOriginalName   = $file->getClientOriginalName();
-        $doc_path           = $this->docs_dir . Auth::user()->id;
+        $files = $request->file('documents');
 
-        Auth::user()->documents()->create([
-            'name'              => $request->input('doc_name'),
-            'original_name'     => $fileOriginalName,
-            'path'              => $doc_path . '/' . $fileOriginalName,
-            'size'              => $file->getSize(),
-        ]);
+        foreach ($files as $file) {
+            $fileOriginalName   = $file->getClientOriginalName();
+            $doc_path           = $this->docs_dir . Auth::user()->id;
 
-        $file->move($doc_path, $fileOriginalName);
+            Auth::user()->documents()->create([
+                'category_id'       => $request->input('doc_category'),
+                'name'              => $fileOriginalName,
+                'path'              => $doc_path . '/' . $fileOriginalName,
+                'size'              => $file->getSize(),
+            ]);
+
+            $file->move($doc_path, $fileOriginalName);
+        }
 
         return redirect(route('documents.index'));
     }
@@ -87,8 +92,8 @@ class DocumentsController extends Controller
     public function edit($id)
     {
         $data = [
-            'doc_names'  => $this->getDocNamesList(),
-            'document'   => UserDocument::find($id),
+            'doc_categories'    => DocumentCategory::all(),
+            'document'          => UserDocument::find($id),
         ];
 
         return view('admin.user.documents.edit', $data);
@@ -103,18 +108,20 @@ class DocumentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $file               = $request->file('document');
+        $file = $request->file('document');
+
         $fileOriginalName   = $file->getClientOriginalName();
         $doc_path           = $this->docs_dir . Auth::user()->id;
 
         UserDocument::find($id)->update([
-            'name'              => $request->input('doc_name'),
-            'original_name'     => $fileOriginalName,
+            'category_id'       => $request->input('doc_category'),
+            'name'              => $fileOriginalName,
             'path'              => $doc_path . '/' . $fileOriginalName,
             'size'              => $file->getSize(),
         ]);
 
         $file->move($doc_path, $fileOriginalName);
+
 
         return redirect(route('documents.index'));
     }
@@ -135,7 +142,7 @@ class DocumentsController extends Controller
         return [
             'Учетная карточка контрагента ЮЛ/ИП.',
             'Анкета ЮЛ/ИП',
-            'Скан-копия свидетельства ОГРН/ОГРНИП ЮЛ (если регистрация прошла до 01.01.2017г.) /ИП',
+            'Скан-копия свидетельства ОГРН/ОГРНИП ЮЛ (если регистрация прошла до 01.01.2017г.) / ИП',
             'Скан-копия свидетельства ИНН ЮЛ/ИП',
             'Скан-копия уведомления о поставке на спец. учет (со всеми изменениями) ЮЛ/ИП',
             'Скан-копия карты спец. учета ЮЛ/ИП',

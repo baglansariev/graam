@@ -17,9 +17,9 @@ class CreateUserDetailsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->string('name');
-            $table->bigInteger('inn');
-            $table->string('company_name');
-            $table->string('company_address');
+            $table->bigInteger('inn')->nullable();
+            $table->string('company_name')->nullable();
+            $table->string('company_address')->nullable();
             $table->timestamps();
         });
     }

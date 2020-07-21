@@ -8,12 +8,12 @@
 
         <div class="form-group">
             <label for="selectNames">Название документа:</label>
-            <select name="doc_name" id="selectNames" class="form-control" required>
-                @foreach($doc_names as $doc_name)
-                    @if($document->name == $doc_name)
-                        <option value="{{ $doc_name }}" selected>{{ $doc_name }}</option>
+            <select name="doc_category" id="selectNames" class="form-control" required>
+                @foreach($doc_categories as $category)
+                    @if($document->category->name == $category->name)
+                        <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
                     @else
-                        <option value="{{ $doc_name }}">{{ $doc_name }}</option>
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endif
                 @endforeach
             </select>

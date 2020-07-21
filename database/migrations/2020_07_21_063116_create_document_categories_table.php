@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserDocumentsTable extends Migration
+class CreateDocumentCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateUserDocumentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_documents', function (Blueprint $table) {
+        Schema::create('document_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id');
-            $table->integer('category_id');
-            $table->string('name')->nullable();
-            $table->string('path');
-            $table->string('size')->nullable();
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateUserDocumentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_documents');
+        Schema::dropIfExists('document_categories');
     }
 }

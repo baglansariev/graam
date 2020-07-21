@@ -9,7 +9,7 @@ class UserDocument extends Model
     protected $fillable = [
         'user_id',
         'name',
-        'original_name',
+        'category_id',
         'title',
         'path',
         'size',
@@ -18,5 +18,10 @@ class UserDocument extends Model
     public function user()
     {
         return $this->belongsTo('App\User');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo('App\Models\DocumentCategory', 'category_id');
     }
 }

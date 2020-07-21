@@ -6,14 +6,14 @@
         @csrf
         <div class="form-group">
             <label for="selectNames">Название документа:</label>
-            <select name="doc_name" id="selectNames" class="form-control" required>
-                @foreach($doc_names as $doc_name)
-                    <option value="{{ $doc_name }}">{{ $doc_name }}</option>
+            <select name="doc_category" id="selectNames" class="form-control" required>
+                @foreach($doc_categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach
             </select>
         </div>
         <div class="form-group">
-            <input type="file" name="document" class="form-control" id="inputAddress" required>
+            <input type="file" name="documents[]" class="form-control" id="inputAddress" multiple required>
         </div>
 
         <div class="form-group d-flex justify-content-between mt-5">

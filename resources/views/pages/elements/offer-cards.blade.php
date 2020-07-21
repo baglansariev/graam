@@ -8,7 +8,7 @@
                 </div>
                 <div class="card-offer">
                     <div class="price">
-                        {{ number_format($offer['price'], 0, '', ' ') }}
+                        {{ number_format($offer['price'], 0, '', ' ') }} ₽
                     </div>
                     <div class="time">
                         через {{ $offer['duration'] }} дня
