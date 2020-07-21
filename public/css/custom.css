@@ -501,6 +501,25 @@ header {
   text-decoration: none;
 }
 
+.sell-wrapper .sell-block .sell-content .sell-cards .card .phone {
+  font-weight: bold;
+  font-size: calc(0.3vw + 25px);
+}
+
+.sell-wrapper .sell-block .sell-content .sell-cards .card .apply button {
+  width: auto;
+  background-color: transparent;
+  color: #000;
+  font-weight: 500;
+  padding: 0 0 5px 0;
+  border: none;
+  border-bottom: 1px solid #CCC;
+  text-transform: none;
+  font-size: calc(0.3vw + 18px);
+  letter-spacing: normal;
+  border-radius: 0;
+}
+
 .sell-wrapper .sell-block .sell-content .sell-cards .card .card-details ul {
   list-style-type: none;
   padding-left: 0;

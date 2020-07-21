@@ -15,11 +15,17 @@
                     </div>
                 </div>
                 <div class="card-actions d-flex flex-column justify-content-center">
-                    <button type="button">Позвонить</button>
-                    <a href="">
+                    <!--<button type="button">Позвонить</button>-->
+                    <!--<a href="">
                         <i class="fab fa-telegram-plane"></i>
                         <span>Написать в телеграм</span>
-                    </a>
+                    </a>-->
+                    <div class="phone">
+                        <p>+7 812 123-45-67</p>
+                    </div>
+                    <div class="apply text-left">
+                        <button type="button" class="d-flex">Оставить заявку</button>
+                    </div>
                 </div>
                 <div class="card-details">
                     <ul>
