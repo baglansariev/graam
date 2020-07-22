@@ -145,6 +145,29 @@ $(function () {
     $('.modal-options-wrapper').fadeIn();
   }
 
+  function getClientPreferences() {
+    var chosen = $('.chosen span');
+    var name = chosen.data('name');
+    var type = chosen.data('type');
+    var weight = $('.sell-weight').val();
+    if (!weight) weight = 10;
+    return {
+      chosen: chosen,
+      name: name,
+      type: type,
+      weight: weight
+    };
+  }
+
+  function setModalPopupParams() {
+    var params = getClientPreferences();
+    var metal = 'золота';
+    if (params.name == 'silver') metal = 'серебра';
+    var message = params.weight + ' г ' + metal + ' ' + params.type + ' пробы через ПЮДМ';
+    $('.modal-popup .subtitle').text(message);
+    $('.hidden-message').val(message);
+  }
+
   $('.chosen, .left-chosen').click(function () {
     modalOptionsShow();
   });
@@ -157,8 +180,12 @@ $(function () {
       var optionType = $(this).data('type');
       var optionName = $(this).data('name');
       var chosen = $('.chosen span');
-      chosen.data('name', optionName).data('type', optionType);
+      var chosenName = chosen.data('name');
+      var chosenType = chosen.data('type');
       var chosenText = chosen.text();
+      chosen.data('name', optionName).data('type', optionType);
+      $(this).data('name', chosenName);
+      $(this).data('type', chosenType);
       $(this).find('span').text(chosenText);
       chosen.text(optionText);
       $('.selected span').text(optionText);
@@ -193,29 +220,16 @@ $(function () {
     $('.sell-weight').val(inputVal);
   });
   $('#sell').click(function () {
-    var chosen = $('.chosen span');
-    var name = chosen.data('name');
-    var type = chosen.data('type');
-    var weight = $('.sell-weight').val();
-    if (!weight) weight = 10;
+    var params = getClientPreferences();
     $.ajax({
-      url: '/ajax/offers/product/' + name + '/' + type + '/' + weight,
+      url: '/ajax/offers/product/' + params.name + '/' + params.type + '/' + params.weight,
       type: 'GET',
       dataType: 'html',
       success: function success(result) {
         $('.sell-cards').html(result);
         $('.sell-app').click(function () {
-          var chosen = $('.chosen span');
-          var name = chosen.data('name');
-          var type = chosen.data('type');
-          var weight = $('.sell-weight').val();
-          var metal = 'золота';
-          if (!weight) weight = 10;
-          if (name == 'silver') metal = 'серебра';
-          var message = weight + ' г ' + metal + ' ' + type + ' пробы через ПЮДМ';
-          $('.modal-popup .subtitle').text(message);
-          $('.hidden-message').val(message);
-          $('.modal-popup').fadeIn(); // console.log(weight);
+          setModalPopupParams();
+          $('.modal-popup.modal-sell').fadeIn();
         });
         $('.popup-close').click(function () {
           $('.modal-popup').fadeOut();
@@ -225,6 +239,10 @@ $(function () {
         console.log(result);
       }
     });
+  });
+  $('.own-price-btn').click(function () {
+    setModalPopupParams();
+    $('.modal-popup.modal-own-price').fadeIn();
   });
 });
 

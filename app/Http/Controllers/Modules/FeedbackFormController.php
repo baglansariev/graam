@@ -11,4 +11,9 @@ class FeedbackFormController extends Controller
     {
         return view('modules.feedback-form.sell-app');
     }
+
+    public function getOwnPriceAppForm()
+    {
+        return view('modules.feedback-form.own-price-app');
+    }
 }

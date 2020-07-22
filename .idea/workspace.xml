@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abff2837-7468-434e-940d-e3b5389bc27b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/feedback-form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/feedback-form.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/modules/feedback-form/own-price-app.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/modules/feedback-form/sell-app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Modules/FeedbackFormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Modules/FeedbackFormController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Pages/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Pages/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/feedback-form.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/feedback-form.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/elements/offer-cards.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/elements/offer-cards.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/custom.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/feedback-form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/feedback-form.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/feedback-form/own-price-app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modules/feedback-form/own-price-app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/feedback-form/sell-app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modules/feedback-form/sell-app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/sass/custom.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="202" column="25" selection-start-line="188" selection-start-column="24" selection-end-line="202" selection-end-column="25" />
+            <state relative-caret-position="227">
+              <caret line="535" column="38" lean-forward="true" selection-start-line="535" selection-start-column="38" selection-end-line="535" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -56,17 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/modules/feedback-form/sell-app.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="21" column="86" selection-start-line="21" selection-start-column="72" selection-end-line="21" selection-end-column="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/elements/offer-cards.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="26" column="62" selection-start-line="26" selection-start-column="62" selection-end-line="26" selection-end-column="62" />
+            <state relative-caret-position="-78">
+              <caret column="34" selection-start-column="34" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -74,8 +63,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1116">
-              <caret line="106" column="18" selection-start-line="106" selection-start-column="18" selection-end-line="106" selection-end-column="18" />
+            <state relative-caret-position="292">
+              <caret line="108" column="14" lean-forward="true" selection-start-line="108" selection-start-column="14" selection-end-line="108" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Pages/HomeController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+              <folding>
+                <element signature="e#46#74#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/modules/feedback-form/own-price-app.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="20" column="62" lean-forward="true" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -83,17 +93,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/default.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="936">
+            <state relative-caret-position="546">
               <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/sass/feedback-form.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+            <state relative-caret-position="413">
+              <caret line="85" column="42" selection-start-line="85" selection-start-column="42" selection-end-line="85" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -101,17 +111,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Modules/FeedbackFormController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+            <state relative-caret-position="390">
+              <caret line="16" column="59" lean-forward="true" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/custom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="119" column="45" lean-forward="true" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
+            <state relative-caret-position="722">
+              <caret line="153" column="39" selection-start-line="153" selection-start-column="39" selection-end-line="153" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -129,8 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>choic</find>
-      <find>para</find>
       <find>carf</find>
       <find>600</find>
       <find>sell</find>
@@ -159,6 +167,8 @@
       <find>wrapper</find>
       <find>close</find>
       <find>wanna</find>
+      <find>sell-conte</find>
+      <find>cards</find>
     </findStrings>
     <replaceStrings>
       <replace>fa-telegram-plane</replace>
@@ -170,7 +180,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/var/www/sites/graam-crm.test/.env" />
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Helpers/ApiTesterController.php" />
         <option value="$PROJECT_DIR$/.env" />
@@ -210,17 +219,18 @@
         <option value="$PROJECT_DIR$/app/Models/UserDocument.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/user/documents/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/User/DocumentsController.php" />
-        <option value="$PROJECT_DIR$/resources/sass/custom.scss" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Modules/FeedbackFormController.php" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Pages/HomeController.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/default.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/elements/offer-cards.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/feedback-form.js" />
-        <option value="$PROJECT_DIR$/resources/sass/feedback-form.scss" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Modules/FeedbackFormController.php" />
+        <option value="$PROJECT_DIR$/resources/sass/custom.scss" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Pages/HomeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/modules/feedback-form/sell-app.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/custom.js" />
+        <option value="$PROJECT_DIR$/resources/views/modules/feedback-form/own-price-app.blade.php" />
+        <option value="$PROJECT_DIR$/resources/sass/feedback-form.scss" />
       </list>
     </option>
   </component>
@@ -349,13 +359,28 @@
             <path>
               <item name="graam.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="graam.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graam.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graam.loc" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graam.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graam.loc" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="graam.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="graam.loc" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="graam.loc" type="b2602c69:ProjectViewProjectNode" />
@@ -367,13 +392,6 @@
               <item name="graam.loc" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="graam.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="graam.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="graam.loc" type="b2602c69:ProjectViewProjectNode" />
@@ -475,18 +493,18 @@
       <workItem from="1595224496474" duration="23847000" />
       <workItem from="1595311104764" duration="20208000" />
       <workItem from="1595349368412" duration="9000" />
-      <workItem from="1595399091273" duration="2723000" />
+      <workItem from="1595399091273" duration="10616000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201681000" />
+    <option name="totallyTimeSpent" value="209574000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2260128" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2260128" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -502,7 +520,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Migrations" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.32628062" />
+      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.32628062" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
       <window_info anchor="bottom" id="File Transfer" order="14" weight="0.32962137" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -792,30 +810,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/modules/feedback-form/own-price-app.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
           <caret line="86" column="121" selection-start-line="86" selection-start-column="121" selection-end-line="86" selection-end-column="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Pages/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding>
-            <element signature="e#46#74#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -831,59 +829,83 @@
     <entry file="file://$PROJECT_DIR$/resources/js/feedback-form.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/default.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Modules/FeedbackFormController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        <state relative-caret-position="390">
+          <caret line="16" column="59" lean-forward="true" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/feedback-form.scss">
+    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        <state relative-caret-position="390">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/elements/offer-cards.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="26" column="62" selection-start-line="26" selection-start-column="62" selection-end-line="26" selection-end-column="62" />
+        <state relative-caret-position="260">
+          <caret line="10" column="74" selection-start-line="10" selection-start-column="73" selection-end-line="10" selection-end-column="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/sass/custom.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="202" column="25" selection-start-line="188" selection-start-column="24" selection-end-line="202" selection-end-column="25" />
+        <state relative-caret-position="227">
+          <caret line="535" column="38" lean-forward="true" selection-start-line="535" selection-start-column="38" selection-end-line="535" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/modules/feedback-form/sell-app.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Pages/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="21" column="86" selection-start-line="21" selection-start-column="72" selection-end-line="21" selection-end-column="86" />
+        <state relative-caret-position="284">
+          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+          <folding>
+            <element signature="e#46#74#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/default.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="106" column="18" selection-start-line="106" selection-start-column="18" selection-end-line="106" selection-end-column="18" />
+        <state relative-caret-position="292">
+          <caret line="108" column="14" lean-forward="true" selection-start-line="108" selection-start-column="14" selection-end-line="108" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/modules/feedback-form/sell-app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78">
+          <caret column="34" selection-start-column="34" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="722">
+          <caret line="153" column="39" selection-start-line="153" selection-start-column="39" selection-end-line="153" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/modules/feedback-form/own-price-app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
-          <caret line="119" column="45" lean-forward="true" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
+          <caret line="20" column="62" lean-forward="true" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/feedback-form.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="85" column="42" selection-start-line="85" selection-start-column="42" selection-end-line="85" selection-end-column="42" />
         </state>
       </provider>
     </entry>

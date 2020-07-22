@@ -1,4 +1,4 @@
-<div class="modal-popup">
+<div class="modal-popup modal-sell">
     <div class="popup-wrapper">
         <div class="popup-close">
             <span></span>
@@ -17,8 +17,8 @@
                                 50 г золота 585 пробы через ПЮДМ
                             </div>
                             <form action="" class="popup-form d-flex flex-column">
-                                <input type="text" name="name" placeholder="Имя" required>
-                                <input type="text" name="phone" value="+7" required>
+                                <input type="text" class="name-input" name="name" placeholder="Имя" required>
+                                <input type="text" class="phone-input" name="phone" value="+7" required>
                                 <input type="hidden" name="text" class="hidden-message">
                                 <button type="button">Отправить</button>
                             </form>

@@ -12,8 +12,9 @@ class HomeController extends Controller
     public function index()
     {
         $data = [
-            'currency'  => (new CurrencyController)->getRates(),
-            'sell_form' => (new FeedbackFormController)->getSellAppForm(),
+            'currency'          => (new CurrencyController)->getRates(),
+            'sell_form'         => (new FeedbackFormController)->getSellAppForm(),
+            'own_price_form'    => (new FeedbackFormController)->getOwnPriceAppForm(),
         ];
         return view('pages.home', $data);
     }
