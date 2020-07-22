@@ -95,7 +95,7 @@ $(function () {
         $('.sell-weight').val(inputVal);
     });
 
-    // /ajax/offers/product/gold/585/100
+
     $('#sell').click(function () {
         let chosen  = $('.chosen span');
         let name    = chosen.data('name');
@@ -103,12 +103,34 @@ $(function () {
         let weight  = $('.sell-weight').val();
         if (!weight) weight = 10;
 
+
         $.ajax({
             url: '/ajax/offers/product/' + name + '/' + type + '/' + weight,
             type: 'GET',
             dataType: 'html',
             success: function (result) {
                 $('.sell-cards').html(result);
+
+                $('.sell-app').click(function () {
+                    let chosen  = $('.chosen span');
+                    let name    = chosen.data('name');
+                    let type    = chosen.data('type');
+                    let weight  = $('.sell-weight').val();
+                    let metal   = 'золота';
+                    if (!weight) weight = 10;
+
+                    if (name == 'silver')  metal = 'серебра';
+
+                    let message = weight + ' г ' + metal + ' ' + type + ' пробы через ПЮДМ';
+                    $('.modal-popup .subtitle').text(message);
+                    $('.hidden-message').val(message);
+
+                    $('.modal-popup').fadeIn();
+                    // console.log(weight);
+                });
+                $('.popup-close').click(function () {
+                    $('.modal-popup').fadeOut();
+                })
             },
             error: function (result) {
                 console.log(result);

@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('font-awesome/css/all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/feedback-form.css') }}">
         <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
         <script src="{{ asset('font-awesome/js/all.min.js') }}"></script>
         <script src="{{ asset('js/custom.js') }}"></script>
@@ -32,5 +33,6 @@
             @yield('content', 'Default Content')
         </main>
         <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/feedback-form.js') }}"></script>
     </body>
 </html>

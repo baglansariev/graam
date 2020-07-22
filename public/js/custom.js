@@ -191,8 +191,7 @@ $(function () {
   $('.sell-weight').change(function () {
     var inputVal = $(this).val();
     $('.sell-weight').val(inputVal);
-  }); // /ajax/offers/product/gold/585/100
-
+  });
   $('#sell').click(function () {
     var chosen = $('.chosen span');
     var name = chosen.data('name');
@@ -205,6 +204,22 @@ $(function () {
       dataType: 'html',
       success: function success(result) {
         $('.sell-cards').html(result);
+        $('.sell-app').click(function () {
+          var chosen = $('.chosen span');
+          var name = chosen.data('name');
+          var type = chosen.data('type');
+          var weight = $('.sell-weight').val();
+          var metal = 'золота';
+          if (!weight) weight = 10;
+          if (name == 'silver') metal = 'серебра';
+          var message = weight + ' г ' + metal + ' ' + type + ' пробы через ПЮДМ';
+          $('.modal-popup .subtitle').text(message);
+          $('.hidden-message').val(message);
+          $('.modal-popup').fadeIn(); // console.log(weight);
+        });
+        $('.popup-close').click(function () {
+          $('.modal-popup').fadeOut();
+        });
       },
       error: function error(result) {
         console.log(result);
@@ -237,15 +252,27 @@ $(function () {
 
 /***/ }),
 
+/***/ "./resources/sass/feedback-form.scss":
+/*!*******************************************!*\
+  !*** ./resources/sass/feedback-form.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!*********************************************************************************************!*\
-  !*** multi ./resources/js/custom.js ./resources/sass/custom.scss ./resources/sass/app.scss ***!
-  \*********************************************************************************************/
+/*!*********************************************************************************************************************************!*\
+  !*** multi ./resources/js/custom.js ./resources/sass/custom.scss ./resources/sass/feedback-form.scss ./resources/sass/app.scss ***!
+  \*********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\xampp\htdocs\graam.loc\resources\js\custom.js */"./resources/js/custom.js");
 __webpack_require__(/*! C:\xampp\htdocs\graam.loc\resources\sass\custom.scss */"./resources/sass/custom.scss");
+__webpack_require__(/*! C:\xampp\htdocs\graam.loc\resources\sass\feedback-form.scss */"./resources/sass/feedback-form.scss");
 module.exports = __webpack_require__(/*! C:\xampp\htdocs\graam.loc\resources\sass\app.scss */"./resources/sass/app.scss");
 
 

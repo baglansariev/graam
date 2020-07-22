@@ -104,6 +104,7 @@
             </div>
         </div>
     </div>
+    {!! $sell_form !!}
 </div>
 
 @endsection

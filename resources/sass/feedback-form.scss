@@ -1,0 +1,99 @@
+@import "colors";
+
+.modal-popup {
+    position: fixed;
+    background-color: $white;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: none;
+
+    .popup-wrapper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        .popup-close {
+            position: absolute;
+            right: 40px;
+            top: 60px;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            z-index: 9;
+
+            span {
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: block;
+                width: 50px;
+                height: 5px;
+                background-color: $black;
+            }
+            span:first-of-type {
+                transform: rotateZ(45deg);
+            }
+            span:last-of-type {
+                transform: rotateZ(-45deg);
+            }
+        }
+        .popup-content {
+            margin-top: 30vh;
+
+            .content {
+                .title {
+                    margin-bottom: 5px;
+
+                    h3 {
+                        font-size: calc(0.9vw + 22px);
+                        font-weight: 700;
+                    }
+                }
+                .subtitle {
+                    font-weight: 600;
+                    font-size: calc(0.2vw + 16px);
+                    margin-bottom: 30px;
+                }
+                .popup-form {
+                    width: 100%;
+
+                    input {
+                        padding: 13px 20px;
+                        margin-bottom: 20px;
+                        border: 1px solid $borderGray;
+                        -webkit-border-radius: 20px;
+                        -moz-border-radius: 20px;
+                        border-radius: 20px;
+                    }
+                    input:focus {
+                        outline: none;
+                        border: 1px solid $black;
+                    }
+                    input:nth-of-type(2) {
+                        width: 75%;
+                        margin-bottom: 30px;
+                    }
+                    button {
+                        border: none;
+                        width: 75%;
+                        padding: 13px 20px;
+                        background-color: $black;
+                        color: $white;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        letter-spacing: 1px;
+                        font-size: calc(0.3vw + 16px);
+                        -webkit-border-radius: 10px;
+                        -moz-border-radius: 10px;
+                        border-radius: 10px;
+                    }
+                    button:hover {
+                        color: $goldBackground;
+                    }
+                }
+            }
+        }
+    }
+}

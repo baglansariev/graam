@@ -1,0 +1,101 @@
+.modal-popup {
+  position: fixed;
+  background-color: #FFF;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: none;
+}
+
+.modal-popup .popup-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.modal-popup .popup-wrapper .popup-close {
+  position: absolute;
+  right: 40px;
+  top: 60px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 9;
+}
+
+.modal-popup .popup-wrapper .popup-close span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 50px;
+  height: 5px;
+  background-color: #000;
+}
+
+.modal-popup .popup-wrapper .popup-close span:first-of-type {
+  transform: rotateZ(45deg);
+}
+
+.modal-popup .popup-wrapper .popup-close span:last-of-type {
+  transform: rotateZ(-45deg);
+}
+
+.modal-popup .popup-wrapper .popup-content {
+  margin-top: 30vh;
+}
+
+.modal-popup .popup-wrapper .popup-content .content .title {
+  margin-bottom: 5px;
+}
+
+.modal-popup .popup-wrapper .popup-content .content .title h3 {
+  font-size: calc(0.9vw + 22px);
+  font-weight: 700;
+}
+
+.modal-popup .popup-wrapper .popup-content .content .subtitle {
+  font-weight: 600;
+  font-size: calc(0.2vw + 16px);
+  margin-bottom: 30px;
+}
+
+.modal-popup .popup-wrapper .popup-content .content .popup-form {
+  width: 100%;
+}
+
+.modal-popup .popup-wrapper .popup-content .content .popup-form input {
+  padding: 13px 20px;
+  margin-bottom: 20px;
+  border: 1px solid #CCC;
+  border-radius: 20px;
+}
+
+.modal-popup .popup-wrapper .popup-content .content .popup-form input:focus {
+  outline: none;
+  border: 1px solid #000;
+}
+
+.modal-popup .popup-wrapper .popup-content .content .popup-form input:nth-of-type(2) {
+  width: 75%;
+  margin-bottom: 30px;
+}
+
+.modal-popup .popup-wrapper .popup-content .content .popup-form button {
+  border: none;
+  width: 75%;
+  padding: 13px 20px;
+  background-color: #000;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: calc(0.3vw + 16px);
+  border-radius: 10px;
+}
+
+.modal-popup .popup-wrapper .popup-content .content .popup-form button:hover {
+  color: #EDBA47;
+}
+

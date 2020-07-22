@@ -24,7 +24,7 @@
                         <p>+7 812 123-45-67</p>
                     </div>
                     <div class="apply text-left">
-                        <button type="button" class="d-flex">Оставить заявку</button>
+                        <button type="button" class="sell-app d-flex">Оставить заявку</button>
                     </div>
                 </div>
                 <div class="card-details">
