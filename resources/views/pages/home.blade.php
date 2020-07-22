@@ -98,7 +98,7 @@
         <div class="sell-block">
             <div class="sell-content d-flex flex-column align-items-center">
                 <div class="sell-content-title text-center">
-                    <p class="d-flex align-items-center justify-content-center flex-wrap">Продать <span>быстро</span><i class="fas fa-times"></i> и <span>дорого</span><i class="fas fa-times"></i> через:</p>
+                    <p class="d-flex align-items-center justify-content-center flex-wrap">Продать <span class="active" data-type="fast">быстро</span><i class="fas fa-times"></i> и <span class="active" data-type="expensive">дорого</span><i class="fas fa-times"></i> через:</p>
                 </div>
                 <div class="sell-cards d-flex justify-content-around"></div>
                 <div class="alternative-offer d-flex flex-column align-items-center">

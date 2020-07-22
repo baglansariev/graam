@@ -244,6 +244,17 @@ $(function () {
     setModalPopupParams();
     $('.modal-popup.modal-own-price').fadeIn();
   });
+  $('.sell-content-title span').click(function () {
+    var type = $(this).data('type');
+    $(this).toggleClass('active');
+
+    if (type == 'fast') {
+      var firstCard = $('.card:first-of-type');
+      firstCard.toggleClass('inactive');
+    } else {
+      $('.card').not('.card:first-of-type').toggleClass('inactive');
+    }
+  });
 });
 
 /***/ }),
