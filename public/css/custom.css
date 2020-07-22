@@ -407,10 +407,11 @@ header {
   padding-bottom: 2px;
   margin: 0 5px 0 7px;
   cursor: pointer;
+  border-bottom: 2px dotted transparent;
 }
 
 .sell-wrapper .sell-block .sell-content .sell-content-title p span.active {
-  border-bottom: 2px dotted #CCC;
+  border-bottom-color: #CCC;
 }
 
 .sell-wrapper .sell-block .sell-content .sell-content-title p .fa-times {

@@ -386,9 +386,10 @@ header {
                         padding-bottom: 2px;
                         margin: 0 5px 0 7px;
                         cursor: pointer;
+                        border-bottom: 2px dotted transparent;
                     }
                     span.active {
-                        border-bottom: 2px dotted $borderGray;
+                        border-bottom-color: $borderGray;
                     }
                     .fa-times {
                         font-size: 18px;
