@@ -156,7 +156,7 @@ header {
             .chosen::after {
                 content: '';
                 position: absolute;
-                width: 92%;
+                width: 79%;
                 //height: 1px;
                 border-bottom: 1px solid $borderGray;
                 left: 0;
@@ -352,6 +352,7 @@ header {
             .note {
                 font-size: 18px;
                 color: $white;
+                opacity: 40%;
             }
         }
     }

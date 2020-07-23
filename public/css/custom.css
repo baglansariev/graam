@@ -167,7 +167,7 @@ header {
 .choice-block .choice-content .select .chosen::after {
   content: "";
   position: absolute;
-  width: 92%;
+  width: 79%;
   border-bottom: 1px solid #CCC;
   left: 0;
   bottom: 0;
@@ -373,6 +373,7 @@ header {
 .sell-wrapper .sell-parameters .currency-block .note {
   font-size: 18px;
   color: #FFF;
+  opacity: 40%;
 }
 
 .sell-wrapper .sell-block {
