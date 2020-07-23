@@ -357,7 +357,11 @@ header {
 
 .sell-wrapper .sell-parameters .currency-block .currencies li span {
   min-width: 25%;
-  display: block;
+  display: flex;
+}
+
+.sell-wrapper .sell-parameters .currency-block .currencies li span .fa-sort-up {
+  margin: 10px 5px 0 0;
 }
 
 .sell-wrapper .sell-parameters .currency-block .currencies li .fa-sort-up {
@@ -465,7 +469,7 @@ header {
 }
 
 .sell-wrapper .sell-block .sell-content .sell-cards .card .card-offer .price {
-  font-size: 35px;
+  font-size: 40px;
   font-weight: bolder;
   margin-bottom: 0;
 }

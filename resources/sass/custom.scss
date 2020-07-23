@@ -336,7 +336,11 @@ header {
 
                     span {
                         min-width: 25%;
-                        display: block;
+                        display: flex;
+
+                        .fa-sort-up {
+                            margin: 10px 5px 0 0
+                        }
                     }
 
                     .fa-sort-up {
@@ -439,7 +443,7 @@ header {
                         margin-bottom: 30px;
 
                         .price {
-                            font-size: 35px;
+                            font-size: 40px;
                             font-weight: bolder;
                             margin-bottom: 0;
                         }
