@@ -131,8 +131,11 @@ $(function () {
 
         setTimeout(function () {
             $('.sell-parameters').animate({opacity: 1}, 400);
-            $('.sell-cards, .sell-content-title').animate({opacity: 1}, 400);
-        }, 1500);
+            // $('.sell-cards, .sell-content-title').animate({
+            //     opacity: 1,
+            // }, 800);
+            $('.sell-cards, .sell-content-title').addClass('fadeInUp');
+        }, 1200);
     });
     $('.sell-weight').change(function () {
         let inputVal = $(this).val();
@@ -218,4 +221,7 @@ $(function () {
             }
         });
     }
+
+
+    $('.phone-input').inputmask("+7(999)999-99-99");
 });

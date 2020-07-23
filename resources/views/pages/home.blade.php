@@ -100,10 +100,10 @@
         </div>
         <div class="sell-block">
             <div class="sell-content d-flex flex-column align-items-center">
-                <div class="sell-content-title text-center">
+                <div class="sell-content-title animated animatedFadeInUp text-center">
                     <p class="d-flex align-items-center justify-content-center flex-wrap">Продать <span class="active" data-type="fast">быстро</span><i class="fas fa-times"></i> и <span class="active" data-type="expensive">дорого</span><i class="fas fa-times"></i> через:</p>
                 </div>
-                <div class="sell-cards d-flex justify-content-around"></div>
+                <div class="sell-cards d-flex justify-content-around animated animatedFadeInUp"></div>
                 <div class="alternative-offer d-flex flex-column align-items-center">
                     <h3 class="text-center">Если предложения вас не устроили, вы можете:</h3>
                     <button class="own-price-btn">Предложить свою цену</button>
