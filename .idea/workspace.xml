@@ -36,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/sass/custom.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="354" column="28" selection-start-line="354" selection-start-column="28" selection-end-line="354" selection-end-column="28" />
+            <state relative-caret-position="214">
+              <caret line="367" column="28" selection-start-line="367" selection-start-column="28" selection-end-line="367" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -121,7 +121,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sell</find>
       <find>overf</find>
       <find>card</find>
       <find>parameters</find>
@@ -151,6 +150,7 @@
       <find>.card</find>
       <find>cards</find>
       <find>sell-content-ti</find>
+      <find>.sell-content</find>
     </findStrings>
     <replaceStrings>
       <replace>fa-telegram-plane</replace>
@@ -454,12 +454,12 @@
       <workItem from="1595311104764" duration="20208000" />
       <workItem from="1595349368412" duration="9000" />
       <workItem from="1595399091273" duration="25093000" />
-      <workItem from="1595482334061" duration="12955000" />
+      <workItem from="1595482334061" duration="15671000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="237006000" />
+    <option name="totallyTimeSpent" value="239722000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -864,8 +864,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/sass/custom.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="354" column="28" selection-start-line="354" selection-start-column="28" selection-end-line="354" selection-end-column="28" />
+        <state relative-caret-position="214">
+          <caret line="367" column="28" selection-start-line="367" selection-start-column="28" selection-end-line="367" selection-end-column="28" />
         </state>
       </provider>
     </entry>

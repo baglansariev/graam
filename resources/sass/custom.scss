@@ -365,13 +365,14 @@ header {
 
         .sell-content {
             margin-top: 100%;
-            padding: 60px 40px;
+            padding: 60px 42px;
             width: 100%;
             min-height: 120vh;
             background-color: $white;
-            -webkit-border-radius: 50px;
-            -moz-border-radius: 50px;
-            border-radius: 50px;
+            border-top-left-radius: 50px;
+            -webkit-border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            -webkit-border-top-right-radius: 50px;
 
 
             .sell-content-title {
@@ -419,7 +420,7 @@ header {
 
 
                     .card-title {
-                        margin-bottom: 35px;
+                        margin-bottom: 30px;
                         min-height: 90px;
 
                         .card-logo {
@@ -429,13 +430,14 @@ header {
                         p {
                             margin-bottom: 0;
                             font-size: 22px;
-                            font-weight: bold;
+                            font-weight: 500;
                             letter-spacing: 1px;
                             line-height: 1.2;
                         }
                     }
                     .card-offer {
                         margin-bottom: 30px;
+
                         .price {
                             font-size: 35px;
                             font-weight: bolder;
@@ -443,7 +445,7 @@ header {
                         }
                         .time {
                             font-size: 22px;
-                            font-weight: bold;
+                            font-weight: 500;
                         }
                     }
                     .card-actions {
@@ -480,7 +482,11 @@ header {
                     }
                     .phone {
                         font-weight: bold;
-                        font-size: calc(0.3vw + 25px);
+                        font-size: calc(0.2vw + 23px);
+
+                        p {
+                            margin-bottom: 5px;
+                        }
                     }
                     .apply {
 
@@ -489,11 +495,11 @@ header {
                             background-color: transparent;
                             color: $black;
                             font-weight: 500;
-                            padding: 0 0 5px 0;
+                            padding: 0;
                             border: none;
                             border-bottom: 1px solid $borderGray;
                             text-transform: none;
-                            font-size: calc(0.3vw + 18px);
+                            font-size: calc(0.3vw + 16px);
                             letter-spacing: normal;
                             -webkit-border-radius: 0;
                             -moz-border-radius: 0;
@@ -508,12 +514,13 @@ header {
                             list-style-type: none;
                             padding-left: 0;
                             color: $borderGray2;
-                            font-size: 23px;
-                            font-weight: 500;
+                            font-size: 22px;
                             letter-spacing: 1px;
+                            font-weight: 500;
 
                             li {
                                 margin-bottom: 10px;
+                                line-height: 1.3;
                             }
                         }
                     }
