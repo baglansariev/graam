@@ -167,4 +167,39 @@ $(function () {
         }
 
     });
+
+    $('.sell-app-submit').click(function () {
+        let formData = $('.modal-sell .popup-form').serialize();
+        popupAjax('/form/send/sell-app', formData);
+    });
+    $('.own-price-submit').click(function () {
+        let formData = $('.modal-own-price .popup-form').serialize();
+        popupAjax('/form/send/own-price', formData);
+    });
+
+    function popupAjax(url, form_data) {
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'JSON',
+            data: form_data,
+            success: function (result) {
+                if (result.status) {
+                    let alert = $('.modal-popup-alert');
+
+                    alert.find('.message').text(result.message);
+                    alert.css('background-color', '#EDBA47');
+                    alert.fadeIn();
+
+                    setTimeout(function () {
+                        alert.fadeOut();
+                        $('.modal-popup').fadeOut();
+                    }, 2500);
+                }
+            },
+            error: function (result) {
+                console.log(result);
+            }
+        });
+    }
 });

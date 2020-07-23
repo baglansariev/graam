@@ -61,6 +61,11 @@
   margin-bottom: 30px;
 }
 
+.modal-popup .popup-wrapper .popup-content .content .modal-popup-alert {
+  display: none;
+  font-size: 12px;
+}
+
 .modal-popup .popup-wrapper .popup-content .content .popup-form {
   width: 100%;
 }

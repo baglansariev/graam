@@ -524,6 +524,10 @@ header {
   border-radius: 0;
 }
 
+.sell-wrapper .sell-block .sell-content .sell-cards .card .apply button:focus {
+  outline: none;
+}
+
 .sell-wrapper .sell-block .sell-content .sell-cards .card .card-details ul {
   list-style-type: none;
   padding-left: 0;

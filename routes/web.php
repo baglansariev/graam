@@ -34,3 +34,7 @@ Route::middleware('auth')->group(function() {
 Route::prefix('ajax')->group(function () {
     Route::get('offers/product/{name}/{type}/{weight}', 'Ajax\OffersController@getOffers');
 });
+Route::prefix('form/send')->group(function () {
+    Route::get('/sell-app', 'Modules\FeedbackFormController@sendSellApp')->name('sell-app');
+    Route::get('/own-price', 'Modules\FeedbackFormController@sendOwnPrice')->name('own-price');
+});

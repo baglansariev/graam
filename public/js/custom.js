@@ -255,6 +255,38 @@ $(function () {
       $('.card').not('.card:first-of-type').toggleClass('inactive');
     }
   });
+  $('.sell-app-submit').click(function () {
+    var formData = $('.modal-sell .popup-form').serialize();
+    popupAjax('/form/send/sell-app', formData);
+  });
+  $('.own-price-submit').click(function () {
+    var formData = $('.modal-own-price .popup-form').serialize();
+    popupAjax('/form/send/own-price', formData);
+  });
+
+  function popupAjax(url, form_data) {
+    $.ajax({
+      url: url,
+      type: 'GET',
+      dataType: 'JSON',
+      data: form_data,
+      success: function success(result) {
+        if (result.status) {
+          var alert = $('.modal-popup-alert');
+          alert.find('.message').text(result.message);
+          alert.css('background-color', '#EDBA47');
+          alert.fadeIn();
+          setTimeout(function () {
+            alert.fadeOut();
+            $('.modal-popup').fadeOut();
+          }, 2500);
+        }
+      },
+      error: function error(result) {
+        console.log(result);
+      }
+    });
+  }
 });
 
 /***/ }),

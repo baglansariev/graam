@@ -498,6 +498,9 @@ header {
                             -moz-border-radius: 0;
                             border-radius: 0;
                         }
+                        button:focus {
+                            outline: none;
+                        }
                     }
                     .card-details {
                         ul {

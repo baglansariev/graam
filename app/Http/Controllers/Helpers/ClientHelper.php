@@ -15,11 +15,11 @@
             ]);
         }
 
-        public function getResponseFromClient($method, $action)
+        public function getResponseFromClient($method, $action, $params = [])
         {
             $client = $this->clientInit();
 
-            $response = $client->request($method, $this->crm_client_api_url . $action);
+            $response = $client->request($method, $this->crm_client_api_url . $action, $params);
             return $response->getBody()->getContents();
         }
     }

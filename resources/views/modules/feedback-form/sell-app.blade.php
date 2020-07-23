@@ -16,11 +16,14 @@
                             <div class="subtitle">
                                 50 г золота 585 пробы через ПЮДМ
                             </div>
-                            <form action="" class="popup-form d-flex flex-column">
+                            <div class="alert modal-popup-alert" role="alert">
+                                <span class="message"></span>
+                            </div>
+                            <form action="{{ route('sell-app') }}" class="popup-form d-flex flex-column">
                                 <input type="text" class="name-input" name="name" placeholder="Имя" required>
                                 <input type="text" class="phone-input" name="phone" value="+7" required>
                                 <input type="hidden" name="text" class="hidden-message">
-                                <button type="button">Отправить</button>
+                                <button type="button" class="sell-app-submit">Отправить</button>
                             </form>
                         </div>
                     </div>
