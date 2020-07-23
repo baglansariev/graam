@@ -1,9 +1,3 @@
-AuthType Basic
-AuthName "WellCome"
-AuthUserFile "/.htpasswd"
-#AuthUserFile "C:\xampp\htdocs\test\.htpasswd"
-Require valid-user
-
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
