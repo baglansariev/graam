@@ -235,6 +235,14 @@ header {
   border-bottom: 1px solid #CCC;
 }
 
+.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .option .color {
+  display: block;
+  width: 10%;
+  height: 1.2em;
+  border: none;
+  margin-right: 22%;
+}
+
 .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options div:not(.selected):hover {
   color: #EDBA47;
 }

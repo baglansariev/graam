@@ -222,6 +222,13 @@ header {
                                         padding-bottom: 2px;
                                         border-bottom: 1px solid $borderGray;
                                     }
+                                    .color {
+                                        display: block;
+                                        width: 10%;
+                                        height: 1.2em;
+                                        border: none;
+                                        margin-right: 22%;
+                                    }
                                 }
                                 div:not(.selected):hover {
                                     color: $goldBackground;

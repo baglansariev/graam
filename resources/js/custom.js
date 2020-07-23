@@ -26,6 +26,28 @@ $(function () {
             opacity: 1,
         })
     }, 1500);
+    
+    function setOptionColors() {
+        let option = $('.option').not('.selected');
+        option.each(function () {
+            let type = $(this).data('type');
+            let name = $(this).data('name');
+            let color = $(this).find('.color');
+            if (name == 'gold' && type == 585) {
+                color.css('background-color', '#EDB947');
+            }
+            else if (name == 'gold' && type == 999) {
+                color.css('background-color', '#FFB30D');
+            }
+            else if (name == 'silver' && type == 999) {
+                color.css('background-color', '#D9D9D9');
+            }
+            else if (name == 'silver' && type == 925) {
+                color.css('background-color', '#C5C5C5');
+            }
+        });
+    }
+
 
     function modalOptionsHide() {
         // $('.options-content').animate({opacity: 0}, function () {
@@ -38,13 +60,7 @@ $(function () {
     }
 
     function modalOptionsShow() {
-        // $('.modal-options-wrapper').fadeIn(function () {
-        //     $('.options-content').animate({opacity: 1});
-        //     $(this).css({
-        //         'transition' : 'all ease 1s',
-        //         'background-color' : '#fff',
-        //     });
-        // });
+        setOptionColors();
         $('.modal-options-wrapper').fadeIn();
 
     }
@@ -84,7 +100,7 @@ $(function () {
     
     $('.options .option').click(function () {
         if (!$(this).hasClass('selected')) {
-            let optionText  = $(this).find('span').text();
+            let optionText  = $(this).find('span').not('.color').text();
             let optionType  = $(this).data('type');
             let optionName  = $(this).data('name');
             let chosen      = $('.chosen span');
@@ -96,7 +112,7 @@ $(function () {
             chosen.data('name', optionName).data('type', optionType);
             $(this).data('name', chosenName);
             $(this).data('type', chosenType);
-            $(this).find('span').text(chosenText);
+            $(this).find('span').not('.color').text(chosenText);
             chosen.text(optionText);
             $('.selected span').text(optionText);
 
