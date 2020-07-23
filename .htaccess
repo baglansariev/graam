@@ -1,5 +1,4 @@
-AuthType Basic
-AuthName "WellCome"
-AuthUserFile "/.htpasswd"
-#AuthUserFile "C:\xampp\htdocs\test\.htpasswd"
-Require valid-user
+require valid-user
+Authname "Basic Auth"
+Authtype Basic
+AuthUserFile "/var/.htpasswd"
