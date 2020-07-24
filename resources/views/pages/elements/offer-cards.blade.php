@@ -1,6 +1,6 @@
 @if (!empty($offers))
     @foreach($offers as $offer)
-        <div class="card">
+        <div class="card animated animatedFadeInUp animate{{ $loop->iteration }}">
             <div class="card-wrapper">
                 <div class="card-title d-flex align-items-center">
                     <img src="{{ asset('images/graam_logo.png') }}" alt="" class="card-logo">

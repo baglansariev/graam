@@ -9,24 +9,33 @@ main {
     overflow: hidden;
     position: relative;
 }
-.gold {
-    background-color: $goldBackground;
-
+.gold585, .gold999 {
     .choice-block, .sell-content {
         -webkit-box-shadow: 2px 2px 25px 0 $blockShadowGold;
         -moz-box-shadow: 2px 2px 25px 0 $blockShadowGold;
         box-shadow: 2px 2px 25px 0 $blockShadowGold;
     }
 }
-.silver {
-    background-color: $silverBackground;
-
+.silver925, .silver999 {
     .choice-block, .sell-content {
         -webkit-box-shadow: 2px 2px 25px 0 $blockShadow;
         -moz-box-shadow: 2px 2px 25px 0 $blockShadow;
         box-shadow: 2px 2px 25px 0 $blockShadow;
     }
 }
+.gold585 {
+    background-color: $goldBackground;
+}
+.gold999 {
+    background-color: $goldBackground2;
+}
+.silver999 {
+    background-color: $silverBackground;
+}
+.silver925 {
+    background-color: $silverBackground;
+}
+
 header {
     padding-bottom: 50px;
     position: absolute;
@@ -141,10 +150,9 @@ header {
                 margin-bottom: 30%;
                 position: relative;
 
-                span {
-                    margin-right: 12px;
+                .chosen-container {
+                    border-bottom: 1px solid $borderGray;
                 }
-
                 .fa-sort-down {
                     font-size: 40px;
                     margin: 16px 0 0 5px;
@@ -152,15 +160,6 @@ header {
             }
             .chosen:hover {
                 color: $goldBackground;
-            }
-            .chosen::after {
-                content: '';
-                position: absolute;
-                width: 79%;
-                //height: 1px;
-                border-bottom: 1px solid $borderGray;
-                left: 0;
-                bottom: 0;
             }
 
             .modal-options-wrapper {
@@ -390,7 +389,6 @@ header {
                 font-size: 40px;
                 letter-spacing: 2px;
                 margin-bottom: 30px;
-                opacity: 0;
 
                 p {
                     font-weight: bolder;
@@ -1117,10 +1115,25 @@ input[type=number] {
 }
 
 .animated {
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-fill-mode: both;
-    -webkit-animation-duration: 1s;
+    -webkit-animation-duration: 0.5s;
     -webkit-animation-fill-mode: both
+}
+.animate1 {
+    animation-delay: 0.3s;
+    -webkit-animation-delay: 0.3s;
+    -moz-animation-delay: 0.3s;
+}
+.animate2 {
+    animation-delay: 0.6s;
+    -webkit-animation-delay: 0.6s;
+    -moz-animation-delay: 0.6s;
+}
+.animate3 {
+    animation-delay: 0.9s;
+    -webkit-animation-delay: 0.9s;
+    -moz-animation-delay: 0.9s;
 }
 
 .animatedFadeInUp {

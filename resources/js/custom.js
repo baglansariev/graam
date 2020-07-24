@@ -26,43 +26,14 @@ $(function () {
             opacity: 1,
         })
     }, 1500);
-    
-    function setOptionColors() {
-        let option = $('.option').not('.selected');
-        option.each(function () {
-            let type = $(this).data('type');
-            let name = $(this).data('name');
-            let color = $(this).find('.color');
-            if (name == 'gold' && type == 585) {
-                color.css('background-color', '#EDB947');
-            }
-            else if (name == 'gold' && type == 999) {
-                color.css('background-color', '#FFB30D');
-            }
-            else if (name == 'silver' && type == 999) {
-                color.css('background-color', '#D9D9D9');
-            }
-            else if (name == 'silver' && type == 925) {
-                color.css('background-color', '#C5C5C5');
-            }
-        });
-    }
 
 
     function modalOptionsHide() {
-        // $('.options-content').animate({opacity: 0}, function () {
-            // $('.modal-options-wrapper').css({
-            //     'background-color' : '#EDBA47',
-            //     'transition' : 'none',
-            // }).fadeOut(1000);
-        // });
         $('.modal-options-wrapper').fadeOut();
     }
 
     function modalOptionsShow() {
-        setOptionColors();
         $('.modal-options-wrapper').fadeIn();
-
     }
 
     function getClientPreferences() {
@@ -98,29 +69,26 @@ $(function () {
         modalOptionsHide();
     });
     
-    $('.options .option').click(function () {
-        if (!$(this).hasClass('selected')) {
-            let optionText  = $(this).find('span').not('.color').text();
-            let optionType  = $(this).data('type');
-            let optionName  = $(this).data('name');
-            let chosen      = $('.chosen span');
-            let chosenName  = chosen.data('name');
-            let chosenType  = chosen.data('type');
-            let chosenText  = chosen.text();
+    $('.options .option').not('.selected').click(function () {
+        let main        = $('main');
+        let optionText  = $(this).find('span').not('.color').text();
+        let optionType  = $(this).data('type');
+        let optionName  = $(this).data('name');
+        let chosen      = $('.chosen span');
+        let chosenName  = chosen.data('name');
+        let chosenType  = chosen.data('type');
+        let chosenText  = chosen.text();
 
+        main.removeClass();
+        main.addClass(optionName + optionType);
+        chosen.data('name', optionName).data('type', optionType);
+        $(this).data('name', chosenName);
+        $(this).data('type', chosenType);
+        $(this).find('span').not('.color').text(chosenText);
+        chosen.text(optionText);
+        $('.selected span').text(optionText);
 
-            chosen.data('name', optionName).data('type', optionType);
-            $(this).data('name', chosenName);
-            $(this).data('type', chosenType);
-            $(this).find('span').not('.color').text(chosenText);
-            chosen.text(optionText);
-            $('.selected span').text(optionText);
-
-            $('main').removeClass();
-            $('main').addClass(optionName);
-
-            modalOptionsHide();
-        }
+        modalOptionsHide();
     });
     $('#sell').click(function () {
         $('.choice-block').animate({top: 100 + '%'}, 600);
@@ -131,10 +99,9 @@ $(function () {
 
         setTimeout(function () {
             $('.sell-parameters').animate({opacity: 1}, 400);
-            // $('.sell-cards, .sell-content-title').animate({
-            //     opacity: 1,
-            // }, 800);
-            $('.sell-cards, .sell-content-title').addClass('fadeInUp');
+            $('.card').each(function () {
+                $(this).addClass('fadeInUp');
+            });
         }, 1200);
     });
     $('.sell-weight').change(function () {

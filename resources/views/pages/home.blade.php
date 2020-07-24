@@ -25,7 +25,9 @@
             </div>
             <div class="select">
                 <div class="chosen d-flex">
-                    <span data-name="gold" data-type="585">золото 585</span> пробы
+                    <div class="chosen-container">
+                        <span data-name="gold" data-type="585">золото 585</span> пробы
+                    </div>
                     <i class="fas fa-sort-down"></i>
                 </div>
                 <div class="modal-options-wrapper">
@@ -44,15 +46,12 @@
                                         </div>
                                         <div class="option d-flex justify-content-between align-items-center" data-name="gold" data-type="999">
                                             <span>золото 999</span>
-                                            <span class="color"></span>
                                         </div>
                                         <div class="option d-flex justify-content-between align-items-center" data-name="silver" data-type="999">
                                             <span>серебро 999</span>
-                                            <span class="color"></span>
                                         </div>
                                         <div class="option d-flex justify-content-between align-items-center" data-name="silver" data-type="925">
                                             <span>серебро 925</span>
-                                            <span class="color"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -100,10 +99,10 @@
         </div>
         <div class="sell-block">
             <div class="sell-content d-flex flex-column align-items-center">
-                <div class="sell-content-title animated animatedFadeInUp text-center">
+                <div class="sell-content-title text-center">
                     <p class="d-flex align-items-center justify-content-center flex-wrap">Продать <span class="active" data-type="fast">быстро</span><i class="fas fa-times"></i> и <span class="active" data-type="expensive">дорого</span><i class="fas fa-times"></i> через:</p>
                 </div>
-                <div class="sell-cards d-flex justify-content-around animated animatedFadeInUp"></div>
+                <div class="sell-cards d-flex justify-content-around"></div>
                 <div class="alternative-offer d-flex flex-column align-items-center">
                     <h3 class="text-center">Если предложения вас не устроили, вы можете:</h3>
                     <button class="own-price-btn">Предложить свою цену</button>

@@ -19,7 +19,7 @@
         <script src="{{ asset('js/custom.js') }}"></script>
     </head>
     <body>
-        <main id="main" class="gold">
+        <main id="main" class="gold585">
             <header>
                 <div class="container-fluid">
                     <div class="row">

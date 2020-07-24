@@ -9,22 +9,34 @@ main {
   position: relative;
 }
 
-.gold {
-  background-color: #EDBA47;
-}
-
-.gold .choice-block,
-.gold .sell-content {
+.gold585 .choice-block,
+.gold585 .sell-content,
+.gold999 .choice-block,
+.gold999 .sell-content {
   box-shadow: 2px 2px 25px 0 #AC7D11;
 }
 
-.silver {
+.silver925 .choice-block,
+.silver925 .sell-content,
+.silver999 .choice-block,
+.silver999 .sell-content {
+  box-shadow: 2px 2px 25px 0 #A2A2A2;
+}
+
+.gold585 {
+  background-color: #EDB947;
+}
+
+.gold999 {
+  background-color: #FFB30D;
+}
+
+.silver999 {
   background-color: #D9D9D9;
 }
 
-.silver .choice-block,
-.silver .sell-content {
-  box-shadow: 2px 2px 25px 0 #A2A2A2;
+.silver925 {
+  background-color: #D9D9D9;
 }
 
 header {
@@ -151,8 +163,8 @@ header {
   position: relative;
 }
 
-.choice-block .choice-content .select .chosen span {
-  margin-right: 12px;
+.choice-block .choice-content .select .chosen .chosen-container {
+  border-bottom: 1px solid #CCC;
 }
 
 .choice-block .choice-content .select .chosen .fa-sort-down {
@@ -161,16 +173,7 @@ header {
 }
 
 .choice-block .choice-content .select .chosen:hover {
-  color: #EDBA47;
-}
-
-.choice-block .choice-content .select .chosen::after {
-  content: "";
-  position: absolute;
-  width: 79%;
-  border-bottom: 1px solid #CCC;
-  left: 0;
-  bottom: 0;
+  color: #EDB947;
 }
 
 .choice-block .choice-content .select .modal-options-wrapper {
@@ -244,7 +247,7 @@ header {
 }
 
 .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options div:not(.selected):hover {
-  color: #EDBA47;
+  color: #EDB947;
 }
 
 .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected {
@@ -275,7 +278,7 @@ header {
 }
 
 .choice-block .choice-content .action button:hover {
-  color: #EDBA47;
+  color: #EDB947;
 }
 
 .sell-wrapper {
@@ -412,7 +415,6 @@ header {
   font-size: 40px;
   letter-spacing: 2px;
   margin-bottom: 30px;
-  opacity: 0;
 }
 
 .sell-wrapper .sell-block .sell-content .sell-content-title p {
@@ -505,7 +507,7 @@ header {
 }
 
 .sell-wrapper .sell-block .sell-content .sell-cards .card .card-actions button:hover {
-  color: #EDBA47;
+  color: #EDB947;
 }
 
 .sell-wrapper .sell-block .sell-content .sell-cards .card .card-actions a {
@@ -589,7 +591,7 @@ header {
 
 .sell-wrapper .sell-block .sell-content .alternative-offer .own-price-btn {
   border: none;
-  background-color: #EDBA47;
+  background-color: #EDB947;
   color: #FFF;
   text-transform: uppercase;
   font-weight: 700;
@@ -600,7 +602,7 @@ header {
 }
 
 .sell-wrapper .sell-block .sell-content .alternative-offer .own-price-btn:hover {
-  color: #EDBA47;
+  color: #EDB947;
   background-color: #000;
 }
 
@@ -1152,10 +1154,28 @@ input[type=number] {
 }
 
 .animated {
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-fill-mode: both;
-  -webkit-animation-duration: 1s;
+  -webkit-animation-duration: 0.5s;
   -webkit-animation-fill-mode: both;
+}
+
+.animate1 {
+  animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+}
+
+.animate2 {
+  animation-delay: 0.6s;
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+}
+
+.animate3 {
+  animation-delay: 0.9s;
+  -webkit-animation-delay: 0.9s;
+  -moz-animation-delay: 0.9s;
 }
 
 .animatedFadeInUp {

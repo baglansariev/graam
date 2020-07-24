@@ -124,37 +124,11 @@ $(function () {
     });
   }, 1500);
 
-  function setOptionColors() {
-    var option = $('.option').not('.selected');
-    option.each(function () {
-      var type = $(this).data('type');
-      var name = $(this).data('name');
-      var color = $(this).find('.color');
-
-      if (name == 'gold' && type == 585) {
-        color.css('background-color', '#EDB947');
-      } else if (name == 'gold' && type == 999) {
-        color.css('background-color', '#FFB30D');
-      } else if (name == 'silver' && type == 999) {
-        color.css('background-color', '#D9D9D9');
-      } else if (name == 'silver' && type == 925) {
-        color.css('background-color', '#C5C5C5');
-      }
-    });
-  }
-
   function modalOptionsHide() {
-    // $('.options-content').animate({opacity: 0}, function () {
-    // $('.modal-options-wrapper').css({
-    //     'background-color' : '#EDBA47',
-    //     'transition' : 'none',
-    // }).fadeOut(1000);
-    // });
     $('.modal-options-wrapper').fadeOut();
   }
 
   function modalOptionsShow() {
-    setOptionColors();
     $('.modal-options-wrapper').fadeIn();
   }
 
@@ -187,25 +161,24 @@ $(function () {
   $('.modal-options-close').click(function () {
     modalOptionsHide();
   });
-  $('.options .option').click(function () {
-    if (!$(this).hasClass('selected')) {
-      var optionText = $(this).find('span').not('.color').text();
-      var optionType = $(this).data('type');
-      var optionName = $(this).data('name');
-      var chosen = $('.chosen span');
-      var chosenName = chosen.data('name');
-      var chosenType = chosen.data('type');
-      var chosenText = chosen.text();
-      chosen.data('name', optionName).data('type', optionType);
-      $(this).data('name', chosenName);
-      $(this).data('type', chosenType);
-      $(this).find('span').not('.color').text(chosenText);
-      chosen.text(optionText);
-      $('.selected span').text(optionText);
-      $('main').removeClass();
-      $('main').addClass(optionName);
-      modalOptionsHide();
-    }
+  $('.options .option').not('.selected').click(function () {
+    var main = $('main');
+    var optionText = $(this).find('span').not('.color').text();
+    var optionType = $(this).data('type');
+    var optionName = $(this).data('name');
+    var chosen = $('.chosen span');
+    var chosenName = chosen.data('name');
+    var chosenType = chosen.data('type');
+    var chosenText = chosen.text();
+    main.removeClass();
+    main.addClass(optionName + optionType);
+    chosen.data('name', optionName).data('type', optionType);
+    $(this).data('name', chosenName);
+    $(this).data('type', chosenType);
+    $(this).find('span').not('.color').text(chosenText);
+    chosen.text(optionText);
+    $('.selected span').text(optionText);
+    modalOptionsHide();
   });
   $('#sell').click(function () {
     $('.choice-block').animate({
@@ -222,11 +195,10 @@ $(function () {
     setTimeout(function () {
       $('.sell-parameters').animate({
         opacity: 1
-      }, 400); // $('.sell-cards, .sell-content-title').animate({
-      //     opacity: 1,
-      // }, 800);
-
-      $('.sell-cards, .sell-content-title').addClass('fadeInUp');
+      }, 400);
+      $('.card').each(function () {
+        $(this).addClass('fadeInUp');
+      });
     }, 1200);
   });
   $('.sell-weight').change(function () {
