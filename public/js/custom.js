@@ -213,6 +213,15 @@ $(function () {
       dataType: 'html',
       success: function success(result) {
         $('.sell-cards').html(result);
+        var delay = 0.3;
+        $('.card').each(function () {
+          $(this).css({
+            'animation-delay': delay + 's',
+            '-webkit-animation-delay': delay + 's',
+            '-moz-animation-delay': delay + 's'
+          });
+          delay += 0.3;
+        });
         $('.sell-app').click(function () {
           setModalPopupParams();
           $('.modal-popup.modal-sell').fadeIn();
