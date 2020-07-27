@@ -12,10 +12,16 @@ $(function () {
 
 
     setTimeout(function () {
-        $('.logo-img').animate({
-            left: 5 + '%',
-            top: -5 + '%',
+        $('.main-logo').animate({
+            left: 2 + '%',
+            top: 0,
+            marginTop: 20 + 'px',
+        }, 600);
+        $('.main-logo img').animate({
             width: 70 + 'px',
+        }, 600);
+        $('.main-logo p').animate({
+            fontSize: 30 + 'px',
         }, 600);
         $('.main-block').animate({opacity: 0});
         $('.choice-block').animate({top: 13 + '%'}, 600).animate({top: 20 + '%'}, 200);

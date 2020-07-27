@@ -37,6 +37,7 @@ main {
 }
 
 header {
+    width: 100%;
     padding-bottom: 50px;
     position: absolute;
     left: 0;
@@ -49,25 +50,34 @@ header {
     left: 0;
     top: 0;
 }
-.main-logo {
+.header-logo {
     position: relative;
-    margin: 20px;
-    text-decoration: none;
 
-    .logo-img {
-        position: absolute;
-        width: 120px;
-        left: 37vw;
-        top: 26vh;
-    }
+    .main-logo {
+        //position: relative;
+        //margin: 20px;
+        text-decoration: none;
 
-    p {
-        opacity: 0;
-        font-size: 30px;
-        font-weight: bolder;
-        letter-spacing: 3px;
-        color: $white;
-        margin: 7px 0 0 90px;
+        //.logo-img {
+            position: absolute;
+            //width: 120px;
+            left: 38vw;
+            top: 28vh;
+        //}
+
+        img {
+            width: 120px;
+        }
+
+        p {
+            //opacity: 0;
+            font-size: 70px;
+            font-weight: bolder;
+            letter-spacing: 3px;
+            color: $white;
+            //margin: 7px 0 0 90px;
+            margin: 0 0 0 18px;
+        }
     }
 }
 .main-logo:hover {
@@ -100,6 +110,7 @@ header {
         font-size: 70px;
         letter-spacing: 6px;
         margin-left: 140px;
+        opacity: 0;
     }
     p {
         font-size: 20px;
@@ -608,16 +619,24 @@ input[type=number] {
 :-ms-input-placeholder      {color: $borderGray;}
 
 
-@media screen and (max-width: 1830px) {
-    .main-logo {
-        .logo-img {
+
+@media screen and (max-width: 1850px) {
+    .header-logo {
+        .main-logo {
+            left: 37vw;
+        }
+    }
+}
+@media screen and (max-width: 1785px) {
+    .header-logo {
+        .main-logo {
             left: 36vw;
         }
     }
 }
-@media screen and (max-width: 1830px) {
-    .main-logo {
-        .logo-img {
+@media screen and (max-width: 1700px) {
+    .header-logo {
+        .main-logo {
             left: 35vw;
         }
     }
@@ -641,18 +660,15 @@ input[type=number] {
             width: 20%;
         }
     }
-    .main-logo {
-        .logo-img {
+}
+@media screen and (max-width: 1600px) {
+    .header-logo {
+        .main-logo {
             left: 34vw;
         }
     }
 }
 @media screen and (max-width: 1580px) {
-    .main-logo {
-        .logo-img {
-            left: 33vw;
-        }
-    }
     .sell-wrapper {
         .sell-block {
             width: 85%;
@@ -697,16 +713,21 @@ input[type=number] {
         }
     }
 }
-@media screen and (max-width: 1400px) {
-    .main-logo {
-        .logo-img {
-            left: 31vw;
+@media screen and (max-width: 1450px) {
+    .header-logo {
+        .main-logo {
+            left: 33vw;
         }
     }
 }
 @media screen and (max-width: 1350px) {
     .sell-wrapper {
         padding: 0 40px;
+    }
+    .header-logo {
+        .main-logo {
+            left: 32vw;
+        }
     }
 }
 @media screen and (max-width: 1310px) {
@@ -720,31 +741,32 @@ input[type=number] {
         }
     }
 }
-@media screen and (max-width: 1340px) {
-    .main-logo {
-        .logo-img {
+@media screen and (max-width: 1250px) {
+    .header-logo {
+        .main-logo {
+            left: 31vw;
+        }
+    }
+}
+@media screen and (max-width: 1175px) {
+    .header-logo {
+        .main-logo {
             left: 30vw;
         }
     }
 }
-@media screen and (max-width: 1240px) {
-    .main-logo {
-        .logo-img {
-            width: 110px;
-        }
-    }
-}
-@media screen and (max-width: 1215px) {
-    .main-logo {
-        .logo-img {
-            width: 100px;
-        }
-    }
-}
 @media screen and (max-width: 1160px) {
-    .main-logo {
-        .logo-img {
-            width: 90px;
+    .header-logo {
+        .main-logo {
+            left: 31vw;
+
+            img {
+                width: 90px;
+            }
+            p {
+                //margin-top: 20px;
+                font-size: 62px;
+            }
         }
     }
     .block-text {
@@ -753,6 +775,13 @@ input[type=number] {
         }
         p {
             margin-top: 20px;
+        }
+    }
+}
+@media screen and (max-width: 1075px) {
+    .header-logo {
+        .main-logo {
+            left: 30vw;
         }
     }
 }
@@ -771,11 +800,6 @@ input[type=number] {
     .sell-wrapper .sell-block .sell-content {
         padding: 60px 20px;
     }
-    .main-logo {
-        .logo-img {
-            left: 29vw;
-        }
-    }
     .block-text {
         p {
             font-size: 18px;
@@ -786,16 +810,16 @@ input[type=number] {
     .sell-wrapper .sell-block .sell-content .sell-cards .card {
         width: 45%;
     }
-    .main-logo {
-        .logo-img {
-            left: 28vw;
+    .header-logo {
+        .main-logo {
+            left: 29vw;
         }
     }
 }
 @media screen and (max-width: 930px) {
-    .main-logo {
-        .logo-img {
-            left: 27vw;
+    .header-logo {
+        .main-logo {
+            left: 28vw;
         }
     }
 }
@@ -803,16 +827,9 @@ input[type=number] {
     .choice-block {
         width: 100%;
     }
-    .main-logo {
-        .logo-img {
+    .header-logo {
+        .main-logo {
             left: 26vw;
-        }
-    }
-}
-@media screen and (max-width: 850px) {
-    .main-logo {
-        .logo-img {
-            left: 24vw;
         }
     }
 }
@@ -826,12 +843,12 @@ input[type=number] {
         }
     }
 }
-@media screen and (max-width: 790px) {
-    .main-logo {
-        .logo-img {
-            left: 22vw;
-        }
-    }
+@media screen and (max-width: 800px) {
+    .header-logo {
+         .main-logo {
+             left: 24vw;
+         }
+     }
 }
 @media screen and (max-width: 775px) {
     .sell-wrapper .sell-block .sell-content .sell-content-title {
@@ -861,16 +878,16 @@ input[type=number] {
             }
         }
     }
-    .main-logo {
-        .logo-img {
-            left: 20vw;
+    .header-logo {
+        .main-logo {
+            left: 21vw;
         }
     }
 }
-@media screen and (max-width: 680px) {
-    .main-logo {
-        .logo-img {
-            left: 17vw;
+@media screen and (max-width: 670px) {
+    .header-logo {
+        .main-logo {
+            left: 18vw;
         }
     }
 }
@@ -883,8 +900,10 @@ input[type=number] {
     .sell-wrapper .sell-block .sell-content .sell-content-title {
         font-size: 22px;
     }
-    .main-logo {
-        .logo-img {
+}
+@media screen and (max-width: 600px) {
+    .header-logo {
+        .main-logo {
             left: 14vw;
         }
     }
@@ -916,17 +935,17 @@ input[type=number] {
         }
     }
 }
-@media screen and (max-width: 575px) {
-    .main-logo {
-        .logo-img {
+@media screen and (max-width: 535px) {
+    .header-logo {
+        .main-logo {
             left: 10vw;
         }
     }
 }
-@media screen and (max-width: 515px) {
-    .main-logo {
-        .logo-img {
-            left: 6vw;
+@media screen and (max-width: 500px) {
+    .header-logo {
+        .main-logo {
+            left: 8vw;
         }
     }
 }
@@ -965,17 +984,17 @@ input[type=number] {
         }
     }
 }
-@media screen and (max-width: 465px) {
-    .main-logo {
-        .logo-img {
-            left: 2vw;
+@media screen and (max-width: 470px) {
+    .header-logo {
+        .main-logo {
+            left: 4vw;
         }
     }
 }
 @media screen and (max-width: 430px) {
-    .main-logo {
-        .logo-img {
-            left: 0;
+    .header-logo {
+        .main-logo {
+            left: 0vw;
         }
     }
 }
@@ -1011,10 +1030,14 @@ input[type=number] {
         }
     }
 }
-@media screen and (max-width: 415px) {
-    .main-logo {
-        .logo-img {
-            width: 80px;
+@media screen and (max-width: 400px) {
+    .header-logo {
+        .main-logo {
+            left: 0;
+
+            p {
+                font-size: 55px;
+            }
         }
     }
     .block-text {
@@ -1026,7 +1049,17 @@ input[type=number] {
         }
     }
 }
-@media screen and (max-width: 365px) {
+@media screen and (max-width: 375px) {
+    .header-logo {
+        .main-logo {
+            img {
+                width: 70px;
+            }
+            p {
+                font-size: 50px;
+            }
+        }
+    }
     .main-logo {
         .logo-img {
             width: 70px;
@@ -1051,6 +1084,13 @@ input[type=number] {
     }
 }
 @media screen and (max-width: 340px) {
+    .header-logo {
+        .main-logo {
+            p {
+                margin-left: 10px;
+            }
+        }
+    }
     .block-text {
         .block-title {
             font-size: 40px;
@@ -1120,21 +1160,6 @@ input[type=number] {
     -webkit-animation-duration: 0.5s;
     -webkit-animation-fill-mode: both
 }
-//.animate1 {
-//    animation-delay: 0.3s;
-//    -webkit-animation-delay: 0.3s;
-//    -moz-animation-delay: 0.3s;
-//}
-//.animate2 {
-//    animation-delay: 0.6s;
-//    -webkit-animation-delay: 0.6s;
-//    -moz-animation-delay: 0.6s;
-//}
-//.animate3 {
-//    animation-delay: 0.9s;
-//    -webkit-animation-delay: 0.9s;
-//    -moz-animation-delay: 0.9s;
-//}
 
 .animatedFadeInUp {
     opacity: 0
