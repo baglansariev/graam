@@ -4,10 +4,8 @@
     <list default="true" id="abff2837-7468-434e-940d-e3b5389bc27b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/custom.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/custom.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/feedback-form/own-price-app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modules/feedback-form/own-price-app.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,38 +35,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/sass/custom.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="1090" column="13" selection-start-line="1090" selection-start-column="13" selection-end-line="1090" selection-end-column="13" />
+            <state relative-caret-position="188">
+              <caret line="354" column="38" lean-forward="true" selection-start-line="354" selection-start-column="38" selection-end-line="354" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/js/custom.js">
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/var/www/sites/pudm_baglan/app/Http/Controllers/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="182">
-              <caret line="13" selection-start-line="13" selection-end-line="27" selection-end-column="13" />
+              <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+              <folding>
+                <element signature="e#39#58#0#PHP" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/home.blade.php">
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/var/www/sites/pudm_baglan/app/Helpers/GoldRateHelper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="7" column="46" lean-forward="true" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+            <state relative-caret-position="642">
+              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+              <folding>
+                <element signature="e#31#53#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/default.blade.php">
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/var/www/sites/pudm_baglan/resources/views/admin/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+            <state relative-caret-position="382">
+              <caret line="125" column="6" selection-start-line="125" selection-start-column="6" selection-end-line="125" selection-end-column="6" />
+              <folding>
+                <element signature="e#4405#4427#0#HTML" expanded="true" />
+                <element signature="e#5737#5765#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/var/www/sites/pudm_baglan/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="148" column="51" selection-start-line="148" selection-start-column="51" selection-end-line="148" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -127,9 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/user/settings.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/User/SettingsController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/user/personal-data.blade.php" />
@@ -167,17 +182,20 @@
         <option value="$PROJECT_DIR$/resources/sass/feedback-form.scss" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Modules/FeedbackFormController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/modules/feedback-form/own-price-app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/modules/feedback-form/sell-app.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/colors.scss" />
         <option value="$PROJECT_DIR$/resources/views/pages/elements/offer-cards.blade.php" />
         <option value="&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/etc/apache2/sites-available/000-default.conf" />
-        <option value="&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/var/www/sites/pudm_baglan/app/Http/Controllers/AdminController.php" />
-        <option value="&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/var/www/sites/pudm_baglan/resources/views/admin/invoices.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/default.blade.php" />
-        <option value="$PROJECT_DIR$/resources/sass/custom.scss" />
         <option value="$PROJECT_DIR$/resources/js/custom.js" />
+        <option value="&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/var/www/sites/pudm_baglan/resources/views/admin/invoices.blade.php" />
+        <option value="&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/var/www/sites/pudm_baglan/app/Helpers/GoldRateHelper.php" />
+        <option value="&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/var/www/sites/pudm_baglan/app/Http/Controllers/AdminController.php" />
+        <option value="&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/var/www/sites/pudm_baglan/routes/web.php" />
+        <option value="&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/var/www/sites/pudm_baglan/resources/views/admin/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/modules/feedback-form/own-price-app.blade.php" />
+        <option value="$PROJECT_DIR$/resources/sass/custom.scss" />
       </list>
     </option>
   </component>
@@ -280,10 +298,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="104" />
-    <option name="y" value="67" />
-    <option name="width" value="1280" />
-    <option name="height" value="1046" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -326,7 +344,15 @@
               <item name="graam.loc" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graam.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graam.loc" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="feedback-form" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="graam.loc" type="b2602c69:ProjectViewProjectNode" />
@@ -349,7 +375,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../med-college" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -408,19 +434,19 @@
       <workItem from="1595399091273" duration="25093000" />
       <workItem from="1595482334061" duration="21056000" />
       <workItem from="1595563737363" duration="25227000" />
-      <workItem from="1595829353776" duration="7156000" />
+      <workItem from="1595829353776" duration="20479000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277490000" />
+    <option name="totallyTimeSpent" value="290813000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49917355" visible="true" weight="0.23507462" />
-      <window_info id="Structure" order="1" sideWeight="0.5008264" side_tool="true" weight="0.23240939" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49752066" visible="true" weight="0.23507462" />
+      <window_info id="Structure" order="1" sideWeight="0.5024793" side_tool="true" weight="0.23507462" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -435,7 +461,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Migrations" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32628062" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.32628062" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
       <window_info anchor="bottom" id="File Transfer" order="14" weight="0.32962137" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -565,13 +591,6 @@
           <folding>
             <element signature="e#45#81#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Helpers/CurrencyController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -723,13 +742,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.htaccess" />
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Helpers/ClientHelper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="21" column="94" selection-start-line="21" selection-start-column="94" selection-end-line="21" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="754">
@@ -748,13 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="60" column="35" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/modules/feedback-form/own-price-app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="27" column="85" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="94" />
         </state>
       </provider>
     </entry>
@@ -789,10 +794,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/default.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+        <state relative-caret-position="182">
+          <caret line="13" selection-start-line="13" selection-end-line="27" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -803,17 +808,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/custom.scss">
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/default.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="1090" column="13" selection-start-line="1090" selection-start-column="13" selection-end-line="1090" selection-end-column="13" />
+        <state relative-caret-position="525">
+          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/custom.js">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Helpers/ClientHelper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="13" selection-start-line="13" selection-end-line="27" selection-end-column="13" />
+        <state relative-caret-position="416">
+          <caret line="22" column="12" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Helpers/CurrencyController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/modules/feedback-form/own-price-app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="23" column="55" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/custom.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="354" column="38" lean-forward="true" selection-start-line="354" selection-start-column="38" selection-end-line="354" selection-end-column="38" />
         </state>
       </provider>
     </entry>

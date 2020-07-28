@@ -370,7 +370,6 @@ header {
 }
 
 .sell-wrapper .sell-parameters .currency-block .currencies li span {
-  min-width: 25%;
   display: flex;
 }
 
@@ -384,7 +383,7 @@ header {
 }
 
 .sell-wrapper .sell-parameters .currency-block .currencies li span:first-of-type {
-  margin-right: 10px;
+  margin-right: 15px;
   font-weight: bolder;
 }
 

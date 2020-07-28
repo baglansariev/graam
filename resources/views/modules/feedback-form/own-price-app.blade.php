@@ -21,7 +21,7 @@
                             </div>
                             <form action="" class="popup-form d-flex flex-column">
                                 <div class="price-input-container d-flex align-items-center">
-                                    <input type="text" class="price-input" name="price" placeholder="Цена" required>
+                                    <input type="number" class="price-input" name="price" placeholder="Цена" required>
                                     <span>₽</span>
                                 </div>
                                 <input type="text" class="name-input" name="name" placeholder="Имя" required>
