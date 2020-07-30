@@ -349,13 +349,16 @@ header {
         }
         .select {
             cursor: pointer;
-            padding-bottom: 5px;
+            padding-bottom: 1px;
             margin-top: 10px;
-            border-bottom: 1px solid $white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 
             .chosen:hover {
                 color: $goldenBorder;
             }
+        }
+        .select:hover {
+            color: rgba(255, 255, 255, 0.7);
         }
         .currency-block {
             .currencies {
@@ -503,6 +506,7 @@ header {
                         }
                         button:hover {
                             color: $goldBackground;
+                            border-bottom-color: $goldBackground;
                         }
                         a {
                             color: $black;

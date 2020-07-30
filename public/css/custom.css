@@ -374,13 +374,17 @@ header {
 
 .sell-wrapper .sell-parameters .select {
   cursor: pointer;
-  padding-bottom: 5px;
+  padding-bottom: 1px;
   margin-top: 10px;
-  border-bottom: 1px solid #FFF;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .sell-wrapper .sell-parameters .select .chosen:hover {
   color: #D29332;
+}
+
+.sell-wrapper .sell-parameters .select:hover {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .sell-wrapper .sell-parameters .currency-block .currencies {
@@ -536,6 +540,7 @@ header {
 
 .sell-wrapper .sell-block .sell-content .sell-cards .card .card-actions button:hover {
   color: #EDB947;
+  border-bottom-color: #EDB947;
 }
 
 .sell-wrapper .sell-block .sell-content .sell-cards .card .card-actions a {
