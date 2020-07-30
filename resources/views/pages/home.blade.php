@@ -4,16 +4,11 @@
 
 <div class="wrapper d-flex justify-content-center">
     <div class="main-block d-flex flex-column">
-        <div class="block-text d-flex flex-column align-items-center">
-            <h2 class="block-title">GRAAM</h2>
-            <p class="text-center">
-                Скупка золота и серебра, быстро,
-                <br>
-                 надежно и в срок
-            </p>
-        </div>
         <div class="progress-block text-center">
             <span>0</span> %
+        </div>
+        <div class="block-text">
+            <p>Скупка золота и серебра, быстро, надежно и в срок</p>
         </div>
     </div>
     <div class="choice-block">
@@ -99,13 +94,13 @@
         </div>
         <div class="sell-block">
             <div class="sell-content d-flex flex-column align-items-center">
-                <div class="sell-content-title text-center">
-                    <p class="d-flex align-items-center justify-content-center flex-wrap">Продать <span class="active" data-type="fast">быстро</span><i class="fas fa-times"></i> и <span class="active" data-type="expensive">дорого</span><i class="fas fa-times"></i> через:</p>
-                </div>
+{{--                <div class="sell-content-title text-center">--}}
+{{--                    <p class="d-flex align-items-center justify-content-center flex-wrap">Продать <span class="active" data-type="fast">быстро</span><i class="fas fa-times"></i> и <span class="active" data-type="expensive">дорого</span><i class="fas fa-times"></i> через:</p>--}}
+{{--                </div>--}}
                 <div class="sell-cards d-flex justify-content-around"></div>
                 <div class="alternative-offer d-flex flex-column align-items-center">
-                    <h3 class="text-center">Если предложения вас не устроили, вы можете:</h3>
-                    <button class="own-price-btn">Предложить свою цену</button>
+                    <h3 class="text-center">Если не нашли выгодную сделку, то:</h3>
+                    <button class="own-price-btn">Предложить свою</button>
                 </div>
             </div>
         </div>

@@ -109,11 +109,12 @@ $(function () {
       top: 0,
       marginTop: 20 + 'px'
     }, 600);
-    $('.main-logo img').animate({
-      width: 70 + 'px'
+    $('.main-logo .logo-title').animate({
+      fontSize: 32 + 'px',
+      marginLeft: 20 + 'px'
     }, 600);
-    $('.main-logo p').animate({
-      fontSize: 30 + 'px'
+    $('.main-logo .logo-subtitle').animate({
+      fontSize: 15 + 'px'
     }, 600);
     $('.main-block').animate({
       opacity: 0
@@ -143,12 +144,14 @@ $(function () {
     var name = chosen.data('name');
     var type = chosen.data('type');
     var weight = $('.sell-weight').val();
+    var price = parseInt($('.card .price').text().split(' ').join(''));
     if (!weight) weight = 10;
     return {
       chosen: chosen,
       name: name,
       type: type,
-      weight: weight
+      weight: weight,
+      price: price
     };
   }
 
@@ -159,6 +162,14 @@ $(function () {
     var message = params.weight + ' г ' + metal + ' ' + params.type + ' пробы через ПЮДМ';
     $('.modal-popup .subtitle').text(message);
     $('.hidden-message').val(message);
+    $('.hidden-type').val(params.type);
+    $('.hidden-metal').val(params.name);
+    $('.hidden-weight').val(params.weight);
+    var hiddenPrice = $('.hidden-price');
+
+    if (hiddenPrice) {
+      hiddenPrice.val(params.price);
+    }
   }
 
   $('.chosen, .left-chosen').click(function () {
@@ -282,6 +293,8 @@ $(function () {
             $('.modal-popup').fadeOut();
           }, 2500);
         }
+
+        console.log(result);
       },
       error: function error(result) {
         console.log(result);

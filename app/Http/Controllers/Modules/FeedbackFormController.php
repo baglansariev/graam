@@ -18,9 +18,10 @@ class FeedbackFormController extends Controller
     public function sendSellApp(Request $request)
     {
         $action = '/feedback/sell-app';
-        echo $this->getResponseFromClient('GET', $action, [
+        echo $this->getResponseFromClientTest('GET', $action, [
             'query' => $request->all(),
         ]);
+//        echo response()->json($request->all())->getContent();
     }
 
     public function getOwnPriceAppForm()
@@ -30,9 +31,10 @@ class FeedbackFormController extends Controller
 
     public function sendOwnPrice(Request $request)
     {
-        $action = '/feedback/own-price';
-        echo $this->getResponseFromClient('GET', $action, [
+        $action = '/feedback/sell-app';
+        echo $this->getResponseFromClientTest('GET', $action, [
             'query' => $request->all(),
         ]);
+//        echo response()->json($request->all())->getContent();
     }
 }

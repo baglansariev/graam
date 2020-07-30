@@ -111,10 +111,14 @@
   font-weight: 600;
   letter-spacing: 1px;
   font-size: calc(0.3vw + 16px);
-  border-radius: 10px;
+  border-radius: 36px;
 }
 
 .modal-popup .popup-wrapper .popup-content .content .popup-form button:hover {
   color: #EDB947;
+}
+
+.modal-popup .popup-wrapper .popup-content .content .popup-form button:focus {
+  outline: none;
 }
 

@@ -22,6 +22,10 @@
                             <form action="{{ route('sell-app') }}" class="popup-form d-flex flex-column">
                                 <input type="text" class="name-input" name="name" placeholder="Имя" required>
                                 <input type="text" class="phone-input" name="phone" value="+7" required>
+                                <input type="hidden" name="weight" class="hidden-weight">
+                                <input type="hidden" name="type" class="hidden-type">
+                                <input type="hidden" name="metal" class="hidden-metal">
+                                <input type="hidden" name="price" class="hidden-price">
                                 <input type="hidden" name="text" class="hidden-message">
                                 <button type="button" class="sell-app-submit">Отправить</button>
                             </form>

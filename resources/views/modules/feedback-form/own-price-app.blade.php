@@ -26,6 +26,9 @@
                                 </div>
                                 <input type="text" class="name-input" name="name" placeholder="Имя" required>
                                 <input type="text" class="phone-input" name="phone" value="+7" required>
+                                <input type="hidden" name="weight" class="hidden-weight">
+                                <input type="hidden" name="type" class="hidden-type">
+                                <input type="hidden" name="metal" class="hidden-metal">
                                 <input type="hidden" name="text" class="hidden-message">
                                 <button type="button" class="own-price-submit">Отправить</button>
                             </form>

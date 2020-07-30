@@ -17,11 +17,12 @@ $(function () {
             top: 0,
             marginTop: 20 + 'px',
         }, 600);
-        $('.main-logo img').animate({
-            width: 70 + 'px',
+        $('.main-logo .logo-title').animate({
+            fontSize: 32 + 'px',
+            marginLeft: 20 + 'px',
         }, 600);
-        $('.main-logo p').animate({
-            fontSize: 30 + 'px',
+        $('.main-logo .logo-subtitle').animate({
+            fontSize: 15 + 'px',
         }, 600);
         $('.main-block').animate({opacity: 0});
         $('.choice-block').animate({top: 13 + '%'}, 600).animate({top: 20 + '%'}, 200);
@@ -47,6 +48,7 @@ $(function () {
         let name    = chosen.data('name');
         let type    = chosen.data('type');
         let weight  = $('.sell-weight').val();
+        let price   = parseInt($('.card .price').text().split(' ').join(''));
         if (!weight) weight = 10;
 
         return {
@@ -54,6 +56,7 @@ $(function () {
             name:   name,
             type:   type,
             weight: weight,
+            price:  price,
         };
     }
 
@@ -66,6 +69,14 @@ $(function () {
         let message = params.weight + ' г ' + metal + ' ' + params.type + ' пробы через ПЮДМ';
         $('.modal-popup .subtitle').text(message);
         $('.hidden-message').val(message);
+        $('.hidden-type').val(params.type);
+        $('.hidden-metal').val(params.name);
+        $('.hidden-weight').val(params.weight);
+
+        let hiddenPrice = $('.hidden-price');
+        if (hiddenPrice) {
+            hiddenPrice.val(params.price);
+        }
     }
 
     $('.chosen, .left-chosen').click(function () {
@@ -198,6 +209,7 @@ $(function () {
                         $('.modal-popup').fadeOut();
                     }, 2500);
                 }
+                console.log(result);
             },
             error: function (result) {
                 console.log(result);

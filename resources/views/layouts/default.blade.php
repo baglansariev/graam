@@ -25,9 +25,9 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="header-logo">
-                                <a href="/" class="main-logo d-flex justify-content-star align-items-center">
-                                    <img class="logo-img" src="{{ asset('images/graam_logo.png') }}" alt="">
-                                    <p>GRAAM</p>
+                                <a href="/" class="main-logo d-flex justify-content-center align-items-center flex-column">
+                                    <p class="logo-title"><span>G</span>RAAM</p>
+                                    <p class="logo-subtitle">Продать быстро и дорого</p>
                                 </a>
                             </div>
                         </div>
