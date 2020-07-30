@@ -232,10 +232,8 @@ header {
                         width: 80%;
                         height: 100%;
                         padding-top: 235px;
-                        //opacity: 0;
 
                         .modal-options {
-
                             .options {
                                 .option {
                                     cursor: pointer;
@@ -326,7 +324,7 @@ header {
                 margin-bottom: 10px;
             }
             input {
-                border: 1px solid $white;
+                border: 1px solid rgba(255, 255, 255, 0.7);
                 width: 60px;
                 padding: 5px;
                 background-color: transparent;

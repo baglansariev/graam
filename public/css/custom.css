@@ -340,7 +340,7 @@ header {
 }
 
 .sell-wrapper .sell-parameters .wanna-sell input {
-  border: 1px solid #FFF;
+  border: 1px solid rgba(255, 255, 255, 0.7);
   width: 60px;
   padding: 5px;
   background-color: transparent;
