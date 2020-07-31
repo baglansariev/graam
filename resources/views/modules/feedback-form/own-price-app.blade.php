@@ -17,7 +17,13 @@
                                 50 г золота 585 пробы через ПЮДМ
                             </div>
                             <div class="alert modal-popup-alert" role="alert">
-                                <span class="message"></span>
+                                <span class="message d-none"></span>
+                                <h3>Спасибо!</h3>
+                                <p>
+                                    Ваша заявка на продажу принята,
+                                    <br>
+                                    наш менеджер скоро свяжется с вами
+                                </p>
                             </div>
                             <form action="" class="popup-form d-flex flex-column">
                                 <div class="price-input-container d-flex align-items-center">

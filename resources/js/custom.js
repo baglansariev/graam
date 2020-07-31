@@ -191,7 +191,6 @@ $(function () {
                     let alert = $('.modal-popup-alert');
 
                     alert.find('.message').text(result.message);
-                    alert.css('background-color', '#EDBA47');
                     alert.fadeIn();
 
                     setTimeout(function () {

@@ -58,6 +58,7 @@ header {
         position: absolute;
         left: 39vw;
         top: 28vh;
+        z-index: 3;
 
         img {
             width: 120px;
@@ -223,6 +224,9 @@ header {
                         span:last-of-type {
                             transform: rotateZ(-45deg);
                         }
+                    }
+                    .modal-options-close:hover span {
+                        background-color: red;
                     }
 
                     .options-content {
@@ -394,7 +398,8 @@ header {
     }
     .sell-block {
         display: inline;
-        width: 72%;
+        //width: 72%; // Времменно
+        width: 56%;
         position: relative;
         overflow-y: scroll;
         padding: 0 25px;
@@ -660,7 +665,8 @@ input[type=number] {
 @media screen and (max-width: 2395px) {
     .sell-wrapper {
         .sell-block {
-            width: 75%;
+            //width: 75%; // Временно
+            width: 56%;
         }
         .sell-parameters {
             width: 25%;
@@ -670,7 +676,8 @@ input[type=number] {
 @media screen and (max-width: 2305px) {
     .sell-wrapper {
         .sell-block {
-            width: 78%;
+            //width: 78%; Временно
+            width: 59%;
         }
         .sell-parameters {
             width: 22%;
@@ -685,7 +692,8 @@ input[type=number] {
 @media screen and (max-width: 2220px) {
     .sell-wrapper {
         .sell-block {
-            width: 80%;
+            //width: 80%; // Временно
+            width: 61%;
         }
         .sell-parameters {
             width: 20%;
@@ -695,7 +703,8 @@ input[type=number] {
 @media screen and (max-width: 2170px) {
     .sell-wrapper {
         .sell-block {
-            width: 82%;
+            //width: 82%; // Временно
+            width: 63%;
         }
         .sell-parameters {
             width: 18%;
@@ -710,7 +719,8 @@ input[type=number] {
 @media screen and (max-width: 2120px) {
     .sell-wrapper {
         .sell-block {
-            width: 85%;
+            //width: 85%; // Временно
+            width: 65%;
         }
         .sell-parameters {
             width: 15%;
@@ -720,7 +730,8 @@ input[type=number] {
 @media screen and (max-width: 2050px) {
     .sell-wrapper {
         .sell-block {
-            width: 87%;
+            //width: 87%; // Временно
+            width: 67%;
         }
         .sell-parameters {
             width: 13%;
@@ -730,10 +741,12 @@ input[type=number] {
 @media screen and (max-width: 2005px) {
     .sell-wrapper {
         .sell-block {
-            width: 89%;
+            //width: 89%; // Временно
+            width: 69%;
         }
         .sell-parameters {
-            width: 11%;
+            //width: 11%; // Временно
+            width: 25%;
         }
     }
 }
@@ -745,7 +758,8 @@ input[type=number] {
 @media screen and (max-width: 1920px) {
     .sell-wrapper .sell-block .sell-content .sell-cards .card {
         min-width: 300px;
-        width: 24%;
+        //width: 24%; // Временно
+        width: 31%;
     }
 }
 @media screen and (max-width: 1885px) {

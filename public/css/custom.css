@@ -64,6 +64,7 @@ header {
   position: absolute;
   left: 39vw;
   top: 28vh;
+  z-index: 3;
 }
 
 .header-logo .main-logo img {
@@ -241,6 +242,10 @@ header {
 
 .choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close span:last-of-type {
   transform: rotateZ(-45deg);
+}
+
+.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close:hover span {
+  background-color: red;
 }
 
 .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
@@ -423,7 +428,7 @@ header {
 
 .sell-wrapper .sell-block {
   display: inline;
-  width: 72%;
+  width: 56%;
   position: relative;
   overflow-y: scroll;
   padding: 0 25px;
@@ -728,7 +733,7 @@ input[type=number] {
 
 @media screen and (max-width: 2395px) {
   .sell-wrapper .sell-block {
-    width: 75%;
+    width: 56%;
   }
 
   .sell-wrapper .sell-parameters {
@@ -738,7 +743,7 @@ input[type=number] {
 
 @media screen and (max-width: 2305px) {
   .sell-wrapper .sell-block {
-    width: 78%;
+    width: 59%;
   }
 
   .sell-wrapper .sell-parameters {
@@ -754,7 +759,7 @@ input[type=number] {
 
 @media screen and (max-width: 2220px) {
   .sell-wrapper .sell-block {
-    width: 80%;
+    width: 61%;
   }
 
   .sell-wrapper .sell-parameters {
@@ -764,7 +769,7 @@ input[type=number] {
 
 @media screen and (max-width: 2170px) {
   .sell-wrapper .sell-block {
-    width: 82%;
+    width: 63%;
   }
 
   .sell-wrapper .sell-parameters {
@@ -780,7 +785,7 @@ input[type=number] {
 
 @media screen and (max-width: 2120px) {
   .sell-wrapper .sell-block {
-    width: 85%;
+    width: 65%;
   }
 
   .sell-wrapper .sell-parameters {
@@ -790,7 +795,7 @@ input[type=number] {
 
 @media screen and (max-width: 2050px) {
   .sell-wrapper .sell-block {
-    width: 87%;
+    width: 67%;
   }
 
   .sell-wrapper .sell-parameters {
@@ -800,11 +805,11 @@ input[type=number] {
 
 @media screen and (max-width: 2005px) {
   .sell-wrapper .sell-block {
-    width: 89%;
+    width: 69%;
   }
 
   .sell-wrapper .sell-parameters {
-    width: 11%;
+    width: 25%;
   }
 }
 
@@ -817,7 +822,7 @@ input[type=number] {
 @media screen and (max-width: 1920px) {
   .sell-wrapper .sell-block .sell-content .sell-cards .card {
     min-width: 300px;
-    width: 24%;
+    width: 31%;
   }
 }
 

@@ -17,7 +17,13 @@
                                 50 г золота 585 пробы через ПЮДМ
                             </div>
                             <div class="alert modal-popup-alert" role="alert">
-                                <span class="message"></span>
+                                <span class="message d-none"></span>
+                                <h3>Спасибо!</h3>
+                                <p>
+                                    Ваша заявка на продажу принята,
+                                    <br>
+                                    наш менеджер скоро свяжется с вами
+                                </p>
                             </div>
                             <form action="{{ route('sell-app') }}" class="popup-form d-flex flex-column">
                                 <input type="text" class="name-input" name="name" placeholder="Имя" required>
