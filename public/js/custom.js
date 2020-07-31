@@ -221,6 +221,7 @@ $(function () {
     $('.sell-weight').val(inputVal);
   });
   $('#sell').click(function () {
+    getGoldRate();
     getCardsByAjax();
   });
   $('.param-weight').on('change', function () {
@@ -249,6 +250,22 @@ $(function () {
     var formData = $('.modal-own-price .popup-form').serialize();
     popupAjax('/form/send/own-price', formData);
   });
+
+  function getGoldRate() {
+    $.ajax({
+      url: '/ajax/get-gold-rate',
+      type: 'GET',
+      dataType: 'JSON',
+      success: function success(result) {
+        if (result.price) {
+          $('.currencies .gold span:first-of-type').append(result.price);
+        }
+      },
+      error: function error(result) {
+        console.log(result);
+      }
+    });
+  }
 
   function popupAjax(url, form_data) {
     $.ajax({
