@@ -195,6 +195,7 @@ $(function () {
     $(this).find('span').not('.color').text(chosenText);
     chosen.text(optionText);
     $('.selected span').text(optionText);
+    getCardsByAjax();
     modalOptionsHide();
   });
   $('#sell').click(function () {
@@ -213,9 +214,6 @@ $(function () {
       $('.sell-parameters').animate({
         opacity: 1
       }, 400);
-      $('.card').each(function () {
-        $(this).addClass('fadeInUp');
-      });
     }, 1200);
   });
   $('.sell-weight').change(function () {
@@ -223,34 +221,10 @@ $(function () {
     $('.sell-weight').val(inputVal);
   });
   $('#sell').click(function () {
-    var params = getClientPreferences();
-    $.ajax({
-      url: '/ajax/offers/product/' + params.name + '/' + params.type + '/' + params.weight,
-      type: 'GET',
-      dataType: 'html',
-      success: function success(result) {
-        $('.sell-cards').html(result);
-        var delay = 0.3;
-        $('.card').each(function () {
-          $(this).css({
-            'animation-delay': delay + 's',
-            '-webkit-animation-delay': delay + 's',
-            '-moz-animation-delay': delay + 's'
-          });
-          delay += 0.3;
-        });
-        $('.sell-app').click(function () {
-          setModalPopupParams();
-          $('.modal-popup.modal-sell').fadeIn();
-        });
-        $('.popup-close').click(function () {
-          $('.modal-popup').fadeOut();
-        });
-      },
-      error: function error(result) {
-        console.log(result);
-      }
-    });
+    getCardsByAjax();
+  });
+  $('.param-weight').on('change', function () {
+    getCardsByAjax();
   });
   $('.own-price-btn').click(function () {
     setModalPopupParams();
@@ -295,6 +269,44 @@ $(function () {
         }
 
         console.log(result);
+      },
+      error: function error(result) {
+        console.log(result);
+      }
+    });
+  }
+
+  function getCardsByAjax() {
+    var params = getClientPreferences();
+    $.ajax({
+      url: '/ajax/offers/product/' + params.name + '/' + params.type + '/' + params.weight,
+      type: 'GET',
+      dataType: 'html',
+      success: function success(result) {
+        $('.sell-cards').html(result);
+        var delay = 0.3;
+        var card = $('.card');
+        card.each(function () {
+          $(this).css({
+            'animation-delay': delay + 's',
+            '-webkit-animation-delay': delay + 's',
+            '-moz-animation-delay': delay + 's'
+          });
+          $(this).removeClass('fadeInUp');
+          delay += 0.3;
+        });
+        setTimeout(function () {
+          card.each(function () {
+            $(this).addClass('fadeInUp');
+          });
+        }, 600);
+        $('.sell-app').click(function () {
+          setModalPopupParams();
+          $('.modal-popup.modal-sell').fadeIn();
+        });
+        $('.popup-close').click(function () {
+          $('.modal-popup').fadeOut();
+        });
       },
       error: function error(result) {
         console.log(result);

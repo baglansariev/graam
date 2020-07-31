@@ -65,7 +65,7 @@
             <div class="parameter-block d-flex align-items-start flex-column">
                 <div class="wanna-sell">
                     <span>Хочу продать</span>
-                    <input type="number" class="sell-weight" placeholder="10">
+                    <input type="number" class="sell-weight param-weight" placeholder="10">
                     <span>г</span>
                 </div>
                 <div class="select">
