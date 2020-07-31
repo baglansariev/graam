@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="popup-content d-flex justify-content-center">
-                        <div class="content d-flex flex-column align-items-center">
+                        <div class="content d-flex flex-column align-items-start">
                             <div class="title">
                                 <h3>Заявка на продажу</h3>
                             </div>

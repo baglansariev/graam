@@ -277,11 +277,10 @@ $(function () {
         if (result.status) {
           var alert = $('.modal-popup-alert');
           alert.find('.message').text(result.message);
-          alert.fadeIn();
-          setTimeout(function () {
-            alert.fadeOut();
-            $('.modal-popup').fadeOut();
-          }, 2500);
+          alert.fadeIn(); // setTimeout(function () {
+          //     alert.fadeOut();
+          //     $('.modal-popup').fadeOut();
+          // }, 2500);
         }
 
         console.log(result);
@@ -322,6 +321,7 @@ $(function () {
         });
         $('.popup-close').click(function () {
           $('.modal-popup').fadeOut();
+          $('.modal-popup-alert').fadeOut();
         });
       },
       error: function error(result) {

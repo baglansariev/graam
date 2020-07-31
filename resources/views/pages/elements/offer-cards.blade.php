@@ -3,7 +3,7 @@
         <div class="card animated animatedFadeInUp">
             <div class="card-wrapper">
                 <div class="card-title d-flex align-items-center">
-                    <img src="{{ asset('images/graam_logo.png') }}" alt="" class="card-logo">
+                    <img src="{{ asset($offer['image']) }}" alt="" class="card-logo">
                     <p>{{ $offer['company_name'] }}</p>
                 </div>
                 <div class="card-offer">

@@ -15,6 +15,10 @@ class OffersController extends Controller
         $action = '/offers/get-list/' . $name . '/' . $type . '/' . $weight;
         $offers = json_decode($this->getResponseFromClientTest('GET', $action), true);
 
+        $offers[0]['image'] = 'images/graam_logo.png';
+        $offers[1]['image'] = 'images/a_zavod.png';
+        $offers[2]['image'] = 'images/k_zavod.png';
+
         return view('pages.elements.offer-cards', ['offers' => $offers]);
     }
 }

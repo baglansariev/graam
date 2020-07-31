@@ -193,10 +193,10 @@ $(function () {
                     alert.find('.message').text(result.message);
                     alert.fadeIn();
 
-                    setTimeout(function () {
-                        alert.fadeOut();
-                        $('.modal-popup').fadeOut();
-                    }, 2500);
+                    // setTimeout(function () {
+                    //     alert.fadeOut();
+                    //     $('.modal-popup').fadeOut();
+                    // }, 2500);
                 }
                 console.log(result);
             },
@@ -242,7 +242,8 @@ $(function () {
                 });
                 $('.popup-close').click(function () {
                     $('.modal-popup').fadeOut();
-                })
+                    $('.modal-popup-alert').fadeOut()
+                });
             },
             error: function (result) {
                 console.log(result);
