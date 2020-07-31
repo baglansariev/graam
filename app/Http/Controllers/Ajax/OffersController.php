@@ -12,8 +12,8 @@ class OffersController extends Controller
 
     public function getOffers($name, $type, $weight)
     {
-        $action = '/offer/product/' . $name . '/' . $type . '/' . $weight;
-        $offers = json_decode($this->getResponseFromClient('GET', $action), true);
+        $action = '/offers/get-list/' . $name . '/' . $type . '/' . $weight;
+        $offers = json_decode($this->getResponseFromClientTest('GET', $action), true);
 
         return view('pages.elements.offer-cards', ['offers' => $offers]);
     }

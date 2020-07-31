@@ -21,7 +21,7 @@
                         <span>Написать в телеграм</span>
                     </a>-->
                     <div class="phone">
-                        <p>+7 812 123-45-67</p>
+                        <p>+7 906 666-27-01</p>
                     </div>
                     <div class="apply text-left">
                         <button type="button" class="sell-app d-flex">Оставить заявку</button>
@@ -43,5 +43,8 @@
                 </div>
             </div>
         </div>
+        @if ($loop->index == 2)
+            @break
+        @endif
     @endforeach
 @endif
