@@ -293,6 +293,7 @@ header {
                 -o-transition: all ease 0.4s;
                 transition: all ease 0.4s;
                 letter-spacing: 2px;
+                z-index: 1;
             }
             button:hover {
                 color: $goldBackground;

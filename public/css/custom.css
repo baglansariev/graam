@@ -303,6 +303,7 @@ header {
   border-radius: 35px;
   transition: all ease 0.4s;
   letter-spacing: 2px;
+  z-index: 1;
 }
 
 .choice-block .choice-content .action button:hover {
