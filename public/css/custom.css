@@ -1470,6 +1470,12 @@ input[type=number] {
   }
 }
 
+@media screen and (max-height: 720px) {
+  .choice-block .choice-content .action {
+    margin-top: -16vh;
+  }
+}
+
 @keyframes fadeInUp {
   from {
     transform: translate3d(0, 40px, 0);

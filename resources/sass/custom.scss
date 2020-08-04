@@ -1434,6 +1434,11 @@ input[type=number] {
         }
     }
 }
+@media screen and (max-height: 720px) {
+    .choice-block .choice-content .action {
+        margin-top: -16vh;
+    }
+}
 
 
 
