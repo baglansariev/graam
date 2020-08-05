@@ -7,6 +7,7 @@
 //        public $crm_client_url = 'http://5.101.119.123:8081';
         public $crm_client_api_url = 'http://5.101.119.123:8081/api/v1';
         public $crm_client_api_url2 = 'http://5.101.119.123:8090/api';
+//        public $crm_client_api_url2 = 'http://193.200.74.101/api';
 
         public function clientInit(String $base_uri) : object
         {
