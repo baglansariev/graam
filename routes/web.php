@@ -18,6 +18,7 @@ Auth::routes();
 
 Route::get('/test', 'Helpers\ApiTesterController@index');
 Route::get('/test', 'Helpers\ApiTesterController@index');
+Route::get('/api-test', 'Helpers\CurrencyController@apiTest');
 
 Route::middleware('auth')->group(function() {
     Route::prefix('admin')->group(function () {
