@@ -19,7 +19,9 @@
                         <p>+7 906 666-27-01</p>
                     </div>
                     <div class="apply text-left">
-                        <button type="button" class="sell-app d-flex">Оставить заявку</button>
+                        @if ($loop->index !== 4 && $loop->index !== 5)
+                            <button type="button" class="sell-app d-flex">Оставить заявку</button>
+                        @endif
                     </div>
                 </div>
                 <div class="card-details">
