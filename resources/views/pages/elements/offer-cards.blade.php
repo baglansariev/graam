@@ -38,8 +38,5 @@
                 </div>
             </div>
         </div>
-{{--        @if ($loop->index == 2)--}}
-{{--            @break--}}
-{{--        @endif--}}
     @endforeach
 @endif
