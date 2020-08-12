@@ -30,6 +30,9 @@
                                     <p class="logo-subtitle">Продать быстро и дорого</p>
                                 </a>
                             </div>
+                            <div class="header-actions text-right p-4">
+                                <a href="#">Вход</a>
+                            </div>
                         </div>
                     </div>
                 </div>

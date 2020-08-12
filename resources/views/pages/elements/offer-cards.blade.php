@@ -1,6 +1,6 @@
 @if (!empty($offers))
     @foreach($offers as $offer)
-        <div class="card animated animatedFadeInUp">
+        <div class="card animated animatedFadeInUp @if(!$card['status'])inactive@endif">
             <div class="card-wrapper">
                 <div class="card-title d-flex align-items-center">
                     <img src="{{ asset($offer['image']) }}" alt="" class="card-logo">
@@ -11,15 +11,10 @@
                         {{ number_format($offer['price'], 0, '', ' ') }} ₽
                     </div>
                     <div class="time">
-                        через {{ $offer['duration'] }} дня
+                        {{ $offer['duration'] }}
                     </div>
                 </div>
                 <div class="card-actions d-flex flex-column justify-content-center">
-                    <!--<button type="button">Позвонить</button>-->
-                    <!--<a href="">
-                        <i class="fab fa-telegram-plane"></i>
-                        <span>Написать в телеграм</span>
-                    </a>-->
                     <div class="phone">
                         <p>+7 906 666-27-01</p>
                     </div>
@@ -43,8 +38,8 @@
                 </div>
             </div>
         </div>
-        @if ($loop->index == 2)
-            @break
-        @endif
+{{--        @if ($loop->index == 2)--}}
+{{--            @break--}}
+{{--        @endif--}}
     @endforeach
 @endif

@@ -192,11 +192,6 @@ $(function () {
 
                     alert.find('.message').text(result.message);
                     alert.fadeIn();
-
-                    // setTimeout(function () {
-                    //     alert.fadeOut();
-                    //     $('.modal-popup').fadeOut();
-                    // }, 2500);
                 }
                 console.log(result);
             },

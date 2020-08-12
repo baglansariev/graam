@@ -277,10 +277,7 @@ $(function () {
         if (result.status) {
           var alert = $('.modal-popup-alert');
           alert.find('.message').text(result.message);
-          alert.fadeIn(); // setTimeout(function () {
-          //     alert.fadeOut();
-          //     $('.modal-popup').fadeOut();
-          // }, 2500);
+          alert.fadeIn();
         }
 
         console.log(result);

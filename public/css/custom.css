@@ -45,6 +45,7 @@ header {
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 3;
 }
 
 .main-wrapper {
@@ -104,6 +105,17 @@ header {
 
 .main-logo:hover {
   text-decoration: none;
+}
+
+.header-actions a {
+  color: #FFF;
+  font-size: 20px;
+  padding-bottom: 2px;
+}
+
+.header-actions a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #FFF;
 }
 
 .wrapper {
