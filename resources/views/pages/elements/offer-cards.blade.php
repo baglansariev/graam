@@ -1,6 +1,6 @@
 @if (!empty($offers))
     @foreach($offers as $offer)
-        <div class="card animated animatedFadeInUp @if(isset($offer['status'])) inactive @endif">
+        <div class="card animated animatedFadeInUp @if(isset($offer['status']) && !$offer['status']) inactive @endif">
             <div class="card-wrapper">
                 <div class="card-title d-flex align-items-center">
                     <img src="{{ asset($offer['image']) }}" alt="" class="card-logo">
