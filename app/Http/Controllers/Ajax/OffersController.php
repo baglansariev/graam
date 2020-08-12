@@ -19,6 +19,10 @@ class OffersController extends Controller
         $offers[1]['image'] = 'images/a_zavod.png';
         $offers[2]['image'] = 'images/k_zavod.png';
 
+//        echo '<pre>';
+//        print_r($offers);
+//        exit;
+
         return view('pages.elements.offer-cards', ['offers' => $offers]);
     }
 }
