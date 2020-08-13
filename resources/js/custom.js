@@ -85,6 +85,12 @@ $(function () {
     $('.modal-options-close').click(function () {
         modalOptionsHide();
     });
+
+    $('.login-btn').click(function (e) {
+       e.preventDefault();
+
+       $('.modal-popup.login-form').fadeIn();
+    });
     
     $('.options .option').not('.selected').click(function () {
 
@@ -128,7 +134,7 @@ $(function () {
 
 
     $('#sell').click(function () {
-        getGoldRate()
+        getGoldRate();
         getCardsByAjax();
     });
     $('.param-weight').on('change', function () {
@@ -245,6 +251,11 @@ $(function () {
             }
         });
     }
+
+    $('.popup-close').click(function () {
+        $('.modal-popup').fadeOut();
+        $('.modal-popup-alert').fadeOut()
+    });
 
 
     $('.phone-input').inputmask("+7(999)999-99-99");

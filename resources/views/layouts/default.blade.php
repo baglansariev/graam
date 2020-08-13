@@ -31,13 +31,15 @@
                                 </a>
                             </div>
                             <div class="header-actions text-right p-4">
-                                <a href="#">Вход</a>
+                                <a href="#" class="login-btn">Вход</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </header>
             @yield('content', 'Default Content')
+            @component('modules.auth.login')
+            @endcomponent
         </main>
         <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/feedback-form.js') }}"></script>

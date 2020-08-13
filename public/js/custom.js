@@ -178,6 +178,10 @@ $(function () {
   $('.modal-options-close').click(function () {
     modalOptionsHide();
   });
+  $('.login-btn').click(function (e) {
+    e.preventDefault();
+    $('.modal-popup.login-form').fadeIn();
+  });
   $('.options .option').not('.selected').click(function () {
     var main = $('main');
     var optionText = $(this).find('span').not('.color').text();
@@ -327,6 +331,10 @@ $(function () {
     });
   }
 
+  $('.popup-close').click(function () {
+    $('.modal-popup').fadeOut();
+    $('.modal-popup-alert').fadeOut();
+  });
   $('.phone-input').inputmask("+7(999)999-99-99");
 });
 
