@@ -29,6 +29,11 @@ $(function () {
     }, 1500);
 
     setTimeout(function () {
+        $('.personal-content').animate({top: 10 + '%'}, 400).animate({top: 13 + '%'}, 200);
+    }, 300);
+
+
+    setTimeout(function () {
         $('.main-logo p').animate({
             opacity: 1,
         })
@@ -88,8 +93,25 @@ $(function () {
 
     $('.login-btn').click(function (e) {
        e.preventDefault();
-
+        $('.modal-popup.reg-form').fadeOut();
        $('.modal-popup.login-form').fadeIn();
+    });
+
+    $('.reg-link').click(function (e) {
+        e.preventDefault();
+        $('.modal-popup.login-form').fadeOut();
+        $('.modal-popup.reg-form').fadeIn();
+    });
+
+    $('.order-link').click(function (e) {
+        e.preventDefault();
+
+        $('.modal-popup.order-detail').fadeIn();
+    });
+
+    $('.more-info').click(function (e) {
+        e.preventDefault();
+        $('.modal-popup.home-content').fadeIn();
     });
     
     $('.options .option').not('.selected').click(function () {

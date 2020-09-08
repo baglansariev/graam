@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\UserDocument;
 
 class UserController extends Controller
 {
@@ -14,7 +15,34 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return view('user/orders');
+    }
+
+
+    public function discount()
+    {
+        return view('user/discount');
+    }
+
+    public function archive()
+    {
+        return view('user/archive');
+    }
+
+    public function docs()
+    {
+        $docs = UserDocument::all()->toArray();
+        return view('user/docs', compact('docs'));
+    }
+
+    public function info()
+    {
+        return view('user/info');
+    }
+
+    public function test()
+    {
+        return view('home/content');
     }
 
     /**

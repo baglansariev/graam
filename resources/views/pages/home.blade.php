@@ -21,7 +21,7 @@
             <div class="select">
                 <div class="chosen d-flex">
                     <div class="chosen-container">
-                        <span data-name="gold" data-type="585">золото 585</span> пробы
+                        <span data-name="gold" data-type="585">золота 585</span> пробы
                     </div>
                     <i class="fas fa-sort-down"></i>
                 </div>
@@ -36,17 +36,17 @@
                                 <div class="select">
                                     <div class="options">
                                         <div class="option selected d-flex align-items-center">
-                                            <span>золото 585</span> пробы
+                                            <span>золота 585</span> пробы
                                             <span class="fas fa-sort-up"></span>
                                         </div>
                                         <div class="option d-flex justify-content-between align-items-center" data-name="gold" data-type="999">
-                                            <span>золото 999</span>
+                                            <span>золота 999</span>
                                         </div>
                                         <div class="option d-flex justify-content-between align-items-center" data-name="silver" data-type="999">
-                                            <span>серебро 999</span>
+                                            <span>серебра 999</span>
                                         </div>
                                         <div class="option d-flex justify-content-between align-items-center" data-name="silver" data-type="925">
-                                            <span>серебро 925</span>
+                                            <span>серебра 925</span>
                                         </div>
                                     </div>
                                 </div>

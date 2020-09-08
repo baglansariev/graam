@@ -30,8 +30,8 @@ class HomeController extends Controller
         $user = Auth::user();
 
 //        echo '<pre>';
-//        print_r($manager->getManager($user->manager_id));
-//        exit;
+//        print_r($user);
+        //exit;
 
         $data = [
             'manager' => $manager->getManager($user->manager_id)['manager']
