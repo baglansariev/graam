@@ -109,14 +109,20 @@ class DocumentsController extends Controller
     public function show($id)
     {
         $document = UserDocument::findOrFail($id);
-        $doc_parts = explode('.', $document->name);
-        $type = strtolower( $doc_parts[count($doc_parts) - 1] );
-        $file = $document->path;
 
-        header('Content-Type: application/' . $type);
-        header('Content-Length: ' . filesize($file));
+        $temp_file = file_get_contents($document->path);
+        $file_path = 'documents/temp/' . $document->name;
+        file_put_contents($file_path, $temp_file);
 
-       readfile($file);
+        header('Content-Description: File Transfer');
+        header('Content-Disposition: attachment; filename="'.basename($file_path).'"');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        header('Content-Length: ' . filesize($file_path));
+
+       readfile($file_path);
+       unlink($file_path);
        exit;
     }
 
