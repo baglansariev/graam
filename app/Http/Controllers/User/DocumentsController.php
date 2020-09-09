@@ -90,6 +90,10 @@ class DocumentsController extends Controller
 
             unlink($doc_path . '/' . $fileOriginalName);
 
+            echo  "<pre>";
+            print_r($response);
+            exit;
+
             if (isset($response['id']) && isset($response['path'])) {
                 $document->crm_id = $response['id'];
                 $document->path = $response['path'];
