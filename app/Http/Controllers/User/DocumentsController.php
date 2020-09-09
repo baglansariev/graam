@@ -88,7 +88,7 @@ class DocumentsController extends Controller
 
             $response = json_decode($response, true);
 
-            unlink($file_full_path);
+            unlink($doc_path . '/' . $fileOriginalName);
 
             if (isset($response['id']) && isset($response['path'])) {
                 $document->crm_id = $response['id'];
