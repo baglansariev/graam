@@ -114,6 +114,7 @@ class DocumentsController extends Controller
 
         header('Content-Type: application/' . $type);
         echo $document->path;
+        echo $doc_parts[count($doc_parts) - 1];
     }
 
     /**
