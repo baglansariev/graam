@@ -115,7 +115,7 @@ class DocumentsController extends Controller
         file_put_contents($file_path, $temp_file);
 
         header('Content-Description: File Transfer');
-        header('Content-Disposition: attachment; filename="'.basename($file_path).'"');
+        header('Content-Disposition: attachment; filename="' . basename($file_path) . '"');
         header('Expires: 0');
         header('Cache-Control: must-revalidate');
         header('Pragma: public');
@@ -156,15 +156,39 @@ class DocumentsController extends Controller
         $fileOriginalName   = $file->getClientOriginalName();
         $doc_path           = $this->docs_dir . Auth::user()->id;
 
-        UserDocument::find($id)->update([
+        $document = UserDocument::find($id)->update([
             'category_id'       => $request->input('doc_category'),
             'name'              => $fileOriginalName,
-            'path'              => $doc_path . '/' . $fileOriginalName,
+            'path'              => '',
             'size'              => $file->getSize(),
         ]);
 
         $file->move($doc_path, $fileOriginalName);
 
+
+        $file_full_path = $request->root() . '/' . $doc_path . '/' . $fileOriginalName;
+
+        $response = $this->getResponseFromClientTest2('POST', '/contractor/upload-doc', [
+            'form_params' => [
+                'document' => [
+                    'id' => $document->crm_id,
+                    'name' => $fileOriginalName,
+                    'full_path' => $file_full_path,
+                    'extension' => $file->getClientOriginalExtension(),
+                    'doc_name' => 'doc' . $document->category->id,
+                ],
+                'api_token' => $this->api_token,
+            ],
+        ]);
+
+        $response = json_decode($response, true);
+
+        unlink($doc_path . '/' . $fileOriginalName);
+
+        if (isset($response['id'])) {
+            $document->path = $response['path'];
+            $document->save();
+        }
 
         return redirect(route('documents.index'));
     }
