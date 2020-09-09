@@ -108,7 +108,9 @@ class DocumentsController extends Controller
      */
     public function show($id)
     {
-        //
+        $document = UserDocument::findOrFail($id);
+
+        return response()->file($document->path);
     }
 
     /**

@@ -22,7 +22,7 @@
                             @if($user->documents()->whereCategoryId($category->id)->count())
                                 @foreach($user->documents()->whereCategoryId($category->id)->get() as $document)
                                     <div class="d-flex">
-                                        <a href="{{ url($document->path) }}" target="_blank" class="mr-1">{{ $document->name }}</a> /
+                                        <a href="{{ route('documents.show', $document->id) }}" target="_blank" class="mr-1">{{ $document->name }}</a> /
                                         <a href="{{ route('documents.edit', $document->id) }}" class="ml-1">Изменить</a>
                                     </div>
                                 @endforeach
