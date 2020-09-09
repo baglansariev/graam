@@ -111,10 +111,13 @@ class DocumentsController extends Controller
         $document = UserDocument::findOrFail($id);
         $doc_parts = explode('.', $document->name);
         $type = strtolower( $doc_parts[count($doc_parts) - 1] );
-        $file = file_get_contents($document->path);
+        $file = $document->path;
 
-        return response($file)->header('Content-Type:', 'application/' . $type);
+        header('Content-Type: application/' . $type);
+        header('Content-Length: ' . filesize($file));
 
+       readfile($file);
+       exit;
     }
 
     /**
