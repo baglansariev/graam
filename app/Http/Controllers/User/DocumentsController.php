@@ -113,8 +113,7 @@ class DocumentsController extends Controller
         $type = strtolower( $doc_parts[count($doc_parts) - 1] );
 
         header('Content-Type: application/' . $type);
-        echo $document->path;
-        echo $doc_parts[count($doc_parts) - 1];
+        echo file_get_contents($document->path);
     }
 
     /**
