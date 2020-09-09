@@ -3,11 +3,16 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Helpers\ClientHelper;
+use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use App\Models\UserDocument;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    use ClientHelper;
     /**
      * Display a listing of the resource.
      *
@@ -37,7 +42,8 @@ class UserController extends Controller
 
     public function info()
     {
-        return view('user/info');
+        $user = Auth::user();
+        return view('user/info', compact('user'));
     }
 
     public function test()
@@ -97,7 +103,43 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($request->has(['company_name', 'email'])) {
+            $user = Auth::user();
+            $user->email = $request->post('email');
+
+            $data = [
+                'company_name' => $request->post('company_name'),
+                'email' => $request->post('email'),
+            ];
+
+            if ($request->post('name')) {
+                $data['name'] = $request->post('name');
+            }
+            if ($request->post('password')) {
+                $user->password = Hash::make($request->post('password'));
+            }
+            if ($request->post('phone')) {
+                $data['phone'] = $request->post('phone');
+            }
+
+            $user->save();
+            $response = $this->getResponseFromClientTest2('PUT', '/contractor/update/' . $user->crm_id, [
+                'form_params' => [
+                    'contractor' => $data,
+                    'api_token' => $this->api_token,
+                ],
+            ]);
+
+            if (json_decode($response, true)['status']) {
+                session()->flash('msg_success', 'Данные успешно обновлены!');
+            }
+            else {
+                session()->flash('msg_error', 'Произошла ошибка обратитесь к администратору!');
+            }
+
+        }
+
+        return redirect(route('personal-info'));
     }
 
     /**

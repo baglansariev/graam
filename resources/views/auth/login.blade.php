@@ -32,7 +32,7 @@
                                 <div class="price-input-container d-flex align-items-start flex-column">
                                     <div class="form-group">
                                          <label for="inputEmail4">Через электронную почту:</label>
-                                         <input type="email" class="form-control @error('email') is-invalid @enderror" id="inputEmail4" value="" placeholder="Электронная почта">
+                                         <input type="email" class="form-control @error('email') is-invalid @enderror" id="inputEmail4" value="{{ old('email') }}" name="email" placeholder="Электронная почта">
                                          @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -41,7 +41,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="input-wrapper d-flex align-items-center">
-                                            <input type="password" class="form-control @error('password') is-invalid @enderror short" id="inputPassword4" value="" placeholder="Пароль">
+                                            <input type="password" name="password" class="form-control @error('password') is-invalid @enderror short" id="inputPassword4" value="" placeholder="Пароль">
                                             @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>

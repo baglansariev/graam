@@ -16,8 +16,6 @@ Route::get('/', 'Pages\HomeController@index');
 Auth::routes();
 
 
-Route::get('/test', 'Helpers\ApiTesterController@index');
-Route::get('/test', 'Helpers\ApiTesterController@index');
 Route::get('/api-test', 'Helpers\CurrencyController@apiTest');
 Route::get('/personal', 'User\UserController@index')->name('personal');
 Route::get('/personal/discount', 'User\UserController@discount')->name('personal-discount');
@@ -37,6 +35,7 @@ Route::middleware('auth')->group(function() {
             Route::resource('documents', 'User\DocumentsController');
             Route::resource('details', 'User\DetailsController');
             Route::resource('deals', 'User\DealController');
+            Route::put('update/{id}', 'User\UserController@update')->name('user.update');
         });
     });
 });

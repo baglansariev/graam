@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Helpers\ClientHelper;
 use App\Models\UserDetail;
 use App\Providers\RouteServiceProvider;
 use App\User;
@@ -26,6 +27,7 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+    use ClientHelper;
 
     /**
      * Where to redirect users after registration.
@@ -53,7 +55,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-//            'name' => ['required', 'string', 'max:255'],
+            'company_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -67,29 +69,38 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-         $User = User::create([
-//          'name' => $data['name'],
+         $user = User::create([
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
 
+        // Передача данных в CRM
+        $response = $this->getResponseFromClientTest2('POST', '/contractor/create', [
+            'form_params' => [
+                'contractor' => [
+                    'email' => $user->email,
+                    'name' => $data['company_name']
+                ],
+                'api_token' => $this->api_token,
+            ],
+        ]);
 
-         UserDetail::create([
-             'user_id' => $User->id,
-             'name' => 'Ваше имя',
-//             'company_name' => $data['company_name'],
-         ]);
+        $user->crm_id = json_decode($response, true)['id'];
+        $user->save();
 
 
 
-        return $User;
+        return $user;
     }
 
     public function registered(Request $request, $user)
     {
         // Привязка менеджера к пользователю
-        $manager = new ManagerController();
-        $manager_data = $manager->setManager($user->id);
-        $user->update(['manager_id' => $manager_data['manager_id']]);
+//        $manager = new ManagerController();
+//        $manager_data = $manager->setManager($user->id);
+//        $user->update(['manager_id' => $manager_data['manager_id']]);
+        $user->update(['manager_id' => 1]);
+
+        $user->save();
     }
 }

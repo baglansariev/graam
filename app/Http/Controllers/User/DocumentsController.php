@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Helpers\ClientHelper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserDocument;
@@ -10,6 +11,8 @@ use App\Models\DocumentCategory;
 
 class DocumentsController extends Controller
 {
+    use ClientHelper;
+
     public $docs_dir;
 
     public function __construct()
@@ -59,14 +62,39 @@ class DocumentsController extends Controller
             $fileOriginalName   = $file->getClientOriginalName();
             $doc_path           = $this->docs_dir . Auth::user()->id;
 
-            Auth::user()->documents()->create([
+            $document = Auth::user()->documents()->create([
                 'category_id'       => $request->input('doc_category'),
                 'name'              => $fileOriginalName,
-                'path'              => $doc_path . '/' . $fileOriginalName,
+                'path'              => '',
                 'size'              => $file->getSize(),
             ]);
 
             $file->move($doc_path, $fileOriginalName);
+
+            $file_full_path = $request->root() . '/' . $doc_path . '/' . $fileOriginalName;
+
+            $response = $this->getResponseFromClientTest2('POST', '/contractor/upload-doc', [
+                'form_params' => [
+                    'document' => [
+                        'user_id' => Auth::user()->crm_id,
+                        'name' => $fileOriginalName,
+                        'full_path' => $file_full_path,
+                        'extension' => $file->getClientOriginalExtension(),
+                        'doc_name' => 'doc' . $document->category->id,
+                    ],
+                    'api_token' => $this->api_token,
+                ],
+            ]);
+
+            $response = json_decode($response, true);
+
+            unlink($file_full_path);
+
+            if (isset($response['id']) && isset($response['path'])) {
+                $document->crm_id = $response['id'];
+                $document->path = $response['path'];
+                $document->save();
+            }
         }
 
         return redirect(route('documents.index'));
