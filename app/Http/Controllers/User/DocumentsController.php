@@ -109,8 +109,10 @@ class DocumentsController extends Controller
     public function show($id)
     {
         $document = UserDocument::findOrFail($id);
+        $type = strtolower( explode('.', $document->name)[1] );
 
-        return response()->file($document->path);
+        header('Content-Type: application/' . $type);
+        echo $document->path;
     }
 
     /**
