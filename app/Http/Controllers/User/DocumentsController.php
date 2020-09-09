@@ -156,7 +156,8 @@ class DocumentsController extends Controller
         $fileOriginalName   = $file->getClientOriginalName();
         $doc_path           = $this->docs_dir . Auth::user()->id;
 
-        $document = UserDocument::find($id)->update([
+        $document = UserDocument::find($id);
+        $document->update([
             'category_id'       => $request->input('doc_category'),
             'name'              => $fileOriginalName,
             'path'              => '',
