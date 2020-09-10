@@ -45,7 +45,7 @@
             }
             catch (ServerException $exception) {
                 echo '<pre>';
-                print_r($exception->getResponse()->getBody(true));
+                print_r($exception->getResponse()->getBody()->getContents());
                 exit;
             }
 //            return $response->getBody()->getContents();
