@@ -17,7 +17,7 @@
             ]);
         }
 
-        private function setClientData()
+        public function setClientData()
         {
             $this->crm_client_api_url = 'http://193.200.74.101/api';
             $this->api_token = 'jM4E53HiO03uSLb19YDwqA1RRUtpfXwN6jP1STm1EZTRITXdpRbHnRBOFuxE4ICOgLEcywicOvMyopDm';
