@@ -14,13 +14,13 @@ class ManagerController extends Controller
     {
         $action = '/client/create/' . $user_id;
 
-        return json_decode($this->getResponseFromClient('GET', $action), true);
+        return json_decode($this->getResponseFromTestClient('GET', $action), true);
     }
 
     public function getManager($manager_id)
     {
         $action = '/manager/get/' . $manager_id;
 
-        return json_decode($this->getResponseFromClient('GET', $action), true);
+        return json_decode($this->getResponseFromTestClient('GET', $action), true);
     }
 }

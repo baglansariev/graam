@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Helpers\ClientHelper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\User\ManagerController;
@@ -14,6 +15,8 @@ class HomeController extends Controller
      *
      * @return void
      */
+    use ClientHelper;
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -28,10 +31,6 @@ class HomeController extends Controller
     {
         $manager = new ManagerController();
         $user = Auth::user();
-
-//        echo '<pre>';
-//        print_r($user);
-        //exit;
 
         $data = [
             'manager' => $manager->getManager($user->manager_id)['manager']
