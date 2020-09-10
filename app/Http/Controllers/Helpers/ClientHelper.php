@@ -33,7 +33,7 @@
             $this->setClientData();
             $client = $this->clientInit($this->test_crm_client_api_url);
             $action = $this->addApiTokenToUrl($action);
-            $response = $client->request($method, $this->crm_client_api_url . $action, $params);
+            $response = $client->request($method, $this->test_crm_client_api_url . $action, $params);
             return $response->getBody()->getContents();
         }
 
