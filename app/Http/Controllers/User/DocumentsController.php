@@ -213,6 +213,10 @@ class DocumentsController extends Controller
 
         $response = json_decode($response, true);
 
+        if ($response['status']) {
+            $document->delete();
+        }
+
         return redirect(route('documents.index'));
     }
 
