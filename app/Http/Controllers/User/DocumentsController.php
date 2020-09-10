@@ -32,7 +32,8 @@ class DocumentsController extends Controller
             'user_docs'             => Auth::user()->documents(),
             'user'             => Auth::user(),
         ];
-        return view('admin.user.documents.index', $data);
+       // return view('admin.user.documents.index', $data);
+        return view('user.docs', $data);
     }
 
     /**

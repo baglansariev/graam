@@ -18,7 +18,7 @@
         <script src="{{ asset('js/jquery.inputmask.min.js') }}"></script>
         <script src="{{ asset('js/inputmask.min.js') }}"></script>
         <script src="{{ asset('js/custom.js') }}"></script>
-        
+
         <!-- Yandex.Metrika counter -->
 		<script type="text/javascript" >
 		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -34,7 +34,7 @@
 		</script>
 		<noscript><div><img src="https://mc.yandex.ru/watch/66766309" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 		<!-- /Yandex.Metrika counter -->
-        
+
     </head>
     <body>
         <main id="main" class="gold585 home-content">
@@ -52,10 +52,7 @@
                 </div>
             </header>
             @yield('content')
-            @component('modules.auth.login')
-            @endcomponent
-            @component('modules.auth.register')
-            @endcomponent
+            
 
             <footer>
                 <div class="container">
@@ -79,7 +76,7 @@
                     <div class="col-md-4 footer-logo">
                         <img src="/images/logo-footer.svg" alt="Vasterra.com">
                         <span>Сделано в <a href="https://vasterra.com">Vasterra.com</a></span>
-                    </div>                   
+                    </div>
                     </div>
                 </div>
             </footer>

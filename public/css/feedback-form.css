@@ -15,7 +15,8 @@
   position: relative;
 }
 
-.modal-popup .popup-wrapper .popup-close {
+.modal-popup .popup-wrapper .popup-close,
+.modal-popup .popup-wrapper .login-close {
   position: fixed;
   right: 40px;
   top: 60px;
@@ -25,7 +26,8 @@
   z-index: 9;
 }
 
-.modal-popup .popup-wrapper .popup-close span {
+.modal-popup .popup-wrapper .popup-close span,
+.modal-popup .popup-wrapper .login-close span {
   position: absolute;
   left: 0;
   top: 0;
@@ -35,15 +37,19 @@
   background-color: #000;
 }
 
-.modal-popup .popup-wrapper .popup-close span:first-of-type {
+.modal-popup .popup-wrapper .popup-close span:first-of-type,
+.modal-popup .popup-wrapper .login-close span:first-of-type{
   transform: rotateZ(45deg);
 }
 
-.modal-popup .popup-wrapper .popup-close span:last-of-type {
+.modal-popup .popup-wrapper .popup-close span:last-of-type,
+.modal-popup .popup-wrapper .login-close span:last-of-type {
   transform: rotateZ(-45deg);
 }
 
-.modal-popup .popup-wrapper .popup-close:hover span {
+.modal-popup .popup-wrapper .popup-close:hover span,
+.modal-popup .popup-wrapper .login-close:hover span
+{
   background-color: red;
 }
 

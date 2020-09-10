@@ -12,7 +12,7 @@ function copyValueTo(fromElem, toElemId) {
 </script>
    <div class="modal-popup reg-form">
     <div class="popup-wrapper">
-        <div class="popup-close">
+        <div class="login-close">
             <span></span>
             <span></span>
         </div>
@@ -34,7 +34,7 @@ function copyValueTo(fromElem, toElemId) {
                                 @csrf
                                 <div class="price-input-container d-flex align-items-start flex-column">
                                     <div class="form-group">
-                                        <input type="text" name="company_name" class="form-control" id="company" value="" placeholder="Название компании">
+                                        <input type="text" class="form-control" id="company" value="" placeholder="Название компании">
                                     </div>
                                     <div class="form-group">
                                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Электронная почта">
@@ -65,7 +65,7 @@ function copyValueTo(fromElem, toElemId) {
                                     </div>
                                     <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
                                 </div>
-                                <p class="login-link"><a class="login-btn" href="/">Войдите</a>, если у вас есть аккаунт</p>
+                                <p class="login-link"><a href="{{ route('login') }}">Войдите</a>, если у вас есть аккаунт</p>
                             </form>
                         </div>
                     </div>

@@ -45,7 +45,7 @@ header {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 3;
+    z-index: 0;
 }
 
 .main-wrapper {
@@ -1722,7 +1722,6 @@ input[type=number] {
     width: 94.5%;
     border-radius: 50px 50px 0 0;
     box-shadow: 0px 0px 25px 0px #ccc;
-    overflow: scroll;
     z-index: 9999;
 }
 
@@ -1951,7 +1950,7 @@ input[type=number] {
 
 .modal-popup.reg-form,
 .modal-popup.login-form {
-    display: block; 
+    display: block;
 }
 
 .login-form .title h3 {
@@ -2629,4 +2628,17 @@ footer .footer-logo span {
 footer .footer-logo span a {
     color: #FFFFFF;
     border-bottom: 1px solid #ffffff50;
+}
+
+.file_input {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+}
+
+span.upload-file {
+    color: #3490dc;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
 }

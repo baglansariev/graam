@@ -3,9 +3,11 @@
 @section('content')
    <div class="modal-popup login-form">
     <div class="popup-wrapper">
-        <div class="popup-close">
-            <span></span>
-            <span></span>
+        <div class="login-close">
+            
+                <span></span>
+                <span></span>
+           
         </div>
         <div class="container">
             <div class="row">
@@ -32,7 +34,7 @@
                                 <div class="price-input-container d-flex align-items-start flex-column">
                                     <div class="form-group">
                                          <label for="inputEmail4">Через электронную почту:</label>
-                                         <input type="email" class="form-control @error('email') is-invalid @enderror" id="inputEmail4" value="{{ old('email') }}" name="email" placeholder="Электронная почта">
+                                         <input id="email" type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="" placeholder="Электронная почта">
                                          @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -41,7 +43,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="input-wrapper d-flex align-items-center">
-                                            <input type="password" name="password" class="form-control @error('password') is-invalid @enderror short" id="inputPassword4" value="" placeholder="Пароль">
+                                            <input id="password" name="password" type="password" class="form-control @error('password') is-invalid @enderror short" value="" placeholder="Пароль">
                                             @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -56,7 +58,7 @@
                                     </div>
                                     <button type="submit" class="btn btn-primary">Войти</button>
                                 </div>
-                                <p class="reg-link-wrap"><a class="reg-link" href="/">Зарегистрируйтесь</a>, если у вас нет аккаунта</p>
+                                <p class="reg-link-wrap"><a href="{{ route('register') }}">Зарегистрируйтесь</a>, если у вас нет аккаунта</p>
                             </form>
                         </div>
                     </div>
@@ -66,6 +68,4 @@
 
     </div>
 </div>
-
-
 @endsection

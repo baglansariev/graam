@@ -16,7 +16,7 @@
                 </div>
                 <div class="card-actions d-flex flex-column justify-content-center">
                     <div class="phone">
-                        <p>+7 906 666-27-01</p>
+                        <p><a href="tel:+79066662701">{{ $offer['phone'] }}</a></p>
                     </div>
                     <div class="apply text-left">
                         <button type="button" class="sell-app d-flex" @if($loop->index == 4 || $loop->index == 5) style="opacity: 0" disabled @endif>Оставить заявку</button>

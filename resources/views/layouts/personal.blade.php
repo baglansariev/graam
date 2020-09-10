@@ -64,6 +64,17 @@
                                 <li class="personal-menu-list-item"><a href="{{ route('personal-info') }}" class="menu-link {{ request()->routeIs('personal-info') ? 'active' : '' }}">Личные данные</a></li>
                                 <li><a href="#" class="reg-link">Тест</a></li>
                                 <li><a href="{{ route('personal-test') }}" class="more-info menu-link">Тест2</a></li>
+                                <li class="nav-item">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Выход
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
                             </ul>
 
                         </nav>

@@ -21,7 +21,8 @@ class DetailsController extends Controller
             'has_details' => $user->details()->count(),
             'user' => $user,
         ];
-        return view('admin.user.details.index', $data);
+       return view('admin.user.details.index', $data);
+       // return view('user.info', $data);
     }
 
     /**

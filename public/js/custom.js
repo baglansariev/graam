@@ -349,11 +349,27 @@ $(function () {
     });
   }
 
-  $('.popup-close').click(function () {
+  $('.login-close').click(function () {
     $('.modal-popup').fadeOut();
     $('.modal-popup-alert').fadeOut();
   });
   $('.phone-input').inputmask("+7(999)999-99-99");
+    
+    
+    $(document).ready(function() {
+            $(".login-close").click(function(event){
+                event.preventDefault();
+                linkLocation = document.referrer;
+                $('.modal-popup').fadeOut(redirectPage);
+                $('.modal-popup-alert').fadeOut(redirectPage);
+                //$(".personal-content").animate({top: 13 + '%'}, 200).animate({top: 100 + '%'}, 200, redirectPage);
+            });
+            function redirectPage() {
+                window.location = linkLocation; }
+        });
+    
+    
+    
 });
 
 /***/ }),

@@ -6,22 +6,49 @@
              <div class="row">
                  <div class="col-sm-12">
                      <div class="popup-content d-flex justify-content-center">
-                         <div class="content d-flex flex-column align-items-start">
-                             <div class="order-infos">
+                         <span class="content d-flex flex-column align-items-start">
+                             <span class="order-infos">
                                  <ul class="order-infos-list">
-                                     @foreach($docs as $doc)
+                                     @foreach($document_categories as $category)
+                                         @if($user->documents()->whereCategoryId($category->id)->count())
+                                            <li class="order-infos-list-item done">
+                                         @else <li class="order-infos-list-item ">
+                                         @endif
+                                             <span class="list-item-heading">{{ $category['name'] }}</span>
+
+                                             @if($user->documents()->whereCategoryId($category->id)->count())
+                                                 @foreach($user->documents()->whereCategoryId($category->id)->get() as $document)
+                                                     <span>
+                                                         <a href="{{ url($document->path) }}" target="_blank" class="mr-1">{{ $document->name }}</a>
+                                                         <a href="{{ route('documents.destroy', $document->id) }}" class="ml-1">X</a>
+                                                     </span>
+                                                 @endforeach
+                                             @else
+                                                 <span>
+
+                                                     <form id="upload_file" action="{{ route('documents.store') }}" method="post" enctype="multipart/form-data">
+                                                            @csrf
+                                                         <label for="inputAddress"><span class="upload-file">Загрузить файл</span> doc, pdf</label>
+                                                                <input type="text" name="doc_category" value="{{ $category->id }}" hidden>
+                                                                <input onchange="document.getElementById('upload_file').submit()"
+                                                                    type="file" name="documents[]" class="form-control file_input" id="inputAddress" multiple required>
+
+{{--                                                            <div class="form-group d-flex justify-content-between mt-5">--}}
+{{--                                                                <button type="submit" class="btn btn-success">Сохранить</button>--}}
+{{--                                                                <a href="{{ route('documents.index') }}" class="btn btn-danger right">Отмена</a>--}}
+{{--                                                            </div>--}}
+                                                        </form>
+                                                </span>
+                                             @endif
+
+                                             @endforeach
+                                         </li>
 
 
-                                     <li class="order-infos-list-item">
-                                         <span class="list-item-heading">Учетная карточка контрагента ЮЛ/ИП</span>
-                                         <span><a href="{{ $doc['path'] }}">{{ $doc['name'] }}</a></span>
-                                     </li>
-
-                                     @endforeach
 
 
 
-                                     <li class="order-infos-list-item done">
+                               <!--      <li class="order-infos-list-item done">
                                          <span class="list-item-heading">Анкета ЮЛ/ИП</span>
                                      </li>
                                      <li class="order-infos-list-item disabled">
@@ -63,7 +90,7 @@
                                      <li class="order-infos-list-item disabled">
                                          <span class="list-item-heading">Скан-копия Устава ЮЛ ЮЛ</span>
                                          <span><a href="">Загрузить файл</a> doc, pdf</span>
-                                     </li>
+                                     </li> -->
                                  </ul>
                              </div>
                          </div>
