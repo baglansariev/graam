@@ -129,7 +129,7 @@ class UserController extends Controller
             }
 
             $user->save();
-            $response = $this->getResponseFromClientTest2('PUT', '/contractor/update/' . $user->crm_id, [
+            $response = $this->getResponseFromClient2('PUT', '/contractor/update/' . $user->crm_id, [
                 'form_params' => [
                     'contractor' => $data,
                     'api_token' => $this->api_token,

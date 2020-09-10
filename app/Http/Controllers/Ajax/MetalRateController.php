@@ -12,6 +12,6 @@ class MetalRateController extends Controller
 
     public function getGoldRate()
     {
-        echo $this->getResponseFromClientTest('GET', '/get-gold-rate');
+        echo $this->getResponseFromClient('GET', '/get-gold-rate');
     }
 }

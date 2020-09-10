@@ -46,7 +46,7 @@ class User extends Authenticatable
 
     public function detailsFromCrm()
     {
-        $data = $this->getResponseFromClientTest('GET', '/contractor/show/' . $this->crm_id);
+        $data = $this->getResponseFromClient('GET', '/contractor/show/' . $this->crm_id);
 
         return json_decode($data);
     }

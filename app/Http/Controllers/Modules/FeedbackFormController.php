@@ -21,7 +21,7 @@ class FeedbackFormController extends Controller
         $request_data = $request->all();
         $request_data['api_token'] = $this->api_token;
 
-        echo $this->getResponseFromClientTest('GET', $action, [
+        echo $this->getResponseFromClient('GET', $action, [
             'query' => $request_data,
         ]);
     }
@@ -37,7 +37,7 @@ class FeedbackFormController extends Controller
         $request_data = $request->all();
         $request_data['api_token'] = $this->api_token;
 
-        echo $this->getResponseFromClientTest('GET', $action, [
+        echo $this->getResponseFromClient('GET', $action, [
             'query' => $request_data,
         ]);
     }
