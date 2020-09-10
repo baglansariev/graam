@@ -2288,9 +2288,11 @@ input[type=number] {
     position: absolute;
     background-color: #FFF;
     width: 100%;
+    border-radius: 50px 50px 0 0;
     height: calc(100vh - 30%);
     left: 0;
     top: 0;
+    bottom:0;
     display: none;
     z-index: 5;
 

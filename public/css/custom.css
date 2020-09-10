@@ -2056,10 +2056,12 @@ input[type=number] {
 .modal-popup.order-detail {
     position: absolute;
     background-color: #FFF;
+    border-radius: 50px 50px 0 0;
     width: 100%;
     height: calc(100vh - 30%);
     left: 0;
     top: 0;
+    bottom:0;
     display: none;
     z-index: 5;
 }
