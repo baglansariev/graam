@@ -3,33 +3,33 @@
 
          <h2 class="orders-heading">Личные данные</h2>
 
-         <form action="https://graam.ru/admin/user/details/update" method="post" class="col-md-12 info">
+         <form action="{{ route('user.update', $user->id) }}" method="post" class="col-md-12 info">
              @csrf
              <input type="hidden" name="_method" value="PATCH">
              <div class="form-row">
                  <div class="form-group col-md-6">
                      <label for="company_name">Компания</label>
-                     <input type="text" class="form-control" id="company_name" name="company_name" value="{{ isset($details['company_name']) ? $details['company_name'] : 'Название компании'}}">
+                     <input type="text" class="form-control" id="company_name" name="company_name" value="{{ $user->detailsFromCrm()->company_name ?? 'Название компании'}}">
                  </div>
                  <div class="form-group col-md-6">
                      <label for="inputEmail4">Электронная почта</label>
-                     <input type="email" name="email" class="form-control" id="email" value="{{ isset($user['email']) ? $user['email'] : 'Ваш email' }}">
+                     <input type="email" name="email" class="form-control" id="email" value="{{ $user->detailsFromCrm()->email ?? 'Ваш email' }}">
                  </div>
              </div>
              <div class="form-row">
                  <div class="form-group col-md-6">
                      <label for="name">Имя и фамилия</label>
-                     <input name="name" type="text" class="form-control" id="name" value="{{ isset($details['name']) ? $details['name'] : 'Ваше имя' }}">
+                     <input name="name" type="text" class="form-control" id="name" value="{{ $user->detailsFromCrm()->name ?? 'Ваше имя' }}">
                  </div>
                  <div class="form-group col-md-6">
                      <label for="inputPassword4">Пароль</label>
-                     <input type="password" class="form-control" id="inputPassword4" value="*********">
+                     <input type="password" class="form-control" id="inputPassword4" placeholder="*********">
                  </div>
              </div>
              <div class="form-row">
                  <div class="form-group col-md-6">
                      <label for="phone">Телефон</label>
-                     <input type="phone" class="form-control" id="phone" value="+7 999 999 99 99">
+                     <input type="phone" class="form-control" id="phone" value="{{ $user->detailsFromCrm()->phone ?? '+7 999 999 99 99' }}">
                  </div>
                  <div class="form-group col-md-6">
                      <label class="soc-label">Связанные аккаунты</label>
@@ -44,7 +44,7 @@
              <div class="form-row">
                  <div class="form-group col-md-6">
                      <label for="bday">Дата рождения</label>
-                     <input type="date" class="form-control" id="bday" name="birth_date">
+                     <input type="date" class="form-control" id="bday" name="birth_date" value="{{ date('Y-m-d', strtotime($user->detailsFromCrm()->birth_date ?? strftime('now'))) }}">
                  </div>
                  <div class="form-group col-md-6">
 
@@ -53,7 +53,7 @@
              <div class="form-row">
                  <div class="form-group col-md-6">
                      <label for="inputCity">Город</label>
-                     <input type="text" class="form-control" id="inputCity" value="Москва" name="city">
+                     <input type="text" class="form-control" id="inputCity" value="{{ $user->detailsFromCrm()->city ?? 'Москва' }}" name="city">
                  </div>
                  <div class="form-group col-md-6">
 
