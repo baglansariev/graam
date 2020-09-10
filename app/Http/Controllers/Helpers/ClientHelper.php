@@ -11,8 +11,6 @@
 
         public function clientInit(String $base_uri) : object
         {
-            $this->setClientData();
-
             return new Client([
                 'base_uri' => $base_uri,
                 'timeout' => 7,
@@ -32,6 +30,7 @@
 
         public function getResponseFromTestClient($method, $action, $params = [])
         {
+            $this->setClientData();
             $client = $this->clientInit($this->test_crm_client_api_url);
             $action = $this->addApiTokenToUrl($action);
             $response = $client->request($method, $this->crm_client_api_url . $action, $params);
@@ -40,6 +39,7 @@
 
         public function getResponseFromClientTest($method, $action, $params = [])
         {
+            $this->setClientData();
             $client = $this->clientInit($this->crm_client_api_url);
             $action = $this->addApiTokenToUrl($action);
             $response = $client->request($method, $this->crm_client_api_url . $action, $params);
@@ -48,6 +48,7 @@
 
         public function getResponseFromClientTest2($method, $action, $params = [])
         {
+            $this->setClientData();
             $client = $this->clientInit($this->crm_client_api_url);
 //            $action = $this->addApiTokenToUrl($action);
             $response = $client->request($method, $this->crm_client_api_url . $action, $params);
