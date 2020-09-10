@@ -34,7 +34,7 @@ function copyValueTo(fromElem, toElemId) {
                                 @csrf
                                 <div class="price-input-container d-flex align-items-start flex-column">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="company" value="" placeholder="Название компании">
+                                        <input type="text" class="form-control" id="company" value="" placeholder="Название компании" name="company_name">
                                     </div>
                                     <div class="form-group">
                                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Электронная почта">
