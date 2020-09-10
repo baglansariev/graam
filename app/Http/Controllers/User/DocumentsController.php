@@ -205,9 +205,8 @@ class DocumentsController extends Controller
     {
         $document = UserDocument::find($id);
 
-        $response = $this->getResponseFromClientTest2('POST', '/contractor/del-doc', [
+        $response = $this->getResponseFromClientTest2('POST', '/contractor/del-doc/' . $document->crm_id, [
             'form_params' => [
-                'id' => $document->crm_id,
                 'api_token' => $this->api_token,
             ],
         ]);
