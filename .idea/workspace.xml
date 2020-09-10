@@ -71,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Helpers/ClientHelper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="47" column="75" selection-start-line="47" selection-start-column="75" selection-end-line="47" selection-end-column="75" />
+            <state relative-caret-position="364">
+              <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="51" selection-end-column="15" />
               <folding>
                 <element signature="e#54#76#0#PHP" expanded="true" />
               </folding>
@@ -482,12 +482,12 @@
       <workItem from="1597308649096" duration="801000" />
       <workItem from="1597648883068" duration="974000" />
       <workItem from="1599543978840" duration="268000" />
-      <workItem from="1599544412815" duration="49732000" />
+      <workItem from="1599544412815" duration="50066000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="460388000" />
+    <option name="totallyTimeSpent" value="460722000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -509,14 +509,14 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Migrations" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.24276169" />
+      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.24276169" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
       <window_info anchor="bottom" id="File Transfer" order="14" weight="0.32962137" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
-      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.11513859" />
+      <window_info active="true" anchor="right" id="Remote Host" order="4" visible="true" weight="0.11513859" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -885,8 +885,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Helpers/ClientHelper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="47" column="75" selection-start-line="47" selection-start-column="75" selection-end-line="47" selection-end-column="75" />
+        <state relative-caret-position="364">
+          <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="51" selection-end-column="15" />
           <folding>
             <element signature="e#54#76#0#PHP" expanded="true" />
           </folding>

@@ -40,15 +40,18 @@
         {
             $client = $this->clientInit($this->crm_client_api_url2);
 //            $action = $this->addApiTokenToUrl($action);
-            try {
-                $client->request($method, $this->crm_client_api_url2 . $action, $params);
-            }
-            catch (ServerException $exception) {
-                echo '<pre>';
-                print_r($exception->getResponse()->getBody()->getContents());
-                exit;
-            }
-//            return $response->getBody()->getContents();
+            $response = $client->request($method, $this->crm_client_api_url2 . $action, $params);
+
+//            try {
+//                $client->request($method, $this->crm_client_api_url2 . $action, $params);
+//            }
+//            catch (ServerException $exception) {
+//                echo '<pre>';
+//                print_r($exception->getResponse()->getBody()->getContents());
+//                exit;
+//            }
+
+            return $response->getBody()->getContents();
         }
 
         public function addApiTokenToUrl($action)
