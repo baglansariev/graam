@@ -29,7 +29,7 @@
              <div class="form-row">
                  <div class="form-group col-md-6">
                      <label for="phone">Телефон</label>
-                     <input type="phone" class="form-control" id="phone" value="{{ $user->detailsFromCrm()->phone ?? '+7 999 999 99 99' }}">
+                     <input type="text" name="phone" class="form-control" id="phone" value="{{ $user->detailsFromCrm()->phone ?? '+7 999 999 99 99' }}">
                  </div>
                  <div class="form-group col-md-6">
                      <label class="soc-label">Связанные аккаунты</label>
