@@ -1,7 +1,7 @@
 <?php
     namespace App\Http\Controllers\Helpers;
     use GuzzleHttp\Client;
-    use GuzzleHttp\Exception\ClientException;
+    use GuzzleHttp\Exception\ServerException;
 
     trait ClientHelper
     {
@@ -41,14 +41,14 @@
             $client = $this->clientInit($this->crm_client_api_url2);
 //            $action = $this->addApiTokenToUrl($action);
             try {
-                $response = $client->request($method, $this->crm_client_api_url2 . $action, $params);
+                $client->request($method, $this->crm_client_api_url2 . $action, $params);
             }
-            catch (ClientException $exception) {
+            catch (ServerException $exception) {
                 echo '<pre>';
                 print_r($exception->getResponse()->getBody(true));
                 exit;
             }
-            return $response->getBody()->getContents();
+//            return $response->getBody()->getContents();
         }
 
         public function addApiTokenToUrl($action)
