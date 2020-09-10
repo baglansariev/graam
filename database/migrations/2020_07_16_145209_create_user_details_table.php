@@ -20,6 +20,8 @@ class CreateUserDetailsTable extends Migration
             $table->bigInteger('inn')->nullable();
             $table->string('company_name')->nullable();
             $table->string('company_address')->nullable();
+            $table->string('city')->nullable();
+            $table->timestamp('birth_date')->nullable();
             $table->timestamps();
         });
     }
