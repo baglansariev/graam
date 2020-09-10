@@ -5,7 +5,7 @@
 
          <form action="{{ route('user.update', $user->id) }}" method="post" class="col-md-12 info">
              @csrf
-             <input type="hidden" name="_method" value="PATCH">
+             <input type="hidden" name="_method" value="PUT">
              <div class="form-row">
                  <div class="form-group col-md-6">
                      <label for="company_name">Компания</label>
