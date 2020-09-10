@@ -4,11 +4,13 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Helpers\ClientHelper;
+use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserDocument;
 use App\Models\DocumentCategory;
 use League\CommonMark\Block\Element\Document;
+use GuzzleHttp\Exception\ServerException;
 
 class DocumentsController extends Controller
 {
@@ -75,18 +77,25 @@ class DocumentsController extends Controller
 
             $file_full_path = $request->root() . '/' . $doc_path . '/' . $fileOriginalName;
 
-            $response = $this->getResponseFromClientTest2('POST', '/contractor/upload-doc', [
-                'form_params' => [
-                    'document' => [
-                        'user_id' => Auth::user()->crm_id,
-                        'name' => $fileOriginalName,
-                        'full_path' => $file_full_path,
-                        'extension' => $file->getClientOriginalExtension(),
-                        'doc_name' => 'doc' . $document->category->id,
+            try {
+                $response = $this->getResponseFromClientTest2('POST', '/contractor/upload-doc', [
+                    'form_params' => [
+                        'document' => [
+                            'user_id' => Auth::user()->crm_id,
+                            'name' => $fileOriginalName,
+                            'full_path' => $file_full_path,
+                            'extension' => $file->getClientOriginalExtension(),
+                            'doc_name' => 'doc' . $document->category->id,
+                        ],
+                        'api_token' => $this->api_token,
                     ],
-                    'api_token' => $this->api_token,
-                ],
-            ]);
+                ]);
+            }
+            catch (ClientException $exception) {
+                echo '<pre>';
+                print_r($exception->getResponse()->getBody(true));
+                exit;
+            }
 
             $response = json_decode($response, true);
 
