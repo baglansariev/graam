@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserDocument;
 use App\Models\DocumentCategory;
-use League\CommonMark\Block\Element\Document;
 
 class DocumentsController extends Controller
 {
@@ -204,7 +203,7 @@ class DocumentsController extends Controller
      */
     public function destroy($id)
     {
-        $document = Document::find($id);
+        $document = UserDocument::find($id);
 
         $response = $this->getResponseFromClientTest2('POST', '/contractor/del-doc', [
             'form_params' => [
