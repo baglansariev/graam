@@ -75,6 +75,7 @@ class RegisterController extends Controller
         ]);
 
         // Передача данных в CRM
+        $this->setClientData();
         $response = $this->getResponseFromClient2('POST', '/contractor/create', [
             'form_params' => [
                 'contractor' => [

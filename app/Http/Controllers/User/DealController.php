@@ -19,6 +19,7 @@ class DealController extends Controller
     {
 
         $action = '/deal/client/' . Auth::user()->id;
+        $this->setClientData();
         $deals =  json_decode($this->getResponseFromClient('GET', $action), true);
 
 

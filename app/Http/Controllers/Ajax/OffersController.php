@@ -13,6 +13,7 @@ class OffersController extends Controller
     public function getOffers($name, $type, $weight)
     {
         $action = '/offers/get-list/' . $name . '/' . $type . '/' . $weight;
+        $this->setClientData();
         $offers = json_decode($this->getResponseFromClient('GET', $action), true);
 
         $offers[0]['image'] = 'images/graam_logo.png';

@@ -20,7 +20,7 @@ class FeedbackFormController extends Controller
         $action = '/feedback/sell-app';
         $request_data = $request->all();
         $request_data['api_token'] = $this->api_token;
-
+        $this->setClientData();
         echo $this->getResponseFromClient('GET', $action, [
             'query' => $request_data,
         ]);
@@ -36,7 +36,7 @@ class FeedbackFormController extends Controller
         $action = '/feedback/sell-app';
         $request_data = $request->all();
         $request_data['api_token'] = $this->api_token;
-
+        $this->setClientData();
         echo $this->getResponseFromClient('GET', $action, [
             'query' => $request_data,
         ]);

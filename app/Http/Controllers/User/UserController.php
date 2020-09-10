@@ -129,6 +129,7 @@ class UserController extends Controller
             }
 
             $user->save();
+            $this->setClientData();
             $response = $this->getResponseFromClient2('PUT', '/contractor/update/' . $user->crm_id, [
                 'form_params' => [
                     'contractor' => $data,

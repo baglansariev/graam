@@ -30,7 +30,6 @@
 
         public function getResponseFromTestClient($method, $action, $params = [])
         {
-            $this->setClientData();
             $client = $this->clientInit($this->test_crm_client_api_url);
             $action = $this->addApiTokenToUrl($action);
             $response = $client->request($method, $this->test_crm_client_api_url . $action, $params);
@@ -39,7 +38,6 @@
 
         public function getResponseFromClient($method, $action, $params = [])
         {
-            $this->setClientData();
             $client = $this->clientInit($this->crm_client_api_url);
             $action = $this->addApiTokenToUrl($action);
             $response = $client->request($method, $this->crm_client_api_url . $action, $params);
@@ -48,7 +46,6 @@
 
         public function getResponseFromClient2($method, $action, $params = [])
         {
-            $this->setClientData();
             $client = $this->clientInit($this->crm_client_api_url);
 //            $action = $this->addApiTokenToUrl($action);
             $response = $client->request($method, $this->crm_client_api_url . $action, $params);

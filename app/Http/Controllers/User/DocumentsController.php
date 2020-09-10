@@ -73,7 +73,7 @@ class DocumentsController extends Controller
             $file->move($doc_path, $fileOriginalName);
 
             $file_full_path = $request->root() . '/' . $doc_path . '/' . $fileOriginalName;
-
+            $this->setClientData();
             $response = $this->getResponseFromClient2('POST', '/contractor/upload-doc', [
                 'form_params' => [
                     'document' => [
@@ -169,7 +169,7 @@ class DocumentsController extends Controller
 
 
         $file_full_path = $request->root() . '/' . $doc_path . '/' . $fileOriginalName;
-
+        $this->setClientData();
         $response = $this->getResponseFromClient2('POST', '/contractor/upload-doc', [
             'form_params' => [
                 'document' => [
@@ -204,7 +204,7 @@ class DocumentsController extends Controller
     public function destroy($id)
     {
         $document = UserDocument::find($id);
-
+        $this->setClientData();
         $response = $this->getResponseFromClient2('POST', '/contractor/del-doc/' . $document->crm_id, [
             'form_params' => [
                 'api_token' => $this->api_token,
