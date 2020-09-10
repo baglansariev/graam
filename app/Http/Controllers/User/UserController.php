@@ -121,6 +121,14 @@ class UserController extends Controller
             if ($request->post('phone')) {
                 $data['phone'] = $request->post('phone');
             }
+            if ($request->post('birth_date')) {
+                $data['birth_date'] = $request->post('birth_date');
+                $user->birth_date = $request->post('birth_date');
+            }
+            if ($request->post('city')) {
+                $data['city'] = $request->post('city');
+                $user->city = $request->post('city');
+            }
 
             $user->save();
             $response = $this->getResponseFromClientTest2('PUT', '/contractor/update/' . $user->crm_id, [
