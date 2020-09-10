@@ -44,7 +44,7 @@
              <div class="form-row">
                  <div class="form-group col-md-6">
                      <label for="bday">Дата рождения</label>
-                     <input type="date" class="form-control" id="bday">
+                     <input type="date" class="form-control" id="bday" name="birth_date">
                  </div>
                  <div class="form-group col-md-6">
 
@@ -53,7 +53,7 @@
              <div class="form-row">
                  <div class="form-group col-md-6">
                      <label for="inputCity">Город</label>
-                     <input type="text" class="form-control" id="inputCity" value="Москва">
+                     <input type="text" class="form-control" id="inputCity" value="Москва" name="city">
                  </div>
                  <div class="form-group col-md-6">
 
