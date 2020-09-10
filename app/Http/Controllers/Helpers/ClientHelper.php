@@ -8,7 +8,7 @@
         public $crm_client_api_url = 'http://5.101.119.123:8081/api/v1';
         public $crm_client_api_url2 = 'http://5.101.119.123:8090/api';
 //        public $crm_client_api_url2 = 'http://193.200.74.101/api';
-        public $api_token = 'D9FiiopeTgQRMP9bIrX16cm8JQsmCzTY145jiuHOMYkWaClxUTCJJHt4opCvytzlhtNgCu0LxCNCL7kB';
+        public $api_token = 'XyVkptmOZES1xfHgGv6kXTtoppXyTCdjxEbrELsFfRzYc78WUKXoDtPA6eekt7yWdqpPBLpNhhsu9mXi';
 //        public $api_token = 'jM4E53HiO03uSLb19YDwqA1RRUtpfXwN6jP1STm1EZTRITXdpRbHnRBOFuxE4ICOgLEcywicOvMyopDm';
 
         public function clientInit(String $base_uri) : object
