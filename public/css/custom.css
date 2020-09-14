@@ -148,6 +148,19 @@ header {
     font-weight: bolder;
     margin-top: 150px;
 }
+.main-sell-trigger {
+    cursor: pointer;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #CCC;
+}
+.main-sell-trigger:hover, .main-sell-trigger:hover + .fa-sort-down {
+    color: #EDB947;
+    border-bottom-color: #EDB947;
+}
+.choice-block .choice-content .wanna-sell span:first-of-type .fa-sort-down {
+    font-size: 40px;
+    margin-left: 5px;
+}
 
 .block-text {
     color: #FFF;

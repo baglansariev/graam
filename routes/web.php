@@ -28,13 +28,12 @@ Route::get('/personal/test', 'User\UserController@test')->name('personal-test');
 Route::middleware('auth')->group(function() {
     Route::prefix('admin')->group(function () {
        Route::get('/home', 'Admin\HomeController@index')->name('home');
-//        Route::get('/home', 'User\UserController@index')->name('home');
+        Route::get('/transactions', 'Admin\HomeController@getAllTransactions');
 
 
         Route::prefix('user')->group(function () {
 
             Route::get('/', 'User\UserController@index');
-//            Route::get('/transactions', 'User\UserController@allTransactions');
 
             Route::resource('documents', 'User\DocumentsController')->name('*', 'documents');
             Route::resource('details', 'User\DetailsController');
