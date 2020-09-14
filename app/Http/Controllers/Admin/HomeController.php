@@ -27,16 +27,34 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
         $manager = new ManagerController();
         $user = Auth::user();
 
         $data = [
-            'manager' => $manager->getManager($user->manager_id)['manager']
+            'manager' => $manager->getManager($user->manager_id)['manager'],
+            'transactions' => $this->getAllTransactions($request),
         ];
 
         //return view('admin.home', $data);
         return view('user.orders', $data);
+    }
+
+    public function getAllTransactions(Request $request)
+    {
+        $page = 1;
+        $type = '1, 3';
+
+        if ($request->has('page')) $page = $request->get('page');
+        if ($request->has('type')) $type = $request->get('type');
+
+        $action = '?page=' . $page;
+        $action .= '&type=' . $type;
+
+        $this->setClientData();
+        $response = $this->getResponseFromClient('GET', '/transaction' . $action);
+
+        return json_decode($response, true);
     }
 }

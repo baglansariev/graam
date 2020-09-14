@@ -14,7 +14,7 @@
     <div class="choice-block">
         <div class="choice-content d-flex justify-content-center align-items-center flex-column">
             <div class="wanna-sell">
-                <span>Хочу продать</span>
+                <span>Хочу <span>продать</span></span>
                 <input type="number" class="sell-weight text-right" placeholder="10">
                 <span>г</span>
             </div>
