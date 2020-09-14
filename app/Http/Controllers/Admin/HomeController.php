@@ -55,6 +55,11 @@ class HomeController extends Controller
         $this->setClientData();
         $response = $this->getResponseFromClient('GET', '/transaction' . $action);
 
+        if ($request->get('pagination')) {
+            echo $response;
+            exit;
+        }
+
         return json_decode($response, true);
     }
 }

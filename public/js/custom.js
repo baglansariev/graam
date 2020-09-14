@@ -135,12 +135,16 @@ $(function () {
     $('.personal-content').animate({top: 10 + '%'}, 400).animate({top: 13 + '%'}, 200);
   }, 300);
 
+  let modalOptionsWrapper = $('.modal-options-wrapper');
+
   function modalOptionsHide() {
-    $('.modal-options-wrapper').fadeOut();
+    modalOptionsWrapper.fadeOut();
   }
 
-  function modalOptionsShow() {
-    $('.modal-options-wrapper').fadeIn();
+  function modalOptionsShow(keyClass) {
+    if (modalOptionsWrapper.hasClass(keyClass)) {
+      modalOptionsWrapper.fadeIn();
+    }
   }
 
   function getClientPreferences() {
@@ -177,7 +181,7 @@ $(function () {
   }
 
   $('.chosen, .left-chosen').click(function () {
-    modalOptionsShow();
+    modalOptionsShow('material');
   });
   $('.modal-options-close').click(function () {
     modalOptionsHide();

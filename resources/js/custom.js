@@ -39,13 +39,16 @@ $(function () {
         })
     }, 1500);
 
+    let modalOptionsWrapper = $('.modal-options-wrapper');
 
     function modalOptionsHide() {
-        $('.modal-options-wrapper').fadeOut();
+        modalOptionsWrapper.fadeOut();
     }
 
-    function modalOptionsShow() {
-        $('.modal-options-wrapper').fadeIn();
+    function modalOptionsShow(keyClass) {
+        if (modalOptionsWrapper.hasClass(keyClass)) {
+            modalOptionsWrapper.fadeIn();
+        }
     }
 
     function getClientPreferences() {
@@ -85,7 +88,7 @@ $(function () {
     }
 
     $('.chosen, .left-chosen').click(function () {
-        modalOptionsShow();
+        modalOptionsShow('material');
     });
     $('.modal-options-close').click(function () {
         modalOptionsHide();
