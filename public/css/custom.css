@@ -1739,6 +1739,7 @@ input[type=number] {
     margin: 50px auto;
     padding: 0 4rem;
     text-align: center;
+    display: flex;
 }
 
 .personal .orders-table {
@@ -2643,4 +2644,92 @@ span.upload-file {
     text-decoration: none;
     background-color: transparent;
     cursor: pointer;
+}
+
+button.ml-1 {
+    border: none;
+    background: none;
+    color: #3490dc;
+    line-height: 0.5em;
+    font-weight: 500;
+    font-size: 0.8em;
+}
+
+.order-infos span form {
+    display: inline;
+}
+
+.select .modal-options-wrapper {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #FFF;
+    z-index: 9;
+}
+.select .modal-options-wrapper .options-block {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.select .modal-options-wrapper .options-block .modal-options-close {
+    position: absolute;
+    right: 40px;
+    top: 60px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.select .modal-options-wrapper .options-block .options-content {
+    margin: 0 auto;
+    position: absolute;
+    top: 20%;
+    width: 80%;
+    height: 100%;
+    padding-top: 235px;
+}
+
+.select .modal-options-wrapper .options-block .modal-options-close span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 50px;
+    height: 5px;
+    background-color: #000;
+}
+.select .modal-options-wrapper .options-block .modal-options-close span:first-of-type {
+    transform: rotateZ(45deg);
+}
+.select .modal-options-wrapper .options-block .modal-options-close span:last-of-type {
+    transform: rotateZ(-45deg);
+}
+
+.load {
+    width:100px;
+    height:60px;
+    background-image: url("images/loading2.gif");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    text-align: center;
+    position: fixed;
+    top: 60%;
+    left:15%;
+    display: none;
+}
+
+.pager {
+    width:30px;
+    height:30px;
+    text-align: center;
+    position: fixed;
+    top: 75%;
+    left:80%;
+    display: none;
+    border: 1px solid red;
 }

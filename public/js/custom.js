@@ -220,6 +220,28 @@ $(function () {
     getCardsByAjax();
     modalOptionsHide();
   });
+    
+    $('.opts .opt').not('.selected').click(function () {
+    
+    var optionText = $(this).find('span').not('.color').text();
+    var optionType = $(this).data('type');
+    var optionName = $(this).data('name');
+    var chosen = $('.chosen span');
+    var chosenName = chosen.data('name');
+    var chosenType = chosen.data('type');
+    var chosenText = chosen.text();    
+    chosen.data('name', optionName).data('type', optionType);
+    $(this).data('name', chosenName);
+    $(this).data('type', chosenType);
+    $(this).find('span').not('.color').text(chosenText);
+    chosen.text(optionText);
+    $('.selected span').text(optionText);
+    getCardsByAjax();
+    modalOptionsHide();
+  });
+    
+    
+    
   $('#sell').click(function () {
     $('.choice-block').animate({
       top: 100 + '%'
@@ -354,7 +376,9 @@ $(function () {
     $('.modal-popup-alert').fadeOut();
   });
   $('.phone-input').inputmask("+7(999)999-99-99");
-    
+   $('.form-control').on('change', function(){
+   $('button[type="submit"]').removeClass('disabled');
+}); 
     
     $(document).ready(function() {
             $(".login-close").click(function(event){

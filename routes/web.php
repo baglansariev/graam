@@ -17,10 +17,10 @@ Auth::routes();
 
 
 Route::get('/api-test', 'Helpers\CurrencyController@apiTest');
-Route::get('/personal', 'User\UserController@index')->name('personal');
+Route::get('/personal', 'User\DealController@index')->name('personal');
 Route::get('/personal/discount', 'User\UserController@discount')->name('personal-discount');
 Route::get('/personal/archive', 'User\UserController@archive')->name('personal-archive');
-Route::get('/personal/docs', 'User\UserController@docs')->name('personal-docs');
+Route::get('/personal/docs', 'User\DocumentsController@index')->name('personal-docs');
 Route::get('/personal/info', 'User\UserController@info')->name('personal-info');
 
 Route::get('/personal/test', 'User\UserController@test')->name('personal-test');
@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function() {
 
 
         Route::prefix('user')->group(function () {
-            Route::resource('documents', 'User\DocumentsController');
+            Route::resource('documents', 'User\DocumentsController')->name('*', 'documents');
             Route::resource('details', 'User\DetailsController');
             Route::resource('deals', 'User\DealController');
             Route::put('update/{id}', 'User\UserController@update')->name('user.update');

@@ -23,7 +23,9 @@ class DealController extends Controller
         $deals =  json_decode($this->getResponseFromClient('GET', $action), true);
 
 
-        return view('admin.user.deals.index', ['deals' => $deals]);
+        //return view('admin.user.deals.index', ['deals' => $deals]);
+        
+        return view('user.orders', ['deals' => $deals]);
     }
 
     /**
