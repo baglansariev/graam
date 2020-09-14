@@ -32,6 +32,8 @@ Route::middleware('auth')->group(function() {
 
 
         Route::prefix('user')->group(function () {
+            Route::get('/', 'User\UserController@index');
+            Route::get('/transactions', 'User\UserController@allTransactions');
             Route::resource('documents', 'User\DocumentsController');
             Route::resource('details', 'User\DetailsController');
             Route::resource('deals', 'User\DealController');

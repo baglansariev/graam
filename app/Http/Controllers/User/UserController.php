@@ -20,7 +20,33 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('user/orders');
+        $user = Auth::user();
+
+        $this->setClientData();
+        $response = $this->getResponseFromClient('GET', '/contractor/get-transactions/' . $user->id);
+        $transactions = json_decode($response, true);
+
+
+        return view('user/orders', compact('transactions'));
+    }
+
+    public function allTransactions(Request $request)
+    {
+        $user = Auth::user();
+        $page = 1;
+        $type = '1, 3';
+
+        if ($request->has('page')) $page = $request->get('page');
+        if ($request->has('type')) $type = $request->get('type');
+
+        $action = '?page=' . $page;
+        $action .= '&type=' . $type;
+
+        $this->setClientData();
+        $response = $this->getResponseFromClient('GET', '/transaction' . $action);
+        $transactions = json_decode($response, true);
+
+        return view('user/orders', compact('transactions'));
     }
 
 
