@@ -20,12 +20,12 @@ class DealController extends Controller
 
         $action = '/deal/client/' . Auth::user()->id;
         $this->setClientData();
-        $deals =  json_decode($this->getResponseFromClient('GET', $action), true);
+        $transactions =  json_decode($this->getResponseFromClient('GET', $action), true);
 
 
         //return view('admin.user.deals.index', ['deals' => $deals]);
         
-        return view('user.orders', ['deals' => $deals]);
+        return view('user.orders', ['deals' => $transactions]);
     }
 
     /**

@@ -44,10 +44,10 @@ class HomeController extends Controller
     public function getAllTransactions(Request $request)
     {
         $page = 1;
-        $type = '1, 3';
+        $type = '1,3';
 
-        if ($request->has('page')) $page = $request->get('page');
-        if ($request->has('type')) $type = $request->get('type');
+        if ($request->get('page')) $page = $request->get('page');
+        if ($request->get('type')) $type = $request->get('type');
 
         $action = '?page=' . $page;
         $action .= '&type=' . $type;

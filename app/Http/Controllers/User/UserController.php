@@ -30,6 +30,7 @@ class UserController extends Controller
         return view('user/orders', compact('transactions'));
     }
 
+
     public function discount()
     {
         return view('user/discount');
