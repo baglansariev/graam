@@ -18,6 +18,7 @@
     <script src="{{ asset('js/jquery.inputmask.min.js') }}"></script>
     <script src="{{ asset('js/inputmask.min.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
+    <script src="{{ asset('js/jquery.jscroll.min.js') }}"></script>
     <script>
         $(document).ready(function() {
             $("a.menu-link").click(function(event){

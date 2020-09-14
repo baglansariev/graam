@@ -36,6 +36,7 @@ class HomeController extends Controller
             'manager' => $manager->getManager($user->manager_id)['manager']
         ];
 
-        return view('admin.home', $data);
+        //return view('admin.home', $data);
+        return view('user.orders', $data);
     }
 }

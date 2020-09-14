@@ -1,7 +1,12 @@
 @extends('layouts.personal')
 @section('content')
+         
 
          <h2 class="orders-heading">Личные данные</h2>
+         
+         @if(session('success_msg'))          
+            <div class="alert">{{ session('success_msg') }}</div>            
+        @endif
 
          <form action="{{ route('user.update', $user->id) }}" method="post" class="col-md-12 info">
              @csrf
