@@ -1,16 +1,14 @@
-
 @extends('layouts.blank')
 
 @section('content')
-  
-  <script>
 
-function copyValueTo(fromElem, toElemId) {
-  var elem = document.getElementById(toElemId);
-  elem.value = fromElem.value;
-}
+<script>
+    function copyValueTo(fromElem, toElemId) {
+        var elem = document.getElementById(toElemId);
+        elem.value = fromElem.value;
+    }   
 </script>
-   <div class="modal-popup reg-form">
+<div class="modal-popup reg-form">
     <div class="popup-wrapper">
         <div class="login-close">
             <span></span>
@@ -24,7 +22,7 @@ function copyValueTo(fromElem, toElemId) {
                             <div class="title">
                                 <h3>Регистрация</h3>
                             </div>
-<!--
+                            <!--
                             <div class="alert modal-popup-alert" role="alert">
                                 <span class="message d-none"></span>
                                 <h3>Спасибо!</h3>
@@ -33,7 +31,20 @@ function copyValueTo(fromElem, toElemId) {
                             <form method="POST" action="{{ route('register') }}" class="popup-form d-flex flex-column">
                                 @csrf
                                 <div class="price-input-container d-flex align-items-start flex-column">
-                                    <div class="form-group">
+                                    <div class="form-check radio">
+                                        <input class="form-check-input iscompany" type="radio" name="exampleRadios" id="iscompany" value="option1" checked onclick="Show(1);">
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            Компании
+                                        </label>
+                                    </div>
+                                    <div class="form-check radio">
+                                        <input class="form-check-input ishuman" type="radio" name="exampleRadios" id="ishuman" value="option2" onclick="Show(0);">
+                                        <label class="form-check-label" for="exampleRadios2">
+                                            Физического лица
+                                        </label>
+                                    </div>
+
+                                    <div class="form-group company-name" id="company-name">
                                         <input type="text" class="form-control" id="company" value="" placeholder="Название компании" name="company_name">
                                     </div>
                                     <div class="form-group">
@@ -53,7 +64,7 @@ function copyValueTo(fromElem, toElemId) {
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                             @enderror
-                                            
+
                                             <input hidden id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                         </div>
                                     </div>
@@ -75,4 +86,12 @@ function copyValueTo(fromElem, toElemId) {
 
     </div>
 </div>
+<script>
+    
+function Show(a) {
+        obj=document.getElementById("company-name");
+        if (a) obj.style.display="block";
+        else obj.style.display="none";
+}
+</script>
 @endsection

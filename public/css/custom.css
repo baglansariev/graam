@@ -2914,3 +2914,25 @@ button.ml-1 {
     box-shadow: none !important;
     border-radius: 0 !important;
 }
+
+.form-check .ishuman:checked ~ .form-control.company-name {
+    display: none;
+}
+
+.form-check {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.reg-form .form-check.radio {
+    margin: 0 0 20px 0;
+}
+
+.form-check-input {
+    min-height: 13px !important;
+    width: 13px !important;
+}
+
+.form-check-label {
+    display: block;
+}

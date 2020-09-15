@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/feedback-form.css') }}">
     <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="{{ asset('font-awesome/js/all.min.js') }}"></script>
     <script src="{{ asset('js/jquery.inputmask.min.js') }}"></script>
     <script src="{{ asset('js/inputmask.min.js') }}"></script>
@@ -35,52 +36,7 @@
                 window.location = linkLocation;
             }
         });
-
-    </script>
-    <script>
-        $(document).ready(function() {
-            var page;
-            var param = location.
-            search.
-            slice(location.search.indexOf('?') + 1).
-            split('&');
-
-            var result = [];
-            for (var i = 0; i < param.length; i++) {
-                var res = param[i].split('=');
-                result[res[0]] = res[1];
-            }
-
-            if (result['page']) {
-                page = result['page'];
-            } else {
-                page = 1;
-            }
-            var block = false;
-            $(window).scroll(function() {
-
-                if ($(window).height() + $(window).scrollTop() >= $(document).height() && !block) {
-                    block = true;
-                    $(".load").fadeIn(500, function() {
-                        page++;
-                        $.ajax({
-                            url: "/admin/transactions",
-                            type: "GET",
-                            data: "?pagination=true&page=" + page,
-                            success: function(html) {
-                                if (html) {
-                                    $(html).appendTo($("#deals")).hide().fadeIn(1000);
-                                }
-                                $(".load").fadeOut(500);
-                                block = false;
-                            }
-                        });
-                    });
-                }
-            });
-        });
-
-    </script>
+    </script>    
 </head>
 
 <body>
