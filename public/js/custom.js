@@ -363,39 +363,47 @@ $(function () {
   }
 
   function getCardsByAjax() {
-    var params = getClientPreferences();
+    let params = getClientPreferences();
+    let sell_type = 'sell';
+    if (params.titleWord == 'купить') sell_type = 'buy';
+
     $.ajax({
-      url: '/ajax/offers/product/' + params.name + '/' + params.type + '/' + params.weight,
+      url: '/ajax/offers/product/' + params.name + '/' + params.type + '/' + params.weight + '/' + sell_type,
       type: 'GET',
       dataType: 'html',
-      success: function success(result) {
+      success: function (result) {
         $('.sell-cards').html(result);
-        var delay = 0.3;
-        var card = $('.card');
+
+        let delay   = 0.3;
+        let card    = $('.card');
+
         card.each(function () {
           $(this).css({
-            'animation-delay': delay + 's',
-            '-webkit-animation-delay': delay + 's',
-            '-moz-animation-delay': delay + 's'
+            'animation-delay'           : delay + 's',
+            '-webkit-animation-delay'   : delay + 's',
+            '-moz-animation-delay'      : delay + 's',
           });
           $(this).removeClass('fadeInUp');
+
           delay += 0.3;
         });
+
         setTimeout(function () {
           card.each(function () {
             $(this).addClass('fadeInUp');
           });
         }, 600);
+
         $('.sell-app').click(function () {
           setModalPopupParams();
           $('.modal-popup.modal-sell').fadeIn();
         });
         $('.popup-close').click(function () {
           $('.modal-popup').fadeOut();
-          $('.modal-popup-alert').fadeOut();
+          $('.modal-popup-alert').fadeOut()
         });
       },
-      error: function error(result) {
+      error: function (result) {
         console.log(result);
       }
     });

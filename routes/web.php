@@ -44,7 +44,7 @@ Route::middleware('auth')->group(function() {
 });
 
 Route::prefix('ajax')->group(function () {
-    Route::get('offers/product/{name}/{type}/{weight}', 'Ajax\OffersController@getOffers');
+    Route::get('offers/product/{name}/{type}/{weight}/{sell_type}', 'Ajax\OffersController@getOffers');
     Route::get('get-gold-rate', 'Ajax\MetalRateController@getGoldRate');
 });
 Route::prefix('form/send')->group(function () {

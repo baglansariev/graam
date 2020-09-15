@@ -257,9 +257,11 @@ $(function () {
 
     function getCardsByAjax() {
         let params = getClientPreferences();
+        let sell_type = 'sell';
+        if (params.titleWord == 'купить') sell_type = 'buy';
 
         $.ajax({
-            url: '/ajax/offers/product/' + params.name + '/' + params.type + '/' + params.weight,
+            url: '/ajax/offers/product/' + params.name + '/' + params.type + '/' + params.weight + '/' + sell_type,
             type: 'GET',
             dataType: 'html',
             success: function (result) {

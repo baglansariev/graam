@@ -151,6 +151,9 @@ header {
 .main-logo:hover {
     text-decoration: none;
 }
+.main-sell-trigger {
+    cursor: pointer;
+}
 
 .header-actions {
     a {
@@ -184,7 +187,10 @@ header {
         margin-top: 150px;
     }
 }
-
+.wanna-sell .main-sell-trigger + .fa-sort-down {
+    font-size: 40px;
+    margin-left: 5px;
+}
 .block-text {
     color: $white;
     position: relative;
@@ -231,6 +237,9 @@ header {
                 outline: none;
                 border-color: $black;
             }
+            .fa-sort-down {
+                font-size: 40px;
+            }
         }
 
         .select {
@@ -266,6 +275,11 @@ header {
                     .option {
                         padding-left: 140px;
                     }
+                }
+            }
+            .modal-options-wrapper.sell {
+                .selected span {
+                    margin-right: 0;
                 }
             }
             .modal-options-wrapper {
@@ -1390,6 +1404,9 @@ input[type=number] {
                 }
             }
         }
+    }
+    .wanna-sell .chosen .fa-sort-down {
+        font-size: 35px;
     }
 
     .header-logo {

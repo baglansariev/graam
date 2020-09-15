@@ -117,6 +117,9 @@ header {
 .main-logo:hover {
     text-decoration: none;
 }
+.main-sell-trigger {
+    cursor: pointer;
+}
 
 .header-actions a {
     color: #FFF;
@@ -213,6 +216,11 @@ header {
 .choice-block .choice-content .select .chosen .fa-sort-down {
     font-size: 40px;
     margin: 16px 0 0 5px;
+}
+
+.wanna-sell .main-sell-trigger + .fa-sort-down {
+    font-size: 40px;
+    margin-left: 5px;
 }
 
 .choice-block .choice-content .select .chosen:hover {
@@ -315,6 +323,9 @@ header {
 .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected span {
     border-bottom: none;
     margin-right: 12px;
+}
+.choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .modal-options .options .selected span {
+    margin-right: 0;
 }
 
 .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
@@ -1214,6 +1225,10 @@ input[type=number] {
         font-size: 35px;
     }
 
+    .wanna-sell .main-sell-trigger + .fa-sort-down {
+        font-size: 35px;
+    }
+
     .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
         padding-top: 230px;
     }
@@ -1283,6 +1298,10 @@ input[type=number] {
         margin-top: 10px;
     }
 
+    .wanna-sell .main-sell-trigger + .fa-sort-down {
+        font-size: 30px;
+    }
+
     .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
         padding-top: 215px;
     }
@@ -1337,6 +1356,10 @@ input[type=number] {
     }
 
     .choice-block .choice-content .select .chosen .fa-sort-down {
+        font-size: 25px;
+    }
+
+    .wanna-sell .main-sell-trigger + .fa-sort-down {
         font-size: 25px;
     }
 
@@ -1410,6 +1433,10 @@ input[type=number] {
     }
 
     .choice-block .choice-content .select .chosen .fa-sort-down {
+        font-size: 18px;
+    }
+
+    .wanna-sell .main-sell-trigger + .fa-sort-down {
         font-size: 18px;
     }
 

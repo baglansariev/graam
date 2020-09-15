@@ -7,12 +7,18 @@
                     <p>{{ $offer['company_name'] }}</p>
                 </div>
                 <div class="card-offer">
-                    <div class="price">
-                        {{ number_format($offer['price'], 0, '', ' ') }} ₽
-                    </div>
-                    <div class="time">
-                        {{ $offer['duration'] }}
-                    </div>
+                    @if (!empty($offer['message']))
+                        <div class="time">
+                            {{ $offer['message'] }}
+                        </div>
+                    @else
+                        <div class="price">
+                            {{ number_format($offer['price'], 0, '', ' ') }} ₽
+                        </div>
+                        <div class="time">
+                            {{ $offer['duration'] }}
+                        </div>
+                    @endif
                 </div>
                 <div class="card-actions d-flex flex-column justify-content-center">
                     <div class="phone">

@@ -10,9 +10,9 @@ class OffersController extends Controller
 {
     use ClientHelper;
 
-    public function getOffers($name, $type, $weight)
+    public function getOffers($name, $type, $weight, $sell_type)
     {
-        $action = '/offers/get-list/' . $name . '/' . $type . '/' . $weight;
+        $action = '/offers/get-list/' . $name . '/' . $type . '/' . $weight . '/' . $sell_type;
         $this->setClientData();
         $offers = json_decode($this->getResponseFromClient('GET', $action), true);
 
@@ -30,6 +30,6 @@ class OffersController extends Controller
         $offers[4]['phone'] = '+7 800 250 56 62';
         $offers[5]['phone'] = '+7 800 500 19 62';
         
-        return view('pages.elements.offer-cards', ['offers' => $offers]);
+        return view('pages.elements.offer-cards', ['offers' => $offers, 'sell_type' => $sell_type]);
     }
 }
