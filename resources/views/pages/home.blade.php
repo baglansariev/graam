@@ -14,9 +14,9 @@
     <div class="choice-block">
         <div class="choice-content d-flex justify-content-center align-items-center flex-column">
             <div class="wanna-sell">
-                <span>Хочу <span class="main-sell-trigger">продать</span><i class="fas fa-sort-down"></i></span>
+{{--                <span>Хочу <span class="main-sell-trigger">продать</span><i class="fas fa-sort-down"></i></span>--}}
                 <span>Хочу продать</span>
-{{--                <input type="number" class="sell-weight text-right" placeholder="10">--}}
+                <input type="number" class="sell-weight text-right" placeholder="10">
                 <span>г</span>
             </div>
             <div class="select">
