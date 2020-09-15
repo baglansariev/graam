@@ -33,7 +33,7 @@ class HomeController extends Controller
         $user = Auth::user();
 
         $data = [
-            'manager' => $manager->getManager($user->manager_id)['manager'],
+            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
             'transactions' => $this->getAllTransactions($request),
         ];
 

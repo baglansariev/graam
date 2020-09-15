@@ -8,7 +8,9 @@
                 </div>
                 <div class="card-offer">
                     <div class="price">
-                        {{ number_format($offer['price'], 0, '', ' ') }} ₽
+                        @if ($loop->iteration !== 6)
+                            {{ number_format($offer['price'], 0, '', ' ') }} ₽
+                        @endif
                     </div>
 {{--                    <div class="time">--}}
 {{--                        {{ $offer['duration'] }}--}}
@@ -29,6 +31,8 @@
                             <li>Деньги предоплатой</li>
                             <li>Подготовка и оформление документаций</li>
                             <li>Дисконт не зависит от веса металла</li>
+                        @elseif (in_array($loop->iteration, [2, 3, 6]))
+                            <li>Условия уточняйте у менеджеров по телефону</li>
                         @else
                             <li>Транспорт за счет продавца</li>
                             <li>Самостоятельная подготовка документации</li>
