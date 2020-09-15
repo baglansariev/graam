@@ -22,10 +22,10 @@
             $this->crm_client_api_url = 'http://193.200.74.101/api';
             $this->api_token = 'jM4E53HiO03uSLb19YDwqA1RRUtpfXwN6jP1STm1EZTRITXdpRbHnRBOFuxE4ICOgLEcywicOvMyopDm';
 
-            if (request()->ip() == '127.0.0.1' || (session()->has('system_version') && session()->get('system_version') == 'dev')) {
+//            if (request()->ip() == '127.0.0.1' || (session()->has('system_version') && session()->get('system_version') == 'dev')) {
                 $this->crm_client_api_url = 'http://5.101.119.123:8090/api';
                 $this->api_token = 'XyVkptmOZES1xfHgGv6kXTtoppXyTCdjxEbrELsFfRzYc78WUKXoDtPA6eekt7yWdqpPBLpNhhsu9mXi';
-            }
+//            }
         }
 
         public function getResponseFromTestClient($method, $action, $params = [])
