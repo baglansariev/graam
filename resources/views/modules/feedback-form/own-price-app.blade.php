@@ -11,7 +11,7 @@
                     <div class="popup-content d-flex justify-content-center">
                         <div class="content d-flex flex-column align-items-start">
                             <div class="title">
-                                <h3>Заявка на продажу</h3>
+                                <h3>Заявка на <span class="keyword">продажу</span></h3>
                             </div>
                             <div class="subtitle">
                                 50 г золота 585 пробы через ПЮДМ

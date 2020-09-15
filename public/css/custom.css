@@ -280,6 +280,12 @@ header {
     height: 100%;
     padding-top: 235px;
 }
+.choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content {
+    padding-top: 125px;
+}
+.choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .option {
+    padding-left: 140px;
+}
 
 .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .option {
     cursor: pointer;
@@ -1174,6 +1180,9 @@ input[type=number] {
     .choice-block .choice-content .select {
         min-width: 550px;
     }
+    .choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .option {
+        padding-left: 120px;
+    }
 }
 
 @media screen and (max-width: 820px) {
@@ -1215,6 +1224,9 @@ input[type=number] {
 
     .header-logo .main-logo {
         left: 15vw;
+    }
+    .choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .option {
+        padding-left: 100px;
     }
 }
 
@@ -1278,6 +1290,9 @@ input[type=number] {
     .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
         font-size: 30px;
         margin-top: 10px;
+    }
+    .choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .option {
+        padding-left: 65px;
     }
 }
 
@@ -1498,6 +1513,9 @@ input[type=number] {
 @media screen and (max-height: 725px) {
     .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
         top: 15%;
+    }
+    .choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content {
+        top: 20%;
     }
 }
 

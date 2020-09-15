@@ -143,7 +143,7 @@ $(function () {
 
   function modalOptionsShow(keyClass) {
     if (modalOptionsWrapper.hasClass(keyClass)) {
-      modalOptionsWrapper.fadeIn();
+      $('.' + keyClass).fadeIn();
     }
   }
 
@@ -153,28 +153,37 @@ $(function () {
     var type = chosen.data('type');
     var weight = $('.sell-weight').val();
     var price = parseInt($('.card .price').text().split(' ').join(''));
+    let titleWord = 'продажу';
+
+    if ($('.sell-trigger').text() == 'купить') titleWord = 'покупку';
+
+
     if (!weight) weight = 10;
     return {
       chosen: chosen,
       name: name,
       type: type,
       weight: weight,
-      price: price
+      price: price,
+      titleWord: titleWord
     };
   }
 
   function setModalPopupParams() {
-    var params = getClientPreferences();
-    var metal = 'золота';
-    if (params.name == 'silver') metal = 'серебра';
-    var message = params.weight + ' г ' + metal + ' ' + params.type + ' пробы через ПЮДМ';
+    let params = getClientPreferences();
+    let metal   = 'золота';
+
+    if (params.name == 'silver')  metal = 'серебра';
+
+    let message = params.weight + ' г ' + metal + ' ' + params.type + ' пробы через ПЮДМ';
     $('.modal-popup .subtitle').text(message);
+    $('.modal-popup .title .keyword').text(params.titleWord);
     $('.hidden-message').val(message);
     $('.hidden-type').val(params.type);
     $('.hidden-metal').val(params.name);
     $('.hidden-weight').val(params.weight);
-    var hiddenPrice = $('.hidden-price');
 
+    let hiddenPrice = $('.hidden-price');
     if (hiddenPrice) {
       hiddenPrice.val(params.price);
     }
@@ -182,6 +191,9 @@ $(function () {
 
   $('.chosen, .left-chosen').click(function () {
     modalOptionsShow('material');
+  });
+  $('.main-sell-trigger').click(function () {
+    modalOptionsShow('sell');
   });
   $('.modal-options-close').click(function () {
     modalOptionsHide();
@@ -204,7 +216,7 @@ $(function () {
     e.preventDefault();
     $('.home-content').animate({top: 0 + '%'}, 400);
   });   
-  $('.options .option').not('.selected').click(function () {
+  $('.material .options .option').not('.selected').click(function () {
     var main = $('main');
     var optionText = $(this).find('span').not('.color').text();
     var optionType = $(this).data('type');
@@ -222,6 +234,20 @@ $(function () {
     chosen.text(optionText);
     $('.selected span').text(optionText);
     getCardsByAjax();
+    modalOptionsHide();
+  });
+
+  $('.sell .options .option').not('.selected').click(function () {
+    let optionText = $(this).find('span').text();
+    let selectedOption = $('.sell .options .option.selected span');
+    let selectedOptionText = selectedOption.text();
+
+    $('.main-sell-trigger').text(optionText);
+    selectedOption.text(optionText);
+    $('#sell').text(optionText);
+    $('.sell-trigger').text(optionText);
+    $(this).find('span').text(selectedOptionText);
+
     modalOptionsHide();
   });
     
