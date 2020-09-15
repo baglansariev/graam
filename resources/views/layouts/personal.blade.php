@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $title ?? 'GRAAM' }}</title>
     <link rel="shortcut icon" href="{{ asset('images/template/favicon.ico') }}" type="image/x-icon">
@@ -21,33 +21,84 @@
     <script src="{{ asset('js/jquery.jscroll.min.js') }}"></script>
     <script>
         $(document).ready(function() {
-            $("a.menu-link").click(function(event){
+            $("a.menu-link").click(function(event) {
                 event.preventDefault();
                 linkLocation = this.href;
-                $(".personal-content").animate({top: 13 + '%'}, 200).animate({top: 100 + '%'}, 200, redirectPage);
+                $(".personal-content").animate({
+                    top: 13 + '%'
+                }, 200).animate({
+                    top: 100 + '%'
+                }, 200, redirectPage);
             });
+
             function redirectPage() {
-                window.location = linkLocation; }
+                window.location = linkLocation;
+            }
+        });
+
+    </script>
+    <script>
+        $(document).ready(function() {
+            var page;
+            var param = location.
+            search.
+            slice(location.search.indexOf('?') + 1).
+            split('&');
+
+            var result = [];
+            for (var i = 0; i < param.length; i++) {
+                var res = param[i].split('=');
+                result[res[0]] = res[1];
+            }
+
+            if (result['page']) {
+                page = result['page'];
+            } else {
+                page = 1;
+            }
+            var block = false;
+            $(window).scroll(function() {
+
+                if ($(window).height() + $(window).scrollTop() >= $(document).height() && !block) {
+                    block = true;
+                    $(".load").fadeIn(500, function() {
+                        page++;
+                        $.ajax({
+                            url: "/admin/transactions",
+                            type: "GET",
+                            data: "?pagination=true&page=" + page,
+                            success: function(html) {
+                                if (html) {
+                                    $(html).appendTo($("#deals")).hide().fadeIn(1000);
+                                }
+                                $(".load").fadeOut(500);
+                                block = false;
+                            }
+                        });
+                    });
+                }
+            });
         });
 
     </script>
 </head>
+
 <body>
-<main id="main" class="white personal">
-    <header>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="header-logo">
-                        <a href="/" class="main-logo-personal d-flex justify-content-center align-items-center flex-column">
-                            <p class="logo-title"><span>G</span>RAAM</p>
-                            <p class="logo-subtitle">Продать быстро и дорого</p>
-                        </a>
+    <main id="main" class="white personal">
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="header-logo">
+                            <a href="/" class="main-logo-personal d-flex justify-content-center align-items-center flex-column">
+                                <p class="logo-title"><span>G</span>RAAM</p>
+                                <p class="logo-subtitle">Продать быстро и дорого</p>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
         <div class="container-fluid wrapper">
             <div class="row">
                 <div class="col-sm-12 personal-wrapper ">
@@ -66,8 +117,7 @@
                                 <li><a href="#" class="reg-link">Тест</a></li>
                                 <li><a href="{{ route('personal-test') }}" class="more-info menu-link">Тест2</a></li>
                                 <li class="nav-item">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         Выход
                                     </a>
@@ -91,7 +141,7 @@
                                 <form action="/">
 
                                     <input type="text" id="username" name="username" value="{username}">
-                                    <textarea name="message" id="message" ></textarea>
+                                    <textarea name="message" id="message"></textarea>
                                     <button type="submit" class="btn primary-btn"></button>
                                 </form>
                             </div>
@@ -107,17 +157,17 @@
                 </div>
             </div>
         </div>
-</main>
-{{--@component('modules.auth.register')--}}
-{{--    @endcomponent--}}
-{{--@component('modules.auth.login')--}}
-{{--@endcomponent--}}
-{{--@component('modules.home.content')--}}
-{{--@endcomponent--}}
+    </main>
+    {{--@component('modules.auth.register')--}}
+    {{-- @endcomponent--}}
+    {{--@component('modules.auth.login')--}}
+    {{--@endcomponent--}}
+    {{--@component('modules.home.content')--}}
+    {{--@endcomponent--}}
 
 
-<script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/feedback-form.js') }}"></script>
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/feedback-form.js') }}"></script>
 </body>
-</html>
 
+</html>
