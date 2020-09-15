@@ -148,19 +148,6 @@ header {
     font-weight: bolder;
     margin-top: 150px;
 }
-.main-sell-trigger {
-    cursor: pointer;
-    padding-bottom: 4px;
-    border-bottom: 1px solid #CCC;
-}
-.main-sell-trigger:hover, .main-sell-trigger:hover + .fa-sort-down {
-    color: #EDB947;
-    border-bottom-color: #EDB947;
-}
-.choice-block .choice-content .wanna-sell span:first-of-type .fa-sort-down {
-    font-size: 40px;
-    margin-left: 5px;
-}
 
 .block-text {
     color: #FFF;
@@ -1755,50 +1742,154 @@ input[type=number] {
     display: flex;
 }
 
-.personal .orders-table {
+.personal #deals {
     width: 100%;
     font-size: 1.1em;
     color: #000;
 }
 
-.personal .orders-table .first-col {
+.personal .list-view .first-col {
     padding-left: 1.5em;
 }
 
-.personal .orders-table thead {
+.personal .list-view .list-heading {
     background: #F5F5F5;
 }
 
-.personal .orders-table thead th {
+.personal .list-view .list-heading .list-heading-item {
     font-weight: 600;
 }
 
-.personal .orders-table thead th,
-.personal .orders-table td {
+.personal .list-view .list-heading .list-heading-item,
+.personal .list-view .item {
     border: none;
 }
 
-.personal .orders-table tr {
+.personal .list-view .item .caption,
+.personal .list-view .list-heading {
+    display: flex;
+    padding: 15px 0;
+}
+
+.personal .list-view .item .caption .weight-price .sum-price,
+.personal .list-view .item .caption .grid-deal-date,
+.personal .list-view .item .caption span .grid-text-title {
+    display: none;
+}
+
+.personal .list-view .list-heading .list-heading-item,
+.personal .list-view .item .caption span {
+    width: 14.28%;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.personal #deals .item {
     cursor: pointer;
 }
 
-.personal .orders-table tr:hover {
+.personal .list-view .item:hover {
     background: #ffbf3320;
 }
 
-.personal .orders-table thead tr:hover {
+.personal .list-view .list-heading:hover {
     background: #F5F5F5;
 }
 
-.personal .orders-table td a {
+.personal .list-view span a {
     font-weight: 500;
     color: #10B6EB;
     border-bottom: 1px solid #10B6EB;
 }
 
-.personal .orders-table td a:hover {
+.personal .list-view span a:hover {
     border-bottom: 1px solid transparent;
     text-decoration: none;
+}
+
+.personal .grid-view {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.personal .grid-view .list-heading,
+.personal .grid-view .list-deal-date {
+    display: none;
+}
+
+.personal .grid-view .item {
+    width: 33.33%;
+    max-width: 300px;
+    padding: 20px;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+}
+
+.personal .grid-view .item .caption {
+    display: flex;
+    flex-direction: column;
+    padding: 22px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 34px rgba(152, 152, 152, 0.2);
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+.personal .grid-view .item .caption span {    
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.personal .grid-view .item .caption .deal-num {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: #00000050;
+}
+
+.personal .grid-view .item .caption .grid-deal-date,
+.personal .grid-view .item .caption span .grid-text-title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #00000050;
+}
+
+.personal .grid-view .item .caption .grid-deal-date {
+    margin-top: 10px;
+}
+
+.personal .grid-view .item .caption .deal-material,
+.personal .grid-view .item .caption .weight-price .weight,
+.personal .grid-view .item .caption .weight-price .sum-price
+{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+
+.personal .grid-view .item .caption .weight-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.personal .grid-view .item .caption .factory {
+    margin-top: 10px;
+}
+
+.personal .grid-view .item .caption .list-price {
+    display: none;
+}
+
+.personal .grid-view .item .caption .deal-status {
+    margin-top: 30px;
 }
 
 .personal .discount-info-wrapper {
@@ -2075,7 +2166,7 @@ input[type=number] {
     height: calc(100vh - 30%);
     left: 0;
     top: 0;
-    bottom:0;
+    bottom: 0;
     display: none;
     z-index: 5;
 }
@@ -2682,6 +2773,7 @@ button.ml-1 {
     background-color: #FFF;
     z-index: 9;
 }
+
 .select .modal-options-wrapper .options-block {
     width: 100%;
     height: 100%;
@@ -2716,33 +2808,35 @@ button.ml-1 {
     height: 5px;
     background-color: #000;
 }
+
 .select .modal-options-wrapper .options-block .modal-options-close span:first-of-type {
     transform: rotateZ(45deg);
 }
+
 .select .modal-options-wrapper .options-block .modal-options-close span:last-of-type {
     transform: rotateZ(-45deg);
 }
 
 .load {
-    width:100px;
-    height:60px;
-    background-image: url("images/loading2.gif");
+    width: 100px;
+    height: 60px;
+    background-image: url("/images/loading.gif");
     background-position: center bottom;
     background-repeat: no-repeat;
     text-align: center;
     position: fixed;
     top: 60%;
-    left:15%;
+    left: 15%;
     display: none;
 }
 
 .pager {
-    width:30px;
-    height:30px;
+    width: 30px;
+    height: 30px;
     text-align: center;
     position: fixed;
     top: 75%;
-    left:80%;
+    left: 80%;
     display: none;
     border: 1px solid red;
 }
@@ -2760,8 +2854,14 @@ button.ml-1 {
 
 
 
-.d-block {display: block;}
-.d-none {display: none;}
+.d-block {
+    display: block;
+}
+
+.d-none {
+    display: none;
+}
+
 .no-shadow {
     box-shadow: none !important;
     border-radius: 0 !important;

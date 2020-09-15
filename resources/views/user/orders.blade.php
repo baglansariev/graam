@@ -2,12 +2,10 @@
 @section('content') 
           <script>
         $(document).ready(function() {
-        $('#list').click(function(event){event.preventDefault();$('.table').removeClass('d-none').addClass('d-block');$('.grid').removeClass('d-flex').addClass('d-none');$('.personal-content').removeClass('no-shadow');});
-        $('#grid').click(function(event){event.preventDefault();$('.grid').removeClass('d-none').addClass('d-flex');$('.table').removeClass('d-block').addClass('d-none');$('.personal-content').addClass('no-shadow');});
+        $('#list').click(function(event){event.preventDefault();$('#deals').removeClass('grid-view').addClass('list-view');$('.personal-content').removeClass('no-shadow');});
+        $('#grid').click(function(event){event.preventDefault();$('#deals').removeClass('list-view').addClass('grid-view');$('.personal-content').addClass('no-shadow');});
          });
     </script>
-    </script>   
-
          <h2 class="orders-heading">Сделки по
          <div class="select">
                 <div class="chosen d-flex">
@@ -48,58 +46,30 @@
                 class="glyphicon glyphicon-th">Grid</span></a>
         </div>
 
-<div id="deals">
-        <table class="table orders-table">
-            <thead>
-                <tr>
-                    <th class="first-col" scope="col">Номер</th>
-                    <th scope="col">Дата создания</th>
-                    <th scope="col">Металл, проба</th>
-                    <th scope="col">Вес, г</th>
-                    <th scope="col">Через</th>
-                    <th scope="col">Сумма, ₽</th>
-                    <th scope="col">Статус</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if(count($transactions))
-                    @foreach ($transactions as $transaction)
-
-                        <tr class="order-link">
-                            <td class="first-col" scope="row">{{ $transaction['id'] }}</td>
-                            <td>{{ $transaction['created_at'] }}</td>
-                            <td>{{ $transaction['material'] . ' ' . $transaction['content'] }}</td>
-                            <td>{{ $transaction['weight'] }}</td>
-                            <td><img src="/images/pictogram.png" alt=""> ПЮДМ</td>
-                            <td>{{ $transaction['sum'] }}</td>
-                            <td>{{ $transaction['status'] }}</td>
-                        </tr>
-
-                    @endforeach
-                @else
-                    <tr class="order-link">
-                        <td colspan="7" class="text-center">У вас пока нет заявок</td>
-                    </tr>
-                @endif
-
-            </tbody>
-        </table>
-        
-        
-    <div class="grid d-none">
+<div id="deals" class="list-view">      
+    
+       <div class="list-heading">
+                    <span class="first-col list-heading-item">Номер</span>
+                    <span class="list-heading-item">Дата создания</span>
+                    <span class="list-heading-item">Металл, проба</span>
+                    <span class="list-heading-item">Вес, г</span>
+                    <span class="list-heading-item">Через</span>
+                    <span class="list-heading-item">Сумма, ₽</span>
+                    <span class="list-heading-item">Статус</span>
+        </div>
         @if(count($transactions))
                     @foreach ($transactions as $transaction)
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
+        <div class="item">            
                 <div class="caption">
-                    <span class="first-col" scope="row">#{{ $transaction['id'] }}</span>
-                    <span>{{ $transaction['created_at'] }}</span>
-                    <span>{{ $transaction['material'] . ' ' . $transaction['content'] }}</span>
-                    <span>{{ $transaction['weight'] }}  {{ $transaction['sum'] }}</span>
-                    <span><img src="/images/pictogram.png" alt=""> ПЮДМ</span>                    
-                    <span>{{ $transaction['status'] }}</span>
-                </div>
-            </div>
+                    <span class="first-col deal-num">#{{ $transaction['id'] }}</span>
+                    <span class="list-deal-date">{{ $transaction['created_at'] }}</span>
+                    <span class="deal-material">{{ $transaction['material'] . ' ' . $transaction['content'] }} пр</span> 
+                    <span class="weight-price"><span class="weight">{{ $transaction['weight'] }} г</span>  <span class="sum-price">{{ $transaction['sum'] }} ₽</span></span>
+                    <span class="grid-deal-date"><span class="grid-text-title">Дата создания</span> {{ $transaction['created_at'] }}</span>
+                    <span class="factory"><span class="grid-text-title">Через </span><img src="/images/pictogram.png" alt=""> ПЮДМ</span> 
+                    <span class="list-price">{{ $transaction['sum'] }}</span>                   
+                    <span class="deal-status">{{ $transaction['status'] }}</span>
+                </div>          
         </div>
             @endforeach
                 @else
@@ -107,11 +77,7 @@
                         <span class="text-center">У вас пока нет заявок</span>
                     </span>
                 @endif
-    </div>
-
-
-
-        <div class="load"></div>
+       
 
          @component('modules.orders.detail')
          @endcomponent
