@@ -14,7 +14,8 @@
     <div class="choice-block">
         <div class="choice-content d-flex justify-content-center align-items-center flex-column">
             <div class="wanna-sell">
-                <span>Хочу <span class="main-sell-trigger">продать</span><i class="fas fa-sort-down"></i></span>
+{{--                <span>Хочу <span class="main-sell-trigger">продать</span><i class="fas fa-sort-down"></i></span>--}}
+                <span>Хочу продать</span>
                 <input type="number" class="sell-weight text-right" placeholder="10">
                 <span>г</span>
             </div>
@@ -37,7 +38,7 @@
         <div class="sell-parameters d-flex flex-column justify-content-between">
             <div class="parameter-block d-flex align-items-start flex-column">
                 <div class="wanna-sell">
-                    <span>Хочу продать</span>
+                    <span class="d-flex">Хочу <span class="sell-trigger ml-1">продать</span></span>
                     <input type="number" class="sell-weight param-weight" placeholder="10">
                     <span>г</span>
                 </div>
