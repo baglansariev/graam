@@ -1476,6 +1476,9 @@ input[type=number] {
     .choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .option {
         padding-left: 65px;
     }
+    .choice-block .choice-content .wanna-sell input[type=number] {
+        width: 100px;
+    }
 }
 
 @media screen and (max-width: 560px) {
