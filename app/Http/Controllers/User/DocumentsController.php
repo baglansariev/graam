@@ -109,7 +109,7 @@ class DocumentsController extends Controller
      */
     public function show($id)
     {
-        $document = UserDocument::findOrFail($id);
+        $document = Auth::user()->docFromCrm($id);
 
         $temp_file = file_get_contents($document->path);
         $file_path = 'documents/temp/' . $document->name;
@@ -203,19 +203,14 @@ class DocumentsController extends Controller
      */
     public function destroy($id)
     {
-        $document = UserDocument::find($id);
         $this->setClientData();
-        $response = $this->getResponseFromClient2('POST', '/contractor/del-doc/' . $document->crm_id, [
+        $response = $this->getResponseFromClient2('POST', '/contractor/del-doc/' . $id, [
             'form_params' => [
                 'api_token' => $this->api_token,
             ],
         ]);
 
         $response = json_decode($response, true);
-
-        if ($response['status']) {
-            $document->delete();
-        }
 
         return redirect(route('documents.index'));
     }

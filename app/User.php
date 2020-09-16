@@ -56,4 +56,20 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\UserDocument', 'user_id');
     }
+
+    public function docsFromCrm($category_id)
+    {
+        $this->setClientData();
+        $data = $this->getResponseFromClient('GET', '/contractor/get-docs/' . $this->crm_id . '?doc_name=doc' . $category_id);
+
+        return json_decode($data);
+    }
+
+    public function docFromCrm($doc_id)
+    {
+        $this->setClientData();
+        $data = $this->getResponseFromClient('GET', '/contractor/get-doc/' . $doc_id);
+
+        return json_decode($data);
+    }
 }
