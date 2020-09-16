@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 class DealController extends Controller
 {
     use ClientHelper;
+
+    public function construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
