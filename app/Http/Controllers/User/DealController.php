@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 class DealController extends Controller
 {
     use ClientHelper;
+
+    public function construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -18,14 +23,14 @@ class DealController extends Controller
     public function index()
     {
 
-        $action = '/deal/client/' . Auth::user()->id;
+        $action = '/contractor/get-transactions/' . Auth::user()->crm_id;
         $this->setClientData();
         $transactions =  json_decode($this->getResponseFromClient('GET', $action), true);
 
 
         //return view('admin.user.deals.index', ['deals' => $deals]);
         
-        return view('user.orders', ['deals' => $transactions]);
+        return view('user.orders', ['transactions' => $transactions]);
     }
 
     /**
