@@ -48,12 +48,24 @@
         </div>
     </div>
 </h2>
+<div class="row filters">
+    <span class="shown">Показано 50 сделок</span>
 
-<div class="btn-group">
-    <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
-            List</span></a> <a href="#" id="grid" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th">Grid</span></a>
+    <div class="btn-group">
+        <div class="sortby d-flex">Сортировать
+            <div class="select">
+                <div class="chosen d-flex">
+                    <div class="chosen-container">
+                        <span data-name="" data-type=""> &nbsp;по весу</span>
+                    </div>
+                    <i class="fas fa-sort-down"></i>
+                </div>
+            </div>
+        </div>
+        <a href="#" id="list" class="btn btn-default btn-sm"><img src="/images/list-icon.png" alt=""></a>
+        <a href="#" id="grid" class="btn btn-default btn-sm"><img src="/images/grid-icon.png" alt=""></a>
+    </div>
 </div>
-
 <div id="deals" class="list-view">
 
     <div class="list-heading">
@@ -86,54 +98,45 @@
     </span>
     @endif
 
-<script>
-    $(document).ready(function() {
-        var inProgress = false; // статус процесса загрузки
-        var page = 1; // страница
-//        $(window).click(function () {
-//            console.log($('.personal-content-wrapper').height())
-//        });
-//        $('.personal-content-wrapper').scroll(function(e) {
-//            console.log(e);
-//        });
-        $('.personal-content-wrapper').scroll(function() {
-           // console.log('yes');
+    <script>
+        $(document).ready(function() {
+            var inProgress = false; // статус процесса загрузки
+            var page = 1; // страница
+            //        
+            $('.personal-content-wrapper').scroll(function() {
 
-            if ($('.personal-content-wrapper').scrollTop() >= ($('.personal-content-wrapper').height() - 100) && !inProgress) {
-                //(($().scrollTop() + 1) == ($(document).height() - $().height()) && !inProgress) {
-                //($(window).scrollTop() + $(window).height() >= $(document).height() - 200 && !inProgress) {
-                console.log("Условие выполнено")
-                
-                $.ajax({
-                    url: '/admin/transactions', // путь к ajax-обработчику
-                    method: 'GET',
-                    data: {
-                        pagination: true,
-                        page: page
-                    },
-                    beforeSend: function() {
-                        inProgress = true;
-                    }
-                }).done(function(data) {                
-                    console.log("Данные получены")
-                    data = jQuery.parseJSON(data); // данные в json
-                    if (data.length > 0) {
-                        // добавляем записи в блок в виде html
-                        $.each(data, function(index, data) {
-                            $("#deals").append("<div class='item'><div class='caption'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "пр</span><span class='weight-price'><span class='weight'>" + data.weight + "г</span><span class='sum-price'>" + data.sum + "₽</span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.sum + "</span><span class='deal-status'>" + data.status + "</span></div></div>"
-                            );
-                        });
-                        inProgress = false;
-                        page += 1;
-                    }
-                });
-            }
+
+                if ($('.personal-content-wrapper').scrollTop() >= ($('.personal-content-wrapper').height() - 100) && !inProgress) {
+                    console.log("Условие выполнено")
+
+                    $.ajax({
+                        url: '/admin/transactions', // путь к ajax-обработчику
+                        method: 'GET',
+                        data: {
+                            pagination: true,
+                            page: page
+                        },
+                        beforeSend: function() {
+                            inProgress = true;
+                        }
+                    }).done(function(data) {
+                        console.log("Данные получены")
+                        data = jQuery.parseJSON(data); // данные в json
+                        if (data.length > 0) {
+                            // добавляем записи в блок в виде html
+                            $.each(data, function(index, data) {
+                                $("#deals").append("<div class='item'><div class='caption'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "пр</span><span class='weight-price'><span class='weight'>" + data.weight + "г</span><span class='sum-price'>" + data.sum + "₽</span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.sum + "</span><span class='deal-status'>" + data.status + "</span></div></div>");
+                            });
+                            inProgress = false;
+                            page += 1;
+                        }
+                    });
+                }
+            });
         });
-    });
 
-</script>
+    </script>
     @component('modules.orders.detail')
     @endcomponent
     @endsection
 </div>
-

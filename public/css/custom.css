@@ -117,6 +117,7 @@ header {
 .main-logo:hover {
     text-decoration: none;
 }
+
 .main-sell-trigger {
     cursor: pointer;
 }
@@ -288,9 +289,11 @@ header {
     height: 100%;
     padding-top: 235px;
 }
+
 .choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content {
     padding-top: 125px;
 }
+
 .choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .option {
     padding-left: 140px;
 }
@@ -324,6 +327,7 @@ header {
     border-bottom: none;
     margin-right: 12px;
 }
+
 .choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .modal-options .options .selected span {
     margin-right: 0;
 }
@@ -1191,6 +1195,7 @@ input[type=number] {
     .choice-block .choice-content .select {
         min-width: 550px;
     }
+
     .choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .option {
         padding-left: 120px;
     }
@@ -1240,6 +1245,7 @@ input[type=number] {
     .header-logo .main-logo {
         left: 15vw;
     }
+
     .choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .option {
         padding-left: 100px;
     }
@@ -1310,9 +1316,11 @@ input[type=number] {
         font-size: 30px;
         margin-top: 10px;
     }
+
     .choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .option {
         padding-left: 65px;
     }
+
     .choice-block .choice-content .wanna-sell input[type=number] {
         width: 100px;
     }
@@ -1544,6 +1552,7 @@ input[type=number] {
     .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
         top: 15%;
     }
+
     .choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content {
         top: 20%;
     }
@@ -1885,7 +1894,7 @@ input[type=number] {
     box-sizing: border-box;
 }
 
-.personal .grid-view .item .caption span {    
+.personal .grid-view .item .caption span {
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
@@ -1913,8 +1922,7 @@ input[type=number] {
 
 .personal .grid-view .item .caption .deal-material,
 .personal .grid-view .item .caption .weight-price .weight,
-.personal .grid-view .item .caption .weight-price .sum-price
-{
+.personal .grid-view .item .caption .weight-price .sum-price {
     margin-top: 5px;
     margin-bottom: 10px;
     font-weight: bold;
@@ -2935,4 +2943,44 @@ button.ml-1 {
 
 .form-check-label {
     display: block;
+}
+
+.filters {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 1.5em;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.sortby {
+    margin-right: 20px;
+}
+
+.btn-group {
+    align-items: center;
+    padding: 10px 0;
+}
+
+.btn-group a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+    border: 2px solid transparent;
+    border-radius: 10px !important;
+    margin-left: 5px !important;
+}
+
+.btn-group a:hover,
+.btn-group a:active,
+.btn-group a:focus {
+    border-color: #000;
+    outline: none;
+    box-shadow:none;
 }
