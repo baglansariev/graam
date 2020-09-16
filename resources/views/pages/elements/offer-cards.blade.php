@@ -21,7 +21,9 @@
                         <p><a href="tel:+79066662701">{{ $offer['phone'] }}</a></p>
                     </div>
                     <div class="apply text-left">
-                        <button type="button" class="sell-app d-flex" @if($loop->index == 4 || $loop->index == 5) style="opacity: 0" disabled @endif>Оставить заявку</button>
+                        @if ($loop->iteration !== 2 && $loop->iteration !== 3)
+                            <button type="button" class="sell-app d-flex" @if($loop->index == 4 || $loop->index == 5) style="opacity: 0" disabled @endif>Оставить заявку</button>
+                        @endif
                     </div>
                 </div>
                 <div class="card-details">
