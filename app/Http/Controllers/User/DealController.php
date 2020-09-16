@@ -23,7 +23,7 @@ class DealController extends Controller
     public function index()
     {
 
-        $action = '/contractor/get-transactions/' . Auth::user()->id;
+        $action = '/contractor/get-transactions/' . Auth::user()->crm_id;
         $this->setClientData();
         $transactions =  json_decode($this->getResponseFromClient('GET', $action), true);
 
