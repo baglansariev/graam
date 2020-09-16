@@ -38,7 +38,7 @@
                                         </label>
                                     </div>
                                     <div class="form-check radio">
-                                        <input class="form-check-input ishuman" type="radio" name="entity_type" id="ishuman" value="" onclick="Show(0);">
+                                        <input class="form-check-input ishuman" type="radio" name="entity_type" id="ishuman" value="2" onclick="Show(0);">
                                         <label class="form-check-label" for="exampleRadios2">
                                             Физического лица
                                         </label>
@@ -46,6 +46,9 @@
 
                                     <div class="form-group company-name" id="company-name">
                                         <input type="text" class="form-control" id="company" value="" placeholder="Название компании" name="company_name">
+                                    </div>
+                                    <div class="form-group company-name">
+                                        <input type="text" class="form-control" id="company" value="" placeholder="Ф.И.О." name="name">
                                     </div>
                                     <div class="form-group">
                                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" placeholder="Электронная почта">
