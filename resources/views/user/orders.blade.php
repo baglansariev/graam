@@ -31,11 +31,11 @@
     </div>
 </h2>
 <div class="row filters">
-    <span class="shown" style="opacity: 0">Показано 50 сделок</span>
+    <span class="shown">Показано 50 сделок</span>
 
     <div class="btn-group">
 
-        <div class="sortby d-flex" style="opacity: 0">Сортировать &nbsp;
+        <div class="sortby d-flex">Сортировать &nbsp;
             <div class="select"> 
                    <div class="select-arrow"></div>               
                     <select name="sort-filter" class="sort-select"> 
@@ -64,7 +64,7 @@
     @if(count($transactions))
     @foreach ($transactions as $transaction)
     <div class="item">
-        <div class="caption order-link">
+        <div class="caption">
             <span class="first-col deal-num">#{{ $transaction['id'] }}</span>
             <span class="list-deal-date">{{ $transaction['created_at'] }}</span>
             <span class="deal-material">{{ $transaction['material'] . ' ' . $transaction['content'] }} <b>пр</b></span>
@@ -72,7 +72,7 @@
             <span class="grid-deal-date"><span class="grid-text-title">Дата создания</span> {{ $transaction['created_at'] }}</span>
             <span class="factory"><span class="grid-text-title">Через </span><img src="/images/pictogram.png" alt=""> ПЮДМ</span>
             <span class="list-price">{{ $transaction['sum'] }}</span>
-            <span class="deal-status"><a href="" class="join">Участвовать в сделке</a></span>
+            <span class="deal-status"><a class="join">Участвовать в сделке</a></span>
 <!--            <span class="deal-status">{{ $transaction['status'] }}</span>-->
         </div>
     </div>
@@ -81,9 +81,7 @@
     <div class="no-orders">
         <span class="text-center">У вас пока нет заявок</span>
     </div>
-    @endif
-        @component('modules.modals.join')
-        @endcomponent
+    @endif        
     <script>
         $(document).ready(function() {
             let inProgress = false; // статус процесса загрузки
@@ -135,6 +133,8 @@
     </script>
 
 </div>
+@component('modules.modals.join')
+    @endcomponent
 @component('modules.orders.detail')
 @endcomponent
 @endsection
