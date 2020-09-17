@@ -224,6 +224,11 @@
 
                 function changeTypeOfDeals(chosenName) {
                     let sortBy = $('.sort-select').val();
+
+                    if (sortBy == '') {
+                        sortBy = 'weight';
+                    }
+
                     if (chosenName == "продаже") {
                         typeofval = "2,4";
                     } else {

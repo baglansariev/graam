@@ -24,9 +24,7 @@ class DealController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $action = '/contractor/get-transactions/' . $user->crm_id;
-        $this->setClientData();
-        $transactions =  json_decode($this->getResponseFromClient('GET', $action), true);
+        $transactions =  json_decode($this->getUserTransactions(), true);
         $manager = new ManagerController();
 
         $data = [
@@ -38,6 +36,14 @@ class DealController extends Controller
         //return view('admin.user.deals.index', ['deals' => $deals]);
         
         return view('user.myorders', $data);
+    }
+
+    public function getUserTransactions()
+    {
+        $user = Auth::user();
+        $action = '/contractor/get-transactions/' . $user->crm_id;
+        $this->setClientData();
+        return $this->getResponseFromClient('GET', $action);
     }
 
     /**
