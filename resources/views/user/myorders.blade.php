@@ -18,7 +18,7 @@
         });
     });
 </script>
-<h2 class="orders-heading">Сделки по &nbsp;<span class="buysell" data-name="продаже">продаже</span>
+<h2 class="orders-heading">Сделки по &nbsp;<span class="buysell" data-name="продаже" style="cursor: pointer">продаже</span>
 <!--
    &nbsp;
     <div class="select">
@@ -34,11 +34,11 @@
 -->
 </h2>
 <div class="row filters">
-    <span class="shown">Показано 50 сделок</span>
+    <span class="shown" style="opacity: 0;">Показано 50 сделок</span>
 
     <div class="btn-group">
 
-        <div class="sortby d-flex">Сортировать &nbsp;
+        <div class="sortby d-flex" style="opacity: 0;">Сортировать &nbsp;
             <div class="select"> 
                    <div class="select-arrow"></div>               
                     <select name="sort-filter" class="sort-select"> 
