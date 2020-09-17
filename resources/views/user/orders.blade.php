@@ -22,7 +22,7 @@
     <div class="select">
         <div class="chosen d-flex">
             <div class="chosen-container">
-                <span class="buysell" data-name="продаже">продаже</span>
+                <span class="buysell" data-name="продаже" style="cursor: pointer">продаже</span>
             </div>
             <i class="fas fa-sort-down orders-fas"></i>
         </div>
@@ -31,11 +31,11 @@
     </div>
 </h2>
 <div class="row filters">
-    <span class="shown">Показано 50 сделок</span>
+    <span class="shown" style="opacity: 0">Показано 50 сделок</span>
 
     <div class="btn-group">
 
-        <div class="sortby d-flex">Сортировать &nbsp;
+        <div class="sortby d-flex" style="opacity: 0">Сортировать &nbsp;
             <div class="select"> 
                    <div class="select-arrow"></div>               
                     <select name="sort-filter" class="sort-select"> 
