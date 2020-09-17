@@ -85,7 +85,7 @@ class RegisterController extends Controller
             'form_params' => [
                 'contractor' => [
                     'email' => $user->email,
-                    'company_name' => $data['company_name'] ?? 'Физическое лицо',
+                    'company_name' => $data['company_name'] ?? 'Физическое лицо ' . $user->id,
                     'entity_type' => $data['entity_type'],
                 ],
                 'api_token' => $this->api_token,
