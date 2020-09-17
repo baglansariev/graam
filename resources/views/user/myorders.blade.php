@@ -18,7 +18,9 @@
         });
     });
 </script>
-<h2 class="orders-heading">Сделки по &nbsp;
+<h2 class="orders-heading">Сделки по &nbsp;<span class="buysell" data-name="продаже">продаже</span>
+<!--
+   &nbsp;
     <div class="select">
         <div class="chosen d-flex">
             <div class="chosen-container">
@@ -29,6 +31,7 @@
         @component('modules.modals.buysell-modal')
         @endcomponent
     </div>
+-->
 </h2>
 <div class="row filters">
     <span class="shown">Показано 50 сделок</span>
@@ -39,8 +42,8 @@
             <div class="select"> 
                    <div class="select-arrow"></div>               
                     <select name="sort-filter" class="sort-select"> 
-                        <option value="weight" selected><span>по весу</span></option>  
-                        <option value="price"><span>по цене</span></option>
+                        <option value="weight" selected><b>по весу</b></option>  
+                        <option value="price"><b>по цене</b></option>
                     </select>              
             </div>
         </div>

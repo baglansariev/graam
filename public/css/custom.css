@@ -211,7 +211,7 @@ header {
 }
 
 .choice-block .choice-content .select .chosen .chosen-container {
-    border-bottom: 1px solid #CCC;
+    border-bottom: 1px solid #10b6eb;
 }
 
 .choice-block .choice-content .select .chosen .fa-sort-down {
@@ -1723,9 +1723,21 @@ input[type=number] {
     color: #000;
 }
 
+.personal .pm-img-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
 .personal .pm-img {
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 0;
+    height: 90px;
 }
 
 .personal .pm-name,
@@ -1822,10 +1834,20 @@ input[type=number] {
     border: none;
 }
 
+.personal .list-view .list-heading,
+.personal .list-view .item {
+    width: 100%;
+}
+
+
 .personal .list-view .item .caption,
 .personal .list-view .list-heading {
     display: flex;
     padding: 15px 0;
+}
+
+.personal .list-view .item .caption span b {
+    display: none;
 }
 
 .personal .list-view .item .caption .weight-price .sum-price,
@@ -1835,8 +1857,7 @@ input[type=number] {
 }
 
 .personal .list-view .list-heading .list-heading-item,
-.personal .list-view .item .caption span {
-    width: 14.28%;
+.personal .list-view .item .caption span {    
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
@@ -1866,9 +1887,52 @@ input[type=number] {
     text-decoration: none;
 }
 
+.personal .list-view .item .caption .deal-status,
+.list-heading-item.deal-status {
+    margin-right: 1.5em;
+    
+}
+/* DEALS LIST VIEW COLUMNS WIDTHS  */
+.personal .list-view .item .caption .deal-num,
+.list-heading-item.deal-num  {
+    width: 12%;
+}
+
+.personal .list-view .item .caption .list-deal-date,
+.list-heading-item.list-deal-date  {
+    width: 16%;
+}
+
+.personal .list-view .item .caption .deal-material,
+.list-heading-item.deal-material  {
+    width: 15%;
+}
+
+.personal .list-view .item .caption .weight-price,
+.list-heading-item.weight-price  {
+    width: 9%;
+}
+
+.personal .list-view .item .caption .factory,
+.list-heading-item.factory {
+    width: 13%;
+}
+
+.personal .list-view .item .caption .list-price,
+.list-heading-item.list-price  {
+    width: 12%;
+}
+
+.personal .list-view .item .caption .deal-status,
+.list-heading-item.deal-status  {    
+    width: 23%;
+}
+
+
 .personal .grid-view {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .personal .grid-view .list-heading,
@@ -1880,7 +1944,7 @@ input[type=number] {
     width: 33.33%;
     max-width: 300px;
     padding: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     box-sizing: border-box;
 }
 
@@ -1900,6 +1964,7 @@ input[type=number] {
     line-height: 20px;
     color: #000000;
 }
+
 
 .personal .grid-view .item .caption .deal-num {
     font-weight: bold;
@@ -1946,6 +2011,7 @@ input[type=number] {
 
 .personal .grid-view .item .caption .deal-status {
     margin-top: 30px;
+    
 }
 
 .personal .discount-info-wrapper {
@@ -2109,6 +2175,18 @@ input[type=number] {
     margin-top: 20vh !important;
 }
 
+.modal-popup.reg-form .popup-wrapper .popup-content {
+    height: 100vh;
+    align-items: center;
+    margin-top: 0 !important;
+}
+
+.modal-popup.reg-form .popup-wrapper .popup-content .content .popup-form {
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
 .modal-popup.reg-form,
 .modal-popup.login-form {
     display: block;
@@ -2158,12 +2236,12 @@ input[type=number] {
     min-height: 52px;
 }
 
-.reg-form .popup-wrapper,
-.login-form .popup-wrapper {
-    width: 100vw;
+.modal-popup.reg-form .popup-wrapper,
+.modal-popup.login-form .popup-wrapper {
+    width: 100vw ;
     height: 100vh;
-    position: relative;
-    overflow: scroll;
+    max-height: 100vh;
+    position: relative;    
 }
 
 .login-form .input-wrapper .short,
@@ -2207,7 +2285,7 @@ input[type=number] {
 
 .login-form .reg-link-wrap,
 .reg-form .login-link {
-    margin-top: 8.75vh;
+    margin-top: 1vh;
 }
 
 .sell-content {
@@ -2219,12 +2297,13 @@ input[type=number] {
     background-color: #FFF;
     border-radius: 50px 50px 0 0;
     width: 100%;
-    height: calc(100vh - 30%);
+    height: 100vh;
     left: 0;
     top: 0;
     bottom: 0;
     display: none;
     z-index: 5;
+    overflow: hidden;
 }
 
 .modal-popup.order-detail .container,
@@ -2979,8 +3058,52 @@ button.ml-1 {
 
 .btn-group a:hover,
 .btn-group a:active,
-.btn-group a:focus {
+.btn-group a:focus,
+.btn-group a.active {
     border-color: #000;
     outline: none;
     box-shadow:none;
 }
+
+.chosen svg {
+    color: #10B6EB;
+    margin-left: 5px;
+}
+
+.chosen-container span {
+    border-bottom: 1px solid #10b6eb40;
+}
+
+
+.select {
+    position: relative;
+}
+
+.select select {     
+    border: none;
+    outline: none;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    border-bottom: 1px solid #10b6eb40;
+}
+
+.select .select-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 8px;
+    right: -15px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #10B6EB;    
+}
+
+.chosen-container.index span {
+    border-bottom: none;
+}
+

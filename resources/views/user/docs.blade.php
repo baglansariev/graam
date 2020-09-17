@@ -20,11 +20,13 @@
                                                  @foreach($user->documents()->whereCategoryId($category->id)->get() as $document)
                                                      <span>
                                                          <a href="{{ route('documents.show', $document->id) }}" target="_blank" class="mr-1">{{ $document->name }}</a>
+<!--
                                                          <form action="{{ route('documents.destroy', $document->id) }}" method="POST">
                                                          @csrf
                                                          <input type="hidden" name="_method" value="DELETE">
                                                              <button type="submit" class="ml-1">X</button>
                                                         </form>
+-->
                                                      </span>
                                                  @endforeach
                                              @else

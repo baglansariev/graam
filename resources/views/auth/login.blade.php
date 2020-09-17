@@ -17,6 +17,7 @@
                             <div class="title">
                                 <h3>Войти в личный кабинет</h3>
                             </div>
+<!--
                             <div class="form-group">
                                  <label class="soc-label">Через соцсети</label>
                                  <div class="soc-icons">
@@ -25,6 +26,7 @@
                                      <img src="/images/vk.svg" alt="VKontakte" title="VKontakte">
                                  </div>
                              </div>
+-->
                             <div class="alert modal-popup-alert" role="alert">
                                 <span class="message d-none"></span>
                                 <h3>Спасибо!</h3>
@@ -49,11 +51,13 @@
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
+<!--
                                             @if (Route::has('password.request'))
                                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                                     Забыли пароль?
                                                 </a>
                                             @endif
+-->
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Войти</button>

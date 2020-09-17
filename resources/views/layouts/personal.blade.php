@@ -61,15 +61,21 @@
                     <div class="col-sm-3 personal-menu row">
                         <nav>
                             <ul class="personal-menu-list">
+                               <li class="personal-menu-list-item">Витрина
+                                    <ul class="submenu">
+                                        <li class="personal-submenu-list-item"><a href="{{ route('personal') }}" class="menu-link {{ request()->routeIs('personal') ? 'active' : '' }}">Все сделки</a></li>                                     
+                                    </ul>
+                                </li>
                                 <li class="personal-menu-list-item">Заявки
                                     <ul class="submenu">
                                         <li class="personal-submenu-list-item"><a href="{{ route('personal') }}" class="menu-link {{ request()->routeIs('personal') ? 'active' : '' }}">Активные</a></li>
-                                        <li class="personal-submenu-list-item"><a href="{{ route('personal-archive') }}" class="menu-link {{ request()->routeIs('personal-archive') ? 'active' : '' }}">История сделок</a></li>
-                                        <li class="personal-menu-list-item"><a href="{{ route('personal-discount') }}" class="menu-link {{ request()->routeIs('personal-discount') ? 'active' : '' }}">Дисконт</a></li>
+<!--                                        <li class="personal-submenu-list-item"><a href="{{ route('personal-archive') }}" class="menu-link {{ request()->routeIs('personal-archive') ? 'active' : '' }}">История сделок</a></li>-->
+<!--                                        <li class="personal-menu-list-item"><a href="{{ route('personal-discount') }}" class="menu-link {{ request()->routeIs('personal-discount') ? 'active' : '' }}">Дисконт</a></li>-->
                                     </ul>
                                 </li>
                                 <li class="personal-menu-list-item"><a href="{{ route('personal-docs') }}" class="menu-link {{ request()->routeIs('personal-docs') ? 'active' : '' }}">Документы</a></li>
                                 <li class="personal-menu-list-item"><a href="{{ route('personal-info') }}" class="menu-link {{ request()->routeIs('personal-info') ? 'active' : '' }}">Личные данные</a></li>
+<!--
                                 <li><a href="#" class="reg-link">Тест</a></li>
                                 <li><a href="{{ route('personal-test') }}" class="more-info menu-link">Тест2</a></li>
                                 <li class="nav-item">
@@ -82,16 +88,19 @@
                                         @csrf
                                     </form>
                                 </li>
+-->
                             </ul>
 
                         </nav>
                         <div class="pm-wrapper">
                             <div class="contact-pm">
-                                <img class="pm-img" src="/images/pm.png" alt="">
+                               <div class="pm-img-wrap">
+                                <img class="pm-img" src="{{ $manager['photo'] }}" alt=""></div>
                                 <p class="logo-subtitle">Ваш личный менеджер</p>
-                                <span class="pm-name">Кристина</span>
-                                <span class="pm-phone">+7 999 123-45-67</span>
+                                <span class="pm-name">{{ $manager['name'] }}</span>
+                                <span class="pm-phone">{{ $manager['phone'] ?? '+7 999 123-45-67' }}</span>
                             </div>
+<!--
                             <div class="contact-pm-form">
                                 <p class="pm-message">Написать сообщение</p>
                                 <form action="/">
@@ -101,6 +110,7 @@
                                     <button type="submit" class="btn primary-btn"></button>
                                 </form>
                             </div>
+-->
                         </div>
                     </div>
                     <div class="col-sm-9 personal-content-wrapper">

@@ -117,7 +117,6 @@ $(function () {
 
     $('.order-link').click(function (e) {
         e.preventDefault();
-
         $('.modal-popup.order-detail').fadeIn();
     });
 

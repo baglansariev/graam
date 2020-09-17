@@ -21,7 +21,7 @@
             </div>
             <div class="select">
                 <div class="chosen d-flex">
-                    <div class="chosen-container">
+                    <div class="chosen-container index">
                         <span data-name="gold" data-type="585">золота 585</span> пробы
                     </div>
                     <i class="fas fa-sort-down"></i>
