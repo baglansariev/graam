@@ -37,12 +37,14 @@
                      <input type="text" name="phone" class="form-control" id="phone" value="{{ $user->detailsFromCrm()->phone ?? '+7 999 999 99 99' }}">
                  </div>
                  <div class="form-group col-md-6">
+<!--
                      <label class="soc-label">Связанные аккаунты</label>
                      <div class="soc-icons">
                          <img src="/images/insta.svg" alt="Instagram" title="Instagram">
                          <img src="/images/fb.svg" alt="Facebook" title="Facebook">
                          <img src="/images/vk.svg" alt="VKontakte" title="VKontakte">
                      </div>
+-->
                  </div>
 
              </div>

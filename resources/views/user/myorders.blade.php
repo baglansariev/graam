@@ -80,9 +80,9 @@
     </div>
     @endforeach
     @else
-    <span class="order-link">
+    <div class="no-orders">
         <span class="text-center">У вас пока нет заявок</span>
-    </span>
+    </div>
     @endif
 
     <script>

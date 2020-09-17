@@ -315,6 +315,10 @@
 //                    e.preventDefault();
 //                    $('.modal-popup.order-detail').fadeIn();
 //                });
+                $('.join').click(function (e) {
+                   e.preventDefault();
+                    $('.join-popup').fadeIn();
+                });
                 $('.more-info').click(function (e) {
                     e.preventDefault();
                     $('.home-content').animate({

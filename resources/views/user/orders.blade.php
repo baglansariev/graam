@@ -59,7 +59,7 @@
         <span class="list-heading-item weight-price">Вес, г</span>
         <span class="list-heading-item factory">Через</span>
         <span class="list-heading-item list-price">Сумма, ₽</span>
-        <span class="list-heading-item deal-status">Статус</span>
+        <span class="list-heading-item deal-status">Участвовать в сделке</span>
     </div>
     @if(count($transactions))
     @foreach ($transactions as $transaction)
@@ -72,16 +72,18 @@
             <span class="grid-deal-date"><span class="grid-text-title">Дата создания</span> {{ $transaction['created_at'] }}</span>
             <span class="factory"><span class="grid-text-title">Через </span><img src="/images/pictogram.png" alt=""> ПЮДМ</span>
             <span class="list-price">{{ $transaction['sum'] }}</span>
-            <span class="deal-status">{{ $transaction['status'] }}</span>
+            <span class="deal-status"><a href="" class="join">Участвовать в сделке</a></span>
+<!--            <span class="deal-status">{{ $transaction['status'] }}</span>-->
         </div>
     </div>
     @endforeach
     @else
-    <span class="order-link d-block text-center">
-        <span>У вас пока нет заявок</span>
-    </span>
+    <div class="no-orders">
+        <span class="text-center">У вас пока нет заявок</span>
+    </div>
     @endif
-
+        @component('modules.modals.join')
+        @endcomponent
     <script>
         $(document).ready(function() {
             let inProgress = false; // статус процесса загрузки
