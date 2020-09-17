@@ -37,7 +37,7 @@ class DealController extends Controller
 
         //return view('admin.user.deals.index', ['deals' => $deals]);
         
-        return view('user.orders', $data);
+        return view('user.myorders', $data);
     }
 
     /**
