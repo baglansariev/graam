@@ -158,6 +158,9 @@ header {
     position: relative;
     margin-top: 23vh;
 }
+.buysell {
+    cursor: pointer;
+}
 
 .block-text p {
     text-align: center;
