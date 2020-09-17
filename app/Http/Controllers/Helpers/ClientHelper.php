@@ -44,6 +44,13 @@
             return $response->getBody()->getContents();
         }
 
+        public function getResponseFromClientByQuery($method, $action, $params = [])
+        {
+            $client = $this->clientInit($this->crm_client_api_url);
+            $response = $client->request($method, $this->crm_client_api_url . $action, $params);
+            return $response->getBody()->getContents();
+        }
+
         public function getResponseFromClient2($method, $action, $params = [])
         {
             $client = $this->clientInit($this->crm_client_api_url);

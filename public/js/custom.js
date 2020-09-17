@@ -318,10 +318,12 @@ $(function () {
   });
   $('.sell-app-submit').click(function () {
     var formData = $('.modal-sell .popup-form').serialize();
+    console.log(formData);
     popupAjax('/form/send/sell-app', formData);
   });
   $('.own-price-submit').click(function () {
     var formData = $('.modal-own-price .popup-form').serialize();
+    console.log(formData);
     popupAjax('/form/send/own-price', formData);
   });
 
