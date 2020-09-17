@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abff2837-7468-434e-940d-e3b5389bc27b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/user/myorders.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/myorders.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/orders.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/orders.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/DealController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/DealController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,29 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/DealController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="40" column="39" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="39" />
-              <folding>
-                <element signature="e#45#81#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Modules/FeedbackFormController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="48" column="48" lean-forward="true" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+            <state relative-caret-position="333">
+              <caret line="49" column="60" lean-forward="true" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
               <folding>
                 <element signature="e#45#81#0#PHP" expanded="true" />
               </folding>
@@ -108,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/personal.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="66" column="41" lean-forward="true" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
+            <state relative-caret-position="366">
+              <caret line="72" column="49" lean-forward="true" selection-start-line="72" selection-start-column="49" selection-end-line="72" selection-end-column="49" />
               <folding>
                 <element signature="n#style#0;n#form#0;n#li#4;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -132,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+            <state relative-caret-position="411">
+              <caret line="54" column="31" lean-forward="true" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
               <folding>
                 <element signature="e#46#92#0#PHP" expanded="true" />
               </folding>
@@ -157,7 +135,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.selected {</find>
       <find>.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected span {</find>
       <find>.choice-block .choice-content .select .chosen .fa-sort-down {</find>
       <find>fa-sort-d</find>
@@ -183,10 +160,11 @@
       <find>let hiddenPrice = $('.hidden-price');</find>
       <find>$('.form-control').on('change', function () {</find>
       <find>$('.main-sell-trigger').text(optionText);</find>
-      <find>$('.material .options .option').not('.selected').click(function () {</find>
       <find>Все сделки</find>
       <find>buysell</find>
       <find>Сортировать</find>
+      <find>Сделки по</find>
+      <find>$('.material .options .option').not('.selected').click(function () {</find>
     </findStrings>
     <replaceStrings>
       <replace>fa-telegram-plane</replace>
@@ -218,7 +196,6 @@
         <option value="&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/etc/apache2/ports.conf" />
         <option value="&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/var/www/sites/graam.test/.env" />
         <option value="&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/var/www/sites/graam.test/resources/views/user/orders.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/docs.blade.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
@@ -240,7 +217,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/User/UserController.php" />
         <option value="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" />
         <option value="&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/var/www/sites/graam.test/public/js/custom.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/User/DealController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/public/js/custom.js" />
         <option value="&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/var/www/sites/graam.test/resources/views/layouts/personal.blade.php" />
@@ -249,6 +225,8 @@
         <option value="$PROJECT_DIR$/resources/views/user/orders.blade.php" />
         <option value="$PROJECT_DIR$/storage/framework/views/3b0cca1b760092765de2fd29236538808b65157d.php" />
         <option value="$PROJECT_DIR$/resources/views/user/myorders.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/User/DealController.php" />
       </list>
     </option>
   </component>
@@ -350,11 +328,11 @@
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1854" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-1928" />
     <option name="y" value="-8" />
-    <option name="width" value="1440" />
-    <option name="height" value="780" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -501,15 +479,16 @@
       <workItem from="1597648883068" duration="974000" />
       <workItem from="1599543978840" duration="268000" />
       <workItem from="1599544412815" duration="69586000" />
-      <workItem from="1600059520656" duration="83481000" />
+      <workItem from="1600059520656" duration="85125000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="563723000" />
+    <option name="totallyTimeSpent" value="565367000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49752066" visible="true" weight="0.25053304" />
       <window_info id="Structure" order="1" sideWeight="0.5024793" side_tool="true" weight="0.23507462" />
@@ -857,33 +836,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Modules/FeedbackFormController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="48" column="48" lean-forward="true" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-          <folding>
-            <element signature="e#46#92#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/DealController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="40" column="39" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="39" />
-          <folding>
-            <element signature="e#45#81#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
@@ -891,6 +843,30 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="161" column="15" lean-forward="true" selection-start-line="161" selection-start-column="15" selection-end-line="161" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/personal.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="72" column="49" lean-forward="true" selection-start-line="72" selection-start-column="49" selection-end-line="72" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#li#4;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="33" column="74" lean-forward="true" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -904,26 +880,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/custom.css">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Modules/FeedbackFormController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="161" column="15" lean-forward="true" selection-start-line="161" selection-start-column="15" selection-end-line="161" selection-end-column="15" />
+        <state relative-caret-position="437">
+          <caret line="48" column="48" lean-forward="true" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/DealController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="33" column="74" lean-forward="true" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/personal.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="66" column="41" lean-forward="true" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
+        <state relative-caret-position="333">
+          <caret line="49" column="60" lean-forward="true" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
           <folding>
-            <element signature="n#style#0;n#form#0;n#li#4;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#45#81#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="54" column="31" lean-forward="true" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
+          <folding>
+            <element signature="e#46#92#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
