@@ -45,7 +45,7 @@
                             <div class="header-logo">
                                 <a href="/" class="main-logo d-flex justify-content-center align-items-center flex-column">
                                     <p class="logo-title"><span>G</span>RAAM</p>
-                                    <p class="logo-subtitle">Продать быстро и дорого</p>
+                                    <p class="logo-subtitle text-center">Один грамм, <br> много возможностей</p>
                                 </a>
                             </div>
                             <div class="header-actions text-right p-4">
