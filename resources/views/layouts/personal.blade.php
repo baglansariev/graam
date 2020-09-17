@@ -63,7 +63,7 @@
                             <ul class="personal-menu-list">
                                <li class="personal-menu-list-item">Витрина
                                     <ul class="submenu">
-                                        <li class="personal-submenu-list-item"><a href="{{ route('personal') }}" class="menu-link {{ request()->routeIs('personal') ? 'active' : '' }}">Все сделки</a></li>                                     
+                                        <li class="personal-submenu-list-item"><a href="{{ route('all-deals') }}" class="menu-link {{ request()->routeIs('all-deals') ? 'active' : '' }}">Все сделки</a></li>
                                     </ul>
                                 </li>
                                 <li class="personal-menu-list-item">Заявки
