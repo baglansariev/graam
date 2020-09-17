@@ -21,10 +21,10 @@ class DealController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $user = Auth::user();
-        $transactions =  json_decode($this->getUserTransactions(), true);
+        $transactions =  json_decode($this->getUserTransactions($request), true);
         $manager = new ManagerController();
 
         $data = [
