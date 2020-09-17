@@ -18,7 +18,7 @@
         });
     });
 </script>
-<h2 class="orders-heading">Сделки по &nbsp;<span class="buysell" data-name="продаже">продаже</span>
+<h2 class="orders-heading">Сделки по &nbsp;<span class="buysell" data-name="продаже" style="cursor: pointer">продаже</span>
 <!--
    &nbsp;
     <div class="select">

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abff2837-7468-434e-940d-e3b5389bc27b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/personal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/personal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/myorders.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/myorders.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/orders.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/orders.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/custom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="676">
-              <caret line="164" column="15" lean-forward="true" selection-start-line="164" selection-start-column="15" selection-end-line="164" selection-end-column="15" />
+            <state relative-caret-position="598">
+              <caret line="161" column="15" lean-forward="true" selection-start-line="161" selection-start-column="15" selection-end-line="161" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -110,9 +111,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/personal.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="65" column="163" selection-start-line="65" selection-start-column="163" selection-end-line="65" selection-end-column="163" />
-              <caret line="65" column="107" selection-start-line="65" selection-start-column="107" selection-end-line="65" selection-end-column="107" />
+            <state relative-caret-position="210">
+              <caret line="66" column="41" lean-forward="true" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#form#0;n#li#4;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -198,7 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Pages/AuthController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/modal-popup.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/modules/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/public/.htaccess" />
@@ -246,9 +245,10 @@
         <option value="$PROJECT_DIR$/public/js/custom.js" />
         <option value="&lt;de1ef396-0742-42ab-a62c-92c882808a54&gt;/var/www/sites/graam.test/resources/views/layouts/personal.blade.php" />
         <option value="$PROJECT_DIR$/public/css/custom.css" />
-        <option value="$PROJECT_DIR$/resources/views/user/myorders.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/user/orders.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/personal.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/user/orders.blade.php" />
+        <option value="$PROJECT_DIR$/storage/framework/views/3b0cca1b760092765de2fd29236538808b65157d.php" />
+        <option value="$PROJECT_DIR$/resources/views/user/myorders.blade.php" />
       </list>
     </option>
   </component>
@@ -501,18 +501,17 @@
       <workItem from="1597648883068" duration="974000" />
       <workItem from="1599543978840" duration="268000" />
       <workItem from="1599544412815" duration="69586000" />
-      <workItem from="1600059520656" duration="83200000" />
+      <workItem from="1600059520656" duration="83481000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="563442000" />
+    <option name="totallyTimeSpent" value="563723000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49752066" visible="true" weight="0.25053304" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49752066" visible="true" weight="0.25053304" />
       <window_info id="Structure" order="1" sideWeight="0.5024793" side_tool="true" weight="0.23507462" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -528,7 +527,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Migrations" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.24276169" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.24276169" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
       <window_info anchor="bottom" id="File Transfer" order="14" weight="0.32962137" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -907,8 +906,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="164" column="15" lean-forward="true" selection-start-line="164" selection-start-column="15" selection-end-line="164" selection-end-column="15" />
+        <state relative-caret-position="598">
+          <caret line="161" column="15" lean-forward="true" selection-start-line="161" selection-start-column="15" selection-end-line="161" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -921,9 +920,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/personal.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="65" column="163" selection-start-line="65" selection-start-column="163" selection-end-line="65" selection-end-column="163" />
-          <caret line="65" column="107" selection-start-line="65" selection-start-column="107" selection-end-line="65" selection-end-column="107" />
+        <state relative-caret-position="210">
+          <caret line="66" column="41" lean-forward="true" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
           <folding>
             <element signature="n#style#0;n#form#0;n#li#4;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
