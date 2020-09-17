@@ -27,7 +27,7 @@ Route::get('/personal/test', 'User\UserController@test')->name('personal-test');
 
 Route::middleware('auth')->group(function() {
     Route::prefix('admin')->group(function () {
-       Route::get('/home', 'Admin\HomeController@index')->name('home');
+       Route::get('/home', 'Admin\HomeController@index')->name('all-deals');
         Route::get('/transactions', 'Admin\HomeController@getAllTransactions');
 
 
