@@ -26,14 +26,19 @@
                                 </p>
                             </div>
                             <form action="{{ route('sell-app') }}" class="popup-form d-flex flex-column">
-                                @auth
-                                    <input type="text" class="name-input" name="name" placeholder="Имя" value="{{ Auth::user()->name ?? '' }}" @if(isset(Auth::user()->name) && Auth::user()->detailsFromCrm()->name !== '') disabled @endif required>
-                                    <input type="text" class="phone-input" name="phone" value="{{ Auth::user()->detailsFromCrm()->phone ?? '+7' }}" @if(isset(Auth::user()->detailsFromCrm()->phone) && Auth::user()->detailsFromCrm()->phone !== '') disabled @endif required>
-                                @endauth
-                                @guest
+                                @if(Auth::user() && isset(Auth::user()->name) && Auth::user()->detailsFromCrm()->name !== '')
+                                    <input type="text" class="name-input" name="name_test" value="{{ Auth::user()->name }}" disabled>
+                                    <input type="hidden" class="name-input" name="name" value="{{ Auth::user()->name }}" required>
+                                @else
                                     <input type="text" class="name-input" name="name" placeholder="Имя" required>
+                                @endif
+
+                                @if(Auth::user() && isset(Auth::user()->detailsFromCrm()->phone) && Auth::user()->detailsFromCrm()->phone !== '')
+                                    <input type="text" class="phone-input" name="phone_test" value="{{ Auth::user()->detailsFromCrm()->phone ?? '+7' }}" disabled>
+                                    <input type="hidden" class="phone-input" name="phone" value="{{ Auth::user()->detailsFromCrm()->phone ?? '+7' }}" required>
+                                @else
                                     <input type="text" class="phone-input" name="phone" value="+7" required>
-                                @endguest
+                                @endif
                                 <input type="hidden" name="weight" class="hidden-weight">
                                 <input type="hidden" name="type" class="hidden-type">
                                 <input type="hidden" name="metal" class="hidden-metal">
