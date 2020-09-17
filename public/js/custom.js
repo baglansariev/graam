@@ -224,7 +224,16 @@
 
                 function changeTypeOfDeals(chosenName) {
                     let sortBy = $('.sort-select').val();
-
+                    let pageType = $('#deals').attr('data-type');
+                    let requestString = '';
+                    if (pageType == 'all'){
+                        requestString = '/admin/transactions';
+                    }
+                    
+                    if (pageType == 'private') {
+                        requestString = '';
+                    }
+                    
                     if (sortBy == '') {
                         sortBy = 'weight';
                     }
@@ -235,7 +244,7 @@
                         typeofval = "1,3";
                     }
                     $.ajax({
-                        url: '/admin/transactions', // путь к ajax-обработчику
+                        url: requestString, // путь к ajax-обработчику
                         method: 'GET',
                         data: {
                             type: typeofval,
@@ -248,7 +257,7 @@
                             // добавляем записи в блок в виде html
                             let content = '<div class="list-heading"><span class="first-col list-heading-item deal-num">Номер</span><span class="list-heading-item list-deal-date">Дата создания</span><span class="list-heading-item deal-material">Металл, проба</span><span class="list-heading-item weight-price">Вес, г</span><span class="list-heading-item factory">Через</span><span class="list-heading-item list-price">Сумма, ₽</span>        <span class="list-heading-item deal-status">Участвовать в сделке</span></div>';
                             $.each(data, function (index, data) {
-                                content += "<div class='item'><div class='caption'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.sum + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.sum + "</span><span class='deal-status'><a class='join'>Участвовать в сделке</a></span></div></div>";
+                                content += "<div class='item'><div class='caption'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "</span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.sum + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания&nbsp;</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.sum + "</span><span class='deal-status'><a class='join'>Участвовать в сделке</a></span></div></div>";
                             });
                             $("#deals").html(content);
                         }
