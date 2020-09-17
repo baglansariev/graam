@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserDocument;
 use App\Models\DocumentCategory;
+use App\Http\Controllers\User\ManagerController;
 
 class DocumentsController extends Controller
 {
@@ -27,10 +28,13 @@ class DocumentsController extends Controller
      */
     public function index()
     {
+        $manager = new ManagerController();
+        $user = Auth::user();
         $data = [
             'document_categories'   => DocumentCategory::all(),
-            'user_docs'             => Auth::user()->documents(),
-            'user'             => Auth::user(),
+            'user_docs'             => $user->documents(),
+            'user'                  => $user,
+            'manager'               => $manager->getManager($user->manager_id)['manager'] ?? [],
         ];
        // return view('admin.user.documents.index', $data);
         return view('user.docs', $data);
@@ -43,8 +47,12 @@ class DocumentsController extends Controller
      */
     public function create()
     {
+        $user = Auth::user();
+        $manager = new ManagerController();
+
         $data = [
             'doc_categories' => DocumentCategory::all(),
+            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
         ];
         return view('admin.user.documents.create', $data);
     }
@@ -135,9 +143,13 @@ class DocumentsController extends Controller
      */
     public function edit($id)
     {
+        $user = Auth::user();
+        $manager = new ManagerController();
+
         $data = [
             'doc_categories'    => DocumentCategory::all(),
             'document'          => UserDocument::find($id),
+            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
         ];
 
         return view('admin.user.documents.edit', $data);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Helpers\ClientHelper;
+use App\Http\Controllers\User\ManagerController;
 use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use App\Models\UserDocument;
@@ -21,41 +22,74 @@ class UserController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $manager = new ManagerController();
 
         $this->setClientData();
         $response = $this->getResponseFromClient('GET', '/contractor/get-transactions/' . $user->id);
         $transactions = json_decode($response, true);
 
+        $data = [
+            'transactions' => $transactions,
+            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+        ];
 
-        return view('user/orders', compact('transactions'));
+
+        return view('user/orders', $data);
     }
 
 
     public function discount()
     {
-        return view('user/discount');
+        $user = Auth::user();
+        $manager = new ManagerController();
+
+        $data = [
+            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+        ];
+        return view('user/discount', $data);
     }
 
     public function archive()
     {
-        return view('user/archive');
+        $user = Auth::user();
+        $manager = new ManagerController();
+        $data = [
+            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+        ];
+        return view('user/archive', $data);
     }
 
     public function docs()
     {
-        $docs = UserDocument::all()->toArray();
-        return view('user/docs', compact('docs'));
+        $user = Auth::user();
+        $manager = new ManagerController();
+        $data = [
+            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'docs' => UserDocument::all()->toArray(),
+        ];
+        return view('user/docs', $data);
     }
 
     public function info()
     {
         $user = Auth::user();
-        return view('user/info', compact('user'));
+        $manager = new ManagerController();
+        $data = [
+            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'user' => $user
+        ];
+        return view('user/info', $data);
     }
 
     public function test()
     {
-        return view('home/content');
+        $user = Auth::user();
+        $manager = new ManagerController();
+        $data = [
+            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'user' => $user
+        ];
+        return view('home/content', $data);
     }
 
     /**

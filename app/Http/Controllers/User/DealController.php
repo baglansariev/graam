@@ -6,12 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Helpers\ClientHelper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\User\ManagerController;
 
 class DealController extends Controller
 {
     use ClientHelper;
 
-    public function construct()
+    public function __construct()
     {
         $this->middleware('auth');
     }
@@ -22,15 +23,21 @@ class DealController extends Controller
      */
     public function index()
     {
-
-        $action = '/contractor/get-transactions/' . Auth::user()->crm_id;
+        $user = Auth::user();
+        $action = '/contractor/get-transactions/' . $user->crm_id;
         $this->setClientData();
         $transactions =  json_decode($this->getResponseFromClient('GET', $action), true);
+        $manager = new ManagerController();
+
+        $data = [
+            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'transactions' => $transactions
+        ];
 
 
         //return view('admin.user.deals.index', ['deals' => $deals]);
         
-        return view('user.orders', ['transactions' => $transactions]);
+        return view('user.orders', $data);
     }
 
     /**

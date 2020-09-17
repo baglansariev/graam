@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\User\ManagerController;
 
 class DetailsController extends Controller
 {
@@ -16,10 +17,12 @@ class DetailsController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $manager = new ManagerController();
 
         $data = [
             'has_details' => $user->details()->count(),
             'user' => $user,
+            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
         ];
        return view('admin.user.details.index', $data);
        // return view('user.info', $data);
@@ -74,9 +77,11 @@ class DetailsController extends Controller
     public function edit($id)
     {
         $user = Auth::user();
+        $manager = new ManagerController();
 
         $data = [
             'user' => $user,
+            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
         ];
         return view('admin.user.details.edit', $data);
     }
