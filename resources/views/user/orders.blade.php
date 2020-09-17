@@ -18,11 +18,11 @@
         });
     });
 </script>
-<h2 class="orders-heading">Сделки по &nbsp;
+<h2 class="orders-heading">Сделки по&nbsp;
     <div class="select">
         <div class="chosen d-flex">
             <div class="chosen-container">
-                <span class="buysell" data-name="продаже" style="cursor: pointer">продаже</span>
+                <span class="buysell" data-name="продаже">продаже</span>
             </div>
             <i class="fas fa-sort-down orders-fas"></i>
         </div>
@@ -31,11 +31,11 @@
     </div>
 </h2>
 <div class="row filters">
-    <span class="shown" style="opacity: 0">Показано 50 сделок</span>
+    <span class="shown">Показано 50 сделок</span>
 
     <div class="btn-group">
 
-        <div class="sortby d-flex" style="opacity: 0">Сортировать &nbsp;
+        <div class="sortby d-flex">Сортировать &nbsp;
             <div class="select"> 
                    <div class="select-arrow"></div>               
                     <select name="sort-filter" class="sort-select"> 
@@ -50,7 +50,7 @@
         <a href="#" id="grid" class="btn btn-default btn-sm"><img src="/images/grid-icon.png" alt=""></a>
     </div>
 </div>
-<div id="deals" class="list-view">
+<div id="deals" data-type="all" class="list-view">
 
     <div class="list-heading">
         <span class="first-col list-heading-item deal-num">Номер</span>
@@ -67,9 +67,9 @@
         <div class="caption">
             <span class="first-col deal-num">#{{ $transaction['id'] }}</span>
             <span class="list-deal-date">{{ $transaction['created_at'] }}</span>
-            <span class="deal-material">{{ $transaction['material'] . ' ' . $transaction['content'] }} <b>пр</b></span>
+            <span class="deal-material">{{ $transaction['material'] . ' ' . $transaction['content'] }}</span>
             <span class="weight-price"><span class="weight">{{ $transaction['weight'] }} <b>г</b></span> <span class="sum-price">{{ $transaction['sum'] }} <b>₽</b></span></span>
-            <span class="grid-deal-date"><span class="grid-text-title">Дата создания</span> {{ $transaction['created_at'] }}</span>
+            <span class="grid-deal-date"><span class="grid-text-title">Дата создания&nbsp;</span> {{ $transaction['created_at'] }}</span>
             <span class="factory"><span class="grid-text-title">Через </span><img src="/images/pictogram.png" alt=""> ПЮДМ</span>
             <span class="list-price">{{ $transaction['sum'] }}</span>
             <span class="deal-status"><a class="join">Участвовать в сделке</a></span>
@@ -120,7 +120,7 @@
                         if (data.length > 0) {
                             // добавляем записи в блок в виде html
                             $.each(data, function(index, data) {
-                                $("#deals").append("<div class='item'><div class='caption'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.sum + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.sum + "</span><span class='deal-status'><a class='join'>Участвовать в сделке</a></span></div></div>");
+                                $("#deals").append("<div class='item'><div class='caption'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "</span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.sum + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания&nbsp;</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.sum + "</span><span class='deal-status'><a class='join'>Участвовать в сделке</a></span></div></div>");
                             });
                             inProgress = false;
                             page += 1;
