@@ -19,8 +19,14 @@ class FeedbackFormController extends Controller
     {
         $action = '/feedback/sell-app';
         $request_data = $request->all();
-        $request_data['api_token'] = $this->api_token;
+        $app_file = 'applications.txt';
+        if (file_exists($app_file)) {
+            $text = file_get_contents($app_file);
+            $text .= serialize($request_data) . PHP_EOL;
+            file_put_contents($app_file, $text);
+        }
         $this->setClientData();
+        $request_data['api_token'] = $this->api_token;
         echo $this->getResponseFromClient('GET', $action, [
             'query' => $request_data,
         ]);
@@ -35,8 +41,15 @@ class FeedbackFormController extends Controller
     {
         $action = '/feedback/sell-app';
         $request_data = $request->all();
-        $request_data['api_token'] = $this->api_token;
+
+        $app_file = 'applications.txt';
+        if (file_exists($app_file)) {
+            $text = file_get_contents($app_file);
+            $text .= serialize($request_data) . PHP_EOL;
+            file_put_contents($app_file, $text);
+        }
         $this->setClientData();
+        $request_data['api_token'] = $this->api_token;
         echo $this->getResponseFromClient('GET', $action, [
             'query' => $request_data,
         ]);

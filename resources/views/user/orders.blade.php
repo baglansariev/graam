@@ -77,8 +77,8 @@
     </div>
     @endforeach
     @else
-    <span class="order-link">
-        <span class="text-center">У вас пока нет заявок</span>
+    <span class="order-link d-block text-center">
+        <span>У вас пока нет заявок</span>
     </span>
     @endif
 

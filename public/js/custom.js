@@ -521,6 +521,7 @@
                 $('button[type="submit"]').removeClass('disabled');
             });
 
+<<<<<<< HEAD
             $(document).ready(function () {
                 $(".login-close").click(function (event) {
                     event.preventDefault();
@@ -534,6 +535,180 @@
                     window.location = linkLocation;
                 }
             });
+=======
+    let hiddenPrice = $('.hidden-price');
+    if (hiddenPrice) {
+      hiddenPrice.val(params.price);
+    }
+  }
+
+  $('.chosen, .left-chosen').click(function () {
+    modalOptionsShow('material');
+  });
+  $('.main-sell-trigger').click(function () {
+    modalOptionsShow('sell');
+  });
+  $('.modal-options-close').click(function () {
+    modalOptionsHide();
+  });
+  $('.login-btn').click(function (e) {
+    e.preventDefault();
+    $('.modal-popup.reg-form').fadeOut();
+    $('.modal-popup.login-form').fadeIn();
+  });
+  $('.reg-link').click(function (e) {
+    e.preventDefault();
+    $('.modal-popup.login-form').fadeOut();
+    $('.modal-popup.reg-form').fadeIn();
+  });
+  $('.order-link').click(function (e) {
+    e.preventDefault();
+    $('.modal-popup.order-detail').fadeIn();
+  });
+  $('.more-info').click(function (e) {
+    e.preventDefault();
+    $('.home-content').animate({top: 0 + '%'}, 400);
+  });   
+  $('.material .options .option').not('.selected').click(function () {
+    var main = $('main');
+    var optionText = $(this).find('span').not('.color').text();
+    var optionType = $(this).data('type');
+    var optionName = $(this).data('name');
+    var chosen = $('.chosen span');
+    var chosenName = chosen.data('name');
+    var chosenType = chosen.data('type');
+    var chosenText = chosen.text();
+    main.removeClass();
+    main.addClass(optionName + optionType);
+    chosen.data('name', optionName).data('type', optionType);
+    $(this).data('name', chosenName);
+    $(this).data('type', chosenType);
+    $(this).find('span').not('.color').text(chosenText);
+    chosen.text(optionText);
+    $('.selected span').text(optionText);
+    getCardsByAjax();
+    modalOptionsHide();
+  });
+
+  $('.sell .options .option').not('.selected').click(function () {
+    let optionText = $(this).find('span').text();
+    let selectedOption = $('.sell .options .option.selected span');
+    let selectedOptionText = selectedOption.text();
+
+    $('.main-sell-trigger').text(optionText);
+    selectedOption.text(optionText);
+    $('#sell').text(optionText);
+    $('.sell-trigger').text(optionText);
+    $(this).find('span').text(selectedOptionText);
+
+    modalOptionsHide();
+  });
+    
+    $('.opts .opt').not('.selected').click(function () {
+    
+    var optionText = $(this).find('span').not('.color').text();
+    var optionType = $(this).data('type');
+    var optionName = $(this).data('name');
+    var chosen = $('.chosen span');
+    var chosenName = chosen.data('name');
+    var chosenType = chosen.data('type');
+    var chosenText = chosen.text();    
+    chosen.data('name', optionName).data('type', optionType);
+    $(this).data('name', chosenName);
+    $(this).data('type', chosenType);
+    $(this).find('span').not('.color').text(chosenText);
+    chosen.text(optionText);
+    $('.selected span').text(optionText);
+    getCardsByAjax();
+    modalOptionsHide();
+  });
+    
+    
+    
+  $('#sell').click(function () {
+    $('.choice-block').animate({
+      top: 100 + '%'
+    }, 600);
+    setTimeout(function () {
+      $('.sell-wrapper').css('display', 'flex');
+      $('.sell-content').animate({
+        marginTop: 105 + 'px'
+      }, 900).animate({
+        marginTop: 142 + 'px'
+      }, 300);
+    }, 350);
+    setTimeout(function () {
+      $('.sell-parameters').animate({
+        opacity: 1
+      }, 400);
+    }, 1200);
+  });
+  $('.sell-weight').change(function () {
+    var inputVal = $(this).val();
+    $('.sell-weight').val(inputVal);
+  });
+  $('#sell').click(function () {
+    getGoldRate();
+    getCardsByAjax();
+  });
+  $('.param-weight').on('change', function () {
+    getCardsByAjax();
+  });
+  $('.own-price-btn').click(function () {
+    setModalPopupParams();
+    $('.modal-popup.modal-own-price').fadeIn();
+  });
+  $('.sell-content-title span').click(function () {
+    var type = $(this).data('type');
+    $(this).toggleClass('active');
+
+    if (type == 'fast') {
+      var firstCard = $('.card:first-of-type');
+      firstCard.toggleClass('inactive');
+    } else {
+      $('.card').not('.card:first-of-type').toggleClass('inactive');
+    }
+  });
+  $('.sell-app-submit').click(function () {
+    var formData = $('.modal-sell .popup-form').serialize();
+    console.log(formData);
+    popupAjax('/form/send/sell-app', formData);
+  });
+  $('.own-price-submit').click(function () {
+    var formData = $('.modal-own-price .popup-form').serialize();
+    console.log(formData);
+    popupAjax('/form/send/own-price', formData);
+  });
+
+  function getGoldRate() {
+    $.ajax({
+      url: '/ajax/get-gold-rate',
+      type: 'GET',
+      dataType: 'JSON',
+      success: function success(result) {
+        if (result.price) {
+          $('.currencies .gold span:first-of-type').append(result.price);
+        }
+      },
+      error: function error(result) {
+        console.log(result);
+      }
+    });
+  }
+
+  function popupAjax(url, form_data) {
+    $.ajax({
+      url: url,
+      type: 'GET',
+      dataType: 'JSON',
+      data: form_data,
+      success: function success(result) {
+        if (result.status) {
+          var alert = $('.modal-popup-alert');
+          alert.find('.message').text(result.message);
+          alert.fadeIn();
+        }
+>>>>>>> 42596e1bafa4228005c2de3364f6294642885665
 
 
 

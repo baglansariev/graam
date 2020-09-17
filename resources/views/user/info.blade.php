@@ -24,7 +24,7 @@
              <div class="form-row">
                  <div class="form-group col-md-6">
                      <label for="name">Имя и фамилия</label>
-                     <input name="name" type="text" class="form-control" id="name" value="{{ $user->detailsFromCrm()->name ?? 'Ваше имя' }}">
+                     <input name="name" type="text" class="form-control" id="name" value="{{ $user->name ?? 'Ваше имя' }}">
                  </div>
                  <div class="form-group col-md-6">
                      <label for="inputPassword4">Пароль</label>

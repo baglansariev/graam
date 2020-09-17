@@ -55,7 +55,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-//            'company_name' => ['string', 'max:255'],
+            'name' => ['string', 'max:255'],
             'entity_type' => ['required', 'max:1'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -75,13 +75,17 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
+         if (isset($data['name'])) {
+             $user->name = $data['name'];
+         }
+
         // Передача данных в CRM
         $this->setClientData();
         $response = $this->getResponseFromClient2('POST', '/contractor/create', [
             'form_params' => [
                 'contractor' => [
                     'email' => $user->email,
-                    'name' => $data['company_name'] ?? 'Физическое лицо',
+                    'company_name' => $data['company_name'] ?? 'Физическое лицо ' . $user->id,
                     'entity_type' => $data['entity_type'],
                 ],
                 'api_token' => $this->api_token,

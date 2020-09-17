@@ -10,14 +10,15 @@
                              <span class="order-infos">
                                  <ul class="order-infos-list">
                                      @foreach($document_categories as $category)
-                                         @if($user->documents()->whereCategoryId($category->id)->count())
+                                         @php($documents = $user->docsFromCrm($category->id))
+                                         @if(!empty($documents))
                                             <li class="order-infos-list-item done">
                                          @else <li class="order-infos-list-item ">
                                          @endif
                                              <span class="list-item-heading">{{ $category['name'] }}</span>
 
-                                             @if($user->documents()->whereCategoryId($category->id)->count())
-                                                 @foreach($user->documents()->whereCategoryId($category->id)->get() as $document)
+                                             @if(!empty($documents))
+                                                 @foreach($documents as $document)
                                                      <span>
                                                          <a href="{{ route('documents.show', $document->id) }}" target="_blank" class="mr-1">{{ $document->name }}</a>
 <!--
