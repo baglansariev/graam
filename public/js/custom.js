@@ -231,7 +231,7 @@
                     }
                     
                     if (pageType == 'private') {
-                        requestString = '';
+                        requestString = '/user-transactions';
                     }
                     
                     if (sortBy == '') {

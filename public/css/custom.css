@@ -1877,7 +1877,8 @@ input[type=number] {
     background: #F5F5F5;
 }
 
-.personal .list-view span a {
+.personal .list-view span a,
+.personal .grid-view span a {
     font-weight: 500;
     color: #10B6EB;
     border-bottom: 1px solid #10B6EB;

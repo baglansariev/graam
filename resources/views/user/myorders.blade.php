@@ -18,9 +18,7 @@
         });
     });
 </script>
-<h2 class="orders-heading">Сделки по &nbsp;<span class="buysell" data-name="продаже" style="cursor: pointer">продаже</span>
-<!--
-   &nbsp;
+<h2 class="orders-heading">Сделки по&nbsp;
     <div class="select">
         <div class="chosen d-flex">
             <div class="chosen-container">
@@ -31,7 +29,7 @@
         @component('modules.modals.buysell-modal')
         @endcomponent
     </div>
--->
+
 </h2>
 <div class="row filters">
     <span class="shown" style="opacity: 0;">Показано 50 сделок</span>
