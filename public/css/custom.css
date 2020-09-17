@@ -158,9 +158,6 @@ header {
     position: relative;
     margin-top: 23vh;
 }
-.buysell, .buysell2 {
-    cursor: pointer;
-}
 
 .block-text p {
     text-align: center;
@@ -2296,7 +2293,8 @@ input[type=number] {
     position: relative;
 }
 
-.modal-popup.order-detail {
+.modal-popup.order-detail,
+.join-popup {
     position: absolute;
     background-color: #FFF;
     border-radius: 50px 50px 0 0;

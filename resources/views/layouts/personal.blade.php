@@ -63,7 +63,7 @@
                             <ul class="personal-menu-list">
                                <li class="personal-menu-list-item">Витрина
                                     <ul class="submenu">
-                                        <li class="personal-submenu-list-item"><a href="{{ route('all-deals') }}" class="menu-link {{ request()->routeIs('all-deals') ? 'active' : '' }}">Все сделки</a></li>
+                                        <li class="personal-submenu-list-item"><a href="{{ route('personal') }}" class="menu-link {{ request()->routeIs('personal') ? 'active' : '' }}">Все сделки</a></li>                                     
                                     </ul>
                                 </li>
                                 <li class="personal-menu-list-item">Заявки
@@ -80,8 +80,8 @@
                                 <li><a href="#" class="reg-link">Тест</a></li>
                                 <li><a href="{{ route('personal-test') }}" class="more-info menu-link">Тест2</a></li>
 -->
-                                <li class="nav-item">
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                <li class="personal-menu-list-item">
+                                    <a class="menu-link " href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         Выход
                                     </a>
@@ -132,7 +132,7 @@
     {{--@endcomponent--}}
     {{--@component('modules.home.content')--}}
     {{--@endcomponent--}}
-
+    
 
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/feedback-form.js') }}"></script>
