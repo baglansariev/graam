@@ -28,7 +28,7 @@
                 </div>
                 <div class="card-details">
                     <ul>
-                        @if ($loop->iteration == 1 || $loop->iteration == 4)
+                        @if ($loop->iteration == 1)
                             <li>Транспорт за наш счет</li>
                             <li>Деньги предоплатой</li>
                             <li>Подготовка и оформление документаций</li>
