@@ -22,7 +22,7 @@
     <div class="select">
         <div class="chosen d-flex">
             <div class="chosen-container">
-                <span class="buysell" data-name="продаже">продаже</span>
+                <span class="buysell" data-name="продаже" style="cursor: pointer">продаже</span>
             </div>
             <i class="fas fa-sort-down orders-fas"></i>
         </div>
