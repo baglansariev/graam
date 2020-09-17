@@ -158,7 +158,7 @@ header {
     position: relative;
     margin-top: 23vh;
 }
-.buysell {
+.buysell, .buysell2 {
     cursor: pointer;
 }
 
