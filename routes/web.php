@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/personal/info', 'User\UserController@info')->name('personal-info');
 
     Route::get('/personal/test', 'User\UserController@test')->name('personal-test');
+    Route::get('/user-transactions', 'User\DealController@getUserTransactions');
 });
 
 
