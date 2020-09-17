@@ -311,10 +311,10 @@
                     $('.modal-popup.login-form').fadeOut();
                     $('.modal-popup.reg-form').fadeIn();
                 });
-                $('.order-link').click(function (e) {
-                    e.preventDefault();
-                    $('.modal-popup.order-detail').fadeIn();
-                });
+//                $('.order-link').click(function (e) {
+//                    e.preventDefault();
+//                    $('.modal-popup.order-detail').fadeIn();
+//                });
                 $('.more-info').click(function (e) {
                     e.preventDefault();
                     $('.home-content').animate({
