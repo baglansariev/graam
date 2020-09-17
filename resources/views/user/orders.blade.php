@@ -72,7 +72,7 @@
             <span class="grid-deal-date"><span class="grid-text-title">Дата создания</span> {{ $transaction['created_at'] }}</span>
             <span class="factory"><span class="grid-text-title">Через </span><img src="/images/pictogram.png" alt=""> ПЮДМ</span>
             <span class="list-price">{{ $transaction['sum'] }}</span>
-            <span class="deal-status"><a href="" class="join">Участвовать в сделке</a></span>
+            <span class="deal-status"><a class="join">Участвовать в сделке</a></span>
 <!--            <span class="deal-status">{{ $transaction['status'] }}</span>-->
         </div>
     </div>
