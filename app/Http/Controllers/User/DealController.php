@@ -38,10 +38,20 @@ class DealController extends Controller
         return view('user.myorders', $data);
     }
 
-    public function getUserTransactions()
+    public function getUserTransactions(Request $request)
     {
         $user = Auth::user();
         $action = '/contractor/get-transactions/' . $user->crm_id;
+
+        $page = 1;
+        $type = '1,3';
+
+        if ($request->get('page')) $page = $request->get('page');
+        if ($request->get('type')) $type = $request->get('type');
+
+        $action .= '?page=' . $page;
+        $action .= '&type=' . $type;
+
         $this->setClientData();
         return $this->getResponseFromClient('GET', $action);
     }
