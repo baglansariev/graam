@@ -30,8 +30,14 @@
                                     <input type="number" class="price-input" name="price" placeholder="Цена" required>
                                     <span>₽</span>
                                 </div>
-                                <input type="text" class="name-input" name="name" placeholder="Имя" required>
-                                <input type="text" class="phone-input" name="phone" value="+7" required>
+                                @auth
+                                    <input type="text" class="name-input" name="name" placeholder="Имя" value="{{ Auth::user()->detailsFromCrm()->name ?? '' }}" @if(isset(Auth::user()->detailsFromCrm()->name)) disabled @endif required>
+                                    <input type="text" class="phone-input" name="phone" value="{{ Auth::user()->detailsFromCrm()->phone ?? '+7' }}" @if(isset(Auth::user()->detailsFromCrm()->phone)) disabled @endif required>
+                                @endauth
+                                @guest
+                                    <input type="text" class="name-input" name="name" placeholder="Имя" required>
+                                    <input type="text" class="phone-input" name="phone" value="+7" required>
+                                @endguest
                                 <input type="hidden" name="weight" class="hidden-weight">
                                 <input type="hidden" name="type" class="hidden-type">
                                 <input type="hidden" name="metal" class="hidden-metal">
