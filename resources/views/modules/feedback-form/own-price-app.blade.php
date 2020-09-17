@@ -31,7 +31,7 @@
                                     <span>₽</span>
                                 </div>
                                 @auth
-                                    <input type="text" class="name-input" name="name" placeholder="Имя" value="{{ Auth::user()->detailsFromCrm()->name ?? '' }}" @if(isset(Auth::user()->detailsFromCrm()->name) && Auth::user()->detailsFromCrm()->name !== '') disabled @endif required>
+                                    <input type="text" class="name-input" name="name" placeholder="Имя" value="{{ Auth::user()->name ?? '' }}" @if(isset(Auth::user()->name) && Auth::user()->detailsFromCrm()->name !== '') disabled @endif required>
                                     <input type="text" class="phone-input" name="phone" value="{{ Auth::user()->detailsFromCrm()->phone ?? '+7' }}" @if(isset(Auth::user()->detailsFromCrm()->phone) && Auth::user()->detailsFromCrm()->phone !== '') disabled @endif required>
                                 @endauth
                                 @guest
