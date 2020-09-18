@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\UserDocument;
 use App\Models\DocumentCategory;
 use App\Http\Controllers\User\ManagerController;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class DocumentsController extends Controller
 {
@@ -28,13 +29,33 @@ class DocumentsController extends Controller
      */
     public function index()
     {
-        $manager = new ManagerController();
-        $user = Auth::user();
+        $manager                = new ManagerController();
+        $user                   = Auth::user();
+        $document_categories    = DocumentCategory::all();
+        $categories             = [];
+        $index                  = 0;
+        $doc_count              = 0;
+
+        foreach ($document_categories as $document_category) {
+            $categories[$index] = [
+                'id'        => $document_category->id,
+                'name'      => $document_category->name,
+                'documents' => $user->docsFromCrm($document_category->id),
+            ];
+            $categories[$index]['documents'] = [];
+
+            if ($documents = $user->docsFromCrm($document_category->id)) {
+                $categories[$index]['documents'] = $documents;
+                $doc_count++;
+            }
+            $index++;
+        }
+
         $data = [
-            'document_categories'   => DocumentCategory::all(),
-            'user_docs'             => $user->documents(),
-            'user'                  => $user,
-            'manager'               => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'categories' => $categories,
+            'doc_count'  => $doc_count,
+            'user'       => $user,
+            'manager'    => $manager->getManager($user->manager_id)['manager'] ?? [],
         ];
        // return view('admin.user.documents.index', $data);
         return view('user.docs', $data);
@@ -119,7 +140,14 @@ class DocumentsController extends Controller
     {
         $document = Auth::user()->docFromCrm($id);
 
-        $temp_file = file_get_contents($document->path);
+        try {
+            $temp_file = file_get_contents($document->path);
+        }
+        catch (\Exception $e) {
+            echo 'Файл <b>' . $document->name . '</b> поврежден либо его не существует';
+            die();
+        }
+
         $file_path = 'documents/temp/' . $document->name;
         file_put_contents($file_path, $temp_file);
 
