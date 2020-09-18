@@ -41,7 +41,7 @@
                      @if (isset($user_details->phone) && !empty($user_details->phone))
                          <input type="text" name="phone" class="form-control" id="phone" value="{{ $user_details->phone }}">
                      @else
-                         <input type="text" name="phone" class="form-control" id="phone" value="{{ $user->phone ?? '+7 999 999 99 99' }}">
+                         <input type="text" name="phone" class="form-control" id="phone" value="{{ $user->phone ?? '' }}">
                      @endif
                  </div>
                  <div class="form-group col-md-6">
