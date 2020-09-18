@@ -140,13 +140,7 @@ class DocumentsController extends Controller
     {
         $document = Auth::user()->docFromCrm($id);
 
-        try {
-            $temp_file = file_get_contents($document->path);
-        }
-        catch (\Exception $e) {
-            echo 'Файл <b>' . $document->name . '</b> поврежден либо его не существует';
-            die();
-        }
+        $temp_file = file_get_contents($document->path);
 
         $file_path = 'documents/temp/' . $document->name;
         file_put_contents($file_path, $temp_file);
