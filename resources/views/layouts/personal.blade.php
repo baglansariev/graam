@@ -63,7 +63,7 @@
                             <ul class="personal-menu-list">
                                <li class="personal-menu-list-item">Витрина
                                     <ul class="submenu">
-                                        <li class="personal-submenu-list-item"><a href="{{ route('all-deals') }}" class="menu-link {{ request()->routeIs('all-deals') ? 'active' : '' }}">Все сделки</a></li>
+                                        <li class="personal-submenu-list-item"><a href="{{ route('personal') }}" class="menu-link {{ request()->routeIs('personal') ? 'active' : '' }}">Все сделки</a></li>                                     
                                     </ul>
                                 </li>
                                 <li class="personal-menu-list-item">Заявки
@@ -81,10 +81,10 @@
                                 <li><a href="{{ route('personal-test') }}" class="more-info menu-link">Тест2</a></li>
 -->
                                 <li class="personal-menu-list-item">
-                                    <a class="menu-link " href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    <span class="menu-link " onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         Выход
-                                    </a>
+                                    </span>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
@@ -132,7 +132,8 @@
     {{--@endcomponent--}}
     {{--@component('modules.home.content')--}}
     {{--@endcomponent--}}
-    
+    @component('modules.modals.join')
+    @endcomponent
 
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/feedback-form.js') }}"></script>

@@ -133,8 +133,7 @@
     </script>
 
 </div>
-@component('modules.modals.join')
-    @endcomponent
+
 @component('modules.orders.detail')
 @endcomponent
 @endsection

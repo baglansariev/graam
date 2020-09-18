@@ -32,14 +32,14 @@
                                 @csrf
                                 <div class="price-input-container d-flex align-items-start flex-column">
                                     <div class="form-check radio">
-                                        <input class="form-check-input iscompany" type="radio" name="entity_type" id="iscompany" value="1" checked onclick="Show(1);">
-                                        <label class="form-check-label" for="exampleRadios1">
+                                        <label class="form-check-label" for="iscompany">
+                                        <input class="form-check-input iscompany" type="radio" name="entity_type" id="iscompany" value="1" checked onclick="Show(1);">      
                                             Компании
                                         </label>
                                     </div>
                                     <div class="form-check radio">
-                                        <input class="form-check-input ishuman" type="radio" name="entity_type" id="ishuman" value="2" onclick="Show(0);">
-                                        <label class="form-check-label" for="exampleRadios2">
+                                        <label class="form-check-label" for="ishuman">
+                                        <input class="form-check-input ishuman" type="radio" name="entity_type" id="ishuman" value="2" onclick="Show(0);">                  
                                             Физического лица
                                         </label>
                                     </div>

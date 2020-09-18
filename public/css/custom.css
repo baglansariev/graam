@@ -45,7 +45,7 @@ header {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 10;
+    z-index: 9;
 }
 
 .main-wrapper {
@@ -210,7 +210,8 @@ header {
     position: relative;
 }
 
-.choice-block .choice-content .select .chosen .chosen-container {
+.choice-block .choice-content .select .chosen .chosen-container,
+.main-sell-trigger {
     border-bottom: 1px solid #10b6eb;
 }
 
@@ -222,6 +223,7 @@ header {
 .wanna-sell .main-sell-trigger + .fa-sort-down {
     font-size: 40px;
     margin-left: 5px;
+    color: #10b6eb;
 }
 
 .choice-block .choice-content .select .chosen:hover {
@@ -367,6 +369,7 @@ header {
     left: 0;
     top: 0;
     padding: 0 60px;
+    z-index: 11;
 }
 
 .sell-wrapper .sell-parameters {
@@ -2295,8 +2298,8 @@ input[type=number] {
 }
 
 .modal-popup.order-detail,
-.join-popup {
-    position: absolute;
+.join-popup {    
+    position: fixed;
     background-color: #FFF;
     border-radius: 50px 50px 0 0;
     width: 100%;
@@ -2305,8 +2308,16 @@ input[type=number] {
     top: 0;
     bottom: 0;
     display: none;
-    z-index: 5;
+    z-index: 9999;
     overflow: hidden;
+}
+
+.join-popup .options-block {
+    height: 100%;
+}
+
+.join-popup .options-content {
+    justify-content:center;
 }
 
 .modal-popup.order-detail .container,
@@ -2918,7 +2929,7 @@ button.ml-1 {
     position: relative;
 }
 
-.select .modal-options-wrapper .options-block .modal-options-close {
+.modal-options-close, .select .modal-options-wrapper .options-block .modal-options-close {
     position: absolute;
     right: 40px;
     top: 60px;
@@ -2937,7 +2948,7 @@ button.ml-1 {
     padding-top: 235px;
 }
 
-.select .modal-options-wrapper .options-block .modal-options-close span {
+.select .modal-options-wrapper .options-block .modal-options-close span, .modal-options-close span {
     position: absolute;
     left: 0;
     top: 0;
@@ -2947,11 +2958,11 @@ button.ml-1 {
     background-color: #000;
 }
 
-.select .modal-options-wrapper .options-block .modal-options-close span:first-of-type {
+.select .modal-options-wrapper .options-block .modal-options-close span:first-of-type, .modal-options-close span:first-of-type {
     transform: rotateZ(45deg);
 }
 
-.select .modal-options-wrapper .options-block .modal-options-close span:last-of-type {
+.select .modal-options-wrapper .options-block .modal-options-close span:last-of-type, .modal-options-close span:last-of-type {
     transform: rotateZ(-45deg);
 }
 
@@ -3120,3 +3131,36 @@ button.ml-1 {
 }
 
 .opt span {cursor: pointer;}
+
+span.menu-link {
+    color: #000;
+}
+.form-check label {cursor: pointer;}
+
+/* ----------- iPad mini ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+}
