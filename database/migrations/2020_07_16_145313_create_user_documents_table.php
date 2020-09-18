@@ -16,9 +16,9 @@ class CreateUserDocumentsTable extends Migration
         Schema::create('user_documents', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
+            $table->integer('crm_id');
             $table->integer('category_id');
             $table->string('name')->nullable();
-            $table->string('path');
             $table->string('size')->nullable();
             $table->timestamps();
         });
