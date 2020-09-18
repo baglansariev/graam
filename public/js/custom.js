@@ -237,11 +237,10 @@
                     if (sortBy == '') {
                         sortBy = 'weight';
                     }
+                    let typeofval = '1,3';
 
-                    if (chosenName == "продаже") {
+                    if (chosenName == "покупке") {
                         typeofval = "2,4";
-                    } else {
-                        typeofval = "1,3";
                     }
                     $.ajax({
                         url: requestString, // путь к ajax-обработчику
