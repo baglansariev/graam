@@ -14,7 +14,7 @@
              <div class="form-row">
                  <div class="form-group col-md-6">
                      <label for="company_name">Компания</label>
-                     <input type="text" class="form-control" id="company_name" name="company_name" @if (isset($user_details->entity_type) && $user_details->entity_type == 2) disabled @endif value="{{ $user_details->company_name ?? 'Название компании'}}">
+                     <input type="text" class="form-control" id="company_name" name="company_name" @if (isset($user_details->entity_type) && $user_details->entity_type == 2) disabled @endif value="{{ $user_details->name ?? 'Название компании'}}">
                  </div>
                  <div class="form-group col-md-6">
                      <label for="inputEmail4">Электронная почта</label>
@@ -28,7 +28,7 @@
              <div class="form-row">
                  <div class="form-group col-md-6">
                      <label for="name">Имя и фамилия</label>
-                     <input name="name" type="text" class="form-control" id="name" value="{{ $user->name ?? $user_details->company_name }}">
+                     <input name="name" type="text" class="form-control" id="name" value="{{ $user->name ?? $user_details->name }}">
                  </div>
                  <div class="form-group col-md-6">
                      <label for="inputPassword4">Пароль</label>
@@ -38,7 +38,11 @@
              <div class="form-row">
                  <div class="form-group col-md-6">
                      <label for="phone">Телефон</label>
-                     <input type="text" name="phone" class="form-control" id="phone" value="{{ $user_details->phone ?? $user->phone ?? '+7 999 999 99 99' }}">
+                     @if (isset($user_details->phone) && !empty($user_details->phone))
+                         <input type="text" name="phone" class="form-control" id="phone" value="{{ $user_details->phone }}">
+                     @else
+                         <input type="text" name="phone" class="form-control" id="phone" value="{{ $user->phone ?? '+7 999 999 99 99' }}">
+                     @endif
                  </div>
                  <div class="form-group col-md-6">
 <!--
@@ -55,7 +59,11 @@
              <div class="form-row">
                  <div class="form-group col-md-6">
                      <label for="bday">Дата рождения</label>
-                     <input type="date" class="form-control" id="bday" name="birth_date" value="{{ date('Y-m-d', strtotime($user_details->birth_date ?? $user->birth_date ?? strftime('now'))) }}">
+                     @if (isset($user_details->birth_date) && !empty($user_details->birth_date) && $user_details->birth_date !== '0000-00-00 00:00:00')
+                         <input type="date" class="form-control" id="bday" name="birth_date" value="{{ date('Y-m-d', strtotime($user_details->birth_date)) }}">
+                     @else
+                        <input type="date" class="form-control" id="bday" name="birth_date" value="{{ date('Y-m-d', strtotime($user->birth_date ?? strftime('now'))) }}">
+                     @endif
                  </div>
                  <div class="form-group col-md-6">
 
@@ -64,7 +72,12 @@
              <div class="form-row">
                  <div class="form-group col-md-6">
                      <label for="inputCity">Город</label>
-                     <input type="text" class="form-control" id="inputCity" value="{{ $user_details->city ?? $user->city ?? 'Москва' }}" name="city">
+                     @if (isset($user_details->city) && !empty($user_details->city))
+                         <input type="text" class="form-control" id="inputCity" value="{{ $user_details->city }}" name="city">
+                     @else
+                         <input type="text" class="form-control" id="inputCity" value="{{ $user->city ?? 'Москва' }}" name="city">
+                     @endif
+
                  </div>
                  <div class="form-group col-md-6">
 

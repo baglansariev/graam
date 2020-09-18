@@ -76,7 +76,8 @@ class UserController extends Controller
         $manager = new ManagerController();
         $data = [
             'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
-            'user' => $user
+            'user' => $user,
+            'user_details' => $user->detailsFromCrm(),
         ];
         return view('user/info', $data);
     }
@@ -88,7 +89,6 @@ class UserController extends Controller
         $data = [
             'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
             'user' => $user,
-            'user_details' => $user->detailsFromCrm(),
         ];
         return view('home/content', $data);
     }
@@ -152,16 +152,12 @@ class UserController extends Controller
             $data = [];
 
             $user->email = $request->post('email');
-            if ($user_details->entity_id == 2) {
-                $data['email'] = $request->post('email');
-            }
+            $data['email'] = ($user_details->entity_type == 2) ? $request->post('email') : false;
 
-            if ($request->has('company_name')) {
-                $data['company_name'] = $request->post('company_name');
-            }
+            $data['company_name'] = $request->has('company_name') ? $request->post('company_name') : false;
 
             if ($request->has('name')) {
-                if ($user_details->entity_id == 2) {
+                if ($user_details->entity_type == 2) {
                     $data['company_name'] = $request->post('name');
                 }
                 else {
@@ -170,7 +166,7 @@ class UserController extends Controller
             }
 
             if ($request->has('phone')) {
-                if ($user_details->entity_id == 2) {
+                if ($user_details->entity_type == 2) {
                     $data['phone'] = $request->post('phone');
                 }
                 else {
@@ -179,7 +175,7 @@ class UserController extends Controller
             }
 
             if ($request->has('birth_date')) {
-                if ($user_details->entity_id == 2) {
+                if ($user_details->entity_type == 2) {
                     $data['birth_date'] = $request->post('birth_date');
                 }
                 else {
@@ -188,7 +184,7 @@ class UserController extends Controller
             }
 
             if ($request->has('city')) {
-                if ($user_details->entity_id == 2) {
+                if ($user_details->entity_type == 2) {
                     $data['city'] = $request->post('city');
                 }
                 else {
