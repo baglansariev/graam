@@ -1,7 +1,7 @@
 @extends('layouts.personal')
 @section('content')
 
-         <h2 class="orders-heading">Загружен 1 из 10 документов</h2>
+         <h2 class="orders-heading">Загружен {{ $doc_count }} из 10 документов</h2>
          <div class="container docs">
              <div class="row">
                  <div class="col-sm-12">
@@ -9,16 +9,16 @@
                          <span class="content d-flex flex-column align-items-start">
                              <span class="order-infos">
                                  <ul class="order-infos-list">
-                                     @foreach($document_categories as $category)
-                                         @php($documents = $user->docsFromCrm($category->id))
-                                         @if(!empty($documents))
+                                     @foreach($categories as $category)
+                                         @if(!empty($category['documents']))
                                             <li class="order-infos-list-item done">
-                                         @else <li class="order-infos-list-item ">
+                                         @else
+                                             <li class="order-infos-list-item ">
                                          @endif
                                              <span class="list-item-heading">{{ $category['name'] }}</span>
 
-                                             @if(!empty($documents))
-                                                 @foreach($documents as $document)
+                                             @if(!empty($category['documents']))
+                                                 @foreach($category['documents'] as $document)
                                                      <span>
                                                          <a href="{{ route('documents.show', $document->id) }}" target="_blank" class="mr-1">{{ $document->name }}</a>
 <!--
@@ -36,7 +36,7 @@
                                                      <form id="upload_file" action="{{ route('documents.store') }}" method="post" enctype="multipart/form-data">
                                                             @csrf
                                                          <label for="inputAddress"><span class="upload-file">Загрузить файл</span> doc, pdf</label>
-                                                                <input type="text" name="doc_category" value="{{ $category->id }}" hidden>
+                                                                <input type="text" name="doc_category" value="{{ $category['id'] }}" hidden>
                                                                 <input onchange="document.getElementById('upload_file').submit()"
                                                                     type="file" name="documents[]" class="form-control file_input" id="inputAddress" multiple required>
 
