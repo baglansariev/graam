@@ -44,7 +44,12 @@
         <div class="container-fluid wrapper">
             <div class="row">
                 <div class="col-sm-12 personal-wrapper ">
-                <p class="logo-title mobile-menu-trigger"><span>G</span></p>  
+                  <div class="header-logo">
+                            <a href="/" class="main-logo-personal d-flex justify-content-center align-items-center flex-column">
+                                <p class="logo-title"><span>G</span>RAAM</p>
+                                <p class="logo-subtitle">Продать быстро и дорого</p>
+                            </a>
+                        </div>   
                 <div class="personal-menu row mobile-menu">
                           <div class="header-logo">
                             <a href="/" class="main-logo-personal d-flex justify-content-center align-items-center flex-column">
@@ -109,19 +114,14 @@
                         </div>
                     </div>               
                            
-                           <div class="header-logo">
-                            <a href="/" class="main-logo-personal d-flex justify-content-center align-items-center flex-column">
-                                <p class="logo-title"><span>G</span>RAAM</p>
-                                <p class="logo-subtitle">Продать быстро и дорого</p>
-                            </a>
-                        </div>    
+                            
                     <div class="col-sm-3 personal-menu row desc">                       
                                        
                            <nav>
                             <ul class="personal-menu-list">
                                <li class="personal-menu-list-item">Витрина
                                     <ul class="submenu">
-                                        <li class="personal-submenu-list-item"><a href="{{ route('all-deals') }}" class="menu-link {{ request()->routeIs('all-deals') ? 'active' : '' }}">Все сделки</a></li>
+                                        <li class="personal-submenu-list-item"><a href="{{ route('all-deals') }}" class="menu-link {{ request()->routeIs('all-deals') ? 'active' : '' }}">Все сделки</a></li>                                     
                                     </ul>
                                 </li>
                                 <li class="personal-menu-list-item">Заявки
