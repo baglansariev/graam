@@ -87,7 +87,8 @@ class UserController extends Controller
         $manager = new ManagerController();
         $data = [
             'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
-            'user' => $user
+            'user' => $user,
+            'user_details' => $user->detailsFromCrm(),
         ];
         return view('home/content', $data);
     }
@@ -144,29 +145,59 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if ($request->has(['company_name', 'email'])) {
+        if ($request->has(['email'])) {
+
             $user = Auth::user();
+            $user_details = $user->detailsFromCrm();
+            $data = [];
+
             $user->email = $request->post('email');
-
-            $data = [
-                'company_name' => $request->post('company_name'),
-                'email' => $request->post('email'),
-            ];
-
-            if ($request->post('name')) {
-                $user->name = $request->post('name');
+            if ($user_details->entity_id == 2) {
+                $data['email'] = $request->post('email');
             }
+
+            if ($request->has('company_name')) {
+                $data['company_name'] = $request->post('company_name');
+            }
+
+            if ($request->has('name')) {
+                if ($user_details->entity_id == 2) {
+                    $data['company_name'] = $request->post('name');
+                }
+                else {
+                    $user->name = $request->post('name');
+                }
+            }
+
+            if ($request->has('phone')) {
+                if ($user_details->entity_id == 2) {
+                    $data['phone'] = $request->post('phone');
+                }
+                else {
+                    $user->phone = $request->post('phone');
+                }
+            }
+
+            if ($request->has('birth_date')) {
+                if ($user_details->entity_id == 2) {
+                    $data['birth_date'] = $request->post('birth_date');
+                }
+                else {
+                    $user->birth_date = $request->post('birth_date');
+                }
+            }
+
+            if ($request->has('city')) {
+                if ($user_details->entity_id == 2) {
+                    $data['city'] = $request->post('city');
+                }
+                else {
+                    $user->city = $request->post('city');
+                }
+            }
+
             if ($request->post('password')) {
                 $user->password = Hash::make($request->post('password'));
-            }
-            if ($request->post('phone')) {
-                $data['phone'] = $request->post('phone');
-            }
-            if ($request->post('birth_date')) {
-                $data['birth_date'] = $request->post('birth_date');
-            }
-            if ($request->post('city')) {
-                $data['city'] = $request->post('city');
             }
 
             $user->save();
