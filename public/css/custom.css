@@ -173,6 +173,7 @@ header {
     top: 93%;
     margin: auto;
     border-radius: 50px;
+    z-index:9999;
 }
 
 .choice-block .choice-content {

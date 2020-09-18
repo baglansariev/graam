@@ -79,8 +79,9 @@
             </div>
         </div>
     </div>
-    {!! $sell_form !!}
-    {!! $own_price_form !!}
+    
 </div>
+{!! $sell_form !!}
+{!! $own_price_form !!}
 
 @endsection
