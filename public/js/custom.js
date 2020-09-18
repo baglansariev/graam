@@ -165,6 +165,9 @@
         (function (module, exports) {
 
             $(function () {
+                var PAGE = 1;
+                var IN_PROGRESS = false;
+
                 var percent = setInterval(function () {
                     var percentage = $('.progress-block span').text();
                     $('.progress-block span').text(parseInt(percentage) + 1);
@@ -240,29 +243,37 @@
                     let typeofval = '1,3';
 
                     if (chosenName == "покупке") {
-                        typeofval = "2,4";
+                        typeofval = '2,4';
                     }
+                    PAGE = 1;
+                    IN_PROGRESS = false;
+
                     $.ajax({
                         url: requestString, // путь к ajax-обработчику
                         method: 'GET',
                         data: {
                             type: typeofval,
-                            sortby: sortBy
-                        }
-                    }).done(function (data) {
-                        console.log(data.length);
-                        if (data.length > 0) {
-                            // добавляем записи в блок в виде html
-                            if ((typeof data) !== 'object') {
-                                data = jQuery.parseJSON(data); // данные в json
+                            sortby: sortBy,
+                        },
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.length > 0) {
+                                // добавляем записи в блок в виде html
+                                // if ((typeof data) !== 'object') {
+                                //     data = jQuery.parseJSON(data); // данные в json
+                                // }
+                                let content = '<div class="list-heading"><span class="first-col list-heading-item deal-num">Номер</span><span class="list-heading-item list-deal-date">Дата создания</span><span class="list-heading-item deal-material">Металл, проба</span><span class="list-heading-item weight-price">Вес, г</span><span class="list-heading-item factory">Через</span><span class="list-heading-item list-price">Сумма, ₽</span>        <span class="list-heading-item deal-status">Участвовать в сделке</span></div>';
+                                $.each(data, function (index, data) {
+                                    content += "<div class='item'><div class='caption'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "</span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.sum + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания&nbsp;</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.sum + "</span><span class='deal-status'><a class='join'>Участвовать в сделке</a></span></div></div>";
+                                });
+                                $("#deals").html(content);
                             }
-                            let content = '<div class="list-heading"><span class="first-col list-heading-item deal-num">Номер</span><span class="list-heading-item list-deal-date">Дата создания</span><span class="list-heading-item deal-material">Металл, проба</span><span class="list-heading-item weight-price">Вес, г</span><span class="list-heading-item factory">Через</span><span class="list-heading-item list-price">Сумма, ₽</span>        <span class="list-heading-item deal-status">Участвовать в сделке</span></div>';
-                            $.each(data, function (index, data) {
-                                content += "<div class='item'><div class='caption'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "</span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.sum + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания&nbsp;</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.sum + "</span><span class='deal-status'><a class='join'>Участвовать в сделке</a></span></div></div>";
-                            });
-                            $("#deals").html(content);
+                            infinityScroll();
+                        },
+                        error: function (ans) {
+                            console.log(ans)
                         }
-                    });
+                    })
                 }
 
                 function getClientPreferences() {
@@ -376,16 +387,20 @@
                 });
 
                 $('.opts .opt').not('.selected').click(function () {
+                    var chosen = $('.chosen span');
+                    let selected = $('.opts .opt.selected');
                     var optionText = $(this).find('span').not('.color').text();
                     var optionName = $(this).data('name');
-                    var chosen = $('.chosen span');
                     var chosenName = chosen.data('name');
                     var chosenText = chosen.text();
                     chosen.data('name', optionName);
-                    $(this).data('name', chosenName);
-                    $(this).find('.buysell').text(chosenText);
                     chosen.text(optionText);
-                    changeTypeOfDeals(chosenName);
+                    selected.data('name', optionName);
+                    selected.text(optionText);
+                    $(this).data('name', chosenName);
+                    $(this).find('span').not('.color').text(chosenText);
+
+                    changeTypeOfDeals(optionName);
                     modalOptionsHide();
                 });
 
@@ -539,6 +554,61 @@
                 $('.form-control').on('change', function () {
                     $('button[type="submit"]').removeClass('disabled');
                 });
+
+
+                function infinityScroll() {
+                    $('.personal-content-wrapper').scroll(function() {
+                        if ($('.personal-content-wrapper').scrollTop() >= ($('.personal-content-wrapper').height() - 1) && !IN_PROGRESS) {
+
+                            let typeOfDeal = "1,3";
+                            let chosen = $('.chosen span');
+                            let chosenName = chosen.data('name');
+                            let sortBy = $('.sort-select').val();
+
+                            if (chosenName == "покупке") {
+                                typeOfDeal = "2,4"
+                            }
+
+                            let pageType = $('#deals').attr('data-type');
+                            let requestString = '';
+                            if (pageType == 'all'){
+                                requestString = '/admin/transactions';
+                            }
+
+                            if (pageType == 'private') {
+                                requestString = '/user-transactions';
+                            }
+
+                            $.ajax({
+                                url: requestString, // путь к ajax-обработчику
+                                method: 'GET',
+                                data: {
+                                    pagination: true,
+                                    page: PAGE,
+                                    type: typeOfDeal,
+                                    sortby: sortBy
+                                },
+                                beforeSend: function() {
+                                    IN_PROGRESS = true;
+                                }
+                            }).done(function(data) {
+
+                                data = jQuery.parseJSON(data); // данные в json
+                                // console.log(data.length)
+                                if (data.length > 0) {
+                                    // добавляем записи в блок в виде html
+                                    $.each(data, function(index, data) {
+                                        $("#deals").append("<div class='item'><div class='caption'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.sum + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.sum + "</span><span class='deal-status'>" + data.status + "</span></div></div>");
+                                    });
+                                    IN_PROGRESS = false;
+                                    PAGE ++;
+                                }
+                            });
+                        }
+                    });
+                }
+
+                infinityScroll();
 
                 $(document).ready(function () {
                     $(".login-close").click(function (event) {
