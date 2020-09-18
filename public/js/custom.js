@@ -544,14 +544,18 @@
                 $(document).ready(function () {
                     $(".login-close").click(function (event) {
                         event.preventDefault();
-                        linkLocation = document.referrer;
+                        linkLocation = document.referrer;                        
                         $('.modal-popup').fadeOut(redirectPage);
                         $('.modal-popup-alert').fadeOut(redirectPage);
                         //$(".personal-content").animate({top: 13 + '%'}, 200).animate({top: 100 + '%'}, 200, redirectPage);
                     });
 
                     function redirectPage() {
-                        window.location = linkLocation;
+                        if (!linkLocation) {
+                        window.location = '/';
+                        } else {
+                            window.location = linkLocation;
+                        }
                     }
                 });
             });
