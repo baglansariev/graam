@@ -8,7 +8,7 @@
             <div class="modal-options">
                 <div class="select">
                     <div class="opts">                        
-                        <div class="opt d-flex justify-content-between align-items-center" data-name="продаже">
+                        <div class="opt d-flex justify-content-between align-items-center selected" data-name="продаже">
                             <span>продаже</span>
                         </div>
                         <div class="opt d-flex justify-content-between align-items-center" data-name="покупке">
