@@ -369,7 +369,7 @@
                     $(this).data('type', chosenType);
                     $(this).find('span').not('.color').text(chosenText);
                     chosen.text(optionText);
-                    $('.selected span').text(optionText);
+                    $('.material .selected span').text(optionText);
                     getCardsByAjax();
                     modalOptionsHide();
                 });
@@ -385,13 +385,28 @@
                     $('.sell-trigger').text(optionText);
                     $(this).find('span').text(selectedOptionText);
 
-                    console.log('test');
+                    let chosenMaterial = $('.chosen .chosen-container span');
                     if (optionText == 'купить') {
-                        $('.material .options .option').each(function () {
+
+                        $('.material .options .option').each(function (elem) {
                             if ($(this).data('type') == '999' && $(this).data('name') == 'gold') {
                                 $(this).find('span').text('золота 9999');
                             }
                         });
+                        if (chosenMaterial.data('type') == '999' && chosenMaterial.data('name') == 'gold') {
+                            chosenMaterial.text('золота 9999');
+                        }
+                    }
+                    else {
+                        $('.material .options .option').each(function (elem) {
+                            if ($(this).data('type') == '999' && $(this).data('name') == 'gold') {
+                                $(this).find('span').text('золота 999');
+                            }
+                        });
+                        if (chosenMaterial.data('type') == '999' && chosenMaterial.data('name') == 'gold') {
+                            chosenMaterial.text('золота 999');
+                            $('.material .option.selected span').text('золота 999');
+                        }
                     }
 
                     modalOptionsHide();
@@ -514,7 +529,6 @@
                     let params = getClientPreferences();
                     let action = 'sell';
                     if (params.titleWord == 'покупку') action = 'buy';
-                    console.log('/ajax/offers/product/' + params.name + '/' + params.type + '/' + params.weight + '/' + action);
 
                     $.ajax({
                         url: '/ajax/offers/product/' + params.name + '/' + params.type + '/' + params.weight + '/' + action,
