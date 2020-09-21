@@ -45,7 +45,7 @@ header {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 99;
+    z-index: 999;
 }
 
 .main-wrapper {
@@ -129,6 +129,7 @@ header {
     color: #FFF;
     font-size: 20px;
     padding-bottom: 2px;
+    z-index: 999;
 }
 
 .header-actions a:hover {
@@ -3201,6 +3202,9 @@ span.menu-link {
 .change-zindex {
     z-index: 999 !important;
 }
+.modal-popup {
+    overflow-y: scroll;
+}
 
 /* ----------- iPad mini ----------- */
 
@@ -3551,7 +3555,6 @@ span.menu-link {
         height: 100%;
         margin-top: 40px !important;
     }
-
     #grid,
     #list {
         display: none;
@@ -3564,6 +3567,5 @@ span.menu-link {
     .pm-img-wrap {
         display: none !important;
     }
-    
-    
+
 }

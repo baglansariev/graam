@@ -308,4 +308,5 @@ $(function () {
 
 
     $('.phone-input').inputmask("+7(999)999-99-99");
+    $('.phone-register-input').inputmask("+7(999)999-99-99");
 });
