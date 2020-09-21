@@ -226,6 +226,7 @@
                 }
 
                 function changeTypeOfDeals(chosenName) {
+                    $('.main-preloader').fadeIn();
                     let sortBy = $('.sort-select').val();
                     let pageType = $('#deals').attr('data-type');
                     let requestString = '';
@@ -268,6 +269,7 @@
                                 });
                                 $("#deals").html(content);
                             }
+                            $('.main-preloader').fadeOut();
                             infinityScroll();
                         },
                         error: function (ans) {
@@ -559,7 +561,7 @@
                 function infinityScroll() {
                     $('.personal-content-wrapper').scroll(function() {
                         if ($('.personal-content-wrapper').scrollTop() >= ($('.personal-content-wrapper').height() - 1) && !IN_PROGRESS) {
-
+                            $('.main-preloader').fadeIn();
                             let typeOfDeal = "1,3";
                             let chosen = $('.chosen span');
                             let chosenName = chosen.data('name');
@@ -603,6 +605,7 @@
                                     IN_PROGRESS = false;
                                     PAGE ++;
                                 }
+                                $('.main-preloader').fadeOut();
                             });
                         }
                     });
