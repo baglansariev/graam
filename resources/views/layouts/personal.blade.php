@@ -36,16 +36,12 @@
                 window.location = linkLocation;
             }
 
-
             $("#mobmenu").click(function(event) {
                 $(".personal-content").toggleClass('change-zindex');
             });
         });
-
-    </script>
-
+    </script>    
 </head>
-
 <body>
     <main id="main" class="white personal">
         <div class="mobile-menu-toggler">
@@ -216,6 +212,18 @@
 
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/feedback-form.js') }}"></script>
+    <script>        
+        let screen = window.innerWidth;
+        let grid = document.getElementById('grid');
+        console.log(grid);
+        if(screen <= 767) {
+            document.getElementById('grid').style.display = 'none';
+            document.getElementById('list').style.display = 'none';
+              document.getElementById('deals').classList.remove('list-view');
+              document.getElementById('deals').classList.add('grid-view');
+              document.getElementByClassName('personal-content').classList.add('no-shadow');                     
+        }        
+    </script>
 </body>
 
 </html>
