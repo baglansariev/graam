@@ -10,10 +10,10 @@
 </script>
 <div class="modal-popup reg-form">
     <div class="popup-wrapper">
-        <div class="login-close">
+        <a href="{{ route('login') }}" class="login-close">
             <span></span>
             <span></span>
-        </div>
+        </a>
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">

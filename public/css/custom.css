@@ -45,7 +45,7 @@ header {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 9;
+    z-index: 99;
 }
 
 .main-wrapper {
@@ -1735,16 +1735,16 @@ input[type=number] {
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    /*border-radius: 50%;*/
     overflow: hidden;
 }
 
 .personal .pm-img {
-    border-radius: 50%;
+    /*border-radius: 50%;*/
     margin-bottom: 0;
-    height: 90px;
+    width: 100%;
 }
 
 .personal .pm-name,

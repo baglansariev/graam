@@ -92,10 +92,10 @@
                 <div class="pm-wrapper">
                     <div class="contact-pm">
                         <div class="pm-img-wrap">
-                            <img class="pm-img" src="{{ $manager['photo'] }}" alt=""></div>
+                            <img class="pm-img" src="{{ asset('images/manager1.png') }}" alt=""></div>
                         <p class="logo-subtitle">Ваш личный менеджер</p>
-                        <span class="pm-name">{{ $manager['name'] }}</span>
-                        <span class="pm-phone">{{ $manager['phone'] ?? '+7 999 123-45-67' }}</span>
+                        <span class="pm-name">Виктория</span>
+                        <span class="pm-phone">+7 (906) 666 27 01</span>
                     </div>
                     <!--
                             <div class="contact-pm-form">
@@ -155,7 +155,7 @@
                                 <li><a href="{{ route('personal-test') }}" class="more-info menu-link">Тест2</a></li>
 -->
                                 <li class="personal-menu-list-item">
-                                    <span class="menu-link " onclick="event.preventDefault();
+                                    <span style="cursor: pointer;" class="menu-link " onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         Выход
                                     </span>
@@ -171,10 +171,10 @@
                         <div class="pm-wrapper">
                             <div class="contact-pm">
                                 <div class="pm-img-wrap">
-                                    <img class="pm-img" src="{{ $manager['photo'] }}" alt=""></div>
+                                    <img class="pm-img" src="{{ asset('images/manager1.png') }}" alt=""></div>
                                 <p class="logo-subtitle">Ваш личный менеджер</p>
-                                <span class="pm-name">{{ $manager['name'] }}</span>
-                                <span class="pm-phone">{{ $manager['phone'] ?? '+7 999 123-45-67' }}</span>
+                                <span class="pm-name">Виктория</span>
+                                <span class="pm-phone">+7 (906) 666 27 01</span>
                             </div>
                             <!--
                             <div class="contact-pm-form">
