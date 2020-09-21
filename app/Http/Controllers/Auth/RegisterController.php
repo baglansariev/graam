@@ -98,6 +98,7 @@ class RegisterController extends Controller
         ]);
 
         $user->crm_id = json_decode($response, true)['id'];
+        $user->manager_id = json_decode($response, true)['manager_id'];
         $user->save();
 
         return $user;
@@ -109,8 +110,8 @@ class RegisterController extends Controller
 //        $manager = new ManagerController();
 //        $manager_data = $manager->setManager($user->id);
 //        $user->update(['manager_id' => $manager_data['manager_id']]);
-        $user->update(['manager_id' => 1]);
-
-        $user->save();
+//        $user->update(['manager_id' => 1]);
+//
+//        $user->save();
     }
 }
