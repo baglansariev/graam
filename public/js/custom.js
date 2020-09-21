@@ -512,11 +512,12 @@
 
                 function getCardsByAjax() {
                     let params = getClientPreferences();
-                    let sell_type = 'sell';
-                    if (params.titleWord == 'купить') sell_type = 'buy';
+                    let action = 'sell';
+                    if (params.titleWord == 'покупку') action = 'buy';
+                    console.log('/ajax/offers/product/' + params.name + '/' + params.type + '/' + params.weight + '/' + action);
 
                     $.ajax({
-                        url: '/ajax/offers/product/' + params.name + '/' + params.type + '/' + params.weight + '/' + sell_type,
+                        url: '/ajax/offers/product/' + params.name + '/' + params.type + '/' + params.weight + '/' + action,
                         type: 'GET',
                         dataType: 'html',
                         success: function (result) {
