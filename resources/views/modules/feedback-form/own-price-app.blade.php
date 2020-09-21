@@ -46,7 +46,7 @@
                                 <input type="hidden" name="weight" class="hidden-weight">
                                 <input type="hidden" name="type" class="hidden-type">
                                 @auth
-                                    <input type="hidden" name="contractor_id" class="hidden-type" value="{{ Auth::user()->crm_id ?? 0 }}">
+                                    <input type="hidden" name="contractor_id" value="{{ Auth::user()->crm_id ?? 0 }}">
                                 @endauth
                                 <input type="hidden" name="metal" class="hidden-metal">
                                 <input type="hidden" name="text" class="hidden-message">
