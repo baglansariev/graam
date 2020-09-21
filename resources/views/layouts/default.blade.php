@@ -41,7 +41,7 @@
             <header>
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-12 d-flex justify-content-between">
                             <div class="header-logo">
                                 <a href="/" class="main-logo d-flex justify-content-center align-items-center flex-column">
                                     <p class="logo-title"><span>G</span>RAAM</p>
