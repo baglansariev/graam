@@ -45,7 +45,7 @@ header {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 99;
+    z-index: 999;
 }
 
 .main-wrapper {
@@ -127,6 +127,7 @@ header {
     color: #FFF;
     font-size: 20px;
     padding-bottom: 2px;
+    z-index: 999;
 }
 
 .header-actions a:hover {
@@ -3199,6 +3200,9 @@ span.menu-link {
 .change-zindex {
     z-index: 999 !important;
 }
+.modal-popup {
+    overflow-y: scroll;
+}
 
 /* ----------- iPad mini ----------- */
 
@@ -3543,36 +3547,6 @@ span.menu-link {
     .modal-popup.reg-form .popup-wrapper .popup-content {
         height: 100%;
         margin-top: 40px !important;
-    }
-
-}
-@media screen and (max-height: 695px) {
-
-    .modal-popup {
-        overflow-y: scroll;
-    }
-    .popup-content .title {
-        margin-top: 30%;
-    }
-
-}
-@media screen and (max-height: 590px) {
-
-    .modal-popup {
-        overflow-y: scroll;
-    }
-    .popup-content .title {
-        margin-top: 60%;
-    }
-
-}
-@media screen and (max-height: 480px) {
-
-    .modal-popup {
-        overflow-y: scroll;
-    }
-    .popup-content .title {
-        margin-top: 90%;
     }
 
 }
