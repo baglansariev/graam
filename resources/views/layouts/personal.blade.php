@@ -197,6 +197,7 @@
                         <div class="personal-content sell-block">
                             <div class="sell-content d-flex flex-column align-items-center">
                                 @yield('content')
+                                @component('modules.preloader')@endcomponent
                             </div>
                         </div>
                     </div>
