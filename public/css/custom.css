@@ -3546,3 +3546,33 @@ span.menu-link {
     }
 
 }
+@media screen and (max-height: 695px) {
+
+    .modal-popup {
+        overflow-y: scroll;
+    }
+    .popup-content .title {
+        margin-top: 30%;
+    }
+
+}
+@media screen and (max-height: 590px) {
+
+    .modal-popup {
+        overflow-y: scroll;
+    }
+    .popup-content .title {
+        margin-top: 60%;
+    }
+
+}
+@media screen and (max-height: 480px) {
+
+    .modal-popup {
+        overflow-y: scroll;
+    }
+    .popup-content .title {
+        margin-top: 90%;
+    }
+
+}
