@@ -385,6 +385,15 @@
                     $('.sell-trigger').text(optionText);
                     $(this).find('span').text(selectedOptionText);
 
+                    console.log('test');
+                    if (optionText == 'купить') {
+                        $('.material .options .option').each(function () {
+                            if ($(this).data('type') == '999' && $(this).data('name') == 'gold') {
+                                $(this).find('span').text('золота 9999');
+                            }
+                        });
+                    }
+
                     modalOptionsHide();
                 });
 
