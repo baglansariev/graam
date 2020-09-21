@@ -26,7 +26,7 @@
                 event.preventDefault();
                 linkLocation = this.href;
                 $(".personal-content").animate({
-                    top: 13 + '%'
+                    top: 120 + 'px'
                 }, 200).animate({
                     top: 100 + '%'
                 }, 200, redirectPage);

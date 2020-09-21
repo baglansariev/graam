@@ -124,6 +124,8 @@ header {
 }
 
 .header-actions a {
+    position: relative;
+    z-index: 9999999;
     color: #FFF;
     font-size: 20px;
     padding-bottom: 2px;
@@ -3334,8 +3336,8 @@ span.menu-link {
 
 
     .personal .personal-menu {
-        padding-left: 0;
-
+        flex-wrap: inherit;
+        padding-left: 40px;        
     }
 
     .personal .list-view .list-heading .list-heading-item,
@@ -3347,6 +3349,10 @@ span.menu-link {
     .personal .list-view .item .caption,
     .personal .list-view .list-heading {
         align-items: center;
+    }
+
+    .personal .grid-view {
+        justify-content: center;
     }
 
 
@@ -3499,7 +3505,8 @@ span.menu-link {
 
 
     .personal .personal-menu {
-        padding-left: 0;
+        padding-left: 40px;
+        flex-wrap: inherit;
 
     }
 
@@ -3547,6 +3554,18 @@ span.menu-link {
     .modal-popup.reg-form .popup-wrapper .popup-content {
         height: 100%;
         margin-top: 40px !important;
+    }
+    #grid,
+    #list {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 1366px) and (min-width: 1025px) {
+    .pm-img-wrap {
+        display: none !important;
     }
 
 }

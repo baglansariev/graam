@@ -209,7 +209,7 @@
                     $('.personal-content').animate({
                         top: 10 + '%'
                     }, 400).animate({
-                        top: 13 + '%'
+                        top: 120 + 'px'
                     }, 200);
                 }, 300);
 
