@@ -613,23 +613,24 @@
 
                 infinityScroll();
 
-                $(document).ready(function () {
-                    $(".login-close").click(function (event) {
-                        event.preventDefault();
-                        linkLocation = document.referrer;                        
-                        $('.modal-popup').fadeOut(redirectPage);
-                        $('.modal-popup-alert').fadeOut(redirectPage);
-                        //$(".personal-content").animate({top: 13 + '%'}, 200).animate({top: 100 + '%'}, 200, redirectPage);
-                    });
-
-                    function redirectPage() {
-                        if (!linkLocation) {
-                        window.location = '/';
-                        } else {
-                            window.location = linkLocation;
-                        }
-                    }
-                });
+                // $(document).ready(function () {
+                //     console.log(document.referrer);
+                //     $(".login-close").click(function (event) {
+                //         event.preventDefault();
+                //         linkLocation = document.referrer;
+                //         $('.modal-popup').fadeOut(redirectPage);
+                //         $('.modal-popup-alert').fadeOut(redirectPage);
+                //         //$(".personal-content").animate({top: 13 + '%'}, 200).animate({top: 100 + '%'}, 200, redirectPage);
+                //     });
+                //
+                //     function redirectPage() {
+                //         if (!linkLocation) {
+                //         window.location = '/';
+                //         } else {
+                //             window.location = linkLocation;
+                //         }
+                //     }
+                // });
             });
 
                 /***/
