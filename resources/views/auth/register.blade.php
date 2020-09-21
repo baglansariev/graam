@@ -48,7 +48,10 @@
                                         <input type="text" class="form-control" id="company" value="" placeholder="Название компании" name="company_name">
                                     </div>
                                     <div class="form-group company-name">
-                                        <input type="text" class="form-control" id="company" value="" placeholder="Ф.И.О." name="name">
+                                        <input type="text" class="form-control" id="name" value="" placeholder="Ф.И.О." name="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control phone-register-input" id="phone" value="" placeholder="Телефон" name="phone" required>
                                     </div>
                                     <div class="form-group">
                                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" placeholder="Электронная почта">

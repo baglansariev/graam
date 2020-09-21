@@ -56,6 +56,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['string', 'max:255'],
+            'phone' => ['required', 'string', 'max:255'],
             'entity_type' => ['required', 'max:1'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -79,13 +80,16 @@ class RegisterController extends Controller
          $contractor['company_name']    = isset($data['company_name']) ? $data['company_name'] : false;
          $contractor['entity_type']     = $data['entity_type'];
          $contractor['email']           = false;
+         $contractor['phone']           = false;
 
          if ($data['entity_type'] == 1 && isset($data['name'])) {
-             $user->name = $data['name'];
+             $user->name  = $data['name'];
+             $user->phone = $data['phone'];
          }
          else {
              $contractor['company_name'] = isset($data['name']) ? $data['name'] : false;
              $contractor['email'] = $data['email'];
+             $contractor['phone'] = $data['phone'];
          }
 
         // Передача данных в CRM
