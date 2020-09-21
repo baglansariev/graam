@@ -26,7 +26,10 @@
                                 </p>
                             </div>
                             <form action="{{ route('sell-app') }}" class="popup-form d-flex flex-column">
-                                @if(Auth::user() && isset(Auth::user()->name) && Auth::user()->detailsFromCrm()->name !== '')
+                                @if(Auth::user() && isset(Auth::user()->detailsFromCrm()->name) && Auth::user()->detailsFromCrm()->name !== '')
+                                    <input type="text" class="name-input" name="name_test" value="{{ Auth::user()->detailsFromCrm()->name }}" disabled>
+                                    <input type="hidden" class="name-input" name="name" value="{{ Auth::user()->detailsFromCrm()->name }}" required>
+                                @elseif (Auth::user() && isset(Auth::user()->name) && Auth::user()->name !== '')
                                     <input type="text" class="name-input" name="name_test" value="{{ Auth::user()->name }}" disabled>
                                     <input type="hidden" class="name-input" name="name" value="{{ Auth::user()->name }}" required>
                                 @else
