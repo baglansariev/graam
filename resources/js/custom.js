@@ -104,9 +104,9 @@ $(function () {
     });
 
     $('.login-btn').click(function (e) {
-       e.preventDefault();
-        $('.modal-popup.reg-form').fadeOut();
-       $('.modal-popup.login-form').fadeIn();
+       // e.preventDefault();
+       //  $('.modal-popup.reg-form').fadeOut();
+       // $('.modal-popup.login-form').fadeIn();
     });
 
     $('.reg-link').click(function (e) {

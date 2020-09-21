@@ -49,7 +49,18 @@
                                 </a>
                             </div>
                             <div class="header-actions text-right p-4">
-                                <!--<a href="#" class="login-btn">Вход</a>-->
+                                @guest
+                                    <a href="{{ route('login') }}" class="login-btn">Войти</a>
+                                @endguest
+                                @auth
+                                    @if (isset(Auth::user()->name) && Auth::user()->name !== '')
+                                        <a href="{{ route('personal-info') }}" class="login-btn">{{ explode(' ', Auth::user()->name)[0] }}</a>
+                                    @elseif(isset(Auth::user()->detailsFromCrm()->name) && Auth::user()->detailsFromCrm()->name !== '')
+                                        <a href="{{ route('personal-info') }}" class="login-btn">{{ explode(' ', Auth::user()->detailsFromCrm()->name)[0] }}</a>
+                                    @else
+                                        <a href="{{ route('personal-info') }}" class="login-btn">Кабинет</a>
+                                    @endif
+                                @endauth
                             </div>
                         </div>
                     </div>

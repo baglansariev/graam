@@ -76,7 +76,7 @@
                                 <li><a href="{{ route('personal-test') }}" class="more-info menu-link">Тест2</a></li>
 -->
                         <li class="personal-menu-list-item">
-                            <span class="menu-link " onclick="event.preventDefault();
+                            <span style="cursor: pointer;" class="menu-link " onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 Выход
                             </span>

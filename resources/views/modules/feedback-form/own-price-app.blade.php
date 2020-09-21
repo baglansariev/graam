@@ -30,12 +30,12 @@
                                     <input type="number" class="price-input" name="price" placeholder="Цена" required>
                                     <span>₽</span>
                                 </div>
-                                @if(Auth::user() && isset(Auth::user()->detailsFromCrm()->name) && Auth::user()->detailsFromCrm()->name !== '')
-                                    <input type="text" class="name-input" name="name_test" value="{{ Auth::user()->detailsFromCrm()->name }}" disabled>
-                                    <input type="hidden" class="name-input" name="name" value="{{ Auth::user()->detailsFromCrm()->name }}" required>
-                                @elseif (Auth::user() && isset(Auth::user()->name) && Auth::user()->name !== '')
+                                @if (Auth::user() && isset(Auth::user()->name) && Auth::user()->name !== '')
                                     <input type="text" class="name-input" name="name_test" value="{{ Auth::user()->name }}" disabled>
                                     <input type="hidden" class="name-input" name="name" value="{{ Auth::user()->name }}" required>
+                                @elseif(Auth::user() && isset(Auth::user()->detailsFromCrm()->name) && Auth::user()->detailsFromCrm()->name !== '')
+                                    <input type="text" class="name-input" name="name_test" value="{{ Auth::user()->detailsFromCrm()->name }}" disabled>
+                                    <input type="hidden" class="name-input" name="name" value="{{ Auth::user()->detailsFromCrm()->name }}" required>
                                 @else
                                     <input type="text" class="name-input" name="name" placeholder="Имя" required>
                                 @endif
