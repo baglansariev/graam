@@ -71,31 +71,35 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
          $user = User::create([
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+            'email'     => $data['email'],
+            'password'  => Hash::make($data['password']),
+         ]);
 
-         if (isset($data['name'])) {
+         $contractor                    = [];
+         $contractor['company_name']    = isset($data['company_name']) ? $data['company_name'] : false;
+         $contractor['entity_type']     = $data['entity_type'];
+         $contractor['email']           = false;
+
+         if ($data['entity_type'] == 1 && isset($data['name'])) {
              $user->name = $data['name'];
+         }
+         else {
+             $contractor['company_name'] = isset($data['name']) ? $data['name'] : false;
+             $contractor['email'] = $data['email'];
          }
 
         // Передача данных в CRM
         $this->setClientData();
         $response = $this->getResponseFromClient2('POST', '/contractor/create', [
             'form_params' => [
-                'contractor' => [
-                    'email' => $user->email,
-                    'company_name' => $data['company_name'] ?? 'Физическое лицо ' . $user->id,
-                    'entity_type' => $data['entity_type'],
-                ],
+                'contractor' => $contractor,
                 'api_token' => $this->api_token,
             ],
         ]);
 
         $user->crm_id = json_decode($response, true)['id'];
+        $user->manager_id = json_decode($response, true)['manager_id'];
         $user->save();
-
-
 
         return $user;
     }
@@ -106,8 +110,8 @@ class RegisterController extends Controller
 //        $manager = new ManagerController();
 //        $manager_data = $manager->setManager($user->id);
 //        $user->update(['manager_id' => $manager_data['manager_id']]);
-        $user->update(['manager_id' => 1]);
-
-        $user->save();
+//        $user->update(['manager_id' => 1]);
+//
+//        $user->save();
     }
 }

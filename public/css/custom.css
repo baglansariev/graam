@@ -90,6 +90,7 @@ header {
     font-weight: bolder;
     letter-spacing: 0.5em;
     margin: 0 0 0 50px;
+    display: flex;
 }
 
 .header-logo .main-logo .logo-title span,
@@ -173,7 +174,7 @@ header {
     top: 93%;
     margin: auto;
     border-radius: 50px;
-    z-index:9999;
+    z-index: 9999;
 }
 
 .choice-block .choice-content {
@@ -1627,18 +1628,20 @@ input[type=number] {
 
 
 .personal .header-logo .main-logo-personal {
-    background-color: #f8fafc;
+    background-color: #fff;
 }
 
 .header-logo .main-logo-personal .logo-title {
     font-size: 32px;
     font-weight: bolder;
     letter-spacing: 0.5em;
-    margin: 0 0 0 0;
+    margin: 0 0 10px 0;
 }
 
 .personal .header-logo .main-logo-personal p {
     color: #2B2B2B;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 .personal .header-logo .main-logo-personal .logo-subtitle {
@@ -1862,7 +1865,7 @@ input[type=number] {
 }
 
 .personal .list-view .list-heading .list-heading-item,
-.personal .list-view .item .caption span {    
+.personal .list-view .item .caption span {
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
@@ -1896,26 +1899,27 @@ input[type=number] {
 .personal .list-view .item .caption .deal-status,
 .list-heading-item.deal-status {
     margin-right: 1.5em;
-    
+
 }
+
 /* DEALS LIST VIEW COLUMNS WIDTHS  */
 .personal .list-view .item .caption .deal-num,
-.list-heading-item.deal-num  {
+.list-heading-item.deal-num {
     width: 12%;
 }
 
 .personal .list-view .item .caption .list-deal-date,
-.list-heading-item.list-deal-date  {
+.list-heading-item.list-deal-date {
     width: 16%;
 }
 
 .personal .list-view .item .caption .deal-material,
-.list-heading-item.deal-material  {
+.list-heading-item.deal-material {
     width: 15%;
 }
 
 .personal .list-view .item .caption .weight-price,
-.list-heading-item.weight-price  {
+.list-heading-item.weight-price {
     width: 9%;
 }
 
@@ -1925,12 +1929,12 @@ input[type=number] {
 }
 
 .personal .list-view .item .caption .list-price,
-.list-heading-item.list-price  {
+.list-heading-item.list-price {
     width: 12%;
 }
 
 .personal .list-view .item .caption .deal-status,
-.list-heading-item.deal-status  {    
+.list-heading-item.deal-status {
     width: 23%;
 }
 
@@ -2017,7 +2021,7 @@ input[type=number] {
 
 .personal .grid-view .item .caption .deal-status {
     margin-top: 30px;
-    
+
 }
 
 .personal .discount-info-wrapper {
@@ -2244,10 +2248,10 @@ input[type=number] {
 
 .modal-popup.reg-form .popup-wrapper,
 .modal-popup.login-form .popup-wrapper {
-    width: 100vw ;
+    width: 100vw;
     height: 100vh;
     max-height: 100vh;
-    position: relative;    
+    position: relative;
 }
 
 .login-form .input-wrapper .short,
@@ -2296,10 +2300,11 @@ input[type=number] {
 
 .sell-content {
     position: relative;
+    background: #fff;
 }
 
 .modal-popup.order-detail,
-.join-popup {    
+.join-popup {
     position: fixed;
     background-color: #FFF;
     border-radius: 50px 50px 0 0;
@@ -2318,7 +2323,7 @@ input[type=number] {
 }
 
 .join-popup .options-content {
-    justify-content:center;
+    justify-content: center;
 }
 
 .modal-popup.order-detail .container,
@@ -2930,7 +2935,8 @@ button.ml-1 {
     position: relative;
 }
 
-.modal-options-close, .select .modal-options-wrapper .options-block .modal-options-close {
+.modal-options-close,
+.select .modal-options-wrapper .options-block .modal-options-close {
     position: absolute;
     right: 40px;
     top: 60px;
@@ -2949,7 +2955,8 @@ button.ml-1 {
     padding-top: 235px;
 }
 
-.select .modal-options-wrapper .options-block .modal-options-close span, .modal-options-close span {
+.select .modal-options-wrapper .options-block .modal-options-close span,
+.modal-options-close span {
     position: absolute;
     left: 0;
     top: 0;
@@ -2959,11 +2966,13 @@ button.ml-1 {
     background-color: #000;
 }
 
-.select .modal-options-wrapper .options-block .modal-options-close span:first-of-type, .modal-options-close span:first-of-type {
+.select .modal-options-wrapper .options-block .modal-options-close span:first-of-type,
+.modal-options-close span:first-of-type {
     transform: rotateZ(45deg);
 }
 
-.select .modal-options-wrapper .options-block .modal-options-close span:last-of-type, .modal-options-close span:last-of-type {
+.select .modal-options-wrapper .options-block .modal-options-close span:last-of-type,
+.modal-options-close span:last-of-type {
     transform: rotateZ(-45deg);
 }
 
@@ -3078,7 +3087,7 @@ button.ml-1 {
 .btn-group a.active {
     border-color: #000;
     outline: none;
-    box-shadow:none;
+    box-shadow: none;
 }
 
 .chosen svg {
@@ -3095,7 +3104,7 @@ button.ml-1 {
     position: relative;
 }
 
-.select select {     
+.select select {
     border: none;
     outline: none;
     background: transparent;
@@ -3116,7 +3125,7 @@ button.ml-1 {
     right: -15px;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    border-top: 6px solid #10B6EB;    
+    border-top: 6px solid #10B6EB;
 }
 
 .chosen-container.index span {
@@ -3131,37 +3140,226 @@ button.ml-1 {
     align-items: center;
 }
 
-.opt span {cursor: pointer;}
+.opt span {
+    cursor: pointer;
+}
 
 span.menu-link {
     color: #000;
 }
-.form-check label {cursor: pointer;}
+
+.form-check label {
+    cursor: pointer;
+}
+
+.white {
+    background-color: #fff;
+}
+
+.mobile-menu,
+.mobile-menu-trigger {
+    display: none;
+}
+
+.mobmenu-label,
+#mobmenu {
+    display: none;
+}
+
+.mobmenu-input:checked ~ .mobile-menu {
+    visibility: visible;
+    z-index: 99999;
+}
+
+.mobmenu-input:checked ~ .mobmenu-label {
+    z-index: 9999;
+}
+
+.mobmenu-input:checked ~ .mobmenu-label .btn1 span {
+    opacity: 1;
+    transform: rotate(-45deg) translate(-2px, -1px);
+    background: #000;
+}
+
+.mobmenu-input:checked ~ .mobmenu-label .btn1 span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.mobmenu-input:checked ~ .mobmenu-label .btn1 span:nth-last-child(2) {
+    transform: rotate(45deg) translate(0, -1px);
+}
+
+.mobmenu-input:checked ~ .mobmenu-label {
+    position: absolute;
+    right: 0;
+}
+
+.change-zindex {
+    z-index: 999 !important;
+}
 
 /* ----------- iPad mini ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
 
+    body {
+        font-size: 14px;
+    }
+
+    .personal .personal-content-wrapper {
+
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .personal .personal-content {        
+        top: 100%;
+        height: auto;
+        min-height: calc(100vh - 13%);
+        width: 100%;
+        border-radius: 50px 50px 0 0;
+        box-shadow: 0px 0px 25px 0px #ccc;
+        z-index: 999999;
+        overflow: hidden;
+    }
+
+    .personal .personal-menu-list-item,
+    .personal .personal-menu-list-item a,
+    .personal .personal-submenu-list-item a {        
+    }
+
+    .personal .orders-heading {
+        font-size: 2em;
+        line-height: 1.2em;
+        margin: 30px auto;
+        padding: 0 2rem;
+    }
+
+    .personal .submenu {
+        padding-left: 20px;
+    }
+
+    .personal .personal-menu.mobile-menu {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 320px;
+        height: 100%;
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .header-logo {
+        position: relative;
+      width: 220px;
+      height: 100px;
+    }  
+
+    .mobile-menu-toggler {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn1 span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #000000;
+        border-radius: 3px;
+        z-index: 103;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+    }
+
+    .btn1 span:first-child {
+        transform-origin: 0% 0%;
+    }
+
+    .btn1 span:nth-last-child(2) {
+        transform-origin: 36% -77%;
+    }
+
+    .mobmenu-label {
+        position: absolute;
+        display: flex;
+        min-width: 50px;
+        height: 50px;
+        align-items: center;
+        padding-top: 6px;
+        z-index: 999999;
+        top: 30px;
+        right: 0;
+    }
+
+    .mobmenu-input:checked ~ .mobmenu-label {
+        z-index: 999999;
+    }   
+
+    .mobile-menu {
+        visibility: hidden;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: absolute;        
+        top: 127px;
+        left: 100%;
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+        padding-top: 130px;
+        background: #fff;
+        box-shadow: 0px 0px 12px 5px #ccc;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transform: translate(-95%, 0);
+       transition: transform 5s ease-in-out;
+        z-index: 102;
+        box-sizing: border-box;
+    } 
+
+
+    .personal .personal-menu {
+        padding-left: 0;
+
+    }
+
+    .personal .list-view .list-heading .list-heading-item,
+    .personal .list-view .item .caption span {
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+    .personal .list-view .item .caption,
+    .personal .list-view .list-heading {
+        align-items: center;
+    }
+
+
+    .desc {
+        display: none;
+    }
+
+    .col-sm-9.personal-content-wrapper {
+        width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+        flex: auto;
+    }
 }
 
 /* Portrait */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: portrait) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-
-}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {}
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: landscape) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-
-}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {}

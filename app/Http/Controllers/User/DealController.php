@@ -55,10 +55,6 @@ class DealController extends Controller
         $this->setClientData();
         $response =  $this->getResponseFromClient('GET', $action);
 
-        if ($request->get('pagination') || $request->get('ajax')) {
-            echo $response;
-            exit;
-        }
         return $response;
 
     }

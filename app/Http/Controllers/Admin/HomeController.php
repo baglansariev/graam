@@ -34,7 +34,7 @@ class HomeController extends Controller
 
         $data = [
             'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
-            'transactions' => $this->getAllTransactions($request),
+            'transactions' => json_decode($this->getAllTransactions($request), true),
         ];
 
         //return view('admin.home', $data);
@@ -55,11 +55,6 @@ class HomeController extends Controller
         $this->setClientData();
         $response = $this->getResponseFromClient('GET', '/transaction' . $action);
 
-        if ($request->get('pagination')) {
-            echo $response;
-            exit;
-        }
-
-        return json_decode($response, true);
+        return $response;
     }
 }
