@@ -58,7 +58,8 @@
         <span class="list-heading-item deal-material">Металл, проба</span>
         <span class="list-heading-item weight-price">Вес, г</span>
         <span class="list-heading-item factory">Через</span>
-        <span class="list-heading-item list-price">Сумма, ₽</span>
+{{--        <span class="list-heading-item list-price">Сумма, ₽</span>--}}
+        <span class="list-heading-item list-price">Цена, ₽</span>
         <span class="list-heading-item deal-status">Участвовать в сделке</span>
     </div>
     @if(count($transactions))
@@ -68,10 +69,11 @@
             <span class="first-col deal-num">#{{ $transaction['id'] }}</span>
             <span class="list-deal-date">{{ $transaction['created_at'] }}</span>
             <span class="deal-material">{{ $transaction['material'] . ' ' . $transaction['content'] }}</span>
-            <span class="weight-price"><span class="weight">{{ $transaction['weight'] }} <b>г</b></span> <span class="sum-price">{{ $transaction['sum'] }} <b>₽</b></span></span>
+            <span class="weight-price"><span class="weight">{{ $transaction['weight'] }} <b>г</b></span> <span class="sum-price">{{ $transaction['price'] }} <b>₽</b></span></span>
             <span class="grid-deal-date"><span class="grid-text-title">Дата создания&nbsp;</span> {{ $transaction['created_at'] }}</span>
             <span class="factory"><span class="grid-text-title">Через </span><img src="/images/pictogram.png" alt=""> ПЮДМ</span>
-            <span class="list-price">{{ $transaction['sum'] }}</span>
+{{--            <span class="list-price">{{ $transaction['sum'] }}</span>--}}
+            <span class="list-price">{{ $transaction['price'] }}</span>
             <span class="deal-status"><a class="join">Участвовать в сделке</a></span>
 <!--            <span class="deal-status">{{ $transaction['status'] }}</span>-->
         </div>
