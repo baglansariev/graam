@@ -3215,7 +3215,7 @@ span.menu-link {
         padding-right: 0;
     }
 
-    .personal .personal-content {        
+    .personal .personal-content {
         top: 100%;
         height: auto;
         min-height: calc(100vh - 13%);
@@ -3228,8 +3228,7 @@ span.menu-link {
 
     .personal .personal-menu-list-item,
     .personal .personal-menu-list-item a,
-    .personal .personal-submenu-list-item a {        
-    }
+    .personal .personal-submenu-list-item a {}
 
     .personal .orders-heading {
         font-size: 2em;
@@ -3258,9 +3257,9 @@ span.menu-link {
 
     .header-logo {
         position: relative;
-      width: 220px;
-      height: 100px;
-    }  
+        width: 220px;
+        height: 100px;
+    }
 
     .mobile-menu-toggler {
         display: flex;
@@ -3303,7 +3302,7 @@ span.menu-link {
 
     .mobmenu-input:checked ~ .mobmenu-label {
         z-index: 999999;
-    }   
+    }
 
     .mobile-menu {
         visibility: hidden;
@@ -3312,7 +3311,7 @@ span.menu-link {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        position: absolute;        
+        position: absolute;
         top: 127px;
         left: 100%;
         width: 100%;
@@ -3324,10 +3323,10 @@ span.menu-link {
         -webkit-font-smoothing: antialiased;
         transform-origin: 0% 0%;
         transform: translate(-95%, 0);
-       transition: transform 5s ease-in-out;
+        transition: transform 5s ease-in-out;
         z-index: 102;
         box-sizing: border-box;
-    } 
+    }
 
 
     .personal .personal-menu {
@@ -3371,13 +3370,17 @@ span.menu-link {
         font-size: 14px;
     }
 
+    main {
+        overflow: scroll;
+    }
+
     .personal .personal-content-wrapper {
 
         padding-left: 0;
         padding-right: 0;
     }
 
-    .personal .personal-content {        
+    .personal .personal-content {
         top: 100%;
         height: auto;
         min-height: calc(100vh - 13%);
@@ -3390,8 +3393,7 @@ span.menu-link {
 
     .personal .personal-menu-list-item,
     .personal .personal-menu-list-item a,
-    .personal .personal-submenu-list-item a {        
-    }
+    .personal .personal-submenu-list-item a {}
 
     .personal .orders-heading {
         font-size: 1.5em;
@@ -3420,9 +3422,9 @@ span.menu-link {
 
     .header-logo {
         position: relative;
-      width: 220px;
-      height: 100px;
-    }  
+        width: 220px;
+        height: 100px;
+    }
 
     .mobile-menu-toggler {
         display: flex;
@@ -3465,7 +3467,7 @@ span.menu-link {
 
     .mobmenu-input:checked ~ .mobmenu-label {
         z-index: 999999;
-    }   
+    }
 
     .mobile-menu {
         visibility: hidden;
@@ -3474,7 +3476,7 @@ span.menu-link {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        position: absolute;        
+        position: absolute;
         top: 127px;
         left: 100%;
         width: 100%;
@@ -3486,10 +3488,10 @@ span.menu-link {
         -webkit-font-smoothing: antialiased;
         transform-origin: 0% 0%;
         transform: translate(-95%, 0);
-       transition: transform 5s ease-in-out;
+        transition: transform 5s ease-in-out;
         z-index: 102;
         box-sizing: border-box;
-    } 
+    }
 
 
     .personal .personal-menu {
@@ -3519,18 +3521,28 @@ span.menu-link {
         min-height: 100vh;
         flex: auto;
     }
-    
-    .personal .grid-view {        
+
+    .personal .grid-view {
         justify-content: space-around;
     }
-    
-    .personal .grid-view .item {        
-        margin-bottom: 0px;        
-    }
-    
-    .personal .personal-content {
-        top: 110px !important;    
-}
 
+    .personal .grid-view .item {
+        margin-bottom: 0px;
+    }
+
+    .personal .personal-content {
+        top: 110px !important;
+    }
+
+    .login-form input,
+    .reg-form input {
+        width: 290px;
+        min-height: 52px;
+    }
+
+    .modal-popup.reg-form .popup-wrapper .popup-content {
+        height: 100%;
+        margin-top: 40px !important;
+    }
 
 }
