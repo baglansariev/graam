@@ -36,13 +36,16 @@
                                 @if(Auth::user() && isset(Auth::user()->detailsFromCrm()->phone) && Auth::user()->detailsFromCrm()->phone !== '')
                                     <input type="text" class="phone-input" name="phone_test" value="{{ Auth::user()->detailsFromCrm()->phone ?? '+7' }}" disabled>
                                     <input type="hidden" class="phone-input" name="phone" value="{{ Auth::user()->detailsFromCrm()->phone ?? '+7' }}" required>
+                                @elseif (isset(Auth::user()->phone) && Auth::user()->phone !== '')
+                                        <input type="text" class="phone-input" name="phone_test" value="{{ Auth::user()->phone ?? '+7' }}" disabled>
+                                        <input type="hidden" class="phone-input" name="phone" value="{{ Auth::user()->phone ?? '+7' }}" required>
                                 @else
                                     <input type="text" class="phone-input" name="phone" value="+7" required>
                                 @endif
                                 <input type="hidden" name="weight" class="hidden-weight">
                                 <input type="hidden" name="type" class="hidden-type">
                                 @auth
-                                    <input type="hidden" name="contractor_id" class="hidden-type" value="{{ Auth::user()->crm_id ?? 0 }}">
+                                    <input type="hidden" name="contractor_id" value="{{ Auth::user()->crm_id ?? 0 }}">
                                 @endauth
                                 <input type="hidden" name="metal" class="hidden-metal">
                                 <input type="hidden" name="price" class="hidden-price">
