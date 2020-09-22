@@ -31,6 +31,7 @@ class UserController extends Controller
         $data = [
             'transactions' => $transactions,
             'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'user_details' => $user->detailsFromCrm(),
         ];
 
 

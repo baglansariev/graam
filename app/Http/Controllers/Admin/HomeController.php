@@ -35,6 +35,8 @@ class HomeController extends Controller
         $data = [
             'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
             'transactions' => json_decode($this->getAllTransactions($request), true),
+            'user_details' => $user->detailsFromCrm(),
+            'user' => $user,
         ];
 
         //return view('admin.home', $data);
@@ -54,6 +56,28 @@ class HomeController extends Controller
 
         $this->setClientData();
         $response = $this->getResponseFromClient('GET', '/transaction' . $action);
+
+        if ($user = Auth::user()) {
+            $transactions   = [];
+            $data           = json_decode($response, true);
+            $index          = 0;
+            $user_details   = $user->detailsFromCrm();
+            $user_data      = [];
+
+            foreach ($data as $item) {
+                $transactions[$index] = $item;
+                $user_data = [
+                    'user_id' => $user->id,
+                    'user_name' => $user->name ?? $user_details->name,
+                    'user_phone' => $user->phone ?? $user_details->phone,
+                ];
+
+                $transactions[$index] = array_merge($transactions[$index], $user_data);
+                $index++;
+            }
+
+            return json_encode($transactions);
+        }
 
         return $response;
     }
