@@ -375,6 +375,7 @@
                     $(this).find('span').not('.color').text(chosenText);
                     chosen.text(optionText);
                     $('.material .selected span').text(optionText);
+                    $('.left-chosen.selected span').text(optionText);
                     getCardsByAjax();
                     modalOptionsHide();
                 });
