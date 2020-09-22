@@ -20,7 +20,32 @@
     <script src="{{ asset('js/inputmask.min.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
     <script src="{{ asset('js/jquery.jscroll.min.js') }}"></script>
-    <script>
+    @if (request()->getHost() == 'graam.ru')
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(66766309, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/66766309" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+    @endif
+       <script>
         $(document).ready(function() {
             $("a.menu-link").click(function(event) {
                 event.preventDefault();
@@ -63,6 +88,7 @@
                         </li>
                         <li class="personal-menu-list-item">Заявки
                             <ul class="submenu">
+                               <li class="personal-submenu-list-item"><a href="/" class="menu-link">Добавить</a></li>
                                 <li class="personal-submenu-list-item"><a href="{{ route('personal') }}" class="menu-link {{ request()->routeIs('personal') ? 'active' : '' }}">Активные</a></li>
                                 <!--                                        <li class="personal-submenu-list-item"><a href="{{ route('personal-archive') }}" class="menu-link {{ request()->routeIs('personal-archive') ? 'active' : '' }}">История сделок</a></li>-->
                                 <!--                                        <li class="personal-menu-list-item"><a href="{{ route('personal-discount') }}" class="menu-link {{ request()->routeIs('personal-discount') ? 'active' : '' }}">Дисконт</a></li>-->
@@ -142,6 +168,7 @@
                                 </li>
                                 <li class="personal-menu-list-item">Заявки
                                     <ul class="submenu">
+                                       <li class="personal-submenu-list-item"><a href="/" class="menu-link">Добавить</a></li>
                                         <li class="personal-submenu-list-item"><a href="{{ route('personal') }}" class="menu-link {{ request()->routeIs('personal') ? 'active' : '' }}">Активные</a></li>
                                         <!--                                        <li class="personal-submenu-list-item"><a href="{{ route('personal-archive') }}" class="menu-link {{ request()->routeIs('personal-archive') ? 'active' : '' }}">История сделок</a></li>-->
                                         <!--                                        <li class="personal-menu-list-item"><a href="{{ route('personal-discount') }}" class="menu-link {{ request()->routeIs('personal-discount') ? 'active' : '' }}">Дисконт</a></li>-->
@@ -213,15 +240,9 @@
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/feedback-form.js') }}"></script>
     <script>        
-        let screen = window.innerWidth;
-        let grid = document.getElementById('grid');
-        console.log(grid);
-        if(screen <= 767) {
-            document.getElementById('grid').style.display = 'none';
-            document.getElementById('list').style.display = 'none';
-              document.getElementById('deals').classList.remove('list-view');
-              document.getElementById('deals').classList.add('grid-view');
-              document.getElementByClassName('personal-content').classList.add('no-shadow');                     
+        let screenH = window.innerHeight;       
+        if(screenH <= 560) {
+            document.getElementById('main').style.overflow = 'auto';                            
         }        
     </script>
 </body>

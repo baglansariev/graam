@@ -151,15 +151,15 @@
 
 
 @media (max-width: 767px) {
-    
+
     .modal-popup {
         position: absolute;
     }
 
     .modal-popup .popup-wrapper .popup-close,
     .modal-popup .popup-wrapper .login-close {
-        right: 30px;
-        top: 30px;
+        right: 10px;
+        top: 20px;
         width: 30px;
         height: 30px;
     }

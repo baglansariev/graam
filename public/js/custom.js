@@ -557,7 +557,14 @@
                 $('.form-control').on('change', function () {
                     $('button[type="submit"]').removeClass('disabled');
                 });
-
+                $('.sell-block').scroll(function() {                           
+                            if ($('.sell-block').scrollTop() > 1) {
+                                $('header').addClass('move-down');
+                            } else {
+                                $('header').removeClass('move-down');
+                            } 
+                });
+                
 
                 function infinityScroll() {
                     $('.personal-content-wrapper').scroll(function() {

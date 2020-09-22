@@ -133,7 +133,16 @@
     </script>
 
 </div>
-
+<script>        
+        let screen = window.innerWidth;       
+        if(screen <= 767) {
+            document.getElementById('grid').style.display = 'none';
+            document.getElementById('list').style.display = 'none';
+              document.getElementById('deals').classList.remove('list-view');
+              document.getElementById('deals').classList.add('grid-view');
+              document.getElementByClassName('personal-content').classList.add('no-shadow');                     
+        }        
+    </script>
 @component('modules.orders.detail')
 @endcomponent
 @endsection

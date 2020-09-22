@@ -45,7 +45,7 @@ header {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 999;
+    z-index: 99;
 }
 
 .main-wrapper {
@@ -125,7 +125,6 @@ header {
 
 .header-actions a {
     position: relative;
-    z-index: 9999999;
     color: #FFF;
     font-size: 20px;
     padding-bottom: 2px;
@@ -3202,6 +3201,11 @@ span.menu-link {
 .change-zindex {
     z-index: 999 !important;
 }
+
+.move-down {
+    z-index: 9 !important;
+}
+
 .modal-popup {
     overflow-y: scroll;
 }
@@ -3224,7 +3228,7 @@ span.menu-link {
     .personal .personal-content {
         top: 100%;
         height: auto;
-        min-height: calc(100vh - 13%);
+        min-height: calc(100vh - 120px);
         width: 100%;
         border-radius: 50px 50px 0 0;
         box-shadow: 0px 0px 25px 0px #ccc;
@@ -3337,7 +3341,7 @@ span.menu-link {
 
     .personal .personal-menu {
         flex-wrap: inherit;
-        padding-left: 40px;        
+        padding-left: 40px;
     }
 
     .personal .list-view .list-heading .list-heading-item,
@@ -3380,9 +3384,11 @@ span.menu-link {
         font-size: 14px;
     }
 
+    /*
     main {
         overflow: scroll;
     }
+*/
 
     .personal .personal-content-wrapper {
 
@@ -3414,6 +3420,14 @@ span.menu-link {
 
     .personal .submenu {
         padding-left: 20px;
+        margin-bottom: 15px;
+    }
+
+    .personal .pm-img-wrap {
+
+        width: 90px;
+        height: 90px;
+
     }
 
     .personal .personal-menu.mobile-menu {
@@ -3421,7 +3435,7 @@ span.menu-link {
         right: 0;
         top: 0;
         width: 320px;
-        height: 100%;
+        height: auto;
     }
 
     header {
@@ -3434,6 +3448,13 @@ span.menu-link {
         position: relative;
         width: 220px;
         height: 100px;
+    }
+
+
+    .header-logo .main-logo {}
+
+    .header-logo .main-logo .logo-title {
+        /*        font-size: 26px !important;*/
     }
 
     .mobile-menu-toggler {
@@ -3505,9 +3526,18 @@ span.menu-link {
 
 
     .personal .personal-menu {
-        padding-left: 40px;
+        padding-left: 20px;
+        padding-top: 40px;
         flex-wrap: inherit;
+    }
 
+    .personal .personal-menu-list-item,
+    .personal .personal-menu-list-item a,
+    .personal .personal-submenu-list-item a {
+
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 30px;
     }
 
     .personal .list-view .list-heading .list-heading-item,
@@ -3555,6 +3585,7 @@ span.menu-link {
         height: 100%;
         margin-top: 40px !important;
     }
+
     #grid,
     #list {
         display: none;
@@ -3566,6 +3597,25 @@ span.menu-link {
 @media (max-width: 1366px) and (min-width: 1025px) {
     .pm-img-wrap {
         display: none !important;
+    }
+
+}
+
+@media (max-width: 320px) {
+
+    .header-logo {
+        position: relative;
+        width: 220px;
+        height: 100px;
+    }
+
+
+    .header-logo .main-logo {
+        left: 12vw;
+    }
+
+    .header-logo .main-logo .logo-title {
+        font-size: 26px !important;
     }
 
 }
