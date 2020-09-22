@@ -272,6 +272,7 @@
                                     content += "<div class='item'><div class='caption'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "</span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.price + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания&nbsp;</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.price + "</span><span class='deal-status'>" + statusPart + "</span></div></div>";
                                 });
                                 $("#deals").html(content);
+                                console.log(typeofval);
                             }
                             $('.main-preloader').fadeOut();
                             infinityScroll();
