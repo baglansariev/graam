@@ -540,8 +540,6 @@
                                 alert.find('.message').text(result.message);
                                 alert.fadeIn();
                             }
-
-                            console.log(result);
                         },
                         error: function error(result) {
                             console.log(result);
