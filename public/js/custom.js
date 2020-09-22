@@ -271,6 +271,7 @@
                             $("#deals").html(content);
                             $('.main-preloader').fadeOut();
                             infinityScroll();
+                            joinToDeal();
                         },
                         error: function (ans) {
                             console.log(ans)
@@ -339,36 +340,37 @@
                     $('.modal-popup.login-form').fadeOut();
                     $('.modal-popup.reg-form').fadeIn();
                 });
-//                $('.order-link').click(function (e) {
-//                    e.preventDefault();
-//                    $('.modal-popup.order-detail').fadeIn();
-//                });
-                $('.join').click(function (e) {
-                   e.preventDefault();
 
-                   let element = $(this).closest('.caption');
-                   let data = {
-                       transaction_id:  element.data('tr_id'),
-                       contractor_id:   element.data('contractor_id'),
-                       name:            element.data('name'),
-                       phone:           element.data('phone'),
-                       weight:          element.data('weight'),
-                       price:           element.data('price').split(' ').join(''),
-                       metal:           element.data('metal'),
-                       type:            element.data('type'),
-                       text:            'Клиент хочет участвовать в сделке под номером: ' + element.data('tr_id'),
-                   };
 
-                   popupAjax('/form/send/join-to-deal', data);
 
-                    $('.modal-popup.modal-join').fadeIn();
-                    $('.popup-close').click(function () {
-                        $('.modal-popup').fadeOut();
-                        $('.modal-popup-alert').fadeOut()
+                function joinToDeal() {
+                    $('.join').click(function (e) {
+                        e.preventDefault();
+
+                        let element = $(this).closest('.caption');
+                        let data = {
+                            transaction_id:  element.data('tr_id'),
+                            contractor_id:   element.data('contractor_id'),
+                            name:            element.data('name'),
+                            phone:           element.data('phone'),
+                            weight:          element.data('weight'),
+                            price:           element.data('price').split(' ').join(''),
+                            metal:           element.data('metal'),
+                            type:            element.data('type'),
+                            text:            'Клиент хочет участвовать в сделке под номером: ' + element.data('tr_id'),
+                        };
+
+                        popupAjax('/form/send/join-to-deal', data);
+
+                        $('.modal-popup.modal-join').fadeIn();
+                        $('.popup-close').click(function () {
+                            $('.modal-popup').fadeOut();
+                            $('.modal-popup-alert').fadeOut()
+                        });
                     });
-                });
+                }
 
-
+                joinToDeal();
 
                 $('.more-info').click(function (e) {
                     e.preventDefault();
