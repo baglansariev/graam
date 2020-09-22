@@ -615,8 +615,9 @@
                 
 
                 function infinityScroll() {
-                    $('.personal-content-wrapper').scroll(function() {
-                        if ($('.personal-content-wrapper').scrollTop() >= ($('.personal-content-wrapper').height() - 1) && !IN_PROGRESS) {
+                    let personalWrapper = $('.personal-content-wrapper');
+                    personalWrapper.scroll(function() {
+                        if (personalWrapper.scrollTop() >= (personalWrapper.height() - 1) && !IN_PROGRESS && !personalWrapper.hasClass('documents')) {
                             $('.main-preloader').fadeIn();
                             let typeOfDeal = "1,3";
                             let chosen = $('.chosen span');
@@ -651,8 +652,9 @@
                                 }
                             }).done(function(data) {
 
-                                data = jQuery.parseJSON(data); // данные в json
-                                // console.log(data.length)
+                                if (typeof value !== 'object') {
+                                    data = jQuery.parseJSON(data); // данные в json
+                                }
                                 if (data.length > 0) {
                                     // добавляем записи в блок в виде html
                                     $.each(data, function(index, data) {
