@@ -54,4 +54,5 @@ Route::prefix('ajax')->group(function () {
 Route::prefix('form/send')->group(function () {
     Route::get('/sell-app', 'Modules\FeedbackFormController@sendSellApp')->name('sell-app');
     Route::get('/own-price', 'Modules\FeedbackFormController@sendOwnPrice')->name('own-price');
+    Route::get('/join-to-deal', 'Modules\FeedbackFormController@joinToDeal')->name('join-to-deal');
 });

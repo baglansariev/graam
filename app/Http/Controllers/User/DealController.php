@@ -40,11 +40,15 @@ class DealController extends Controller
 
     public function getUserTransactions(Request $request)
     {
-        $user = Auth::user();
-        $action = '/contractor/get-transactions/' . $user->crm_id;
+        $user           = Auth::user();
+        $action         = '/contractor/get-transactions/' . $user->crm_id;
+        $transactions   = [];
+        $index          = 0;
+        $user_details   = $user->detailsFromCrm();
+        $user_data      = [];
 
-        $page = 1;
-        $type = '1,3';
+        $page           = 1;
+        $type           = '1,3';
 
         if ($request->get('page')) $page = $request->get('page');
         if ($request->get('type')) $type = $request->get('type');
@@ -54,8 +58,21 @@ class DealController extends Controller
 
         $this->setClientData();
         $response =  $this->getResponseFromClient('GET', $action);
+        $data     = json_decode($response, true);
 
-        return $response;
+        foreach ($data as $item) {
+            $transactions[$index] = $item;
+            $user_data = [
+                'user_id' => $user->id,
+                'user_name' => $user->name ?? $user_details->name,
+                'user_phone' => $user->phone ?? $user_details->phone,
+            ];
+
+            $transactions[$index] = array_merge($transactions[$index], $user_data);
+            $index++;
+        }
+
+        return json_encode($transactions);
 
     }
 
