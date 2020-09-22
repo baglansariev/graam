@@ -391,11 +391,11 @@
 
                         $('.material .options .option').each(function (elem) {
                             if ($(this).data('type') == '999' && $(this).data('name') == 'gold') {
-                                $(this).find('span').text('золота 9999');
+                                $(this).find('span').text('золота 999,9');
                             }
                         });
                         if (chosenMaterial.data('type') == '999' && chosenMaterial.data('name') == 'gold') {
-                            chosenMaterial.text('золота 9999');
+                            chosenMaterial.text('золота 999,9');
                         }
                     }
                     else {
