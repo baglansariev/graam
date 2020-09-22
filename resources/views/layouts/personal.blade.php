@@ -218,7 +218,7 @@
                     </div>
                     <div class="col-sm-9 personal-content-wrapper">
                         <div class="personal-content sell-block">
-                            <div class="sell-content d-flex flex-column align-items-center">
+                            <div class="sell-content d-flex flex-column align-items-center @if (in_array('docs', explode('/', request()->getUri()))) documents @endif">
                                 @yield('content')
                                 @component('modules.preloader')@endcomponent
                             </div>
