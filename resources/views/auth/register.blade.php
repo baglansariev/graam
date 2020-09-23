@@ -45,7 +45,7 @@
                                     </div>
 
                                     <div class="form-group company-name" id="company-name">
-                                        <input type="text" class="form-control" id="company" value="" placeholder="Название компании" name="company_name">
+                                        <input type="text" class="form-control" id="company" @if(request()->has('company_name')) value="{{ request()->get('company_name') }}" @endif placeholder="Название компании" name="company_name">
                                     </div>
                                     <div class="form-group company-name">
                                         <input type="text" class="form-control" id="name" value="" placeholder="Ф.И.О." name="name">

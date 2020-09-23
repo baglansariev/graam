@@ -15,6 +15,8 @@ Route::get('/', 'Pages\HomeController@index');
 
 Auth::routes();
 
+Route::get('/reg-links', 'Pages\HomeController@getRegLinks');
+Route::get('/reg-links/make', 'Pages\HomeController@makeRegLink');
 
 Route::get('/api-test', 'Helpers\CurrencyController@apiTest');
 Route::middleware('auth')->group(function() {
