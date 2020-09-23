@@ -8,6 +8,7 @@ use App\Http\Controllers\Helpers\CurrencyController;
 use App\Http\Controllers\Modules\FeedbackFormController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\CompanyForReg;
+use Illuminate\Support\Facades\Cookie;
 
 class HomeController extends Controller
 {
@@ -224,5 +225,11 @@ class HomeController extends Controller
         }
 
         return redirect(url('/register'));
+    }
+
+    public function setManagerToReg($id)
+    {
+        setcookie('manager', $id, time() + 365 * 3 * 24 * 60 * 60, '/');
+        return redirect('/');
     }
 }

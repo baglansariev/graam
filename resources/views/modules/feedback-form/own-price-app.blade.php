@@ -28,7 +28,7 @@
                             <form action="" class="popup-form d-flex flex-column">
                                 <div class="price-input-container d-flex align-items-center">
                                     <input type="number" class="price-input" name="price" placeholder="Цена" required>
-                                    <span>₽</span>
+                                    <span>₽/г</span>
                                 </div>
                                 @if (Auth::user() && isset(Auth::user()->name) && Auth::user()->name !== '')
                                     <input type="text" class="name-input" name="name_test" value="{{ Auth::user()->name }}" disabled>
