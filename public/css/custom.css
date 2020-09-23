@@ -3232,22 +3232,28 @@ span.menu-link {
 }
 
 .video-index {
+    background-color: #FFF;
     position: absolute;
-    z-index: 9;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    border-radius: 50px 50px 0 0;    
+    width: 80%;
+    min-height: 100vh;
+    top: 93%;
+    margin: auto;    
+    z-index: 99999;
+    border-radius: 50px 50px 0 0;  
 }
 
 #player {
-    width: 100%;
+    min-width: calc(100% + 2px);
     height: 100%;
-    position: absolute;
+    min-height: 640px;
+    top: 0;
+    margin-left: -1px;
+    margin-right: 0px;
     border-radius: 50px 50px 0 0;
+}
+
+.vp-center {
+    align-items: flex-start !important;
 }
 
 /* ----------- iPad mini ----------- */
