@@ -15,7 +15,7 @@
 {{--                    </div>--}}
                     <div class="general-price">
                         @if ($loop->iteration !== 6)
-                            @if (isset($offer['price_585']))
+                            @if (isset($offer['price_585']) && $metal_name !== 'silver')
                                 <div class="gen-price d-flex justify-content-between">
                                     <span>Цена в 585:</span>
                                     <span>{{ number_format($offer['price_585'], 0, '', ' ') }} ₽</span>

@@ -103,6 +103,14 @@ class RegisterController extends Controller
 
         $user->crm_id = json_decode($response, true)['id'];
         $user->manager_id = json_decode($response, true)['manager_id'];
+
+//        if (request()->cookie('manager')) {
+//            $user->regged_by = request()->cookie('manager');
+//        }
+        if (isset($_COOKIE['manager'])) {
+            $user->regged_by = $_COOKIE['manager'];
+        }
+
         $user->save();
 
         return $user;

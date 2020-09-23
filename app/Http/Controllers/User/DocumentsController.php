@@ -40,9 +40,8 @@ class DocumentsController extends Controller
             $categories[$index] = [
                 'id'        => $document_category->id,
                 'name'      => $document_category->name,
-                'documents' => $user->docsFromCrm($document_category->id),
+                'documents' => [],
             ];
-            $categories[$index]['documents'] = [];
 
             if ($documents = $user->docsFromCrm($document_category->id)) {
                 $categories[$index]['documents'] = $documents;

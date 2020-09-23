@@ -31,10 +31,14 @@ class HomeController extends Controller
     {
         $manager = new ManagerController();
         $user = Auth::user();
+        $transactions = json_decode($this->getAllTransactions($request), true);
+
+        $transactions_count = !empty($transactions) ? count($transactions) : 0;
 
         $data = [
             'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
-            'transactions' => json_decode($this->getAllTransactions($request), true),
+            'transactions' => $transactions,
+            'transactions_count' => $transactions_count,
             'user_details' => $user->detailsFromCrm(),
             'user' => $user,
         ];
@@ -47,12 +51,15 @@ class HomeController extends Controller
     {
         $page = 1;
         $type = '1,3';
+        $sortby = 'weight';
 
         if ($request->get('page')) $page = $request->get('page');
         if ($request->get('type')) $type = $request->get('type');
+        if ($request->get('sortby')) $sortby = $request->get('sortby');
 
         $action = '?page=' . $page;
         $action .= '&type=' . $type;
+        $action .= '&sortby=' . $sortby;
 
         $this->setClientData();
         $response = $this->getResponseFromClient('GET', '/transaction' . $action);
