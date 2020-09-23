@@ -2951,7 +2951,7 @@ button.ml-1 {
 }
 
 .select .modal-options-wrapper .options-block .options-content {
-    
+
     margin: 0 auto;
     position: absolute;
     top: 20%;
@@ -2959,7 +2959,7 @@ button.ml-1 {
     height: 100%;
     padding-top: 235px;
 
-/*
+    /*
     margin: 0 auto;
     position: absolute;
     top: 0;
@@ -2990,13 +2990,13 @@ button.ml-1 {
 
 .select .modal-options-wrapper .options-block .modal-options-close span:first-of-type,
 .modal-options-close span:first-of-type,
-.modal-video-close span:first-of-type{
+.modal-video-close span:first-of-type {
     transform: rotateZ(45deg);
 }
 
 .select .modal-options-wrapper .options-block .modal-options-close span:last-of-type,
 .modal-options-close span:last-of-type,
- .modal-video-close span:last-of-type {
+.modal-video-close span:last-of-type {
     transform: rotateZ(-45deg);
 }
 
@@ -3234,18 +3234,23 @@ span.menu-link {
 .video-index {
     background-color: #FFF;
     position: absolute;
-    width: 80%;
-    min-height: 100vh;
+    width: 82%;
+    height: 100%;
     top: 93%;
     margin: auto;
     z-index: 99999;
-    border-radius: 50px 50px 0 0;    
-    display: flex; 
+    border-radius: 50px 50px 0 0;
+    display: flex;
+    align-items: flex-start;
 }
 
 video {
     margin: 0;
-    border-radius: 50px 50px 0 0; 
+    border-radius: 50px 50px 0 0;
+}
+
+video:focus {
+    outline: none;
 }
 
 #player {
@@ -3262,8 +3267,49 @@ video {
 }
 
 .gold585 {
-    overflow: scroll !important;
+    overflow-y: scroll !important;
 }
+
+.video-wrapper {
+    width: 100%;
+    margin-top: -3px;
+    position: relative;
+}
+
+.play-btn {
+    width: 80px;
+    height: 80px;
+    border-radius:40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -40px;
+    margin-top: -40px;
+    color: #fff;
+    background: #fff;
+    z-index: 99;
+    cursor: pointer;
+    box-shadow: 0 0 19px -1px #000;
+    -webkit-box-shadow: 0 0 19px -1px #000;
+    -moz-box-shadow: 0 0 19px -1px #000;
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 890px) {
+    
+    .gold585 {
+    overflow: hidden !important;
+}
+    
+    .video-index {
+        width: 100%;
+    }
+
+}
+
 
 /* ----------- iPad mini ----------- */
 
@@ -3426,7 +3472,7 @@ video {
         flex: auto;
     }
 
-/*
+    /*
     .select .modal-options-wrapper .options-block .options-content {
         padding-top: 150px;
     }

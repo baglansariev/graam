@@ -605,9 +605,16 @@
                     $('.modal-popup').fadeOut();
                     $('.modal-popup-alert').fadeOut();
                 });
-                $('.modal-video-close').click(function () {
-                    $('.video-index').fadeOut().css('display', 'none');                    
+                $('.modal-video-close').click(function () {                    
+                    $('.video-index').hide();                    
                 });
+                $('.play-btn').click(function () {
+                    $('video')[0].play();
+                    $('.play-btn').fadeOut();                    
+                });
+                
+                
+                
                 $('.phone-input').inputmask("+7(999)999-99-99");
                 $('.phone-register-input').inputmask("+7(999)999-99-99");
                 $('.form-control').on('change', function () {
@@ -766,3 +773,5 @@
 
             /******/
         });
+
+

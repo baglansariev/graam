@@ -43,6 +43,28 @@
     </noscript>
     <!-- /Yandex.Metrika counter -->
     @endif
+
+    <script>
+        let video;
+        window.onload = function() {
+            video = document.getElementById("main-video");
+            playBtn = document.getElementsByClassName("play-btn");
+        };
+
+        function play() {
+            video.play();            
+        }
+
+        function pause() {
+            video.pause();
+        }
+
+        function stop() {
+            video.pause();
+            video.currentTime = 0;
+        }
+
+    </script>
 </head>
 
 <body>
@@ -80,7 +102,7 @@
     </main>
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/feedback-form.js') }}"></script>
-    
+
 </body>
 
 </html>

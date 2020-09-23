@@ -12,15 +12,19 @@
         </div>
     </div>
     <div class="video-index">
-        <div class="modal-video-close">
+        <div class="modal-video-close" onclick="stop()">
             <span></span>
             <span></span>
         </div>
-        <video width="100%" height="100%" preload="none" muted="" autoplay="" loop="" playsinline="" controls>
-            <source src="https://graam.ru/video/graam.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <!--            <iframe id="player" src="http://player.vimeo.com/video/460836946" allow=autoplay frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>-->
+        <div class="video-wrapper">
+            <div class="play-btn"><img src="/images/play-button.svg" alt="Возпроизведение"></div>
+            <video id="main-video" width="100%" height="100%" preload="none" playsinline="" controls poster="/images/video-fon.jpg">
+                <source src="https://graam.ru/video/graam.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+
+            </video>
+        </div>
+
     </div>
     <div class="choice-block">
 
@@ -92,6 +96,22 @@
     </div>
 
 </div>
+<script>
+    function playClick() {
+  $('video')[0].play();
+}
+    
+    
+$(document).ready(function () {
+$('video').bind('click', playClick);
+$( "video" ).click(function() {
+    $( "video" ).unbind();
+    $('.play-btn').fadeOut();
+});
+    
+});
+</script>
+
 {!! $sell_form !!}
 {!! $own_price_form !!}
 
