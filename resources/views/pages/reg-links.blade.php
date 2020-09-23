@@ -24,7 +24,7 @@
                                         <div class="c-row d-flex mb-3 pb-3" style="border-bottom: 1px solid #ebebeb;">
                                             <div class="c-number" style="font-weight: lighter;">{{ $loop->iteration }}</div>
                                             <div class="c-name pl-5" style="font-weight: lighter;">
-                                                <a href="{{ url('/reg-links/make?company_name=' . $reg_link) }}">{{ $reg_link }}</a>
+                                                <a href="{{ url('/reg-links/make?company_name=' . $reg_link) }}" target="_blank">{{ $reg_link }}</a>
                                             </div>
                                         </div>
                                     @endforeach
