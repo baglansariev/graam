@@ -32,7 +32,8 @@ class OffersController extends Controller
             $offers[5]['phone'] = '+7 391 259 33 33';
         }
 
+        $data = ['offers' => $offers, 'action' => $action, 'metal_name' => $name];
 
-        return view('pages.elements.offer-cards', ['offers' => $offers, 'action' => $action]);
+        return view('pages.elements.offer-cards', $data);
     }
 }

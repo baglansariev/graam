@@ -27,7 +27,7 @@
                                     <span>{{ number_format($offer['price_999'], 0, '', ' ') }} ₽</span>
                                 </div>
                             @endif
-                            @if (isset($offer['price_925']))
+                            @if (isset($offer['price_925']) && $metal_name == 'silver')
                                 <div class="gen-price d-flex justify-content-between">
                                     <span>Цена в 925:</span>
                                     <span>{{ number_format($offer['price_925'], 0, '', ' ') }} ₽</span>
