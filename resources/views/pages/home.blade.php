@@ -11,14 +11,15 @@
             <p>Скупка золота и серебра, быстро, надежно и в срок</p>
         </div>
     </div>
-    <div class="choice-block">
-        <div class="video-index">
+    <div class="video-index">
            <div class="modal-video-close">
             <span></span>
             <span></span>
         </div>
-            <iframe id="player" src="http://player.vimeo.com/video/460836946" allow=autoplay width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+            <iframe id="player" src="http://player.vimeo.com/video/460836946" allow=autoplay frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
         </div>
+    <div class="choice-block">
+        
         <div class="choice-content d-flex justify-content-center align-items-center flex-column">
             <div class="wanna-sell">
                 <span>Хочу <span class="main-sell-trigger">продать</span><i class="fas fa-sort-down"></i></span>

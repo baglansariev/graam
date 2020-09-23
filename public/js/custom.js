@@ -193,6 +193,11 @@
                     $('.main-block').animate({
                         opacity: 0
                     });
+                    $('.video-index').animate({
+                        top: 13 + '%'
+                    }, 600).animate({
+                        top: 20 + '%'
+                    }, 200);
                     $('.choice-block').animate({
                         top: 13 + '%'
                     }, 600).animate({
