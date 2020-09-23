@@ -31,11 +31,11 @@
     </div>
 </h2>
 <div class="row filters">
-    <span class="shown">Показано <span>{{ $transactions_count }}</span> сделок</span>
+    <span class="shown" style="opacity: 0;">Показано <span>{{ $transactions_count }}</span> сделок</span>
 
     <div class="btn-group">
 
-        <div class="sortby d-flex">Сортировать &nbsp;
+        <div class="sortby d-flex" style="opacity: 0;">Сортировать &nbsp;
             <div class="select"> 
                    <div class="select-arrow"></div>               
                     <select name="sort-filter" class="sort-select"> 
