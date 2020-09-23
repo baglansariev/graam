@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Helpers\CurrencyController;
 use App\Http\Controllers\Modules\FeedbackFormController;
 use Illuminate\Support\Facades\Auth;
+use App\Models\CompanyForReg;
 
 class HomeController extends Controller
 {
@@ -20,8 +21,13 @@ class HomeController extends Controller
         return view('pages.home', $data);
     }
 
-    public function getRegLinks()
+    public function getRegLinks(Request $request)
     {
+        if ($request->has('db')) {
+            foreach ($this->regLinks() as $regLink) {
+                CompanyForReg::create(['name' => $regLink]);
+            }
+        }
         $reg_links = $this->regLinks();
 
         return view('pages.reg-links', ['reg_links' => $reg_links]);

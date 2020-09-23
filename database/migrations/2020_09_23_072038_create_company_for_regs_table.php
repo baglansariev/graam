@@ -15,6 +15,7 @@ class CreateCompanyForRegsTable extends Migration
     {
         Schema::create('company_for_regs', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
             $table->timestamps();
         });
     }
