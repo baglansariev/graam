@@ -3237,23 +3237,32 @@ span.menu-link {
     width: 80%;
     min-height: 100vh;
     top: 93%;
-    margin: auto;    
+    margin: auto;
     z-index: 99999;
-    border-radius: 50px 50px 0 0;  
+    border-radius: 50px 50px 0 0;    
+    display: flex; 
+}
+
+video {
+    margin: 0;
+    border-radius: 50px 50px 0 0; 
 }
 
 #player {
-    min-width: calc(100% + 2px);
+    min-width: 80%;
     height: 100%;
     min-height: 640px;
     top: 0;
-    margin-left: -1px;
-    margin-right: 0px;
     border-radius: 50px 50px 0 0;
+    margin: 120px auto;
 }
 
 .vp-center {
     align-items: flex-start !important;
+}
+
+.gold585 {
+    overflow: scroll !important;
 }
 
 /* ----------- iPad mini ----------- */

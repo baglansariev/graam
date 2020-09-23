@@ -12,14 +12,18 @@
         </div>
     </div>
     <div class="video-index">
-           <div class="modal-video-close">
+        <div class="modal-video-close">
             <span></span>
             <span></span>
         </div>
-            <iframe id="player" src="http://player.vimeo.com/video/460836946" allow=autoplay frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
-        </div>
+        <video width="100%" height="100%" preload="none" muted="" autoplay="" loop="" playsinline="" controls>
+            <source src="https://graam.ru/video/graam.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!--            <iframe id="player" src="http://player.vimeo.com/video/460836946" allow=autoplay frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>-->
+    </div>
     <div class="choice-block">
-        
+
         <div class="choice-content d-flex justify-content-center align-items-center flex-column">
             <div class="wanna-sell">
                 <span>Хочу <span class="main-sell-trigger">продать</span><i class="fas fa-sort-down"></i></span>
@@ -75,9 +79,9 @@
         </div>
         <div class="sell-block">
             <div class="sell-content d-flex flex-column align-items-center">
-{{--                <div class="sell-content-title text-center">--}}
-{{--                    <p class="d-flex align-items-center justify-content-center flex-wrap">Продать <span class="active" data-type="fast">быстро</span><i class="fas fa-times"></i> и <span class="active" data-type="expensive">дорого</span><i class="fas fa-times"></i> через:</p>--}}
-{{--                </div>--}}
+                {{-- <div class="sell-content-title text-center">--}}
+                {{-- <p class="d-flex align-items-center justify-content-center flex-wrap">Продать <span class="active" data-type="fast">быстро</span><i class="fas fa-times"></i> и <span class="active" data-type="expensive">дорого</span><i class="fas fa-times"></i> через:</p>--}}
+                {{-- </div>--}}
                 <div class="sell-cards d-flex"></div>
                 <div class="alternative-offer d-flex flex-column align-items-center">
                     <h3 class="text-center">Если не нашли выгодную сделку, то:</h3>
@@ -86,7 +90,7 @@
             </div>
         </div>
     </div>
-    
+
 </div>
 {!! $sell_form !!}
 {!! $own_price_form !!}

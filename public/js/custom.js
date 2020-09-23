@@ -606,7 +606,7 @@
                     $('.modal-popup-alert').fadeOut();
                 });
                 $('.modal-video-close').click(function () {
-                    $('.video-index').fadeOut();                    
+                    $('.video-index').fadeOut().css('display', 'none');                    
                 });
                 $('.phone-input').inputmask("+7(999)999-99-99");
                 $('.phone-register-input').inputmask("+7(999)999-99-99");
