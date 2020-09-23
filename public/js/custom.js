@@ -267,12 +267,16 @@
                         dataType: 'JSON',
                         success: function (data) {
                             let dataCount = 0;
-                            let content = '<div class="list-heading"><span class="first-col list-heading-item deal-num">Номер</span><span class="list-heading-item list-deal-date">Дата создания</span><span class="list-heading-item deal-material">Металл, проба</span><span class="list-heading-item weight-price">Вес, г</span><span class="list-heading-item factory">Через</span><span class="list-heading-item list-price">Сумма, ₽</span>        <span class="list-heading-item deal-status">Участвовать в сделке</span></div>';
+                            let statusPart = '<a class=\'join\'>Участвовать в сделке</a>';
+                            let statusHead = 'Участвовать в сделке';
+                            if (showStatus) {
+                                statusPart = data.status;
+                                statusHead = 'Статус';
+                            }
+                            let content = '<div class="list-heading"><span class="first-col list-heading-item deal-num">Номер</span><span class="list-heading-item list-deal-date">Дата создания</span><span class="list-heading-item deal-material">Металл, проба</span><span class="list-heading-item weight-price">Вес, г</span><span class="list-heading-item factory">Через</span><span class="list-heading-item list-price">Сумма, ₽</span>        <span class="list-heading-item deal-status">' + statusHead + '</span></div>';
                             if (data.length > 0) {
                                 $.each(data, function (index, data) {
-                                    let statusPart = '<a class=\'join\'>Участвовать в сделке</a>';
-                                    if (showStatus) statusPart = data.status;
-                                    content += "<div class='item'><div class='caption' data-name='" + data.user_name + "' data-contractor_id='" + data.user_id + "' data-phone='" + data.user_phone + "' data-weight='" + data.weight + "' data-price='" + data.price + "' data-metal='" + data.material + "' data-type='" + data.content + "'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.price + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.price + "</span><span class='deal-status'><a class='join'>Участвовать в сделке</a></span></div></div>";
+                                    content += "<div class='item'><div class='caption' data-name='" + data.user_name + "' data-contractor_id='" + data.user_id + "' data-phone='" + data.user_phone + "' data-weight='" + data.weight + "' data-price='" + data.price + "' data-metal='" + data.material + "' data-type='" + data.content + "'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.price + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.price + "</span><span class='deal-status'>" + statusPart + "</span></div></div>";
                                     dataCount++;
                                 });
                             }
@@ -650,12 +654,14 @@
 
                                 let pageType = $('#deals').attr('data-type');
                                 let requestString = false;
+                                let showStatus = false;
                                 if (pageType == 'all'){
                                     requestString = '/admin/transactions';
                                 }
 
                                 if (pageType == 'private') {
                                     requestString = '/user-transactions';
+                                    showStatus = true;
                                 }
 
                                 if (requestString) {
@@ -673,6 +679,10 @@
                                         }
                                     }).done(function(data) {
                                         let dataCount = parseInt($('.shown span').text());
+                                        let statusPart = '<a class=\'join\'>Участвовать в сделке</a>';
+                                        if (showStatus) {
+                                            statusPart = data.status;
+                                        }
 
                                         if (typeof value !== 'object') {
 
@@ -682,7 +692,7 @@
                                         if (data.length > 0) {
                                             // добавляем записи в блок в виде html
                                             $.each(data, function(index, data) {
-                                                $("#deals").append("<div class='item'><div class='caption' data-name='" + data.user_name + "' data-contractor_id='" + data.user_id + "' data-phone='" + data.user_phone + "' data-weight='" + data.weight + "' data-price='" + data.price + "' data-metal='" + data.material + "' data-type='" + data.content + "'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.price + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.price + "</span><span class='deal-status'><a class='join'>Участвовать в сделке</a></span></div></div>");
+                                                $("#deals").append("<div class='item'><div class='caption' data-name='" + data.user_name + "' data-contractor_id='" + data.user_id + "' data-phone='" + data.user_phone + "' data-weight='" + data.weight + "' data-price='" + data.price + "' data-metal='" + data.material + "' data-type='" + data.content + "'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.price + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.price + "</span><span class='deal-status'>" + statusPart + "</span></div></div>");
                                                 dataCount++;
                                             });
                                             $('.shown span').text(dataCount);
