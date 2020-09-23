@@ -8,9 +8,31 @@
                     <p>{{ $offer['company_name'] }}</p>
                 </div>
                 <div class="card-offer">
-                    <div class="price">
+{{--                    <div class="price">--}}
+{{--                        @if ($loop->iteration !== 6)--}}
+{{--                            {{ number_format($offer['price'], 0, '', ' ') }} ₽--}}
+{{--                        @endif--}}
+{{--                    </div>--}}
+                    <div class="general-price">
                         @if ($loop->iteration !== 6)
-                            {{ number_format($offer['price'], 0, '', ' ') }} ₽
+                            @if (isset($offer['price_585']))
+                                <div class="gen-price d-flex justify-content-between">
+                                    <span>Цена в 585:</span>
+                                    <span>{{ number_format($offer['price_585'], 0, '', ' ') }} ₽</span>
+                                </div>
+                            @endif
+                            @if (isset($offer['price_999']))
+                                <div class="gen-price d-flex justify-content-between">
+                                    <span>Цена в 999:</span>
+                                    <span>{{ number_format($offer['price_999'], 0, '', ' ') }} ₽</span>
+                                </div>
+                            @endif
+                            @if (isset($offer['price_925']))
+                                <div class="gen-price d-flex justify-content-between">
+                                    <span>Цена в 925:</span>
+                                    <span>{{ number_format($offer['price_925'], 0, '', ' ') }} ₽</span>
+                                </div>
+                            @endif
                         @endif
                     </div>
 {{--                    <div class="time">--}}
@@ -47,4 +69,15 @@
         </div>
         @endif
     @endforeach
+    <style>
+        .gen-price {
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ebebeb;
+        }
+        .gen-price span:nth-of-type(2) {
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
 @endif
