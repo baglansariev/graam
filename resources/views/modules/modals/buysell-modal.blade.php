@@ -5,7 +5,7 @@
             <span></span>
         </div>
         <div class="options-content d-flex align-items-center flex-column">
-            <div class="modal-options">
+            <div class="modal-options orders-select">
                 <div class="select">
                     <div class="opts">                        
                         <div class="opt d-flex justify-content-between align-items-center selected" data-name="продаже">
