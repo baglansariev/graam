@@ -600,6 +600,9 @@
                     $('.modal-popup').fadeOut();
                     $('.modal-popup-alert').fadeOut();
                 });
+                $('.modal-video-close').click(function () {
+                    $('.video-index').fadeOut();                    
+                });
                 $('.phone-input').inputmask("+7(999)999-99-99");
                 $('.phone-register-input').inputmask("+7(999)999-99-99");
                 $('.form-control').on('change', function () {
@@ -653,7 +656,9 @@
                             }).done(function(data) {
 
                                 if (typeof value !== 'object') {
+                                    
                                     data = jQuery.parseJSON(data); // данные в json
+                                    
                                 }
                                 if (data.length > 0) {
                                     // добавляем записи в блок в виде html
