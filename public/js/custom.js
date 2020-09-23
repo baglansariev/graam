@@ -476,7 +476,7 @@
 
                 $('#sell').click(function () {
                     $('.choice-block').animate({
-                        top: 100 + '%'
+                        top: 150 + '%'
                     }, 600);
                     setTimeout(function () {
                         $('.sell-wrapper').css('display', 'flex');
@@ -614,7 +614,8 @@
                     $('.modal-popup-alert').fadeOut();
                 });
                 $('.modal-video-close').click(function () {                    
-                    $('.video-index').hide();                    
+                    $('.video-index').hide();
+                    
                 });
                 $('.play-btn').click(function () {
                     $('video')[0].play();

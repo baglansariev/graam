@@ -3266,9 +3266,11 @@ video:focus {
     align-items: flex-start !important;
 }
 
-.gold585 {
+
+.gold585 .wrapper {
     overflow-y: scroll !important;
 }
+
 
 .video-wrapper {
     width: 100%;
