@@ -18,8 +18,8 @@
         </div>
         <div class="video-wrapper">
             <div class="play-btn"><img src="/images/play-button.svg" alt="Возпроизведение"></div>
-            <video id="main-video" width="100%" height="100%" preload="none" playsinline="" controls poster="/images/video-fon.jpg">
-                <source src="https://graam.ru/video/graam.mp4" type="video/mp4">
+           <video id="main-video" width="100%" height="100%" preload="none" playsinline="" controls poster="/images/new_gold.jpg">
+                <source src="https://player.vimeo.com/external/461289085.hd.mp4?s=4b2c2356b99e5e5580646c29031f6a7b3b0fec9c&profile_id=175" type="video/mp4">
                 Your browser does not support the video tag.
 
             </video>
