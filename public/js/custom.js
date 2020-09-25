@@ -642,7 +642,18 @@
                             } 
                 });
                 
-
+                $('.wrapper').scroll(function() {
+                    $('footer').animate({
+                        bottom: 0 + '%'
+                    }, 600)
+                 });
+                $('#sell').click(function () {
+                     $('footer').animate({
+                        bottom: -100 + '%'
+                    }, 300)
+                });
+                
+                
                 function infinityScroll() {
                     let personalWrapper = $('.personal-content-wrapper');
                     if (!personalWrapper.hasClass('documents')) {

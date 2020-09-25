@@ -52,7 +52,7 @@
         };
 
         function play() {
-            video.play();            
+            video.play();
         }
 
         function pause() {
@@ -98,7 +98,7 @@
             </div>
         </header>
         @yield('content', 'Default Content')
-
+        
     </main>
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/feedback-form.js') }}"></script>

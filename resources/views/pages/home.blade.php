@@ -97,7 +97,34 @@
             </div>
         </div>
     </div>
+<footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="soc-icons">
+                            <a href="/" class="insta-footer"></a>
+                            <a href="/" class="fb-footer"></a>
+                            <a href="/" class="vk-footer"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="footer-links">
+                            <a href="/">Продать золото или серебро</a>
+                            <a href="/">Войти в личный кабинет</a><br>
+                            <a class="small-text" href="/privacy-policy">Политика конфиденциальности</a>
 
+                        </div>
+                        <div class="copyright">© ООО «Граам», 2020</div>
+                    </div>
+                    <div class="col-md-4 footer-logo">
+                        <img src="/images/logo-footer.svg" alt="Vasterra.com">
+                        <span>Сделано в <a href="https://vasterra.com">Vasterra.com</a></span>
+                    </div>
+                </div>
+            </div>
+        </footer>
 </div>
 <script>
     function playClick() {
