@@ -615,6 +615,7 @@
                 });
                 $('.modal-video-close').click(function () {                    
                     $('.video-index').hide();
+                    $('#main-video').remove();
                     
                 });
                 $('.play-btn').click(function () {
@@ -643,6 +644,7 @@
                     if (!personalWrapper.hasClass('documents')) {
                         personalWrapper.scroll(function() {
                             if (personalWrapper.scrollTop() >= (personalWrapper.height() - 1) && !IN_PROGRESS) {
+                                $('.main-preloader').fadeIn();
                                 let typeOfDeal = "1,3";
                                 let chosen = $('.chosen span');
                                 let chosenName = chosen.data('name');
@@ -665,7 +667,6 @@
                                 }
 
                                 if (requestString) {
-                                    $('.main-preloader').fadeIn();
                                     $.ajax({
                                         url: requestString, // путь к ajax-обработчику
                                         method: 'GET',
