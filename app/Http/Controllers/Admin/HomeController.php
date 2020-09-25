@@ -77,6 +77,7 @@ class HomeController extends Controller
                     'user_id' => $user->id,
                     'user_name' => $user->name ?? $user_details->name,
                     'user_phone' => $user->phone ?? $user_details->phone,
+                    'deal_type' => ($type == '1,3') ? 'sell' : 'buy',
                 ];
 
                 $transactions[$index] = array_merge($transactions[$index], $user_data);

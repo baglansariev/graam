@@ -31,11 +31,11 @@
     </div>
 </h2>
 <div class="row filters">
-    <span class="shown" style="opacity: 0;">Показано <span>{{ $transactions_count }}</span> сделок</span>
+    <span class="shown">Показано <span>{{ $transactions_count }}</span> сделок</span>
 
     <div class="btn-group">
 
-        <div class="sortby d-flex" style="opacity: 0;">Сортировать &nbsp;
+        <div class="sortby d-flex">Сортировать &nbsp;
             <div class="select"> 
                    <div class="select-arrow"></div>               
                     <select name="sort-filter" class="sort-select"> 
@@ -74,7 +74,11 @@
             <span class="factory"><span class="grid-text-title">Через </span><img src="/images/pictogram.png" alt=""> ПЮДМ</span>
 {{--            <span class="list-price">{{ $transaction['sum'] }}</span>--}}
             <span class="list-price">{{ $transaction['price'] }}</span>
-            <span class="deal-status"><a class="join">Участвовать в сделке</a></span>
+            @if ($transaction['deal_type'] == 'sell')
+                <span class="deal-status"><a class="join">Участвовать в покупке</a></span>
+            @else
+                <span class="deal-status"><a class="join">Участвовать в продаже</a></span>
+            @endif
 <!--            <span class="deal-status">{{ $transaction['status'] }}</span>-->
         </div>
     </div>
