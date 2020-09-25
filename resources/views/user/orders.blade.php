@@ -18,7 +18,7 @@
         });
     });
 </script>
-<h2 class="orders-heading">Сделки по&nbsp;
+<h2 class="orders-heading">Открытые заявки по&nbsp;
     <div class="select">
         <div class="chosen d-flex">
             <div class="chosen-container">
