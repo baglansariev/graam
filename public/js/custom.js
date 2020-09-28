@@ -203,6 +203,11 @@
                     }, 600).animate({
                         top: 20 + '%'
                     }, 200);
+                    $('.choice-block').animate({
+                        marginTop: 120 + 'px'
+                    }, 600).animate({
+                        marginTop: 140 + 'px'
+                    }, 200);
                 }, 1500);
                 setTimeout(function () {
                     $('.main-logo p').animate({
@@ -650,8 +655,8 @@
                 $('#sell').click(function () {
                     $('footer').css('display', 'none');
                 });
-                
-                
+
+
 
                 function infinityScroll() {
                     let personalWrapper = $('.personal-content-wrapper');
