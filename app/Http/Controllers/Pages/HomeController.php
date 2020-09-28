@@ -232,4 +232,9 @@ class HomeController extends Controller
         setcookie('manager', $id, time() + 365 * 3 * 24 * 60 * 60, '/');
         return redirect('/');
     }
+    
+    public function getPrivacyPage()    
+    { 
+        return view('pages.privacy-policy');
+    }
 }

@@ -31,20 +31,20 @@
     </div>
 </h2>
 <div class="row filters">
-    <span class="shown" style="opacity: 0;">Показано <span>{{ $transactions_count }}</span> сделок</span>
+    <span class="shown">Показано 0{{--<span>{{ $transactions_count }}</span> --}} сделок</span>
 
     <div class="btn-group">
 
-        <div class="sortby d-flex" style="opacity: 0;">Сортировать &nbsp;
-            <div class="select"> 
-                   <div class="select-arrow"></div>               
-                    <select name="sort-filter" class="sort-select"> 
-                        <option value="weight" selected><span>по весу</span></option>  
+        <div class="sortby d-flex">Сортировать &nbsp;
+            <div class="select">
+                   <div class="select-arrow"></div>
+                    <select name="sort-filter" class="sort-select">
+                        <option value="weight" selected><span>по весу</span></option>
                         <option value="price"><span>по цене</span></option>
-                    </select>              
+                    </select>
             </div>
         </div>
-        
+
 
         <a href="#" id="list" class="btn btn-default btn-sm active"><img src="/images/list-icon.png" alt=""></a>
         <a href="#" id="grid" class="btn btn-default btn-sm"><img src="/images/grid-icon.png" alt=""></a>
@@ -62,7 +62,7 @@
         <span class="list-heading-item list-price">Цена, ₽</span>
         <span class="list-heading-item deal-status">Участвовать в сделке</span>
     </div>
-    @if(count($transactions))
+ {{--   @if(count($transactions))
     @foreach ($transactions as $transaction)
     <div class="item">
         <div class="caption" data-tr_id="{{ $transaction['id'] }}" data-contractor_id="{{ $user->id }}" data-name="{{ $user->name ?? $user_details->name }}" data-phone="{{ $user->phone ?? $user_details->phone }}" data-weight="{{ $transaction['weight'] }}" data-price="{{ $transaction['price'] }}" data-metal="{{ $transaction['material'] }}" data-type="{{ $transaction['content'] }}">
@@ -73,28 +73,33 @@
             <span class="grid-deal-date"><span class="grid-text-title">Дата создания&nbsp;</span> {{ $transaction['created_at'] }}</span>
             <span class="factory"><span class="grid-text-title">Через </span><img src="/images/pictogram.png" alt=""> ПЮДМ</span>
 {{--            <span class="list-price">{{ $transaction['sum'] }}</span>--}}
-            <span class="list-price">{{ $transaction['price'] }}</span>
-            <span class="deal-status"><a class="join">Участвовать в сделке</a></span>
+ {{--           <span class="list-price">{{ $transaction['price'] }}</span>
+            @if ($transaction['deal_type'] == 'sell')
+                <span class="deal-status"><a class="join">Участвовать в покупке</a></span>
+            @else
+                <span class="deal-status"><a class="join">Участвовать в продаже</a></span>
+            @endif
 <!--            <span class="deal-status">{{ $transaction['status'] }}</span>-->
         </div>
     </div>
     @endforeach
-    @else
+    @else --}}
     <div class="no-orders">
-        <span class="text-center">У вас пока нет заявок</span>
+{{--        <span class="text-center">У вас пока нет заявок</span>--}}
+        <span class="text-center">Скоро появятся актуальные заявки</span>
     </div>
-    @endif
+{{--    @endif--}}
 
 </div>
-<script>        
-        let screen = window.innerWidth;       
+<script>
+        let screen = window.innerWidth;
         if(screen <= 767) {
             document.getElementById('grid').style.display = 'none';
             document.getElementById('list').style.display = 'none';
               document.getElementById('deals').classList.remove('list-view');
               document.getElementById('deals').classList.add('grid-view');
-              document.getElementByClassName('personal-content').classList.add('no-shadow');                     
-        }        
+              document.getElementByClassName('personal-content').classList.add('no-shadow');
+        }
     </script>
 @component('modules.orders.detail')
 @endcomponent

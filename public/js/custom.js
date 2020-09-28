@@ -240,12 +240,12 @@
                         requestString = '/admin/transactions';
                     }
                     let showStatus = false;
-                    
+
                     if (pageType == 'private') {
                         requestString = '/user-transactions';
                         showStatus = true;
                     }
-                    
+
                     if (sortBy == '') {
                         sortBy = 'weight';
                     }
@@ -267,7 +267,8 @@
                         dataType: 'JSON',
                         success: function (data) {
                             let dataCount = 0;
-                            let statusPart = '<a class=\'join\'>Участвовать в сделке</a>';
+                            let statusPart = '<a class=\'join\'>Участвовать в покупке</a>';
+                            console.log(data);
                             let statusHead = 'Участвовать в сделке';
                             if (showStatus) {
                                 statusPart = data.status;
@@ -276,6 +277,9 @@
                             let content = '<div class="list-heading"><span class="first-col list-heading-item deal-num">Номер</span><span class="list-heading-item list-deal-date">Дата создания</span><span class="list-heading-item deal-material">Металл, проба</span><span class="list-heading-item weight-price">Вес, г</span><span class="list-heading-item factory">Через</span><span class="list-heading-item list-price">Сумма, ₽</span>        <span class="list-heading-item deal-status">' + statusHead + '</span></div>';
                             if (data.length > 0) {
                                 $.each(data, function (index, data) {
+                                    if (data.deal_type == 'buy') {
+                                        statusPart = '<a class=\'join\'>Участвовать в продаже</a>';
+                                    }
                                     content += "<div class='item'><div class='caption' data-name='" + data.user_name + "' data-contractor_id='" + data.user_id + "' data-phone='" + data.user_phone + "' data-weight='" + data.weight + "' data-price='" + data.price + "' data-metal='" + data.material + "' data-type='" + data.content + "'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.price + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.price + "</span><span class='deal-status'>" + statusPart + "</span></div></div>";
                                     dataCount++;
                                 });
@@ -613,29 +617,40 @@
                     $('.modal-popup').fadeOut();
                     $('.modal-popup-alert').fadeOut();
                 });
-                $('.modal-video-close').click(function () {                    
+                $('.modal-video-close').click(function () {
                     $('.video-index').hide();
-                    
+                    $('#main-video').remove();
+
                 });
                 $('.play-btn').click(function () {
                     $('video')[0].play();
-                    $('.play-btn').fadeOut();                    
+                    $('.play-btn').fadeOut();
                 });
-                
-                
-                
+
+
+
                 $('.phone-input').inputmask("+7(999)999-99-99");
                 $('.phone-register-input').inputmask("+7(999)999-99-99");
                 $('.form-control').on('change', function () {
                     $('button[type="submit"]').removeClass('disabled');
                 });
-                $('.sell-block').scroll(function() {                           
-                            if ($('.sell-block').scrollTop() > 1) {
-                                $('header').addClass('move-down');
-                            } else {
-                                $('header').removeClass('move-down');
-                            } 
+                $('.sell-block').scroll(function() {
+                    if ($('.sell-block').scrollTop() > 1) {
+                        $('header').addClass('move-down');
+                    } else {
+                        $('header').removeClass('move-down');
+                    }
                 });
+
+//                $('.wrapper').scroll(function() {
+//                    $('footer').animate({
+//                        bottom: 0 + '%'
+//                    }, 600)
+//                });
+                $('#sell').click(function () {
+                    $('footer').css('display', 'none');
+                });
+                
                 
 
                 function infinityScroll() {
@@ -643,6 +658,7 @@
                     if (!personalWrapper.hasClass('documents')) {
                         personalWrapper.scroll(function() {
                             if (personalWrapper.scrollTop() >= (personalWrapper.height() - 1) && !IN_PROGRESS) {
+                                $('.main-preloader').fadeIn();
                                 let typeOfDeal = "1,3";
                                 let chosen = $('.chosen span');
                                 let chosenName = chosen.data('name');
@@ -665,7 +681,7 @@
                                 }
 
                                 if (requestString) {
-                                    $('.main-preloader').fadeIn();
+                                    PAGE ++;
                                     $.ajax({
                                         url: requestString, // путь к ajax-обработчику
                                         method: 'GET',
@@ -680,7 +696,7 @@
                                         }
                                     }).done(function(data) {
                                         let dataCount = parseInt($('.shown span').text());
-                                        let statusPart = '<a class=\'join\'>Участвовать в сделке</a>';
+                                        let statusPart = '<a class=\'join\'>Участвовать в покупке</a>';
                                         if (showStatus) {
                                             statusPart = data.status;
                                         }
@@ -692,14 +708,22 @@
                                         }
                                         if (data.length > 0) {
                                             // добавляем записи в блок в виде html
+                                            let test = 0;
+                                            let arr = {};
                                             $.each(data, function(index, data) {
+                                                arr[test] = data;
+                                                if (data.deal_type == 'buy') {
+                                                    statusPart = '<a class=\'join\'>Участвовать в продаже</a>';
+                                                }
                                                 $("#deals").append("<div class='item'><div class='caption' data-name='" + data.user_name + "' data-contractor_id='" + data.user_id + "' data-phone='" + data.user_phone + "' data-weight='" + data.weight + "' data-price='" + data.price + "' data-metal='" + data.material + "' data-type='" + data.content + "'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.price + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.price + "</span><span class='deal-status'>" + statusPart + "</span></div></div>");
                                                 dataCount++;
+                                                test++;
                                             });
+                                            console.log(arr);
                                             $('.shown span').text(dataCount);
                                             IN_PROGRESS = false;
-                                            PAGE ++;
                                         }
+                                        console.log(PAGE);
                                         $('.main-preloader').fadeOut();
                                     });
                                 }
@@ -730,70 +754,70 @@
                 // });
             });
 
-                /***/
-            }),
+            /***/
+        }),
+
+    /***/
+    "./resources/sass/app.scss":
+    /*!*********************************!*\
+      !*** ./resources/sass/app.scss ***!
+      \*********************************/
+    /*! no static exports found */
+    /***/
+        (function (module, exports) {
+
+            // removed by extract-text-webpack-plugin
 
             /***/
-            "./resources/sass/app.scss":
-            /*!*********************************!*\
-              !*** ./resources/sass/app.scss ***!
-              \*********************************/
-            /*! no static exports found */
+        }),
+
+    /***/
+    "./resources/sass/custom.scss":
+    /*!************************************!*\
+      !*** ./resources/sass/custom.scss ***!
+      \************************************/
+    /*! no static exports found */
+    /***/
+        (function (module, exports) {
+
+            // removed by extract-text-webpack-plugin
+
             /***/
-            (function (module, exports) {
+        }),
 
-                // removed by extract-text-webpack-plugin
+    /***/
+    "./resources/sass/feedback-form.scss":
+    /*!*******************************************!*\
+      !*** ./resources/sass/feedback-form.scss ***!
+      \*******************************************/
+    /*! no static exports found */
+    /***/
+        (function (module, exports) {
 
-                /***/
-            }),
+            // removed by extract-text-webpack-plugin
 
-                /***/
-                "./resources/sass/custom.scss":
-            /*!************************************!*\
-              !*** ./resources/sass/custom.scss ***!
-              \************************************/
-            /*! no static exports found */
             /***/
-            (function (module, exports) {
+        }),
 
-                // removed by extract-text-webpack-plugin
+    /***/
+    0:
+    /*!*********************************************************************************************************************************!*\
+      !*** multi ./resources/js/custom.js ./resources/sass/custom.scss ./resources/sass/feedback-form.scss ./resources/sass/app.scss ***!
+      \*********************************************************************************************************************************/
+    /*! no static exports found */
+    /***/
+        (function (module, exports, __webpack_require__) {
 
-                /***/
-            }),
+            __webpack_require__( /*! C:\xampp\htdocs\graam.loc\resources\js\custom.js */ "./resources/js/custom.js");
+            __webpack_require__( /*! C:\xampp\htdocs\graam.loc\resources\sass\custom.scss */ "./resources/sass/custom.scss");
+            __webpack_require__( /*! C:\xampp\htdocs\graam.loc\resources\sass\feedback-form.scss */ "./resources/sass/feedback-form.scss");
+            module.exports = __webpack_require__( /*! C:\xampp\htdocs\graam.loc\resources\sass\app.scss */ "./resources/sass/app.scss");
 
-                /***/
-                "./resources/sass/feedback-form.scss":
-            /*!*******************************************!*\
-              !*** ./resources/sass/feedback-form.scss ***!
-              \*******************************************/
-            /*! no static exports found */
+
             /***/
-            (function (module, exports) {
+        })
 
-                // removed by extract-text-webpack-plugin
-
-                /***/
-            }),
-
-                /***/
-                0:
-            /*!*********************************************************************************************************************************!*\
-              !*** multi ./resources/js/custom.js ./resources/sass/custom.scss ./resources/sass/feedback-form.scss ./resources/sass/app.scss ***!
-              \*********************************************************************************************************************************/
-            /*! no static exports found */
-            /***/
-            (function (module, exports, __webpack_require__) {
-
-                __webpack_require__( /*! C:\xampp\htdocs\graam.loc\resources\js\custom.js */ "./resources/js/custom.js");
-                __webpack_require__( /*! C:\xampp\htdocs\graam.loc\resources\sass\custom.scss */ "./resources/sass/custom.scss");
-                __webpack_require__( /*! C:\xampp\htdocs\graam.loc\resources\sass\feedback-form.scss */ "./resources/sass/feedback-form.scss");
-                module.exports = __webpack_require__( /*! C:\xampp\htdocs\graam.loc\resources\sass\app.scss */ "./resources/sass/app.scss");
-
-
-                /***/
-            })
-
-            /******/
-        });
+    /******/
+});
 
 

@@ -2,6 +2,14 @@
     font-family: "Montserrat", sans-serif;
 }
 
+a:hover, a:focus, a:active {
+    text-decoration: none;
+}
+
+.small-text {
+    font-size: 0.7em !important;
+}
+
 main {
     width: 100%;
     height: 100vh;
@@ -175,7 +183,7 @@ header {
     min-height: 100%;
     top: 93%;
     margin: auto;
-    border-radius: 50px;
+    border-radius: 50px 50px 0 0;
     z-index: 9999;
 }
 
@@ -2815,6 +2823,16 @@ input[type=number] {
     align-items: flex-start;
 }
 
+footer {
+    width: 100%;
+    padding: 30px 0;
+    border-radius: 50px 50px 0 0;
+    background: #000;
+    position: relative;   
+    z-index: 999999;
+}
+
+
 footer .soc-icons {
     display: flex;
     margin-bottom: 35px;
@@ -3232,16 +3250,27 @@ span.menu-link {
 }
 
 .video-index {
-    background-color: #FFF;
+    background-color: #edb947;
     position: absolute;
-    width: 82%;
-    height: 100%;
+    width: 81%;
+    height: 880px;
+    min-height: 100vh;    
     top: 93%;
     margin: auto;
     z-index: 99999;
     border-radius: 50px 50px 0 0;
     display: flex;
     align-items: flex-start;
+}
+
+.modal-video-close {
+    background: #ffffff40;
+    border-radius: 50%;
+}
+
+.modal-video-close span {
+    left: 4.5px;
+    top: 27.8px;
 }
 
 video {
@@ -3251,6 +3280,13 @@ video {
 
 video:focus {
     outline: none;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    border-radius: 50px 50px 0 0;
 }
 
 #player {
@@ -3266,10 +3302,23 @@ video:focus {
     align-items: flex-start !important;
 }
 
+main#main.gold585 {
+/*    overflow: hidden;*/
+    height: 100%;
+}
+
+
+
 
 .gold585 .wrapper {
-    overflow-y: scroll !important;
+/*
+    overflow-y: auto !important;
+    flex-wrap: wrap;
+*/
+    min-height:calc(100vh + 148px);
+    height: 100%;
 }
+
 
 
 .video-wrapper {
@@ -3281,7 +3330,7 @@ video:focus {
 .play-btn {
     width: 80px;
     height: 80px;
-    border-radius:40px;
+    border-radius: 40px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -3300,12 +3349,33 @@ video:focus {
     transform: scale(1.1);
 }
 
-@media (max-width: 890px) {
-    
-    .gold585 {
-    overflow: hidden !important;
+.privacy {
+    font-size: 16px;
+    color: #000;
+    line-height: 1.5em;
+    font-weight: 400;
 }
-    
+
+.privacy h3 {
+    font-weight: 600;
+}
+
+.privacy .subtitle {
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 2em;
+}
+
+.privacy p {
+    margin-left: 25px;
+}
+
+@media (max-width: 890px) {
+
+    .gold585 {
+        overflow: hidden !important;
+    }
+
     .video-index {
         width: 100%;
     }
