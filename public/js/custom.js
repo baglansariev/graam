@@ -642,16 +642,16 @@
                     }
                 });
 
-                $('.wrapper').scroll(function() {
-                    $('footer').animate({
-                        bottom: 0 + '%'
-                    }, 600)
-                });
+//                $('.wrapper').scroll(function() {
+//                    $('footer').animate({
+//                        bottom: 0 + '%'
+//                    }, 600)
+//                });
                 $('#sell').click(function () {
-                    $('footer').animate({
-                        bottom: -100 + '%'
-                    }, 300)
+                    $('footer').css('display', 'none');
                 });
+                
+                
 
                 function infinityScroll() {
                     let personalWrapper = $('.personal-content-wrapper');

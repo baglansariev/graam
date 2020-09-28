@@ -3,6 +3,8 @@
 @section('content')
 
 <div class="wrapper d-flex justify-content-center">
+
+
     <div class="main-block d-flex flex-column">
         <div class="progress-block text-center">
             <span>0</span> %
@@ -11,24 +13,23 @@
             <p>Скупка золота и серебра, быстро, надежно и в срок</p>
         </div>
     </div>
+
     <div class="video-index">
         <div class="modal-video-close" onclick="stop()">
             <span></span>
             <span></span>
         </div>
         <div class="video-wrapper">
-           
+
             <div class="play-btn"><img src="/images/play-button.svg" alt="Возпроизведение"></div>
             <video id="main-video" width="100%" height="100%" preload="none" playsinline="" controls poster="/images/new_gold.jpg">
                 <source src="https://player.vimeo.com/external/461289085.hd.mp4?s=4b2c2356b99e5e5580646c29031f6a7b3b0fec9c&profile_id=175" type="video/mp4">
-
                 Your browser does not support the video tag.
-
             </video>
-<!--            <iframe id="main-video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/A8MabQgpCd4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
         </div>
 
     </div>
+
     <div class="choice-block">
 
         <div class="choice-content d-flex justify-content-center align-items-center flex-column">
@@ -97,26 +98,28 @@
             </div>
         </div>
     </div>
+
+</div>
 <footer>
             <div class="container">
                 <div class="row">
                     <div class="col-12 d-flex justify-content-center">
                         <div class="soc-icons">
-                            <a href="/" class="insta-footer"></a>
-                            <a href="/" class="fb-footer"></a>
-                            <a href="/" class="vk-footer"></a>
+                            <a href="https://www.instagram.com/graaam.ru/" class="insta-footer"></a>
+                            <a href="https://www.facebook.com/graam.ru" class="fb-footer"></a>
+                            <a href="https://vk.com/public197867126" class="vk-footer"></a>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-8">
                         <div class="footer-links">
-                            <a href="/">Продать золото или серебро</a>
-                            <a href="/">Войти в личный кабинет</a><br>
+                            <a href="#main">Продать&nbsp;золото&nbsp;или&nbsp;серебро</a>
+                            <a href="/login/">Войти&nbsp;в&nbsp;личный&nbsp;кабинет</a><br>
                             <a class="small-text" href="/privacy-policy">Политика конфиденциальности</a>
 
                         </div>
-                        <div class="copyright">© ООО «Граам», 2020</div>
+                        <div class="copyright">© ООО «ПЮДМ», 2020</div>
                     </div>
                     <div class="col-md-4 footer-logo">
                         <img src="/images/logo-footer.svg" alt="Vasterra.com">
@@ -125,7 +128,6 @@
                 </div>
             </div>
         </footer>
-</div>
 <script>
     function playClick() {
         $('video')[0].play();

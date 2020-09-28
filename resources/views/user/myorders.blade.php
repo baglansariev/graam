@@ -32,20 +32,20 @@
 
 </h2>
 <div class="row filters">
-    <span class="shown">Показано 50 сделок</span>
+    <span class="shown">Показано <span>{{ $transactions_count }}</span>  сделок</span>
 
     <div class="btn-group">
 
         <div class="sortby d-flex">Сортировать &nbsp;
-            <div class="select"> 
-                   <div class="select-arrow"></div>               
-                    <select name="sort-filter" class="sort-select"> 
-                        <option value="weight" selected><b>по весу</b></option>  
+            <div class="select">
+                   <div class="select-arrow"></div>
+                    <select name="sort-filter" class="sort-select">
+                        <option value="weight" selected><b>по весу</b></option>
                         <option value="price"><b>по цене</b></option>
-                    </select>              
+                    </select>
             </div>
         </div>
-        
+
 
         <a href="#" id="list" class="btn btn-default btn-sm active"><img src="/images/list-icon.png" alt=""></a>
         <a href="#" id="grid" class="btn btn-default btn-sm"><img src="/images/grid-icon.png" alt=""></a>
@@ -86,15 +86,15 @@
     @endif
 
 </div>
-<script>        
-        let screen = window.innerWidth;       
+<script>
+        let screen = window.innerWidth;
         if(screen <= 767) {
             document.getElementById('grid').style.display = 'none';
             document.getElementById('list').style.display = 'none';
               document.getElementById('deals').classList.remove('list-view');
               document.getElementById('deals').classList.add('grid-view');
-              document.getElementByClassName('personal-content').classList.add('no-shadow');                     
-        }        
+              document.getElementsByClassName('personal-content').classList.add('no-shadow');
+        }
     </script>
 @component('modules.orders.detail')
 @endcomponent

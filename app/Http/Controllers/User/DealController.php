@@ -25,16 +25,18 @@ class DealController extends Controller
     {
         $user = Auth::user();
         $transactions =  json_decode($this->getUserTransactions($request), true);
+        $transactions_count = !empty($transactions) ? count($transactions) : 0;
         $manager = new ManagerController();
 
         $data = [
             'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
-            'transactions' => $transactions
+            'transactions' => $transactions,
+            'transactions_count' => $transactions_count
         ];
 
 
         //return view('admin.user.deals.index', ['deals' => $deals]);
-        
+
         return view('user.myorders', $data);
     }
 

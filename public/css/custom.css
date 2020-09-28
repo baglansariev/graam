@@ -2828,8 +2828,7 @@ footer {
     padding: 30px 0;
     border-radius: 50px 50px 0 0;
     background: #000;
-    position: fixed;     
-    bottom: -100%;
+    position: relative;   
     z-index: 999999;
 }
 
@@ -3251,11 +3250,11 @@ span.menu-link {
 }
 
 .video-index {
-    background-color: #FFF;
+    background-color: #edb947;
     position: absolute;
     width: 81%;
-    height: 100%;
-    min-height: 100vh;
+    height: 880px;
+    min-height: 100vh;    
     top: 93%;
     margin: auto;
     z-index: 99999;
@@ -3305,13 +3304,19 @@ iframe {
 
 main#main.gold585 {
 /*    overflow: hidden;*/
+    height: 100%;
 }
 
 
 
 
 .gold585 .wrapper {
+/*
     overflow-y: auto !important;
+    flex-wrap: wrap;
+*/
+    min-height:calc(100vh + 148px);
+    height: 100%;
 }
 
 
