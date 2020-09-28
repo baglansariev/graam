@@ -240,12 +240,12 @@
                         requestString = '/admin/transactions';
                     }
                     let showStatus = false;
-                    
+
                     if (pageType == 'private') {
                         requestString = '/user-transactions';
                         showStatus = true;
                     }
-                    
+
                     if (sortBy == '') {
                         sortBy = 'weight';
                     }
@@ -617,31 +617,31 @@
                     $('.modal-popup').fadeOut();
                     $('.modal-popup-alert').fadeOut();
                 });
-                $('.modal-video-close').click(function () {                    
+                $('.modal-video-close').click(function () {
                     $('.video-index').hide();
                     $('#main-video').remove();
-                    
+
                 });
                 $('.play-btn').click(function () {
                     $('video')[0].play();
-                    $('.play-btn').fadeOut();                    
+                    $('.play-btn').fadeOut();
                 });
-                
-                
-                
+
+
+
                 $('.phone-input').inputmask("+7(999)999-99-99");
                 $('.phone-register-input').inputmask("+7(999)999-99-99");
                 $('.form-control').on('change', function () {
                     $('button[type="submit"]').removeClass('disabled');
                 });
-                $('.sell-block').scroll(function() {                           
-                            if ($('.sell-block').scrollTop() > 1) {
-                                $('header').addClass('move-down');
-                            } else {
-                                $('header').removeClass('move-down');
-                            } 
+                $('.sell-block').scroll(function() {
+                    if ($('.sell-block').scrollTop() > 1) {
+                        $('header').addClass('move-down');
+                    } else {
+                        $('header').removeClass('move-down');
+                    }
                 });
-                
+
 
                 function infinityScroll() {
                     let personalWrapper = $('.personal-content-wrapper');
@@ -744,70 +744,70 @@
                 // });
             });
 
-                /***/
-            }),
+            /***/
+        }),
+
+    /***/
+    "./resources/sass/app.scss":
+    /*!*********************************!*\
+      !*** ./resources/sass/app.scss ***!
+      \*********************************/
+    /*! no static exports found */
+    /***/
+        (function (module, exports) {
+
+            // removed by extract-text-webpack-plugin
 
             /***/
-            "./resources/sass/app.scss":
-            /*!*********************************!*\
-              !*** ./resources/sass/app.scss ***!
-              \*********************************/
-            /*! no static exports found */
+        }),
+
+    /***/
+    "./resources/sass/custom.scss":
+    /*!************************************!*\
+      !*** ./resources/sass/custom.scss ***!
+      \************************************/
+    /*! no static exports found */
+    /***/
+        (function (module, exports) {
+
+            // removed by extract-text-webpack-plugin
+
             /***/
-            (function (module, exports) {
+        }),
 
-                // removed by extract-text-webpack-plugin
+    /***/
+    "./resources/sass/feedback-form.scss":
+    /*!*******************************************!*\
+      !*** ./resources/sass/feedback-form.scss ***!
+      \*******************************************/
+    /*! no static exports found */
+    /***/
+        (function (module, exports) {
 
-                /***/
-            }),
+            // removed by extract-text-webpack-plugin
 
-                /***/
-                "./resources/sass/custom.scss":
-            /*!************************************!*\
-              !*** ./resources/sass/custom.scss ***!
-              \************************************/
-            /*! no static exports found */
             /***/
-            (function (module, exports) {
+        }),
 
-                // removed by extract-text-webpack-plugin
+    /***/
+    0:
+    /*!*********************************************************************************************************************************!*\
+      !*** multi ./resources/js/custom.js ./resources/sass/custom.scss ./resources/sass/feedback-form.scss ./resources/sass/app.scss ***!
+      \*********************************************************************************************************************************/
+    /*! no static exports found */
+    /***/
+        (function (module, exports, __webpack_require__) {
 
-                /***/
-            }),
+            __webpack_require__( /*! C:\xampp\htdocs\graam.loc\resources\js\custom.js */ "./resources/js/custom.js");
+            __webpack_require__( /*! C:\xampp\htdocs\graam.loc\resources\sass\custom.scss */ "./resources/sass/custom.scss");
+            __webpack_require__( /*! C:\xampp\htdocs\graam.loc\resources\sass\feedback-form.scss */ "./resources/sass/feedback-form.scss");
+            module.exports = __webpack_require__( /*! C:\xampp\htdocs\graam.loc\resources\sass\app.scss */ "./resources/sass/app.scss");
 
-                /***/
-                "./resources/sass/feedback-form.scss":
-            /*!*******************************************!*\
-              !*** ./resources/sass/feedback-form.scss ***!
-              \*******************************************/
-            /*! no static exports found */
+
             /***/
-            (function (module, exports) {
+        })
 
-                // removed by extract-text-webpack-plugin
-
-                /***/
-            }),
-
-                /***/
-                0:
-            /*!*********************************************************************************************************************************!*\
-              !*** multi ./resources/js/custom.js ./resources/sass/custom.scss ./resources/sass/feedback-form.scss ./resources/sass/app.scss ***!
-              \*********************************************************************************************************************************/
-            /*! no static exports found */
-            /***/
-            (function (module, exports, __webpack_require__) {
-
-                __webpack_require__( /*! C:\xampp\htdocs\graam.loc\resources\js\custom.js */ "./resources/js/custom.js");
-                __webpack_require__( /*! C:\xampp\htdocs\graam.loc\resources\sass\custom.scss */ "./resources/sass/custom.scss");
-                __webpack_require__( /*! C:\xampp\htdocs\graam.loc\resources\sass\feedback-form.scss */ "./resources/sass/feedback-form.scss");
-                module.exports = __webpack_require__( /*! C:\xampp\htdocs\graam.loc\resources\sass\app.scss */ "./resources/sass/app.scss");
-
-
-                /***/
-            })
-
-            /******/
-        });
+    /******/
+});
 
 
