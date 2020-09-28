@@ -20,22 +20,27 @@
 </script>
 <h2 class="orders-heading">Открытые заявки по&nbsp;
     <div class="select">
-        <div class="chosen d-flex">
+{{--        <div class="chosen d-flex">--}}
+{{--            <div class="chosen-container">--}}
+{{--                <span class="buysell" data-name="продаже" style="cursor: pointer">продаже</span>--}}
+{{--            </div>--}}
+{{--            <i class="fas fa-sort-down orders-fas"></i>--}}
+{{--        </div>--}}
+        <div class="d-flex">
             <div class="chosen-container">
                 <span class="buysell" data-name="продаже" style="cursor: pointer">продаже</span>
             </div>
-            <i class="fas fa-sort-down orders-fas"></i>
         </div>
         @component('modules.modals.buysell-modal')
         @endcomponent
     </div>
 </h2>
 <div class="row filters">
-    <span class="shown">Показано 0{{--<span>{{ $transactions_count }}</span> --}} сделок</span>
+    <span class="shown" style="opacity: 0;">Показано <span>{{ $transactions_count }}</span> сделок</span>
 
     <div class="btn-group">
 
-        <div class="sortby d-flex">Сортировать &nbsp;
+        <div class="sortby d-flex" style="opacity: 0;">Сортировать &nbsp;
             <div class="select">
                    <div class="select-arrow"></div>
                     <select name="sort-filter" class="sort-select">
