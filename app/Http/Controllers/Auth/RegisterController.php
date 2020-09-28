@@ -78,6 +78,7 @@ class RegisterController extends Controller
 
          $contractor                    = [];
          $contractor['company_name']    = isset($data['company_name']) ? $data['company_name'] : false;
+         $contractor['name']            = isset($data['name']) ? $data['name'] : false;
          $contractor['entity_type']     = $data['entity_type'];
          $contractor['email']           = false;
          $contractor['phone']           = false;
