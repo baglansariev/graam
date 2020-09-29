@@ -203,6 +203,11 @@
                     }, 600).animate({
                         top: 20 + '%'
                     }, 200);
+                    $('.choice-block.privacy').animate({
+                        marginTop: 120 + 'px'
+                    }, 600).animate({
+                        marginTop: 140 + 'px'
+                    }, 200);
                 }, 1500);
                 setTimeout(function () {
                     $('.main-logo p').animate({
@@ -641,6 +646,16 @@
                         $('header').removeClass('move-down');
                     }
                 });
+
+//                $('.wrapper').scroll(function() {
+//                    $('footer').animate({
+//                        bottom: 0 + '%'
+//                    }, 600)
+//                });
+                $('#sell').click(function () {
+                    $('footer').css('display', 'none');
+                });
+
 
 
                 function infinityScroll() {
