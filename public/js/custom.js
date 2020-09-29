@@ -340,7 +340,7 @@
                     let hiddenPrice = $('.hidden-price');
                     if (hiddenPrice) {
                         let priceClass = '.price_' + params.type;
-                        let price = data.price;
+                        let price = params.price;
                         if (clicked_btn) {
                             price = parseInt( clicked_btn.closest('.card').find(priceClass).text().split(' ').join('') ) * params.weight;
                         }
