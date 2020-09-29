@@ -323,7 +323,7 @@
                     };
                 }
 
-                function setModalPopupParams() {
+                function setModalPopupParams(cliked_btn = false) {
                     let params = getClientPreferences();
                     let metal = 'золота';
 
@@ -339,7 +339,9 @@
 
                     let hiddenPrice = $('.hidden-price');
                     if (hiddenPrice) {
-                        hiddenPrice.val(params.price);
+                        let priceClass = '.price_' + params.type;
+                        let price = parseInt( cliked_btn.closest('.card').find(priceClass).text().split(' ').join('') ) * params.weight;
+                        hiddenPrice.val(price);
                     }
                 }
 
@@ -604,7 +606,7 @@
                             }, 600);
 
                             $('.sell-app').click(function () {
-                                setModalPopupParams();
+                                setModalPopupParams($(this));
                                 $('.modal-popup.modal-sell').fadeIn();
                             });
                             $('.popup-close').click(function () {

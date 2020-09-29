@@ -18,19 +18,19 @@
                             @if (isset($offer['price_585']) && $metal_name !== 'silver')
                                 <div class="gen-price d-flex justify-content-between">
                                     <span>Цена в 585:</span>
-                                    <span>{{ number_format($offer['price_585'], 0, '', ' ') }} ₽</span>
+                                    <span class="price_585">{{ number_format($offer['price_585'], 0, '', ' ') }} ₽</span>
                                 </div>
                             @endif
                             @if (isset($offer['price_999']))
                                 <div class="gen-price d-flex justify-content-between">
                                     <span>Цена в 999:</span>
-                                    <span>{{ number_format($offer['price_999'], 0, '', ' ') }} ₽</span>
+                                    <span class="price_999">{{ number_format($offer['price_999'], 0, '', ' ') }} ₽</span>
                                 </div>
                             @endif
                             @if (isset($offer['price_925']) && $metal_name == 'silver')
                                 <div class="gen-price d-flex justify-content-between">
                                     <span>Цена в 925:</span>
-                                    <span>{{ number_format($offer['price_925'], 0, '', ' ') }} ₽</span>
+                                    <span class="price_925">{{ number_format($offer['price_925'], 0, '', ' ') }} ₽</span>
                                 </div>
                             @endif
                         @endif
