@@ -24,10 +24,7 @@ class DealController extends Controller
     public function index(Request $request)
     {
         $user = Auth::user();
-        $transactions = [];
-        if (isset($user->is_pending) && !$user->is_pending) {
-            $transactions = json_decode($this->getUserTransactions($request), true);
-        }
+        $transactions =  json_decode($this->getUserTransactions($request), true);
         $transactions_count = !empty($transactions) ? count($transactions) : 0;
         $manager = new ManagerController();
 
@@ -77,7 +74,11 @@ class DealController extends Controller
             $index++;
         }
 
-        return json_encode($transactions);
+        if (isset($user->is_pending) && !$user->is_pending) {
+            return json_encode($transactions);
+        }
+
+        return json_encode([]);
 
     }
 
