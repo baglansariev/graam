@@ -203,7 +203,7 @@
                     }, 600).animate({
                         top: 20 + '%'
                     }, 200);
-                    $('.choice-block').animate({
+                    $('.choice-block.privacy').animate({
                         marginTop: 120 + 'px'
                     }, 600).animate({
                         marginTop: 140 + 'px'
