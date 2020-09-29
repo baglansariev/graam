@@ -49,6 +49,7 @@
                                 <input type="hidden" name="type" class="hidden-type">
                                 @auth
                                     <input type="hidden" name="contractor_id" value="{{ Auth::user()->crm_id ?? 0 }}">
+                                    <input type="hidden" name="external_id" value="{{ Auth::user()->id ?? 0 }}">
                                 @endauth
                                 <input type="hidden" name="metal" class="hidden-metal">
                                 <input type="hidden" name="price" class="hidden-price">
