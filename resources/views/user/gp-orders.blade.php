@@ -57,7 +57,7 @@
         <a href="#" id="grid" class="btn btn-default btn-sm"><img src="/images/grid-icon.png" alt=""></a>
     </div>
 </div>
-<div id="deals" data-type="all" class="list-view">
+<div id="deals" data-type="gp" class="list-view">
 
     <div class="list-heading">
         <span class="first-col list-heading-item deal-num">Номер</span>
@@ -82,8 +82,10 @@
 <!--           <span class="list-price"></span>-->
             <span class="list-price">{{ $transaction['price'] }}</span>
             @if ($transaction['deal_type'] == 'sell')
+            
                 <span class="deal-status"><a class="join">Участвовать в покупке</a></span>
             @else
+               
                 <span class="deal-status"><a class="join">Участвовать в продаже</a></span>
             @endif
 <!--            <span class="deal-status">{{ $transaction['status'] }}</span>-->

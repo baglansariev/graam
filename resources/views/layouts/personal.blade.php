@@ -84,7 +84,9 @@
                     <ul class="personal-menu-list">
                         <li class="personal-menu-list-item">Витрина
                             <ul class="submenu">
-                                <li class="personal-submenu-list-item"><a href="{{ route('all-deals') }}" class="menu-link {{ request()->routeIs('all-deals') ? 'active' : '' }}">Все сделки</a></li>
+<!--                                -->
+                                <li class="personal-submenu-list-item"><a href="{{ route('scrub-deals') }}" class="menu-link {{ request()->routeIs('scrub-deals') ? 'active' : '' }}">Заявки по лому</a></li>
+                                <li class="personal-submenu-list-item"><a href="{{ route('gp-deals') }}" class="menu-link {{ request()->routeIs('gp-deals') ? 'active' : '' }}">Заявки по гранулам</a></li>
                             </ul>
                         </li>
                         <li class="personal-menu-list-item">Заявки
@@ -164,7 +166,8 @@
                             <ul class="personal-menu-list">
                                 <li class="personal-menu-list-item">Витрина
                                     <ul class="submenu">
-                                        <li class="personal-submenu-list-item"><a href="{{ route('all-deals') }}" class="menu-link {{ request()->routeIs('all-deals') ? 'active' : '' }}">Все сделки</a></li>
+                                        <li class="personal-submenu-list-item"><a href="{{ route('scrub-deals') }}" class="menu-link {{ request()->routeIs('scrub-deals') ? 'active' : '' }}">Заявки по лому</a></li>
+                                <li class="personal-submenu-list-item"><a href="{{ route('gp-deals') }}" class="menu-link {{ request()->routeIs('gp-deals') ? 'active' : '' }}">Заявки по гранулам</a></li>
                                     </ul>
                                 </li>
                                 <li class="personal-menu-list-item">Заявки
@@ -219,7 +222,8 @@
                     </div>
                     <div class="col-sm-9 personal-content-wrapper">
                         <div class="personal-content sell-block">
-                            <div class="sell-content d-flex flex-column align-items-center @if (in_array('docs', explode('/', request()->getUri()))) documents @endif">
+                            <div class="sell-content d-flex flex-column align-items-center @if (in_array('docs', explode('/', request()->getUri()))) documents @endif">                               
+                               
                                 @yield('content')
                                 @component('modules.preloader')@endcomponent
                             </div>
