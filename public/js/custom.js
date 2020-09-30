@@ -307,8 +307,12 @@
                     var weight = $('.sell-weight').val();
                     var price = parseInt($('.card .price').text().split(' ').join(''));
                     let titleWord = 'продажу';
+                    let action = 'sell';
 
-                    if ($('.sell-trigger').text() == 'купить') titleWord = 'покупку';
+                    if ($('.sell-trigger').text() == 'купить') {
+                        titleWord = 'покупку';
+                        action = 'buy';
+                    }
 
 
                     if (!weight) weight = 10;
@@ -318,7 +322,8 @@
                         type: type,
                         weight: weight,
                         price: price,
-                        titleWord: titleWord
+                        titleWord: titleWord,
+                        action: action
                     };
                 }
 
@@ -335,6 +340,7 @@
                     $('.hidden-type').val(params.type);
                     $('.hidden-metal').val(params.name);
                     $('.hidden-weight').val(params.weight);
+                    $('.hidden-action').val(params.action);
 
                     let hiddenPrice = $('.hidden-price');
                     if (hiddenPrice) {
