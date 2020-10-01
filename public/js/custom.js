@@ -203,6 +203,11 @@
                     }, 600).animate({
                         top: 20 + '%'
                     }, 200);
+                    $('.choice-block.privacy').animate({
+                        marginTop: 120 + 'px'
+                    }, 600).animate({
+                        marginTop: 140 + 'px'
+                    }, 200);
                 }, 1500);
                 setTimeout(function () {
                     $('.main-logo p').animate({
@@ -285,15 +290,15 @@
                             console.log(data);
                             let statusHead = 'Участвовать в сделке';
                             if (showStatus) {
-                                statusPart = data.status;
                                 statusHead = 'Статус';
                             }
                             let content = '<div class="list-heading"><span class="first-col list-heading-item deal-num">Номер</span><span class="list-heading-item list-deal-date">Дата создания</span><span class="list-heading-item deal-material">Металл, проба</span><span class="list-heading-item weight-price">Вес, г</span><span class="list-heading-item factory">Через</span><span class="list-heading-item list-price">Сумма, ₽</span>        <span class="list-heading-item deal-status">' + statusHead + '</span></div>';
                             if (data.length > 0) {
-                                $.each(data, function (index, data) {                                  
-                                    if (data.type == '2' || data.type == '4') {    
+                                $.each(data, function (index, data) {
+                                    if (data.type == '2' || data.type == '4') {
                                         statusPart = '<a class=\'join\'>Участвовать в продаже</a>';
                                     }
+                                    if (showStatus) statusPart = data.status;
                                     content += "<div class='item'><div class='caption' data-name='" + data.user_name + "' data-contractor_id='" + data.user_id + "' data-phone='" + data.user_phone + "' data-weight='" + data.weight + "' data-price='" + data.price + "' data-metal='" + data.material + "' data-type='" + data.content + "'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.price + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.price + "</span><span class='deal-status'>" + statusPart + "</span></div></div>";
                                     dataCount++;
                                 });
@@ -317,8 +322,12 @@
                     var weight = $('.sell-weight').val();
                     var price = parseInt($('.card .price').text().split(' ').join(''));
                     let titleWord = 'продажу';
+                    let action = 'sell';
 
-                    if ($('.sell-trigger').text() == 'купить') titleWord = 'покупку';
+                    if ($('.sell-trigger').text() == 'купить') {
+                        titleWord = 'покупку';
+                        action = 'buy';
+                    }
 
 
                     if (!weight) weight = 10;
@@ -328,11 +337,12 @@
                         type: type,
                         weight: weight,
                         price: price,
-                        titleWord: titleWord
+                        titleWord: titleWord,
+                        action: action
                     };
                 }
 
-                function setModalPopupParams() {
+                function setModalPopupParams(clicked_btn = false) {
                     let params = getClientPreferences();
                     let metal = 'золота';
 
@@ -345,10 +355,16 @@
                     $('.hidden-type').val(params.type);
                     $('.hidden-metal').val(params.name);
                     $('.hidden-weight').val(params.weight);
+                    $('.hidden-action').val(params.action);
 
                     let hiddenPrice = $('.hidden-price');
                     if (hiddenPrice) {
-                        hiddenPrice.val(params.price);
+                        let priceClass = '.price_' + params.type;
+                        let price = params.price;
+                        if (clicked_btn) {
+                            price = parseInt( clicked_btn.closest('.card').find(priceClass).text().split(' ').join('') ) * params.weight;
+                        }
+                        hiddenPrice.val(price);
                     }
                 }
 
@@ -612,7 +628,7 @@
                             }, 600);
 
                             $('.sell-app').click(function () {
-                                setModalPopupParams();
+                                setModalPopupParams($(this));
                                 $('.modal-popup.modal-sell').fadeIn();
                             });
                             $('.popup-close').click(function () {
@@ -723,9 +739,6 @@
                                     }).done(function (data) {
                                         let dataCount = parseInt($('.shown span').text());
                                         let statusPart = '<a class=\'join\'>Участвовать в покупке</a>';
-                                        if (showStatus) {
-                                            statusPart = data.status;
-                                        }
 
                                         if (typeof value !== 'object') {
 
@@ -740,6 +753,9 @@
                                                 arr[test] = data;
                                                 if (data.deal_type == 'buy') {
                                                     statusPart = '<a class=\'join\'>Участвовать в продаже</a>';
+                                                }
+                                                if (showStatus) {
+                                                    statusPart = data.status;
                                                 }
                                                 $("#deals").append("<div class='item'><div class='caption' data-name='" + data.user_name + "' data-contractor_id='" + data.user_id + "' data-phone='" + data.user_phone + "' data-weight='" + data.weight + "' data-price='" + data.price + "' data-metal='" + data.material + "' data-type='" + data.content + "'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.price + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.price + "</span><span class='deal-status'>" + statusPart + "</span></div></div>");
                                                 dataCount++;
