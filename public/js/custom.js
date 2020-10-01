@@ -299,7 +299,7 @@
                                         statusPart = '<a class=\'join\'>Участвовать в продаже</a>';
                                     }
                                     if (showStatus) statusPart = data.status;
-                                    content += "<div class='item'><div class='caption' data-name='" + data.user_name + "' data-contractor_id='" + data.user_id + "' data-phone='" + data.user_phone + "' data-weight='" + data.weight + "' data-price='" + data.price + "' data-metal='" + data.material + "' data-type='" + data.content + "'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.price + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.price + "</span><span class='deal-status'>" + statusPart + "</span></div></div>";
+                                    content += "<div class='item'><div class='caption' data-tr_id='" + data.id + "' data-name='" + data.user_name + "' data-external_id='" + data.user_id + "' data-crm_id='" + data.user_crm_id + "' data-phone='" + data.user_phone + "' data-weight='" + data.weight + "' data-price='" + data.price + "' data-metal='" + data.material + "' data-type='" + data.content + "'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.price + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.price + "</span><span class='deal-status'>" + statusPart + "</span></div></div>";
                                     dataCount++;
                                 });
                             }
@@ -397,7 +397,8 @@
                         let element = $(this).closest('.caption');
                         let data = {
                             transaction_id: element.data('tr_id'),
-                            contractor_id: element.data('contractor_id'),
+                            contractor_id: element.data('crm_id'),
+                            external_id: element.data('external_id'),
                             name: element.data('name'),
                             phone: element.data('phone'),
                             weight: element.data('weight'),
@@ -405,7 +406,12 @@
                             metal: element.data('metal'),
                             type: element.data('type'),
                             text: 'Клиент хочет участвовать в сделке под номером: ' + element.data('tr_id'),
+                            action: 'sell',
                         };
+
+                        if ($('.buysell').data('name') == 'покупке') {
+                            data.action = 'buy';
+                        }
 
                         popupAjax('/form/send/join-to-deal', data);
 
@@ -588,6 +594,7 @@
                                 alert.find('.message').text(result.message);
                                 alert.fadeIn();
                             }
+                            console.log(result);
                         },
                         error: function error(result) {
                             console.log(result);
@@ -757,7 +764,7 @@
                                                 if (showStatus) {
                                                     statusPart = data.status;
                                                 }
-                                                $("#deals").append("<div class='item'><div class='caption' data-name='" + data.user_name + "' data-contractor_id='" + data.user_id + "' data-phone='" + data.user_phone + "' data-weight='" + data.weight + "' data-price='" + data.price + "' data-metal='" + data.material + "' data-type='" + data.content + "'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.price + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.price + "</span><span class='deal-status'>" + statusPart + "</span></div></div>");
+                                                $("#deals").append("<div class='item'><div class='caption' data-tr_id='" + data.id + "' data-name='" + data.user_name + "' data-external_id='" + data.user_id + "' data-crm_id='" + data.user_crm_id + "' data-phone='" + data.user_phone + "' data-weight='" + data.weight + "' data-price='" + data.price + "' data-metal='" + data.material + "' data-type='" + data.content + "'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.price + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.price + "</span><span class='deal-status'>" + statusPart + "</span></div></div>");
                                                 dataCount++;
                                                 test++;
                                             });

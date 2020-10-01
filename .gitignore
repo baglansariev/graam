@@ -1,7 +1,9 @@
 /node_modules
 /public/hot
 /public/applications.txt
+public/applications.txt
 /public/.htaccess
+public/.htaccess
 /public/storage
 /storage/*.key
 /vendor
@@ -14,5 +16,6 @@ npm-debug.log
 yarn-error.log
 .htaccess
 /public/video
+public/video
 .idea
 applications.txt
