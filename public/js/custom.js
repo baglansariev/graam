@@ -203,6 +203,11 @@
                     }, 600).animate({
                         top: 20 + '%'
                     }, 200);
+                    $('.choice-block.privacy').animate({
+                        marginTop: 120 + 'px'
+                    }, 600).animate({
+                        marginTop: 140 + 'px'
+                    }, 200);
                 }, 1500);
                 setTimeout(function () {
                     $('.main-logo p').animate({
@@ -255,7 +260,6 @@
                     if (chosenName == 'продаже' && pageType == 'all') {
                         typeofval = '1';
                     }
-
                     if (chosenName == 'покупке' && pageType == 'all') {
                         typeofval = '4';
                     }
@@ -286,7 +290,6 @@
                             console.log(data);
                             let statusHead = 'Участвовать в сделке';
                             if (showStatus) {
-                                statusPart = data.status;
                                 statusHead = 'Статус';
                             }
                             if (chosenName == 'продаже') {
@@ -299,11 +302,12 @@
                             
                             
                             if (data.length > 0) {
-                                $.each(data, function (index, data) {                                  
-                                    if (data.type == '2' || data.type == '4') {    
+                                $.each(data, function (index, data) {
+                                    if (data.type == '2' || data.type == '4') {
                                         statusPart = '<a class=\'join\'>Участвовать в продаже</a>';
                                     }
-                                    content += "<div class='item'><div class='caption' data-name='" + data.user_name + "' data-contractor_id='" + data.user_id + "' data-phone='" + data.user_phone + "' data-weight='" + data.weight + "' data-price='" + data.price + "' data-metal='" + data.material + "' data-type='" + data.content + "'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.price + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.price + "</span><span class='deal-status'>" + statusPart + "</span></div></div>";
+                                    if (showStatus) statusPart = data.status;
+                                    content += "<div class='item'><div class='caption' data-tr_id='" + data.id + "' data-name='" + data.user_name + "' data-external_id='" + data.user_id + "' data-crm_id='" + data.user_crm_id + "' data-phone='" + data.user_phone + "' data-weight='" + data.weight + "' data-price='" + data.price + "' data-metal='" + data.material + "' data-type='" + data.content + "'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.price + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.price + "</span><span class='deal-status'>" + statusPart + "</span></div></div>";
                                     dataCount++;
                                 });
                             }
@@ -331,8 +335,12 @@
                     var weight = $('.sell-weight').val();
                     var price = parseInt($('.card .price').text().split(' ').join(''));
                     let titleWord = 'продажу';
+                    let action = 'sell';
 
-                    if ($('.sell-trigger').text() == 'купить') titleWord = 'покупку';
+                    if ($('.sell-trigger').text() == 'купить') {
+                        titleWord = 'покупку';
+                        action = 'buy';
+                    }
 
 
                     if (!weight) weight = 10;
@@ -342,11 +350,12 @@
                         type: type,
                         weight: weight,
                         price: price,
-                        titleWord: titleWord
+                        titleWord: titleWord,
+                        action: action
                     };
                 }
 
-                function setModalPopupParams() {
+                function setModalPopupParams(clicked_btn = false) {
                     let params = getClientPreferences();
                     let metal = 'золота';
 
@@ -359,10 +368,16 @@
                     $('.hidden-type').val(params.type);
                     $('.hidden-metal').val(params.name);
                     $('.hidden-weight').val(params.weight);
+                    $('.hidden-action').val(params.action);
 
                     let hiddenPrice = $('.hidden-price');
                     if (hiddenPrice) {
-                        hiddenPrice.val(params.price);
+                        let priceClass = '.price_' + params.type;
+                        let price = params.price;
+                        if (clicked_btn) {
+                            price = parseInt( clicked_btn.closest('.card').find(priceClass).text().split(' ').join('') ) * params.weight;
+                        }
+                        hiddenPrice.val(price);
                     }
                 }
 
@@ -395,7 +410,8 @@
                         let clickText = $('.join')[0].text;                                          
                         let data = {
                             transaction_id: element.data('tr_id'),
-                            contractor_id: element.data('contractor_id'),
+                            contractor_id: element.data('crm_id'),
+                            external_id: element.data('external_id'),
                             name: element.data('name'),
                             phone: element.data('phone'),
                             weight: element.data('weight'),
@@ -403,8 +419,14 @@
                             metal: element.data('metal'),
                             type: element.data('type'),
                             text: 'Клиент хочет участвовать в сделке под номером: ' + element.data('tr_id'),
+                            action: 'sell',
                         };
-                        
+
+                        if ($('.buysell').data('name') == 'покупке') {
+                            data.action = 'buy';
+                        }
+
+                        popupAjax('/form/send/join-to-deal', data);
                         $('.modal-popup.modal-join').fadeIn();
                         
                         if ( clickText == 'Участвовать в покупке' ) {
@@ -617,6 +639,7 @@
                                 alert.find('.message').text(result.message);
                                 alert.fadeIn();
                             }
+                            console.log(result);
                         },
                         error: function error(result) {
                             console.log(result);
@@ -657,7 +680,7 @@
                             }, 600);
 
                             $('.sell-app').click(function () {
-                                setModalPopupParams();
+                                setModalPopupParams($(this));
                                 $('.modal-popup.modal-sell').fadeIn();
                             });
                             $('.popup-close').click(function () {
@@ -713,13 +736,15 @@
 
                 function infinityScroll() {
                     let personalWrapper = $('.personal-content-wrapper');
-                    
-                    let typeOfDeal = "1";
+                    if (!personalWrapper.hasClass('documents')) {
+                        personalWrapper.scroll(function () {
+                            if (personalWrapper.scrollTop() >= (personalWrapper.height() - 1) && !IN_PROGRESS) {
+                                $('.main-preloader').fadeIn();
+                                let typeOfDeal = "1";
                                 let chosen = $('.chosen span');
                                 let chosenName = chosen.data('name');
                                 let sortBy = $('.sort-select').val();
                                 let pageType = $('#deals').attr('data-type');
-                                
                                 if (chosenName == 'продаже' && pageType == 'all') {
                                     typeOfDeal = '1';
                                 }
@@ -735,19 +760,19 @@
                                 if (chosenName == 'покупке' && pageType == 'gp') {
                                     typeOfDeal = '2';
                                 }
-                    if (!personalWrapper.hasClass('documents') && typeOfDeal != '3' ) {
-                        personalWrapper.scroll(function () {
-                            if (personalWrapper.scrollTop() >= (personalWrapper.height() - 1) && !IN_PROGRESS) {
-                                $('.main-preloader').fadeIn();            
-                                
+                                if (!personalWrapper.hasClass('documents') && typeOfDeal != '3' ) {
+                                    personalWrapper.scroll(function () {
+                                        if (personalWrapper.scrollTop() >= (personalWrapper.height() - 1) && !IN_PROGRESS) {
+                                            $('.main-preloader').fadeIn();
 
-                                let requestString = false;
-                                let showStatus = false;
-                                if (pageType == 'all' || pageType == 'gp') {
-                                    
-                                    if (pageType == 'gp' && chosenName == 'продаже') {
-                                         requestString = false;
-                                    }
+
+                                            let requestString = false;
+                                            let showStatus = false;
+                                            if (pageType == 'all' || pageType == 'gp') {
+
+                                                if (pageType == 'gp' && chosenName == 'продаже') {
+                                                    requestString = false;
+                                                }
                                     requestString = '/admin/transactions';
                                 }
                                 
@@ -758,7 +783,7 @@
                                     showStatus = true;
                                 }
 
-                                if (requestString != false) {
+                                if (requestString) {
                                     PAGE++;
                                     $.ajax({
                                         url: requestString, // путь к ajax-обработчику
@@ -775,9 +800,6 @@
                                     }).done(function (data) {
                                         let dataCount = parseInt($('.shown span').text());
                                         let statusPart = '<a class=\'join\'>Участвовать в покупке</a>';
-                                        if (showStatus) {
-                                            statusPart = data.status;
-                                        }
 
                                         if (typeof value !== 'object') {
 
@@ -793,7 +815,10 @@
                                                 if (data.deal_type == 'buy') {
                                                     statusPart = '<a class=\'join\'>Участвовать в продаже</a>';
                                                 }
-                                                $("#deals").append("<div class='item'><div class='caption' data-name='" + data.user_name + "' data-contractor_id='" + data.user_id + "' data-phone='" + data.user_phone + "' data-weight='" + data.weight + "' data-price='" + data.price + "' data-metal='" + data.material + "' data-type='" + data.content + "'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.price + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.price + "</span><span class='deal-status'>" + statusPart + "</span></div></div>");
+                                                if (showStatus) {
+                                                    statusPart = data.status;
+                                                }
+                                                $("#deals").append("<div class='item'><div class='caption' data-tr_id='" + data.id + "' data-name='" + data.user_name + "' data-external_id='" + data.user_id + "' data-crm_id='" + data.user_crm_id + "' data-phone='" + data.user_phone + "' data-weight='" + data.weight + "' data-price='" + data.price + "' data-metal='" + data.material + "' data-type='" + data.content + "'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.price + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.price + "</span><span class='deal-status'>" + statusPart + "</span></div></div>");
                                                 dataCount++;
                                                 test++;
                                             });

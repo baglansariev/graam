@@ -77,10 +77,12 @@ class RegisterController extends Controller
          ]);
 
          $contractor                    = [];
+         $contractor['id']              = $user->id;
          $contractor['company_name']    = isset($data['company_name']) ? $data['company_name'] : false;
+         $contractor['name']            = isset($data['name']) ? $data['name'] : false;
          $contractor['entity_type']     = $data['entity_type'];
-         $contractor['email']           = false;
-         $contractor['phone']           = false;
+         $contractor['email']           = $data['email'];
+         $contractor['phone']           = $data['phone'];
 
          if ($data['entity_type'] == 1 && isset($data['name'])) {
              $user->name  = $data['name'];
@@ -88,8 +90,6 @@ class RegisterController extends Controller
          }
          else {
              $contractor['company_name'] = isset($data['name']) ? $data['name'] : false;
-             $contractor['email'] = $data['email'];
-             $contractor['phone'] = $data['phone'];
          }
 
         // Передача данных в CRM
@@ -103,10 +103,8 @@ class RegisterController extends Controller
 
         $user->crm_id = json_decode($response, true)['id'];
         $user->manager_id = json_decode($response, true)['manager_id'];
+        $user->is_pending = json_decode($response, true)['is_pending'];
 
-//        if (request()->cookie('manager')) {
-//            $user->regged_by = request()->cookie('manager');
-//        }
         if (isset($_COOKIE['manager'])) {
             $user->regged_by = $_COOKIE['manager'];
         }

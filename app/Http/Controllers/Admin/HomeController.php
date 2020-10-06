@@ -79,6 +79,7 @@ class HomeController extends Controller
                     'user_name' => $user->name ?? $user_details->name,
                     'user_phone' => $user->phone ?? $user_details->phone,
                     'deal_type' => ($type == '1') ? 'sell' : 'buy',
+                    'user_crm_id' => $user->crm_id ?? 0,
                 ];
 
                 $transactions[$index] = array_merge($transactions[$index], $user_data);
@@ -90,10 +91,7 @@ class HomeController extends Controller
 
         return $response;
     }
-
-
-
-public function showGPTransactions(Request $request)
+    public function showGPTransactions(Request $request)
     {
         $manager = new ManagerController();
         $user = Auth::user();
@@ -129,7 +127,6 @@ public function showGPTransactions(Request $request)
 
         $this->setClientData();
         $response = $this->getResponseFromClient('GET', '/transaction' . $action);
-
         if ($user = Auth::user()) {
             $transactions   = [];
             $data           = json_decode($response, true);            
@@ -145,6 +142,7 @@ public function showGPTransactions(Request $request)
                     'user_name' => $user->name ?? $user_details->name,
                     'user_phone' => $user->phone ?? $user_details->phone,
                     'deal_type' => ($type == '3') ? 'sell' : 'buy',
+                    'user_crm_id' => $user->crm_id ?? 0,
                 ];
 
                 $transactions[$index] = array_merge($transactions[$index], $user_data);

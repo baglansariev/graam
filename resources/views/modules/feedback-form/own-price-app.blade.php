@@ -11,7 +11,7 @@
                     <div class="popup-content d-flex justify-content-center">
                         <div class="content d-flex flex-column align-items-start">
                             <div class="title">
-                                <h3>Заявка на <span class="keyword">продажу</span></h3>
+                                <h3>Заявка на <span class="keyword" data-action="sell">продажу</span></h3>
                             </div>
                             <div class="subtitle">
                                 50 г золота 585 пробы через ПЮДМ
@@ -51,8 +51,10 @@
                                 @endif
                                 <input type="hidden" name="weight" class="hidden-weight">
                                 <input type="hidden" name="type" class="hidden-type">
+                                <input type="hidden" name="action" class="hidden-action">
                                 @auth
                                     <input type="hidden" name="contractor_id" value="{{ Auth::user()->crm_id ?? 0 }}">
+                                    <input type="hidden" name="external_id" value="{{ Auth::user()->id ?? 0 }}">
                                 @endauth
                                 <input type="hidden" name="metal" class="hidden-metal">
                                 <input type="hidden" name="text" class="hidden-message">

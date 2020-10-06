@@ -116,7 +116,6 @@
                     <ul class="personal-menu-list">
                         <li class="personal-menu-list-item">Витрина
                             <ul class="submenu">
-                                <!--                                -->
                                 <li class="personal-submenu-list-item"><a href="{{ route('scrub-deals') }}" class="menu-link {{ request()->routeIs('scrub-deals') ? 'active' : '' }}">Заявки по лому</a></li>
                                 <li class="personal-submenu-list-item"><a href="{{ route('gp-deals') }}" class="menu-link {{ request()->routeIs('gp-deals') ? 'active' : '' }}">Заявки по ГП</a></li>
                             </ul>
@@ -260,7 +259,6 @@
                     <div class="col-sm-9 personal-content-wrapper">
                         <div class="personal-content sell-block">
                             <div class="sell-content d-flex flex-column align-items-center @if (in_array('docs', explode('/', request()->getUri()))) documents @endif">
-
                                 @yield('content')
                                 @component('modules.preloader')@endcomponent
                             </div>

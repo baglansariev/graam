@@ -76,7 +76,7 @@
 @if(count($transactions))
     @foreach ($transactions as $transaction)
     <div class="item">
-        <div class="caption" data-tr_id="{{ $transaction['id'] }}" data-contractor_id="{{ $user->id }}" data-name="{{ $user->name ?? $user_details->name }}" data-phone="{{ $user->phone ?? $user_details->phone }}" data-weight="{{ $transaction['weight'] }}" data-price="{{ $transaction['price'] }}" data-metal="{{ $transaction['material'] }}" data-type="{{ $transaction['content'] }}">
+        <div class="caption" data-tr_id="{{ $transaction['id'] }}" data-external_id="{{ $user->id }}" data-crm_id="{{ $user->crm_id ?? 0 }}" data-name="{{ $user->name ?? $user_details->name }}" data-phone="{{ $user->phone ?? $user_details->phone }}" data-weight="{{ $transaction['weight'] }}" data-price="{{ $transaction['price'] }}" data-metal="{{ $transaction['material'] }}" data-type="{{ $transaction['content'] }}">
             <span class="first-col deal-num">#{{ $transaction['id'] }}</span>
             <span class="list-deal-date">{{ $transaction['created_at'] }}</span>
             <span class="deal-material">{{ $transaction['material'] . ' ' . $transaction['content'] }}</span>

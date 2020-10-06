@@ -51,12 +51,16 @@ class DealController extends Controller
 
         $page           = 1;
         $type           = '1,3';
+        $user_id        = $user->id;
+        $is_pending     = $user->is_pending ? $user->is_pending : false;
 
         if ($request->get('page')) $page = $request->get('page');
         if ($request->get('type')) $type = $request->get('type');
 
         $action .= '?page=' . $page;
         $action .= '&type=' . $type;
+        $action .= '&is_pending=' . $is_pending;
+        $action .= '&user_id=' . $user_id;
 
         $this->setClientData();
         $response =  $this->getResponseFromClient('GET', $action);
