@@ -2,6 +2,10 @@
 @section('content')
 <script>
     $(document).ready(function() {
+        if ($('.buysell').attr('name') == 'покупке'){
+            $('.list-heading-item.list-deal-date').text('Дата покупки');
+        }
+    
         $('#list').click(function(event) {
             event.preventDefault();
             $('#deals').removeClass('grid-view').addClass('list-view');
@@ -20,27 +24,29 @@
 </script>
 <h2 class="orders-heading">Открытые заявки по&nbsp;
     <div class="select">
-{{--        <div class="chosen d-flex">--}}
-{{--            <div class="chosen-container">--}}
-{{--                <span class="buysell" data-name="продаже" style="cursor: pointer">продаже</span>--}}
-{{--            </div>--}}
-{{--            <i class="fas fa-sort-down orders-fas"></i>--}}
-{{--        </div>--}}
+<div class="chosen d-flex">
+           <div class="chosen-container">
+                <span class="buysell" data-name="продаже" style="cursor: pointer">продаже</span>
+          </div>
+        <i class="fas fa-sort-down orders-fas"></i>
+       </div>
+<!--
         <div class="d-flex">
             <div class="chosen-container">
                 <span class="buysell" data-name="продаже" style="cursor: pointer">продаже</span>
             </div>
         </div>
+-->
         @component('modules.modals.buysell-modal')
         @endcomponent
     </div>
 </h2>
 <div class="row filters">
-    <span class="shown" style="opacity: 0;">Показано <span>{{ $transactions_count }}</span> сделок</span>
+    <span class="shown">Показано <span>{{ $transactions_count }}</span> сделок</span>
 
     <div class="btn-group">
 
-        <div class="sortby d-flex" style="opacity: 0;">Сортировать &nbsp;
+        <div class="sortby d-flex">Сортировать &nbsp;
             <div class="select">
                    <div class="select-arrow"></div>
                     <select name="sort-filter" class="sort-select">
@@ -59,15 +65,15 @@
 
     <div class="list-heading">
         <span class="first-col list-heading-item deal-num">Номер</span>
-        <span class="list-heading-item list-deal-date">Дата создания</span>
+        <span class="list-heading-item list-deal-date">Дата доступности</span>
         <span class="list-heading-item deal-material">Металл, проба</span>
         <span class="list-heading-item weight-price">Вес, г</span>
         <span class="list-heading-item factory">Через</span>
 {{--        <span class="list-heading-item list-price">Сумма, ₽</span>--}}
         <span class="list-heading-item list-price">Цена, ₽</span>
         <span class="list-heading-item deal-status">Участвовать в сделке</span>
-    </div>
- {{--   @if(count($transactions))
+    </div>    
+@if(count($transactions))
     @foreach ($transactions as $transaction)
     <div class="item">
         <div class="caption" data-tr_id="{{ $transaction['id'] }}" data-contractor_id="{{ $user->id }}" data-name="{{ $user->name ?? $user_details->name }}" data-phone="{{ $user->phone ?? $user_details->phone }}" data-weight="{{ $transaction['weight'] }}" data-price="{{ $transaction['price'] }}" data-metal="{{ $transaction['material'] }}" data-type="{{ $transaction['content'] }}">
@@ -77,8 +83,8 @@
             <span class="weight-price"><span class="weight">{{ $transaction['weight'] }} <b>г</b></span> <span class="sum-price">{{ $transaction['price'] }} <b>₽</b></span></span>
             <span class="grid-deal-date"><span class="grid-text-title">Дата создания&nbsp;</span> {{ $transaction['created_at'] }}</span>
             <span class="factory"><span class="grid-text-title">Через </span><img src="/images/pictogram.png" alt=""> ПЮДМ</span>
-{{--            <span class="list-price">{{ $transaction['sum'] }}</span>--}}
- {{--           <span class="list-price">{{ $transaction['price'] }}</span>
+<!--           <span class="list-price"></span>-->
+            <span class="list-price">{{ $transaction['price'] }}</span>
             @if ($transaction['deal_type'] == 'sell')
                 <span class="deal-status"><a class="join">Участвовать в покупке</a></span>
             @else
@@ -87,13 +93,14 @@
 <!--            <span class="deal-status">{{ $transaction['status'] }}</span>-->
         </div>
     </div>
+<!--    <span>{{ $transaction['deal_type'] }}</span>-->
     @endforeach
-    @else --}}
+    @else 
     <div class="no-orders">
-{{--        <span class="text-center">У вас пока нет заявок</span>--}}
+       <span class="text-center">У вас пока нет заявок</span>
         <span class="text-center">Скоро появятся актуальные заявки</span>
     </div>
-{{--    @endif--}}
+    @endif
 
 </div>
 <script>

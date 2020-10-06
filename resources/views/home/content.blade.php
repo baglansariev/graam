@@ -1,9 +1,9 @@
 @extends('layouts.main')
 @section('content')
 <script>
-    jQuery(document).ready(function() {
-        jQuery(".question").click(function() {
-            jQuery(this).toggleClass("opened-answer");
+    $(document).ready(function() {
+        $(".question").click(function() {
+            $(this).toggleClass("opened-answer");
         });
     });
 

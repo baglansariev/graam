@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -46,7 +45,7 @@
     </noscript>
     <!-- /Yandex.Metrika counter -->
     @endif
-       <script>
+    <script>
         $(document).ready(function() {
             $("a.menu-link").click(function(event) {
                 event.preventDefault();
@@ -65,9 +64,42 @@
             $("#mobmenu").click(function(event) {
                 $(".personal-content").toggleClass('change-zindex');
             });
+
+            $.ajax({
+                    url: '/admin/stock-infos', // путь к ajax-обработчику
+                    method: 'GET',
+                    data: {},
+                    dataType: 'JSON',
+                    success: function(data) {
+                        let content = '';
+                        if (data.length > 0) {
+                            $.each(data, function(index, data) {
+                                if ( data.price_type_1 == 0 && data.price_type_2 == 0 ) {
+                                content += '<span>Цена золота <strong>' + data.gold_price + ' </strong> руб/г</span>';
+                                }
+                                if (data.price_type_1 == 0 && data.price_type_2 != 0) {
+                                    content += '<span>Цена золота <strong>' + data.gold_price + '</strong> руб/г</span><br><span>Средняя цена покупки гранул ' + data.price_type_2 + ' руб/г</span>';
+                                }
+                                
+                                if (data.price_type_1 != 0 && data.price_type_2 == 0) {
+                                    content += '<span>Цена золота <strong>' + data.gold_price + '</strong> руб/г</span><br><span>Средняя цена продажи лома ' + data.price_type_1 + ' руб/г</span>';
+                                }
+                                if (data.price_type_1 != 0 && data.price_type_2 != 0) {
+                                    content += '<span>Цена золота <strong>' + data.gold_price + '</strong> руб/г</span><br><span>Средняя цена продажи лома ' + data.price_type_1 + ' руб/г</span><br><span>Средняя цена покупки гранул ' + data.price_type_2 + ' руб/г</span>';
+                                }
+                                
+                            });
+                        }
+                        $("#stock-infos").html(content);
+
+                    }                
+                
+            })
         });
-    </script>    
+
+    </script>
 </head>
+
 <body>
     <main id="main" class="white personal">
         <div class="mobile-menu-toggler">
@@ -84,12 +116,14 @@
                     <ul class="personal-menu-list">
                         <li class="personal-menu-list-item">Витрина
                             <ul class="submenu">
-                                <li class="personal-submenu-list-item"><a href="{{ route('all-deals') }}" class="menu-link {{ request()->routeIs('all-deals') ? 'active' : '' }}">Все сделки</a></li>
+                                <!--                                -->
+                                <li class="personal-submenu-list-item"><a href="{{ route('scrub-deals') }}" class="menu-link {{ request()->routeIs('scrub-deals') ? 'active' : '' }}">Заявки по лому</a></li>
+                                <li class="personal-submenu-list-item"><a href="{{ route('gp-deals') }}" class="menu-link {{ request()->routeIs('gp-deals') ? 'active' : '' }}">Заявки по ГП</a></li>
                             </ul>
                         </li>
                         <li class="personal-menu-list-item">Заявки
                             <ul class="submenu">
-                               <li class="personal-submenu-list-item"><a href="/" class="menu-link">Добавить</a></li>
+                                <li class="personal-submenu-list-item"><a href="/" class="menu-link">Добавить</a></li>
                                 <li class="personal-submenu-list-item"><a href="{{ route('personal') }}" class="menu-link {{ request()->routeIs('personal') ? 'active' : '' }}">Активные</a></li>
                                 <!--                                        <li class="personal-submenu-list-item"><a href="{{ route('personal-archive') }}" class="menu-link {{ request()->routeIs('personal-archive') ? 'active' : '' }}">История сделок</a></li>-->
                                 <!--                                        <li class="personal-menu-list-item"><a href="{{ route('personal-discount') }}" class="menu-link {{ request()->routeIs('personal-discount') ? 'active' : '' }}">Дисконт</a></li>-->
@@ -164,12 +198,13 @@
                             <ul class="personal-menu-list">
                                 <li class="personal-menu-list-item">Витрина
                                     <ul class="submenu">
-                                        <li class="personal-submenu-list-item"><a href="{{ route('all-deals') }}" class="menu-link {{ request()->routeIs('all-deals') ? 'active' : '' }}">Все сделки</a></li>
+                                        <li class="personal-submenu-list-item"><a href="{{ route('scrub-deals') }}" class="menu-link {{ request()->routeIs('scrub-deals') ? 'active' : '' }}">Заявки по лому</a></li>
+                                        <li class="personal-submenu-list-item"><a href="{{ route('gp-deals') }}" class="menu-link {{ request()->routeIs('gp-deals') ? 'active' : '' }}">Заявки по ГП</a></li>
                                     </ul>
                                 </li>
                                 <li class="personal-menu-list-item">Заявки
                                     <ul class="submenu">
-                                       <li class="personal-submenu-list-item"><a href="/" class="menu-link">Добавить</a></li>
+                                        <li class="personal-submenu-list-item"><a href="/" class="menu-link">Добавить</a></li>
                                         <li class="personal-submenu-list-item"><a href="{{ route('personal') }}" class="menu-link {{ request()->routeIs('personal') ? 'active' : '' }}">Активные</a></li>
                                         <!--                                        <li class="personal-submenu-list-item"><a href="{{ route('personal-archive') }}" class="menu-link {{ request()->routeIs('personal-archive') ? 'active' : '' }}">История сделок</a></li>-->
                                         <!--                                        <li class="personal-menu-list-item"><a href="{{ route('personal-discount') }}" class="menu-link {{ request()->routeIs('personal-discount') ? 'active' : '' }}">Дисконт</a></li>-->
@@ -188,7 +223,7 @@
                                         Выход
                                     </span>
 
-                                 <form id="" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </li>
@@ -196,6 +231,11 @@
                             </ul>
 
                         </nav>
+
+                        <div id="stock-infos">
+                        </div>
+
+
                         <div class="pm-wrapper">
                             <div class="contact-pm">
                                 <div class="pm-img-wrap">
@@ -220,6 +260,7 @@
                     <div class="col-sm-9 personal-content-wrapper">
                         <div class="personal-content sell-block">
                             <div class="sell-content d-flex flex-column align-items-center @if (in_array('docs', explode('/', request()->getUri()))) documents @endif">
+
                                 @yield('content')
                                 @component('modules.preloader')@endcomponent
                             </div>
@@ -240,11 +281,12 @@
 
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/feedback-form.js') }}"></script>
-    <script>        
-        let screenH = window.innerHeight;       
-        if(screenH <= 560) {
-            document.getElementById('main').style.overflow = 'auto';                            
-        }        
+    <script>
+        let screenH = window.innerHeight;
+        if (screenH <= 560) {
+            document.getElementById('main').style.overflow = 'auto';
+        }
+
     </script>
 </body>
 

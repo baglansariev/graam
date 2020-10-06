@@ -34,9 +34,10 @@ Route::middleware('auth')->group(function() {
 
 Route::middleware('auth')->group(function() {
     Route::prefix('admin')->group(function () {
-       Route::get('/deals', 'Admin\HomeController@index')->name('all-deals');
+       Route::get('/deals-scrub', 'Admin\HomeController@index')->name('scrub-deals');
+       Route::get('/deals-gp', 'Admin\HomeController@showGPTransactions')->name('gp-deals');
         Route::get('/transactions', 'Admin\HomeController@getAllTransactions');
-
+        Route::get('/stock-infos', 'Admin\HomeController@getStockInfos');
 
         Route::prefix('user')->group(function () {
 

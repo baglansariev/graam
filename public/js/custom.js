@@ -157,11 +157,11 @@
 
     /***/
     "./resources/js/custom.js":
-    /*!********************************!*\
-      !*** ./resources/js/custom.js ***!
-      \********************************/
-    /*! no static exports found */
-    /***/
+        /*!********************************!*\
+          !*** ./resources/js/custom.js ***!
+          \********************************/
+        /*! no static exports found */
+        /***/
         (function (module, exports) {
 
             $(function () {
@@ -236,7 +236,7 @@
                     console.log(sortBy);
                     let pageType = $('#deals').attr('data-type');
                     let requestString = '';
-                    if (pageType == 'all'){
+                    if (pageType == 'all' || pageType == 'gp') {
                         requestString = '/admin/transactions';
                     }
                     let showStatus = false;
@@ -249,11 +249,25 @@
                     if (sortBy == '') {
                         sortBy = 'weight';
                     }
-                    let typeofval = '1,3';
-
-                    if (chosenName == "покупке") {
-                        typeofval = '2,4';
+                    let typeofval = '1';
+                    
+                    
+                    if (chosenName == 'продаже' && pageType == 'all') {
+                        typeofval = '1';
                     }
+
+                    if (chosenName == 'покупке' && pageType == 'all') {
+                        typeofval = '4';
+                    }
+
+                    if(chosenName == 'продаже' && pageType == 'gp') {
+                        typeofval = '3';
+                    }
+
+                    if (chosenName == 'покупке' && pageType == 'gp') {
+                        typeofval = '2';
+                    }
+                    
                     PAGE = 1;
                     IN_PROGRESS = false;
 
@@ -266,6 +280,7 @@
                         },
                         dataType: 'JSON',
                         success: function (data) {
+                            let content = '';
                             let dataCount = 0;
                             let statusPart = '<a class=\'join\'>Участвовать в покупке</a>';
                             console.log(data);
@@ -274,10 +289,18 @@
                                 statusPart = data.status;
                                 statusHead = 'Статус';
                             }
-                            let content = '<div class="list-heading"><span class="first-col list-heading-item deal-num">Номер</span><span class="list-heading-item list-deal-date">Дата создания</span><span class="list-heading-item deal-material">Металл, проба</span><span class="list-heading-item weight-price">Вес, г</span><span class="list-heading-item factory">Через</span><span class="list-heading-item list-price">Сумма, ₽</span>        <span class="list-heading-item deal-status">' + statusHead + '</span></div>';
+                            if (chosenName == 'продаже') {
+                            content = '<div class="list-heading"><span class="first-col list-heading-item deal-num">Номер</span><span class="list-heading-item list-deal-date">Дата доступности</span><span class="list-heading-item deal-material">Металл, проба</span><span class="list-heading-item weight-price">Вес, г</span><span class="list-heading-item factory">Через</span><span class="list-heading-item list-price">Сумма, ₽</span>        <span class="list-heading-item deal-status">' + statusHead + '</span></div>';
+                                
+                            } else {
+                                 content = '<div class="list-heading"><span class="first-col list-heading-item deal-num">Номер</span><span class="list-heading-item list-deal-date">Дата покупки</span><span class="list-heading-item deal-material">Металл, проба</span><span class="list-heading-item weight-price">Вес, г</span><span class="list-heading-item factory">Через</span><span class="list-heading-item list-price">Сумма, ₽</span>        <span class="list-heading-item deal-status">' + statusHead + '</span></div>';
+                            }
+                            
+                            
+                            
                             if (data.length > 0) {
-                                $.each(data, function (index, data) {
-                                    if (data.deal_type == 'buy') {
+                                $.each(data, function (index, data) {                                  
+                                    if (data.type == '2' || data.type == '4') {    
                                         statusPart = '<a class=\'join\'>Участвовать в продаже</a>';
                                     }
                                     content += "<div class='item'><div class='caption' data-name='" + data.user_name + "' data-contractor_id='" + data.user_id + "' data-phone='" + data.user_phone + "' data-weight='" + data.weight + "' data-price='" + data.price + "' data-metal='" + data.material + "' data-type='" + data.content + "'><span class='first-col deal-num'>#" + data.id + "</span><span class='list-deal-date'>" + data.created_at + "</span><span class='deal-material'>" + data.material + " " + data.content + "<b>пр</b></span><span class='weight-price'><span class='weight'>" + data.weight + "<b>г</b></span><span class='sum-price'>" + data.price + "<b>₽</b></span></span><span class='grid-deal-date'><span class='grid-text-title'>Дата создания</span>" + data.created_at + "</span><span class='factory'><span class='grid-text-title'>Через </span><img src='/images/pictogram.png' alt=''> ПЮДМ</span><span class='list-price'>" + data.price + "</span><span class='deal-status'>" + statusPart + "</span></div></div>";
@@ -286,9 +309,14 @@
                             }
                             $("#deals").html(content);
                             $(".shown span").text(dataCount);
-                            $('.main-preloader').fadeOut();
-                            infinityScroll();
-                            joinToDeal();
+                            
+                            if ((typeofval = '1') || (typeofval = '2') || (typeofval = '4')) {
+                            
+                                $('.main-preloader').fadeOut();
+                                infinityScroll();
+                                joinToDeal();
+                                
+                            }
                         },
                         error: function (ans) {
                             console.log(ans)
@@ -363,29 +391,60 @@
                 function joinToDeal() {
                     $('.join').click(function (e) {
                         e.preventDefault();
-
                         let element = $(this).closest('.caption');
+                        let clickText = $('.join')[0].text;                                          
                         let data = {
-                            transaction_id:  element.data('tr_id'),
-                            contractor_id:   element.data('contractor_id'),
-                            name:            element.data('name'),
-                            phone:           element.data('phone'),
-                            weight:          element.data('weight'),
-                            price:           element.data('price').split(' ').join(''),
-                            metal:           element.data('metal'),
-                            type:            element.data('type'),
-                            text:            'Клиент хочет участвовать в сделке под номером: ' + element.data('tr_id'),
+                            transaction_id: element.data('tr_id'),
+                            contractor_id: element.data('contractor_id'),
+                            name: element.data('name'),
+                            phone: element.data('phone'),
+                            weight: element.data('weight'),
+                            price: element.data('price').split(' ').join(''),
+                            metal: element.data('metal'),
+                            type: element.data('type'),
+                            text: 'Клиент хочет участвовать в сделке под номером: ' + element.data('tr_id'),
                         };
-
-                        popupAjax('/form/send/join-to-deal', data);
-
+                        
                         $('.modal-popup.modal-join').fadeIn();
+                        
+                        if ( clickText == 'Участвовать в покупке' ) {
+                            $('#tr-action').text('купить');
+                        }
+                        if ( clickText == 'Участвовать в продаже' ) {
+                            $('#tr-action').text('продать');
+                        }
+                        
+                        $('#weight-in-form').val(data.weight);
+                        $('#price-in-form').text(data.price);
+                        
+                        if ( data.metal == 'Золото' ) {
+                        $('#metall-in-form').text('золота');
+                        }
+                        if ( data.metal == 'Серебро' ) {
+                        $('#metall-in-form').text('серебра');
+                        }
+                        
+                        $('#type-in-form').text(data.type);
                         $('.popup-close').click(function () {
                             $('.modal-popup').fadeOut();
                             $('.modal-popup-alert').fadeOut()
                         });
-                    });
-                }
+                        
+                       $('#join-submit').click(function(e){
+                        e.preventDefault();                        
+                        let weightToSend = $('#weight-in-form').val();
+                        data.weight = weightToSend; 
+                           
+                        console.log(data);
+                        popupAjax('/form/send/join-to-deal', data);
+                           
+                        $('.modal-popup-alert').fadeIn();                           
+                           
+                        }); 
+                       
+                    });                       
+                        
+                    }
 
                 joinToDeal();
 
@@ -439,8 +498,7 @@
                         if (chosenMaterial.data('type') == '999' && chosenMaterial.data('name') == 'gold') {
                             chosenMaterial.text('золота 999,9');
                         }
-                    }
-                    else {
+                    } else {
                         $('.material .options .option').each(function (elem) {
                             if ($(this).data('type') == '999' && $(this).data('name') == 'gold') {
                                 $(this).find('span').text('золота 999');
@@ -473,7 +531,7 @@
                     modalOptionsHide();
                 });
 
-                $('.sort-select').change(function(){
+                $('.sort-select').change(function () {
                     let chosenName = $('.chosen span').data('name');
                     changeTypeOfDeals(chosenName);
                 });
@@ -634,7 +692,7 @@
                 $('.form-control').on('change', function () {
                     $('button[type="submit"]').removeClass('disabled');
                 });
-                $('.sell-block').scroll(function() {
+                $('.sell-block').scroll(function () {
                     if ($('.sell-block').scrollTop() > 1) {
                         $('header').addClass('move-down');
                     } else {
@@ -642,46 +700,66 @@
                     }
                 });
 
-//                $('.wrapper').scroll(function() {
-//                    $('footer').animate({
-//                        bottom: 0 + '%'
-//                    }, 600)
-//                });
+                //                $('.wrapper').scroll(function() {
+                //                    $('footer').animate({
+                //                        bottom: 0 + '%'
+                //                    }, 600)
+                //                });
                 $('#sell').click(function () {
                     $('footer').css('display', 'none');
                 });
-                
-                
+
+
 
                 function infinityScroll() {
                     let personalWrapper = $('.personal-content-wrapper');
-                    if (!personalWrapper.hasClass('documents')) {
-                        personalWrapper.scroll(function() {
-                            if (personalWrapper.scrollTop() >= (personalWrapper.height() - 1) && !IN_PROGRESS) {
-                                $('.main-preloader').fadeIn();
-                                let typeOfDeal = "1,3";
+                    
+                    let typeOfDeal = "1";
                                 let chosen = $('.chosen span');
                                 let chosenName = chosen.data('name');
                                 let sortBy = $('.sort-select').val();
-
-                                if (chosenName == "покупке") {
-                                    typeOfDeal = "2,4"
+                                let pageType = $('#deals').attr('data-type');
+                                
+                                if (chosenName == 'продаже' && pageType == 'all') {
+                                    typeOfDeal = '1';
                                 }
 
-                                let pageType = $('#deals').attr('data-type');
+                                if (chosenName == 'покупке' && pageType == 'all') {
+                                    typeOfDeal = '4';
+                                }
+
+                                if(chosenName == 'продаже' && pageType == 'gp') {
+                                    typeOfDeal = '3';
+                                }
+
+                                if (chosenName == 'покупке' && pageType == 'gp') {
+                                    typeOfDeal = '2';
+                                }
+                    if (!personalWrapper.hasClass('documents') && typeOfDeal != '3' ) {
+                        personalWrapper.scroll(function () {
+                            if (personalWrapper.scrollTop() >= (personalWrapper.height() - 1) && !IN_PROGRESS) {
+                                $('.main-preloader').fadeIn();            
+                                
+
                                 let requestString = false;
                                 let showStatus = false;
-                                if (pageType == 'all'){
+                                if (pageType == 'all' || pageType == 'gp') {
+                                    
+                                    if (pageType == 'gp' && chosenName == 'продаже') {
+                                         requestString = false;
+                                    }
                                     requestString = '/admin/transactions';
                                 }
+                                
+                                console.log(pageType);
 
                                 if (pageType == 'private') {
                                     requestString = '/user-transactions';
                                     showStatus = true;
                                 }
 
-                                if (requestString) {
-                                    PAGE ++;
+                                if (requestString != false) {
+                                    PAGE++;
                                     $.ajax({
                                         url: requestString, // путь к ajax-обработчику
                                         method: 'GET',
@@ -691,10 +769,10 @@
                                             type: typeOfDeal,
                                             sortby: sortBy
                                         },
-                                        beforeSend: function() {
+                                        beforeSend: function () {
                                             IN_PROGRESS = true;
                                         }
-                                    }).done(function(data) {
+                                    }).done(function (data) {
                                         let dataCount = parseInt($('.shown span').text());
                                         let statusPart = '<a class=\'join\'>Участвовать в покупке</a>';
                                         if (showStatus) {
@@ -710,7 +788,7 @@
                                             // добавляем записи в блок в виде html
                                             let test = 0;
                                             let arr = {};
-                                            $.each(data, function(index, data) {
+                                            $.each(data, function (index, data) {
                                                 arr[test] = data;
                                                 if (data.deal_type == 'buy') {
                                                     statusPart = '<a class=\'join\'>Участвовать в продаже</a>';
@@ -732,8 +810,8 @@
                     }
                 }
 
-                infinityScroll();
-
+                infinityScroll();       
+                
                 // $(document).ready(function () {
                 //     console.log(document.referrer);
                 //     $(".login-close").click(function (event) {
@@ -759,11 +837,11 @@
 
     /***/
     "./resources/sass/app.scss":
-    /*!*********************************!*\
-      !*** ./resources/sass/app.scss ***!
-      \*********************************/
-    /*! no static exports found */
-    /***/
+        /*!*********************************!*\
+          !*** ./resources/sass/app.scss ***!
+          \*********************************/
+        /*! no static exports found */
+        /***/
         (function (module, exports) {
 
             // removed by extract-text-webpack-plugin
@@ -773,11 +851,11 @@
 
     /***/
     "./resources/sass/custom.scss":
-    /*!************************************!*\
-      !*** ./resources/sass/custom.scss ***!
-      \************************************/
-    /*! no static exports found */
-    /***/
+        /*!************************************!*\
+          !*** ./resources/sass/custom.scss ***!
+          \************************************/
+        /*! no static exports found */
+        /***/
         (function (module, exports) {
 
             // removed by extract-text-webpack-plugin
@@ -787,11 +865,11 @@
 
     /***/
     "./resources/sass/feedback-form.scss":
-    /*!*******************************************!*\
-      !*** ./resources/sass/feedback-form.scss ***!
-      \*******************************************/
-    /*! no static exports found */
-    /***/
+        /*!*******************************************!*\
+          !*** ./resources/sass/feedback-form.scss ***!
+          \*******************************************/
+        /*! no static exports found */
+        /***/
         (function (module, exports) {
 
             // removed by extract-text-webpack-plugin
@@ -801,11 +879,11 @@
 
     /***/
     0:
-    /*!*********************************************************************************************************************************!*\
-      !*** multi ./resources/js/custom.js ./resources/sass/custom.scss ./resources/sass/feedback-form.scss ./resources/sass/app.scss ***!
-      \*********************************************************************************************************************************/
-    /*! no static exports found */
-    /***/
+        /*!*********************************************************************************************************************************!*\
+          !*** multi ./resources/js/custom.js ./resources/sass/custom.scss ./resources/sass/feedback-form.scss ./resources/sass/app.scss ***!
+          \*********************************************************************************************************************************/
+        /*! no static exports found */
+        /***/
         (function (module, exports, __webpack_require__) {
 
             __webpack_require__( /*! C:\xampp\htdocs\graam.loc\resources\js\custom.js */ "./resources/js/custom.js");
@@ -819,5 +897,3 @@
 
     /******/
 });
-
-
