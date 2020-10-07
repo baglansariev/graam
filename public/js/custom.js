@@ -426,7 +426,7 @@
                             data.action = 'buy';
                         }
 
-                        popupAjax('/form/send/join-to-deal', data);
+//                        popupAjax('/form/send/join-to-deal', data);
                         $('.modal-popup.modal-join').fadeIn();
                         
                         if ( clickText == 'Участвовать в покупке' ) {
@@ -455,11 +455,10 @@
                        $('#join-submit').click(function(e){
                         e.preventDefault();                        
                         let weightToSend = $('#weight-in-form').val();
-                        data.weight = weightToSend; 
-                           
-                        console.log(data);
+                        data.weight = weightToSend;                           
+                    
                         popupAjax('/form/send/join-to-deal', data);
-                           
+                        console.log(data);   
                         $('.modal-popup-alert').fadeIn();                           
                            
                         }); 
@@ -685,7 +684,7 @@
                             });
                             $('.popup-close').click(function () {
                                 $('.modal-popup').fadeOut();
-                                $('.modal-popup-alert').fadeOut()
+                                $('.modal-popup-alert').fadeOut();
                             });
                         },
                         error: function (result) {
@@ -721,18 +720,10 @@
                     } else {
                         $('header').removeClass('move-down');
                     }
-                });
-
-                //                $('.wrapper').scroll(function() {
-                //                    $('footer').animate({
-                //                        bottom: 0 + '%'
-                //                    }, 600)
-                //                });
+                });                
                 $('#sell').click(function () {
                     $('footer').css('display', 'none');
                 });
-
-
 
                 function infinityScroll() {
                     let personalWrapper = $('.personal-content-wrapper');
@@ -858,8 +849,10 @@
             });
 
             /***/
+        }
+                }
+            });
         }),
-
     /***/
     "./resources/sass/app.scss":
         /*!*********************************!*\
