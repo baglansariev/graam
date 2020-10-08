@@ -199,9 +199,9 @@
                         top: 20 + '%'
                     }, 200);
                     $('.choice-block').animate({
-                        top: 13 + '%'
+                        marginTop: 120 + 'px'
                     }, 600).animate({
-                        top: 20 + '%'
+                        marginTop: 140 + 'px'
                     }, 200);
                     $('.choice-block.privacy').animate({
                         marginTop: 120 + 'px'
@@ -475,6 +475,30 @@
                         top: 0 + '%'
                     }, 400);
                 });
+                
+                $('.why-link').on('click', function() {
+                    let href = $(this).attr('href');
+                    $('html, body').animate({
+                        scrollTop: $(href).offset().top
+                    }, {
+                        duration: 370,   // по умолчанию «400» 
+                        easing: "linear" // по умолчанию «swing» 
+                    });
+
+                    return false;
+                });
+                $('.sell-btn').on('click', function() {
+                    let href = $(this).attr('href');
+                    $('html, body').animate({
+                        scrollTop: $(href).offset().top
+                    }, {
+                        duration: 370,   // по умолчанию «400» 
+                        easing: "linear" // по умолчанию «swing» 
+                    });
+
+                    return false;
+                });
+                
                 $('.material .options .option').not('.selected').click(function () {
                     var main = $('main');
                     var optionText = $(this).find('span').not('.color').text();
