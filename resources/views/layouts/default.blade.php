@@ -68,7 +68,7 @@
 </head>
 
 <body>
-    <main id="main" class="gold585">
+    <main id="main" class="gold585  home-content">
         <header class="head">
             <div class="container-fluid">
                 <div class="row">

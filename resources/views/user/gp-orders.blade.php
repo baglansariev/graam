@@ -111,7 +111,7 @@
             document.getElementById('list').style.display = 'none';
               document.getElementById('deals').classList.remove('list-view');
               document.getElementById('deals').classList.add('grid-view');
-              document.getElementByClassName('personal-content').classList.add('no-shadow');
+              document.getElementsByClassName('personal-content').classList.add('no-shadow');
         }
     </script>
 @component('modules.orders.detail')
