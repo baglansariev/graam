@@ -64,7 +64,7 @@
 
     <div class="list-heading">
         <span class="first-col list-heading-item deal-num">Номер</span>
-        <span class="list-heading-item list-deal-date">Дата создания</span>
+        <span class="list-heading-item list-deal-date">Дата доступности</span>
         <span class="list-heading-item deal-material">Металл, проба</span>
         <span class="list-heading-item weight-price">Вес, г</span>
         <span class="list-heading-item factory">Через</span>
@@ -80,7 +80,7 @@
             <span class="list-deal-date">{{ $transaction['created_at'] }}</span>
             <span class="deal-material">{{ $transaction['material'] . ' ' . $transaction['content'] }}</span>
             <span class="weight-price"><span class="weight">{{ $transaction['weight'] }} <b>г</b></span> <span class="sum-price">{{ $transaction['price'] }} <b>₽</b></span></span>
-            <span class="grid-deal-date"><span class="grid-text-title">Дата создания&nbsp;</span> {{ $transaction['created_at'] }}</span>
+            <span class="grid-deal-date"><span class="grid-text-title">Дата доступности&nbsp;</span> {{ $transaction['created_at'] }}</span>
             <span class="factory"><span class="grid-text-title">Через </span><img src="/images/pictogram.png" alt=""> ПЮДМ</span>
 <!--           <span class="list-price"></span>-->
             <span class="list-price">{{ $transaction['price'] }}</span>

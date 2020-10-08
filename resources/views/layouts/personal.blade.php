@@ -75,17 +75,17 @@
                         if (data.length > 0) {
                             $.each(data, function(index, data) {
                                 if ( data.price_type_1 == 0 && data.price_type_2 == 0 ) {
-                                content += '<span>Цена золота <strong>' + data.gold_price + ' </strong> руб/г</span>';
+                                content += '<span>Цена золота 999 <strong>' + data.gold_price + ' </strong> ₽/г</span>';
                                 }
                                 if (data.price_type_1 == 0 && data.price_type_2 != 0) {
-                                    content += '<span>Цена золота <strong>' + data.gold_price + '</strong> руб/г</span><br><span>Средняя цена покупки гранул ' + data.price_type_2 + ' руб/г</span>';
+                                    content += '<span>Цена золота 999 <strong>' + data.gold_price + '</strong> ₽/г</span><br><span>Средняя цена покупки гранул 999 <strong>' + data.price_type_2 + '</strong> ₽/г</span>';
                                 }
                                 
                                 if (data.price_type_1 != 0 && data.price_type_2 == 0) {
-                                    content += '<span>Цена золота <strong>' + data.gold_price + '</strong> руб/г</span><br><span>Средняя цена продажи лома ' + data.price_type_1 + ' руб/г</span>';
+                                    content += '<span>Цена золота 999 <strong>' + data.gold_price + '</strong> ₽/г</span><br><span>Средняя цена продажи лома 585 <strong>' + data.price_type_1 + '</strong> ₽/г</span>';
                                 }
                                 if (data.price_type_1 != 0 && data.price_type_2 != 0) {
-                                    content += '<span>Цена золота <strong>' + data.gold_price + '</strong> руб/г</span><br><span>Средняя цена продажи лома ' + data.price_type_1 + ' руб/г</span><br><span>Средняя цена покупки гранул ' + data.price_type_2 + ' руб/г</span>';
+                                    content += '<span>Цена золота 999 <strong>' + data.gold_price + '</strong> ₽/г</span><br><span>Средняя цена продажи лома 585 <strong>' + data.price_type_1 + '</strong> ₽/г</span><br><span>Средняя цена покупки гранул 999 <strong>' + data.price_type_2 + '</strong> ₽/г</span>';
                                 }
                                 
                             });
