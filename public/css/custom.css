@@ -2,7 +2,9 @@
     font-family: "Montserrat", sans-serif;
 }
 
-a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
     text-decoration: none;
 }
 
@@ -153,7 +155,7 @@ header {
 .main-block {
     position: absolute;
     padding-top: 30vh;
-    
+
     display: flex;
     margin: 70px auto 0;
 }
@@ -181,7 +183,7 @@ header {
     background-color: #FFF;
     position: relative;
     width: 80%;
-    min-height: 100%;    
+    min-height: 100%;
     margin: 93% auto 0;
     border-radius: 50px 50px 0 0;
     z-index: 9999;
@@ -220,15 +222,16 @@ header {
     font-size: 20px;
     line-height: 24px;
     text-align: center;
-    color: #00000040; 
-    transition: all ease 0.4s;    
+    color: #00000040;
+    transition: all ease 0.4s;
 }
 
 .choice-block .choice-content .fullheight .why-link:hover {
     color: #EDB947;
 }
+
 .choice-block .choice-content .fullheight .why-link img {
-    margin-top: 10px;    
+    margin-top: 10px;
 }
 
 .choice-block .choice-content .wanna-sell {
@@ -2279,6 +2282,7 @@ input[type=number] {
 
 .login-form .input-wrapper {
     margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 
 .login-form .input-wrapper a.btn-link {
@@ -2858,7 +2862,7 @@ input[type=number] {
 
 .home-content .sell-btn:hover {
     color: #EDB947;
-    
+
 }
 
 .question .answer {
@@ -3355,16 +3359,16 @@ iframe {
 }
 
 main#main.gold585 {
-/*    overflow: hidden;*/
+    /*    overflow: hidden;*/
     height: 100%;
 }
 
 .gold585 .wrapper {
-/*
+    /*
     overflow-y: auto !important;
     flex-wrap: wrap;
 */
-    min-height:calc(100vh + 148px);
+    min-height: calc(100vh + 148px);
     height: 100%;
     flex-direction: column;
     align-items: center;
@@ -3439,10 +3443,10 @@ main#main.gold585 {
 }
 
 .pass-group label {
-    margin-bottom: 5px;    
+    margin-bottom: 5px;
 }
 
-.alert.remainder { 
+.alert.remainder {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3656,6 +3660,11 @@ main#main.gold585 {
     }
 */
 
+    .choice-block .choice-content {
+        padding: 50px 0;
+
+    }
+
     .personal .personal-content-wrapper {
 
         padding-left: 0;
@@ -3857,6 +3866,86 @@ main#main.gold585 {
         display: none;
     }
 
+    .home-content .content-wrapper {
+        margin: 0 auto;
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #000000;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home-content .content-wrapper .col-8 {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .home-content .col-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .home-content .question {
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #10B6EB;
+        margin-bottom: 10px;
+    }
+
+    .home-content .question .answer {
+        margin-top: 20px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #000000;
+    }
+
+    .home-content .steps {
+        grid-template-columns: 1fr;
+        justify-items: left;
+    }
+
+    .home-content .block-heading {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+
+    .home-content .heading-wrapper .col-4 {
+        display: none;
+    }
+
+    .home-content .heading-wrapper .col-8 {
+        max-width: 100%;
+        flex: 0 0 100%;
+        margin: 0 auto;
+    }
+
+    .home-content .sell-btn {
+        margin: 40px 0;
+    }
+
+    footer .footer-links a {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: #FFFFFF;
+        border-bottom: 1px solid #ffffff50;
+    }
+
+    footer .footer-logo {
+        margin-top: 30px;
+        align-items: center;
+    }
+
 }
 
 
@@ -3883,5 +3972,7 @@ main#main.gold585 {
     .header-logo .main-logo .logo-title {
         font-size: 26px !important;
     }
+
+
 
 }
