@@ -51,6 +51,7 @@
                     <select name="sort-filter" class="sort-select">
                         <option value="weight" selected><span>по весу</span></option>
                         <option value="price"><span>по цене</span></option>
+                        <option value="metall"><span>по металлу</span></option>
                     </select>
             </div>
         </div>
@@ -111,7 +112,7 @@
             document.getElementById('list').style.display = 'none';
               document.getElementById('deals').classList.remove('list-view');
               document.getElementById('deals').classList.add('grid-view');
-              document.getElementByClassName('personal-content').classList.add('no-shadow');
+              document.getElementsByClassName('personal-content').classList.add('no-shadow');
         }
     </script>
 @component('modules.orders.detail')

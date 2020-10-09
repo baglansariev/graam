@@ -14,7 +14,7 @@
                                 <span class="message" style="font-size: 18px;">Спасибо за вашу заявку!</span>
                                 <h4>Наш менеджер скоро вам позвонит!</h4>
                             </div>
-                          
+<!--                          -->
                            <form action="{{ route('sell-app') }}" class="popup-form d-flex flex-column">
                             <div class="title">
                                 <h3>Вы хотите <span id="tr-action" class="keyword"></span> <input type="text" name="weight" class="hidden-weight" value="" id="weight-in-form"> г<br>
@@ -50,7 +50,7 @@
                                 <input type="hidden" name="metal" class="hidden-metal">
                                 <input type="hidden" name="price" class="hidden-price">
                                 <input type="hidden" name="text" class="hidden-message">
-                                <button type="button" class="sell-app-submit" id="join-submit">Отправить заявку</button>
+                                <button type="button" id="join-submit">Отправить заявку</button>
                             </form>
                         </div>
                     </div>

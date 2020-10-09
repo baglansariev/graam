@@ -199,9 +199,9 @@
                         top: 20 + '%'
                     }, 200);
                     $('.choice-block').animate({
-                        top: 13 + '%'
+                        marginTop: 120 + 'px'
                     }, 600).animate({
-                        top: 20 + '%'
+                        marginTop: 140 + 'px'
                     }, 200);
                     $('.choice-block.privacy').animate({
                         marginTop: 120 + 'px'
@@ -404,11 +404,12 @@
 
 
                 function joinToDeal() {
+                    let join_data = {};
                     $('.join').click(function (e) {
                         e.preventDefault();
                         let element = $(this).closest('.caption');
                         let clickText = $('.join')[0].text;                                          
-                        let data = {
+                        join_data = {
                             transaction_id: element.data('tr_id'),
                             contractor_id: element.data('crm_id'),
                             external_id: element.data('external_id'),
@@ -423,10 +424,9 @@
                         };
 
                         if ($('.buysell').data('name') == 'покупке') {
-                            data.action = 'buy';
+                            join_data.action = 'buy';
                         }
 
-//                        popupAjax('/form/send/join-to-deal', data);
                         $('.modal-popup.modal-join').fadeIn();
                         
                         if ( clickText == 'Участвовать в покупке' ) {
@@ -436,38 +436,38 @@
                             $('#tr-action').text('продать');
                         }
                         
-                        $('#weight-in-form').val(data.weight);
-                        $('#price-in-form').text(data.price);
+                        $('#weight-in-form').val(join_data.weight);
+                        $('#price-in-form').text(join_data.price);
                         
-                        if ( data.metal == 'Золото' ) {
+                        if ( join_data.metal == 'Золото' ) {
                         $('#metall-in-form').text('золота');
                         }
-                        if ( data.metal == 'Серебро' ) {
+                        if ( join_data.metal == 'Серебро' ) {
                         $('#metall-in-form').text('серебра');
                         }
                         
-                        $('#type-in-form').text(data.type);
+                        $('#type-in-form').text(join_data.type);
                         $('.popup-close').click(function () {
                             $('.modal-popup').fadeOut();
                             $('.modal-popup-alert').fadeOut()
                         });
-                        
-                       $('#join-submit').click(function(e){
-                        e.preventDefault();                        
+                    });
+
+                    $('#join-submit').click(function() {
                         let weightToSend = $('#weight-in-form').val();
-                        data.weight = weightToSend;                           
-                    
-                        popupAjax('/form/send/join-to-deal', data);
-                        console.log(data);   
-                        $('.modal-popup-alert').fadeIn();                           
-                           
-                        }); 
-                       
-                    });                       
-                        
-                    }
+                        join_data.weight = weightToSend;
+
+                        popupAjax('/form/send/join-to-deal', join_data);
+                        $('.modal-popup-alert').fadeIn();
+
+                    });
+
+
+                }
 
                 joinToDeal();
+                
+                
 
                 $('.more-info').click(function (e) {
                     e.preventDefault();
@@ -475,6 +475,30 @@
                         top: 0 + '%'
                     }, 400);
                 });
+                
+                $('.why-link').on('click', function() {
+                    let href = $(this).attr('href');
+                    $('html, body').animate({
+                        scrollTop: $(href).offset().top
+                    }, {
+                        duration: 370,   // по умолчанию «400» 
+                        easing: "linear" // по умолчанию «swing» 
+                    });
+
+                    return false;
+                });
+                $('.sell-btn').on('click', function() {
+                    let href = $(this).attr('href');
+                    $('html, body').animate({
+                        scrollTop: $(href).offset().top
+                    }, {
+                        duration: 370,   // по умолчанию «400» 
+                        easing: "linear" // по умолчанию «swing» 
+                    });
+
+                    return false;
+                });
+                
                 $('.material .options .option').not('.selected').click(function () {
                     var main = $('main');
                     var optionText = $(this).find('span').not('.color').text();
@@ -559,9 +583,13 @@
 
                 $('#sell').click(function () {
                     $('.choice-block').animate({
-                        top: 150 + '%'
+                        marginTop: 150 + '%'
                     }, 600);
+                    
                     setTimeout(function () {
+                        $('.choice-block').css('display', 'none');
+                        $('#main.gold585').css('overflow', 'hidden');
+                        $('#main.gold585').css('height', '100vh');
                         $('.sell-wrapper').css('display', 'flex');
                         $('.sell-content').animate({
                             marginTop: 105 + 'px'
@@ -636,9 +664,12 @@
                             if (result.status) {
                                 var alert = $('.modal-popup-alert');
                                 alert.find('.message').text(result.message);
-                                alert.fadeIn();
+                                alert.fadeIn(); 
+                                $('.popup-form').each(function(){
+                                    this.reset();
+                                });
                             }
-                            console.log(result);
+                            
                         },
                         error: function error(result) {
                             console.log(result);

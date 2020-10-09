@@ -90,7 +90,7 @@
                                 
                             });
                         }
-                        $("#stock-infos").html(content);
+                        $(".stock-infos").html(content);
 
                     }                
                 
@@ -149,6 +149,8 @@
                     </ul>
 
                 </nav>
+                <div class="stock-infos">
+                        </div>
                 <div class="pm-wrapper">
                     <div class="contact-pm">
                         <div class="pm-img-wrap">
@@ -231,7 +233,7 @@
 
                         </nav>
 
-                        <div id="stock-infos">
+                        <div class="stock-infos">
                         </div>
 
 

@@ -159,6 +159,7 @@
     .modal-popup .popup-wrapper .popup-close,
     .modal-popup .popup-wrapper .login-close {
         right: 10px;
+        left: auto;
         top: 20px;
         width: 30px;
         height: 30px;

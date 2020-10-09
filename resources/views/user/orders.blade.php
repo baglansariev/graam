@@ -52,6 +52,7 @@
                     <select name="sort-filter" class="sort-select">
                         <option value="weight" selected><span>по весу</span></option>
                         <option value="price"><span>по цене</span></option>
+                        <option value="metall"><span>по металлу</span></option>
                     </select>
             </div>
         </div>
