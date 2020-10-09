@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'graamov@yandex.ru'),
-        'name' => env('MAIL_FROM_NAME', 'Graam.ru'),
+        'address' => 'noreply@graam.ru',
+        'name' => 'Graam.ru',
     ],
 
     /*
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    'username' => env('MAIL_USERNAME','graam999@ya.ru'),
 
-    'password' => env('MAIL_PASSWORD'),
+    'password' => env('MAIL_PASSWORD', 'oUa7kRmb0R9x1C5M'),
 
     /*
     |--------------------------------------------------------------------------
