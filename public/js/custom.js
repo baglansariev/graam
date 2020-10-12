@@ -509,7 +509,7 @@
                     var chosenType = chosen.data('type');
                     var chosenText = chosen.text();
                     main.removeClass();
-                    main.addClass(optionName + optionType);
+                    main.addClass(optionName + optionType + ' home-content');
                     chosen.data('name', optionName).data('type', optionType);
                     $(this).data('name', chosenName);
                     $(this).data('type', chosenType);
