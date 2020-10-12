@@ -2531,8 +2531,7 @@ input[type=number] {
 }
 
 
-.home-content {
-    background-color: #EDB947;
+.home-content {    
     overflow: auto;
     height: 100%;
 }
