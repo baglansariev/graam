@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
         <link rel="stylesheet" href="{{ asset('css/feedback-form.css') }}">
         <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.coockie.js') }}"></script>
         <script src="{{ asset('font-awesome/js/all.min.js') }}"></script>
         <script src="{{ asset('js/jquery.inputmask.min.js') }}"></script>
         <script src="{{ asset('js/inputmask.min.js') }}"></script>
@@ -81,8 +82,13 @@
                 </div>
             </footer>
         </main>
-
-        <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+<div id="coo-popup">
+    <div class="popup">
+        <p>Этот сайт использует файлы cookies для обеспечения работоспособности и улучшения качества обслуживания. Продолжая использовать наш сайт, вы автоматически соглашаетесь с использованием данных технологий.</p>
+        <a class="coo-close" title="Закрыть" id="privatePolicyBtn">Согласен</a>
+    </div>
+</div>        
+       <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/feedback-form.js') }}"></script>
     </body>
 </html>

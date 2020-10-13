@@ -74,13 +74,14 @@
                                             <input hidden id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                         </div>
                                     </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" required>
-                                            Согласен на обработку данных
-                                        </label>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                                    
+                                     <div class="form-group register-btn">   
+                                    
+                                         <button type="submit" class="btn btn-primary">Зарегистрироваться</button></div>
+                                    <input class="form-check-input" type="hidden" value="true" id="accept" name="accept" checked>
+                                <label class="form-check-label accept-label" for="accept">
+                                    Нажимая на кнопку "Зарегистрироваться", вы соглашаетесь на обработку персональных данных и с <a href="/privacy-policy" target="_blank">политикой конфиденциальности</a>
+                                </label>
                                 </div>
                                 <p class="login-link"><a href="{{ route('login') }}">Войдите</a>, если у вас есть аккаунт</p>
                             </form>

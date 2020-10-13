@@ -31,10 +31,10 @@
                                         </div>
                                     </div>
                                     <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input">
-                                            Согласен на обработку данных
-                                        </label>
+                                        <input class="form-check-input" type="hidden" value="true" id="accept" name="accept" checked>
+                                <label class="form-check-label accept-label" for="accept">
+                                    Нажимая на кнопку "Отправить", вы соглашаетесь на обработку персональных данных и с <a href="/privacy-policy" target="_blank">политикой конфиденциальности</a>
+                                </label>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
                                 </div>

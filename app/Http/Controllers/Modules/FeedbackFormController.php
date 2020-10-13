@@ -17,8 +17,9 @@ class FeedbackFormController extends Controller
 
     public function sendSellApp(Request $request)
     {
+        
         $action = '/feedback/sell-app';
-        $request_data = $request->all();
+        $request_data = $request->all();        
         $this->setApplicationLog('applications.txt', $request_data);
 
         $this->setClientData();

@@ -27,35 +27,42 @@
                             </div>
                             <form action="{{ route('sell-app') }}" class="popup-form d-flex flex-column">
                                 @if (Auth::user() && isset(Auth::user()->name) && Auth::user()->name !== '')
-                                    <input type="text" class="name-input" name="name_test" value="{{ Auth::user()->name }}" disabled>
-                                    <input type="hidden" class="name-input" name="name" value="{{ Auth::user()->name }}" required>
+                                <input type="text" class="name-input" name="name_test" value="{{ Auth::user()->name }}" disabled>
+                                <input type="hidden" class="name-input" name="name" value="{{ Auth::user()->name }}" required>
                                 @elseif(Auth::user() && isset(Auth::user()->detailsFromCrm()->name) && Auth::user()->detailsFromCrm()->name !== '')
-                                    <input type="text" class="name-input" name="name_test" value="{{ Auth::user()->detailsFromCrm()->name }}" disabled>
-                                    <input type="hidden" class="name-input" name="name" value="{{ Auth::user()->detailsFromCrm()->name }}" required>
+                                <input type="text" class="name-input" name="name_test" value="{{ Auth::user()->detailsFromCrm()->name }}" disabled>
+                                <input type="hidden" class="name-input" name="name" value="{{ Auth::user()->detailsFromCrm()->name }}" required>
                                 @else
-                                    <input type="text" class="name-input" name="name" placeholder="Имя" required>
+                                <input type="text" class="name-input" name="name" placeholder="Имя" required>
                                 @endif
 
                                 @if(isset(Auth::user()->phone) && Auth::user()->phone !== '')
-                                    <input type="text" class="phone-input" name="phone_test" value="{{ Auth::user()->phone ?? '+7' }}" disabled>
-                                    <input type="hidden" class="phone-input" name="phone" value="{{ Auth::user()->phone ?? '+7' }}" required>
+                                <input type="text" class="phone-input" name="phone_test" value="{{ Auth::user()->phone ?? '+7' }}" disabled>
+                                <input type="hidden" class="phone-input" name="phone" value="{{ Auth::user()->phone ?? '+7' }}" required>
                                 @elseif (Auth::user() && isset(Auth::user()->detailsFromCrm()->phone) && Auth::user()->detailsFromCrm()->phone !== '')
-                                    <input type="text" class="phone-input" name="phone_test" value="{{ Auth::user()->detailsFromCrm()->phone ?? '+7' }}" disabled>
-                                    <input type="hidden" class="phone-input" name="phone" value="{{ Auth::user()->detailsFromCrm()->phone ?? '+7' }}" required>
+                                <input type="text" class="phone-input" name="phone_test" value="{{ Auth::user()->detailsFromCrm()->phone ?? '+7' }}" disabled>
+                                <input type="hidden" class="phone-input" name="phone" value="{{ Auth::user()->detailsFromCrm()->phone ?? '+7' }}" required>
                                 @else
-                                    <input type="text" class="phone-input" name="phone" value="+7" required>
+                                <input type="text" class="phone-input" name="phone" value="+7" required>
                                 @endif
                                 <input type="hidden" name="weight" class="hidden-weight">
                                 <input type="hidden" name="type" class="hidden-type">
                                 <input type="hidden" name="action" class="hidden-action">
                                 @auth
-                                    <input type="hidden" name="contractor_id" value="{{ Auth::user()->crm_id ?? 0 }}">
-                                    <input type="hidden" name="external_id" value="{{ Auth::user()->id ?? 0 }}">
+                                <input type="hidden" name="contractor_id" value="{{ Auth::user()->crm_id ?? 0 }}">
+                                <input type="hidden" name="external_id" value="{{ Auth::user()->id ?? 0 }}">
                                 @endauth
                                 <input type="hidden" name="metal" class="hidden-metal">
                                 <input type="hidden" name="price" class="hidden-price">
-                                <input type="hidden" name="text" class="hidden-message">
+                                <input type="hidden" name="text" class="hidden-message">                               
+
                                 <button type="button" class="sell-app-submit">Отправить</button>
+                                
+                                <input class="form-check-input" type="hidden" value="true" id="accept" name="accept" checked>
+                                <label class="form-check-label accept-label" for="accept">
+                                    Нажимая на кнопку "Отправить", вы соглашаетесь на обработку персональных данных и с <a href="/privacy-policy" target="_blank">политикой конфиденциальности</a>
+                                </label>
+                                
                             </form>
                         </div>
                     </div>
@@ -65,3 +72,4 @@
 
     </div>
 </div>
+
