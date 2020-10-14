@@ -388,7 +388,7 @@
                         let priceClass = '.price_' + params.type;
                         let price = params.price;
                         if (clicked_btn) {
-                            price = parseInt(clicked_btn.closest('.card').find(priceClass).text().split(' ').join('')) * params.weight;
+                            price = parseInt(clicked_btn.closest('.card').find(priceClass).text().split(' ').join(''));
                         }
                         hiddenPrice.val(price);
                     }
