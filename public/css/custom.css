@@ -87,6 +87,9 @@ header {
 .sticky-logo .logo-title {
     margin-bottom: 0;
 }
+.sticky-logo .logo-title i {
+    font-style: normal;
+}
 .sticky-logo .logo-title span {
     position: relative;
 }
@@ -1352,6 +1355,12 @@ input[type=number] {
     }
 }
 
+@media screen and (max-width: 698px) {
+    .sticky-logo {
+        letter-spacing: 0.6rem;
+    }
+}
+
 @media screen and (max-width: 670px) {
     .header-logo .main-logo {
         left: -16vw;
@@ -1372,6 +1381,9 @@ input[type=number] {
     .header-logo .main-logo {
         left: -18vw;
     }
+    .sticky-logo {
+        letter-spacing: 0.4rem;
+    }
 }
 
 @media screen and (max-width: 620px) {
@@ -1381,6 +1393,11 @@ input[type=number] {
 
     .header-logo .main-logo {
         left: -20vw;
+    }
+}
+@media screen and (max-width: 604px) {
+    .sticky-logo {
+        letter-spacing: 0.2rem;
     }
 }
 
@@ -1440,6 +1457,9 @@ input[type=number] {
 @media screen and (max-width: 575px) {
     .header-logo .main-logo {
         left: 12vw;
+    }
+    .params-head {
+        display: none !important;
     }
 }
 
@@ -1583,6 +1603,12 @@ input[type=number] {
     }
     .header-logo .main-logo .logo-title {
         font-size: 40px;
+    }
+    .sticky-logo .logo-title span::after {
+        width: 125%;
+    }
+    .sticky-logo .logo-title i {
+        display: none;
     }
 }
 

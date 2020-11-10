@@ -826,9 +826,9 @@
                         $('header').removeClass('move-down');
                     }
                 });
-                $('#sell').click(function () {
-                    $('footer').css('display', 'none');
-                });
+                // $('#sell').click(function () {
+                //     $('footer').css('display', 'none');
+                // });
 
                 function infinityScroll() {
                     let personalWrapper = $('.personal-content-wrapper');

@@ -73,17 +73,17 @@
         <div class="sticky-header">
             <div class="container-fluid">
                 <div class="row content-row">
-                    <div class="col-sm-4 d-flex justify-content-start">
+                    <div class="col-sm-4 col-6 d-flex justify-content-start">
                         <div class="sticky-header-logo">
                             <a href="/" class="sticky-logo d-flex justify-content-center align-items-center flex-column">
-                                <p class="logo-title"><span>G</span>RAAM</p>
+                                <p class="logo-title"><span>G</span><i>RAAM</i></p>
                             </a>
                         </div>
                     </div>
-                    <div class="col-sm-4 d-flex align-items-center justify-content-center">
+                    <div class="col-sm-4 params-head d-flex align-items-center justify-content-center">
                         @component('modules.params_block')@endcomponent
                     </div>
-                    <div class="col-sm-4 d-flex align-items-center justify-content-end">
+                    <div class="col-sm-4 col-6 d-flex align-items-center justify-content-end">
                         <div class="header-actions text-right">
                             @guest
                                 <a href="{{ route('login') }}" class="login-btn">Вход</a>
