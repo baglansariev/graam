@@ -179,10 +179,16 @@
                 }, 10);
                 setTimeout(function () {
                     $('.main-logo').animate({
-                        left: 2 + '%',
-                        top: 0,
-                        marginTop: 20 + 'px'
-                    }, 600);
+                        left: -13 + 'vw',
+                        top: -15 + 'px',
+                        marginTop: 0,
+                    }, 600, function () {
+                        $(this).css('position', 'static');
+                        $('.header-logo .main-logo .logo-subtitle').css({
+                            'flex-direction': 'row',
+                            'justify-content': 'center',
+                        });
+                    });
                     $('.main-logo .logo-title').animate({
                         fontSize: 32 + 'px',
                         marginLeft: 20 + 'px'
@@ -394,10 +400,21 @@
                     }
                 }
 
+                $('.sell-block').on('scroll', function (e) {
+                    if ($(this).scrollTop() > 290) {
+                        $('.sticky-header').show();
+                        // $('.sticky-header').css('transform', 'rotateX(0deg)');
+                    }
+                    else {
+                        $('.sticky-header').hide();
+                        // $('.sticky-header').css('transform', 'rotateX(90deg)');
+                    }
+                });
+
                 $('.chosen, .left-chosen').click(function () {
                     modalOptionsShow('material');
                 });
-                $('.main-sell-trigger').click(function () {
+                $('.main-sell-trigger, .parameter-block .sell-trigger').click(function () {
                     modalOptionsShow('sell');
                 });
                 $('.modal-options-close').click(function () {
@@ -542,6 +559,9 @@
                     $('.main-sell-trigger').text(optionText);
                     selectedOption.text(optionText);
                     $('#sell').text(optionText);
+                    if (optionText === 'займ за') {
+                        $('#sell').text('получить займ');
+                    }
                     $('.sell-trigger').text(optionText);
                     $(this).find('span').text(selectedOptionText);
 
@@ -610,18 +630,13 @@
                             marginTop: 142 + 'px'
                         }, 300);
                     }, 350);
-                    setTimeout(function () {
-                        $('.sell-parameters').animate({
-                            opacity: 1
-                        }, 400);
-                    }, 1200);
                 });
+                getGoldRate();
                 $('.sell-weight').change(function () {
                     var inputVal = $(this).val();
                     $('.sell-weight').val(inputVal);
                 });
                 $('#sell').click(function () {
-                    getGoldRate();
                     getCardsByAjax();
                 });
                 $('.param-weight').on('change', function () {
@@ -740,7 +755,7 @@
                         type: 'GET',
                         dataType: 'html',
                         success: function (result) {
-                            $('.sell-cards').html(result);
+                            $('.sell-cards.factory-cards').html(result);
 
                             let delay = 0.3;
                             let card = $('.card');

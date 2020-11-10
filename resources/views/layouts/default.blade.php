@@ -70,28 +70,82 @@
 
 <body>
     <main id="main" class="gold585 home-content">
+        <div class="sticky-header">
+            <div class="container-fluid">
+                <div class="row content-row">
+                    <div class="col-sm-4 d-flex justify-content-start">
+                        <div class="sticky-header-logo">
+                            <a href="/" class="sticky-logo d-flex justify-content-center align-items-center flex-column">
+                                <p class="logo-title"><span>G</span>RAAM</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 d-flex align-items-center justify-content-center">
+                        @component('modules.params_block')@endcomponent
+                    </div>
+                    <div class="col-sm-4 d-flex align-items-center justify-content-end">
+                        <div class="header-actions text-right">
+                            @guest
+                                <a href="{{ route('login') }}" class="login-btn">Вход</a>
+                            @endguest
+                            @auth
+                                @if (isset(Auth::user()->name) && Auth::user()->name !== '')
+                                    <a href="{{ route('personal-info') }}" class="login-btn">{{ explode(' ', Auth::user()->name)[0] }}</a>
+                                @elseif(isset(Auth::user()->detailsFromCrm()->name) && Auth::user()->detailsFromCrm()->name !== '')
+                                    <a href="{{ route('personal-info') }}" class="login-btn">{{ explode(' ', Auth::user()->detailsFromCrm()->name)[0] }}</a>
+                                @else
+                                    <a href="{{ route('personal-info') }}" class="login-btn">Кабинет</a>
+                                @endif
+                            @endauth
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <header class="head">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12 d-flex justify-content-between">
+                <div class="row content-row">
+                    <div class="col-sm-4 d-sm-flex d-none align-items-center justify-content-start col-currency">
+                        <div class="head-currencies">
+                            <div class="currency-block d-flex flex-column">
+                                <ul class="currencies">
+                                    <li class="dollar">
+                                        <span><i class="fas fa-sort-up"></i> {{ $currency['USD']['Value'] }}</span>
+                                        <span>$ USD</span>
+                                    </li>
+                                    <li class="gold">
+                                        <span><i class="fas fa-sort-up"></i></span>
+                                        <span>золото</span>
+                                    </li>
+                                </ul>
+                                <p class="note">
+                                    курсы актуальны на {{ date('d.m.Y H:i') }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-6 d-flex justify-content-center align-items-center">
+
                         <div class="header-logo">
                             <a href="/" class="main-logo d-flex justify-content-center align-items-center flex-column">
                                 <p class="logo-title"><span>G</span>RAAM</p>
-                                <p class="logo-subtitle text-center" style="line-height: 1.1">Один грамм, <br> много возможностей</p>
+                                <p class="logo-subtitle text-center"><span>Один грамм,</span> <span>много возможностей</span></p>
                             </a>
                         </div>
-                        <div class="header-actions text-right p-4">
+                    </div>
+                    <div class="col-sm-4 col-6 d-flex justify-content-end align-items-center">
+                        <div class="header-actions text-right">
                             @guest
-                            <a href="{{ route('login') }}" class="login-btn">Войти</a>
+                                <a href="{{ route('login') }}" class="login-btn">Вход</a>
                             @endguest
                             @auth
-                            @if (isset(Auth::user()->name) && Auth::user()->name !== '')
-                            <a href="{{ route('personal-info') }}" class="login-btn">{{ explode(' ', Auth::user()->name)[0] }}</a>
-                            @elseif(isset(Auth::user()->detailsFromCrm()->name) && Auth::user()->detailsFromCrm()->name !== '')
-                            <a href="{{ route('personal-info') }}" class="login-btn">{{ explode(' ', Auth::user()->detailsFromCrm()->name)[0] }}</a>
-                            @else
-                            <a href="{{ route('personal-info') }}" class="login-btn">Кабинет</a>
-                            @endif
+                                @if (isset(Auth::user()->name) && Auth::user()->name !== '')
+                                    <a href="{{ route('personal-info') }}" class="login-btn">{{ explode(' ', Auth::user()->name)[0] }}</a>
+                                @elseif(isset(Auth::user()->detailsFromCrm()->name) && Auth::user()->detailsFromCrm()->name !== '')
+                                    <a href="{{ route('personal-info') }}" class="login-btn">{{ explode(' ', Auth::user()->detailsFromCrm()->name)[0] }}</a>
+                                @else
+                                    <a href="{{ route('personal-info') }}" class="login-btn">Кабинет</a>
+                                @endif
                             @endauth
                         </div>
                     </div>
