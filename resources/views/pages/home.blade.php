@@ -32,8 +32,7 @@
                             </div>
                             <i class="fas fa-sort-down"></i>
                         </div>
-                        @component('modules.modals.materials-modal')@endcomponent
-                        @component('modules.modals.sell-modal')@endcomponent
+
                     </div>
                 </div>
                 <div class="action d-flex justify-content-center align-items-center">
@@ -81,6 +80,9 @@
         </div>
 
     </div>
+
+    @component('modules.modals.materials-modal')@endcomponent
+    @component('modules.modals.sell-modal')@endcomponent
 
 </div>
 

@@ -179,22 +179,16 @@
                 }, 10);
                 setTimeout(function () {
                     $('.main-logo').animate({
-                        left: -13 + 'vw',
-                        top: -15 + 'px',
+                        top: 0,
                         marginTop: 0,
-                    }, 600, function () {
-                        $(this).css('position', 'static');
-                        $('.header-logo .main-logo .logo-subtitle').css({
-                            'flex-direction': 'row',
-                            'justify-content': 'center',
-                        });
-                    });
+                    }, 600);
+
                     $('.main-logo .logo-title').animate({
                         fontSize: 32 + 'px',
-                        marginLeft: 20 + 'px'
                     }, 600);
                     $('.main-logo .logo-subtitle').animate({
-                        fontSize: 15 + 'px'
+                        fontSize: 15 + 'px',
+                        width: 300 + 'px',
                     }, 600);
                     $('.main-block').animate({
                         opacity: 0
@@ -826,9 +820,13 @@
                         $('header').removeClass('move-down');
                     }
                 });
-                // $('#sell').click(function () {
-                //     $('footer').css('display', 'none');
-                // });
+                $('#sell').click(function () {
+                    $('footer').css('display', 'none');
+                });
+                
+                $('.sell-content-title').click(function () {
+                    modalOptionsShow('material');
+                });
 
                 function infinityScroll() {
                     let personalWrapper = $('.personal-content-wrapper');

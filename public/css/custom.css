@@ -114,12 +114,16 @@ header {
 
 .header-logo {
     position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .header-logo .main-logo {
     text-decoration: none;
     position: absolute;
-    left: -10vw;
+    left: auto;
     top: 25vh;
     z-index: 3;
 }
@@ -145,7 +149,7 @@ header {
     font-size: 70px;
     font-weight: bolder;
     letter-spacing: 0.5em;
-    margin: 0 0 0 50px;
+    /*margin: 0 0 0 50px;*/
     display: flex;
 }
 
@@ -169,9 +173,7 @@ header {
 .header-logo .main-logo .logo-subtitle {
     font-size: calc(0.7vw + 19px);
     margin-top: -5px;
-    display: flex;
-    flex-direction: column;
-    width: 600px;
+    width: 715px;
 }
 
 .header-logo .main-logo .logo-subtitle span:first-of-type {
@@ -248,6 +250,7 @@ header {
     background-color: #FFF;
     position: relative;
     width: 95%;
+    max-width: 1610px;
     min-height: 100%;
     margin: 93% auto 0;
     border-radius: 50px 50px 0 0;
@@ -264,6 +267,10 @@ header {
     font-weight: 600;
     font-size: 50px;
 }
+.wrapper .modal-options-wrapper {
+    font-weight: 600;
+    font-size: 50px;
+}
 
 .choice-block .choice-content .fullheight {
     position: relative;
@@ -276,9 +283,10 @@ header {
 }
 
 .choice-block .choice-content .fullheight .why-link {
-    position: relative;
-    margin-top: 30vh;
+    position: absolute;
+    /*margin-top: 30vh;*/
     margin-bottom: 0;
+    bottom: -10%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -339,7 +347,7 @@ header {
 
 .choice-block .choice-content .select .chosen .fa-sort-down {
     font-size: 40px;
-    margin: 16px 0 0 5px;
+    margin: 26px 0 0 5px;
 }
 
 .wanna-sell .main-sell-trigger + .fa-sort-down {
@@ -356,7 +364,7 @@ header {
     border-color: #EDB947;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper {
+.wrapper .modal-options-wrapper {
     display: none;
     position: fixed;
     width: 100%;
@@ -367,13 +375,13 @@ header {
     z-index: 9;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block {
+.wrapper .modal-options-wrapper .options-block {
     width: 100%;
     height: 100%;
     position: relative;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close {
+.wrapper .modal-options-wrapper .options-block .modal-options-close {
     position: absolute;
     right: 40px;
     top: 60px;
@@ -383,7 +391,7 @@ header {
     z-index: 3;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close span {
+.wrapper .modal-options-wrapper .options-block .modal-options-close span {
     position: absolute;
     left: 0;
     top: 0;
@@ -393,19 +401,19 @@ header {
     background-color: #000;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close span:first-of-type {
+.wrapper .modal-options-wrapper .options-block .modal-options-close span:first-of-type {
     transform: rotateZ(45deg);
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close span:last-of-type {
+.wrapper .modal-options-wrapper .options-block .modal-options-close span:last-of-type {
     transform: rotateZ(-45deg);
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close:hover span {
+.wrapper .modal-options-wrapper .options-block .modal-options-close:hover span {
     background-color: red;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
+.wrapper .modal-options-wrapper .options-block .options-content {
     margin: 0 auto;
     position: absolute;
     top: 20%;
@@ -414,24 +422,24 @@ header {
     padding-top: 235px;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content {
+.wrapper .modal-options-wrapper.sell .options-block .options-content {
     padding-top: 125px;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .option {
+.wrapper .modal-options-wrapper.sell .options-block .options-content .option {
     padding-left: 140px;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .option {
+.wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .option {
     cursor: pointer;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .option span {
+.wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .option span {
     padding-bottom: 2px;
     border-bottom: 1px solid #CCC;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .option .color {
+.wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .option .color {
     display: block;
     width: 10%;
     height: 1.2em;
@@ -439,24 +447,24 @@ header {
     margin-right: 22%;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options div:not(.selected):hover {
+.wrapper .modal-options-wrapper .options-block .options-content .modal-options .options div:not(.selected):hover {
     color: #EDB947;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected {
+.wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .selected {
     color: #B1B1B1;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected span {
+.wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .selected span {
     border-bottom: none;
     margin-right: 12px;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .modal-options .options .selected span {
+.wrapper .modal-options-wrapper.sell .options-block .options-content .modal-options .options .selected span {
     margin-right: 0;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
+.wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
     font-size: 40px;
     margin: 16px 0 0 5px;
 }
@@ -518,7 +526,7 @@ header {
     padding: 5px 18px 5px 5px;
     background-color: transparent;
     border-radius: 8px;
-    color: #FFF;
+    color: #000;
     text-align: right;
     font-weight: 500;
     margin-right: 5px;
@@ -553,6 +561,9 @@ header {
 
 .parameter-block .select .chosen:hover {
     color: #D29332;
+}
+.parameter-block .sell-trigger {
+    cursor: pointer;
 }
 .parameter-block .sell-trigger, .parameter-block .left-chosen {
     padding-bottom: 2px;
@@ -605,6 +616,7 @@ header {
 .sell-wrapper .sell-block {
     display: inline;
     width: 96%;
+    max-width: 1700px;
     position: relative;
     overflow-y: scroll;
     padding: 0 25px;
@@ -953,23 +965,10 @@ input[type=number] {
 :-ms-input-placeholder {
     color: #CCC;
 }
-@media screen and (max-width: 2775px) {
-    .header-logo .main-logo {
-        left: -11vw;
-    }
-}
-@media screen and (max-width: 2650px) {
-    .header-logo .main-logo {
-        left: -12vw;
-    }
-}
 
 @media screen and (max-width: 2480px) {
     .sell-wrapper .sell-block .sell-content .sell-cards .card {
         margin-right: 20px;
-    }
-    .header-logo .main-logo {
-        left: -13vw;
     }
 }
 
@@ -984,19 +983,6 @@ input[type=number] {
         margin-right: 10px;
     }
 }
-
-@media screen and (max-width: 2235px) {
-    .header-logo .main-logo {
-        left: -14vw;
-    }
-}
-
-@media screen and (max-width: 2125px) {
-    .header-logo .main-logo {
-        left: -15vw;
-    }
-}
-
 @media screen and (max-width: 1920px) {
     .sell-wrapper .sell-block .sell-content .sell-cards .card {
         min-width: 300px;
@@ -1034,18 +1020,6 @@ input[type=number] {
     }
 }
 
-@media screen and (max-width: 1785px) {
-    .header-logo .main-logo {
-        left: -17vw;
-    }
-}
-
-@media screen and (max-width: 1700px) {
-    .header-logo .main-logo {
-        left: -19vw;
-    }
-}
-
 @media screen and (max-width: 1630px) {
     .sell-wrapper {
         padding-right: 0;
@@ -1057,9 +1031,6 @@ input[type=number] {
 }
 
 @media screen and (max-width: 1600px) {
-    .header-logo .main-logo {
-        left: -19vw;
-    }
     .sell-wrapper .sell-block .sell-content {
         padding: 50px 40px;
     }
@@ -1087,22 +1058,10 @@ input[type=number] {
     }
 }
 
-@media screen and (max-width: 1480px) {
-    .main-logo .logo-img {
-        left: -20vw;
-    }
-}
-
 @media screen and (max-width: 1470px) {
     .main-choice-container {
         flex-direction: column;
         align-items: center;
-    }
-}
-
-@media screen and (max-width: 1450px) {
-    .header-logo .main-logo {
-        left: -21vw;
     }
 }
 
@@ -1134,12 +1093,6 @@ input[type=number] {
 
     .sell-wrapper .sell-block .sell-content .sell-cards .card .apply button {
         font-size: calc(0.3vw + 14px);
-    }
-}
-
-@media screen and (max-width: 1352px) {
-    .header-logo .main-logo {
-        left: -22vw;
     }
 }
 
@@ -1179,22 +1132,7 @@ input[type=number] {
     }
 }
 
-@media screen and (max-width: 1250px) {
-    .header-logo .main-logo {
-        left: -23vw;
-    }
-}
-
-@media screen and (max-width: 1175px) {
-    .header-logo .main-logo {
-        left: -24vw;
-    }
-}
-
 @media screen and (max-width: 1160px) {
-    .header-logo .main-logo {
-        left: -25vw;
-    }
 
     .header-logo .main-logo img {
         width: 90px;
@@ -1223,17 +1161,13 @@ input[type=number] {
 }
 @media screen and (max-width: 1097px) {
     .header-logo .main-logo .logo-subtitle {
-        width: 300px;
+        width: 500px;
     }
     .head-currencies .currency-block .currencies, .head-currencies .currency-block .note {
         font-size: 14px;
     }
 }
-@media screen and (max-width: 1075px) {
-    .header-logo .main-logo {
-        left: -26vw;
-    }
-}
+
 @media screen and (max-width: 1050px) {
     .head-currencies .currency-block .currencies {
         flex-direction: column;
@@ -1249,25 +1183,10 @@ input[type=number] {
         font-size: 18px;
     }
 }
-@media screen and (max-width: 1075px) {
-    .header-logo .main-logo {
-        left: -23vw;
-    }
-}
-@media screen and (max-width: 1024px) {
-    .header-logo .main-logo {
-        left: -14vw;
-        top: 25vh;
-    }
-}
 
 @media screen and (max-width: 970px) {
     .sell-wrapper .sell-block .sell-content .sell-cards .card {
         width: 45%;
-    }
-
-    .header-logo .main-logo {
-        left: -16vw;
     }
 }
 
@@ -1286,7 +1205,7 @@ input[type=number] {
         min-width: 550px;
     }
 
-    .choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .option {
+    .wrapper .modal-options-wrapper.sell .options-block .options-content .option {
         padding-left: 120px;
     }
 }
@@ -1296,7 +1215,6 @@ input[type=number] {
         font-size: 55px;
     }
     .header-logo .main-logo {
-        left: -13vw;
         top: 30vh;
     }
     .sell-wrapper .sell-block .sell-content .sell-content-title {
@@ -1308,8 +1226,7 @@ input[type=number] {
 }
 @media screen and (max-width: 767px) {
     .header-logo .main-logo {
-        left: -12vw;
-        top: 35vh;
+        top: 30vh;
     }
 }
 
@@ -1318,7 +1235,7 @@ input[type=number] {
         font-size: 40px;
         top: 3px !important;
     }
-    .choice-block .choice-content {
+    .choice-block .choice-content, .wrapper .modal-options-wrapper {
         font-size: 45px;
     }
 
@@ -1338,19 +1255,15 @@ input[type=number] {
         font-size: 35px;
     }
 
-    .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
+    .wrapper .modal-options-wrapper .options-block .options-content {
         padding-top: 230px;
     }
 
-    .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
+    .wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
         font-size: 35px;
     }
 
-    .header-logo .main-logo {
-        left: -13vw;
-    }
-
-    .choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .option {
+    .wrapper .modal-options-wrapper.sell .options-block .options-content .option {
         padding-left: 100px;
     }
 }
@@ -1358,12 +1271,6 @@ input[type=number] {
 @media screen and (max-width: 698px) {
     .sticky-logo {
         letter-spacing: 0.6rem;
-    }
-}
-
-@media screen and (max-width: 670px) {
-    .header-logo .main-logo {
-        left: -16vw;
     }
 }
 
@@ -1378,9 +1285,6 @@ input[type=number] {
 }
 
 @media screen and (max-width: 650px) {
-    .header-logo .main-logo {
-        left: -18vw;
-    }
     .sticky-logo {
         letter-spacing: 0.4rem;
     }
@@ -1390,10 +1294,6 @@ input[type=number] {
     .sell-wrapper .sell-block .sell-content .sell-content-title {
         font-size: 22px;
     }
-
-    .header-logo .main-logo {
-        left: -20vw;
-    }
 }
 @media screen and (max-width: 604px) {
     .sticky-logo {
@@ -1402,9 +1302,6 @@ input[type=number] {
 }
 
 @media screen and (max-width: 600px) {
-    .header-logo .main-logo {
-        left: -16vw;
-    }
     .header-logo .main-logo .logo-title {
         font-size: 45px;
     }
@@ -1415,7 +1312,7 @@ input[type=number] {
         font-size: 35px;
         top: 10px !important;
     }
-    .choice-block .choice-content {
+    .choice-block .choice-content, .wrapper .modal-options-wrapper {
         font-size: 35px;
     }
 
@@ -1436,16 +1333,16 @@ input[type=number] {
         font-size: 30px;
     }
 
-    .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
+    .wrapper .modal-options-wrapper .options-block .options-content {
         padding-top: 215px;
     }
 
-    .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
+    .wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
         font-size: 30px;
         margin-top: 10px;
     }
 
-    .choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .option {
+    .wrapper .modal-options-wrapper.sell .options-block .options-content .option {
         padding-left: 65px;
     }
 
@@ -1455,9 +1352,6 @@ input[type=number] {
     }
 }
 @media screen and (max-width: 575px) {
-    .header-logo .main-logo {
-        left: 12vw;
-    }
     .params-head {
         display: none !important;
     }
@@ -1470,9 +1364,6 @@ input[type=number] {
 }
 
 @media screen and (max-width: 560px) {
-    .header-logo .main-logo {
-        left: 13vw;
-    }
     .header-logo .main-logo .logo-title {
         font-size: 35px;
     }
@@ -1486,7 +1377,7 @@ input[type=number] {
     .choice-block .choice-content .wanna-sell input[type=number] {
         padding-right: 33px;
     }
-    .choice-block .choice-content {
+    .choice-block .choice-content, .wrapper .modal-options-wrapper {
         font-size: 30px;
     }
 
@@ -1498,11 +1389,11 @@ input[type=number] {
         font-size: 25px;
     }
 
-    .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
+    .wrapper .modal-options-wrapper .options-block .options-content {
         padding-top: 205px;
     }
 
-    .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
+    .wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
         font-size: 25px;
     }
 
@@ -1518,10 +1409,6 @@ input[type=number] {
 
     .choice-block .choice-content .select {
         min-width: 350px;
-    }
-
-    .header-logo .main-logo {
-        left: 9vw;
     }
 
     .header-logo .main-logo .logo-title {
@@ -1546,7 +1433,7 @@ input[type=number] {
 }
 
 @media screen and (max-width: 400px) {
-    .choice-block .choice-content {
+    .choice-block .choice-content, .wrapper .modal-options-wrapper {
         font-size: 25px;
     }
 
@@ -1566,11 +1453,11 @@ input[type=number] {
         font-size: 18px;
     }
 
-    .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
+    .wrapper .modal-options-wrapper .options-block .options-content {
         padding-top: 200px;
     }
 
-    .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
+    .wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
         font-size: 18px;
     }
 
@@ -1598,9 +1485,6 @@ input[type=number] {
 }
 
 @media screen and (max-width: 385px) {
-    .header-logo .main-logo {
-        left: 3vw;
-    }
     .header-logo .main-logo .logo-title {
         font-size: 40px;
     }
@@ -1634,9 +1518,6 @@ input[type=number] {
     .header-logo .main-logo .logo-title {
         font-size: 35px;
     }
-    .header-logo .main-logo {
-        left: -3vw;
-    }
 }
 
 @media screen and (max-width: 340px) {
@@ -1648,7 +1529,7 @@ input[type=number] {
         font-size: 15px;
     }
 
-    .choice-block .choice-content {
+    .choice-block .choice-content, .wrapper .modal-options-wrapper {
         font-size: 20px;
     }
 
@@ -1664,11 +1545,11 @@ input[type=number] {
         margin-top: 5px;
     }
 
-    .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
+    .wrapper .modal-options-wrapper .options-block .options-content {
         padding-top: 190px;
     }
 
-    .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
+    .wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
         margin-top: 5px;
     }
 
@@ -1682,11 +1563,11 @@ input[type=number] {
 }
 
 @media screen and (max-height: 725px) {
-    .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
+    .wrapper .modal-options-wrapper .options-block .options-content {
         top: 15%;
     }
 
-    .choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content {
+    .wrapper .modal-options-wrapper.sell .options-block .options-content {
         top: 20%;
     }
 }
@@ -1698,7 +1579,7 @@ input[type=number] {
 }
 
 @media screen and (max-height: 660px) {
-    .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
+    .wrapper .modal-options-wrapper .options-block .options-content {
         top: 5%;
     }
 }
@@ -1708,7 +1589,7 @@ input[type=number] {
         margin-bottom: 10%;
     }
 
-    .choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
+    .wrapper .modal-options-wrapper .options-block .options-content {
         top: 0;
     }
 }
@@ -3073,7 +2954,7 @@ button.ml-1 {
     display: inline;
 }
 
-.select .modal-options-wrapper {
+.wrapper .modal-options-wrapper {
     display: none;
     position: fixed;
     width: 100%;
@@ -3081,17 +2962,17 @@ button.ml-1 {
     left: 0;
     top: 0;
     background-color: #FFF;
-    z-index: 9;
+    z-index: 9999;
 }
 
-.select .modal-options-wrapper .options-block {
+.wrapper .modal-options-wrapper .options-block {
     width: 100%;
     height: 100%;
     position: relative;
 }
 
 .modal-options-close,
-.select .modal-options-wrapper .options-block .modal-options-close,
+.wrapper .modal-options-wrapper .options-block .modal-options-close,
 .modal-video-close {
     position: absolute;
     right: 40px;
@@ -3102,7 +2983,7 @@ button.ml-1 {
     z-index: 3;
 }
 
-.select .modal-options-wrapper .options-block .options-content {
+.wrapper .modal-options-wrapper .options-block .options-content {
 
     margin: 0 auto;
     position: absolute;
@@ -3128,7 +3009,7 @@ button.ml-1 {
 }
 */
 
-.select .modal-options-wrapper .options-block .modal-options-close span,
+.wrapper .modal-options-wrapper .options-block .modal-options-close span,
 .modal-options-close span,
 .modal-video-close span {
     position: absolute;
@@ -3140,13 +3021,13 @@ button.ml-1 {
     background-color: #000;
 }
 
-.select .modal-options-wrapper .options-block .modal-options-close span:first-of-type,
+.wrapper .modal-options-wrapper .options-block .modal-options-close span:first-of-type,
 .modal-options-close span:first-of-type,
 .modal-video-close span:first-of-type {
     transform: rotateZ(45deg);
 }
 
-.select .modal-options-wrapper .options-block .modal-options-close span:last-of-type,
+.wrapper .modal-options-wrapper .options-block .modal-options-close span:last-of-type,
 .modal-options-close span:last-of-type,
 .modal-video-close span:last-of-type {
     transform: rotateZ(-45deg);
@@ -4172,11 +4053,6 @@ main#main.gold585 {
         position: relative;
         width: 220px;
         height: 100px;
-    }
-
-
-    .header-logo .main-logo {
-        left: -12vw;
     }
 
     .header-logo .main-logo .logo-title {
