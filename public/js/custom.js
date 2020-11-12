@@ -223,6 +223,16 @@
                     }, 200);
                 }, 300);
 
+                let lombardSwitcherButton = $('.lombard-switcher button');
+                lombardSwitcherButton.click(function () {
+                    lombardSwitcherButton.removeClass('active');
+                    lombardSwitcherButton.each(function (key, elem) {
+                        $( $(elem).data('switch') ).hide();
+                    });
+                    $( $(this).data('switch') ).show();
+                    $(this).addClass('active');
+                });
+
                 if (getCookie('agreed') == undefined){
                     setTimeout(function () {
                     $('#coo-popup').addClass('show_me');

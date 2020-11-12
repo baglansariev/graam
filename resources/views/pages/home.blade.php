@@ -65,12 +65,17 @@
                 </div>
                 <div class="lombard-switcher d-flex justify-content-center">
                     <div class="switch-container d-flex justify-content-center">
-                        <button class="list-switch active">Списком</button>
-                        <button class="map-switch">На карте</button>
+                        <button class="list-switch active" data-switch="#lombardCards">Списком</button>
+                        <button class="map-switch" data-switch="#mapCards">На карте</button>
                     </div>
                 </div>
-                <div class="sell-cards lombard-cards d-flex">
-                    @component('pages.elements.lombard-cards')@endcomponent
+                <div class="switcher-cards">
+                    <div id="mapCards" class="map-cards">
+                        <div class="switcher-map"></div>
+                    </div>
+                    <div id="lombardCards" class="sell-cards lombard-cards">
+                        @component('pages.elements.lombard-cards')@endcomponent
+                    </div>
                 </div>
                 <div class="alternative-offer d-flex flex-column align-items-center">
                     <h3 class="text-center">Если не нашли выгодную сделку, то:</h3>
