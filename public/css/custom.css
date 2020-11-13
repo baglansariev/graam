@@ -186,6 +186,16 @@ header {
 
 .main-sell-trigger {
     cursor: pointer;
+    position: relative;
+    margin-right: 20px;
+}
+.main-sell-trigger::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -12%;
+    border: 10px solid transparent;
+    border-top-color: #000;
 }
 
 .header-actions a {
@@ -356,11 +366,11 @@ header {
     color: #000;
 }
 
-.choice-block .choice-content .select .chosen:hover {
+.choice-block .choice-content .select .chosen:hover, .main-sell-trigger:hover {
     color: #EDB947;
 }
 
-.choice-block .choice-content .select .chosen:hover .chosen-container {
+.choice-block .choice-content .select .chosen:hover .chosen-container, .main-sell-trigger:hover {
     border-color: #EDB947;
 }
 
@@ -564,13 +574,32 @@ header {
 }
 .parameter-block .sell-trigger {
     cursor: pointer;
+    position: relative;
+    margin-right: 15px !important;
+}
+.sell-trigger::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -17%;
+    border: 5px solid transparent;
+    border-top-color: #000;
 }
 .parameter-block .sell-trigger, .parameter-block .left-chosen {
     padding-bottom: 2px;
     border-bottom: 1px solid #cdcdcd;
+    position: relative;
+}
+.parameter-block .left-chosen::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10%;
+    border: 5px solid transparent;
+    border-top-color: #000;
 }
 
-.parameter-block .select:hover {
+.parameter-block .select:hover, .parameter-block .sell-trigger:hover {
     color: #D29332;
 }
 
@@ -831,7 +860,7 @@ header {
 }
 .switcher-map {
     width: 100%;
-    height: 300px;
+    height: 1020px;
     border: 1px solid #cdcdcd;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -871,6 +900,8 @@ header {
 }
 .lombard-switcher {
     margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
 }
 .lombard-switcher .switch-container button {
     width: 107px;
@@ -3199,7 +3230,17 @@ button.ml-1 {
     color: #000;
     font-weight: bold;
 }
-
+.chosen-container {
+    position: relative;
+}
+.chosen-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -5%;
+    border: 10px solid transparent;
+    border-top-color: #000;
+}
 .chosen-container span {
     border-bottom: 1px solid #10b6eb40;
 }

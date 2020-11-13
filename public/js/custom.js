@@ -360,9 +360,13 @@
                     let titleWord = 'продажу';
                     let action = 'sell';
 
-                    if ($('.sell-trigger').text() == 'купить') {
+                    if ($('.sell-trigger').text() == 'купить' || $('.main-sell-trigger').text() == 'купить') {
                         titleWord = 'покупку';
                         action = 'buy';
+                    }
+                    else if ($('.sell-trigger').text() == 'займ за' || $('.main-sell-trigger').text() == 'займ за') {
+                        titleWord = 'займ за';
+                        action = 'loan';
                     }
 
 
@@ -555,6 +559,39 @@
                     modalOptionsHide();
                 });
 
+                function cardsToggle(action) {
+                    if (action === 'купить' || action === 'buy' || action === 'покупку') {
+                        console.log(action);
+                        $('.lombard-title').hide();
+                        $('.lombard-cards').hide();
+                        $('.lombard-switcher').hide();
+                        $('.factory-title').show();
+                        $('.factory-cards').show();
+                        $('.factory-cards .card').hide();
+                        $('.pudm-card').show();
+                    }
+                    else if (action === 'продать' || action === 'sell' || action === 'продажу') {
+                        console.log(action);
+                        $('.lombard-title').show();
+                        $('.lombard-cards').show();
+                        $('.lombard-switcher').show();
+                        $('.factory-title').show();
+                        $('.factory-cards .card').show();
+                        $('.factory-cards').show();
+                    }
+                    // else if (action === 'займ за' || action === 'loan') {
+                    else {
+                        console.log(action);
+                        $('#sell').text('получить займ');
+                        $('.lombard-title').show();
+                        $('.lombard-cards').show();
+                        $('.lombard-switcher').show();
+                        $('.factory-title').hide();
+                        $('.factory-cards').hide();
+                        $('.factory-cards .card').hide();
+                    }
+                }
+
                 $('.sell .options .option').not('.selected').click(function () {
                     let optionText = $(this).find('span').text();
                     let selectedOption = $('.sell .options .option.selected span');
@@ -563,9 +600,6 @@
                     $('.main-sell-trigger').text(optionText);
                     selectedOption.text(optionText);
                     $('#sell').text(optionText);
-                    if (optionText === 'займ за') {
-                        $('#sell').text('получить займ');
-                    }
                     $('.sell-trigger').text(optionText);
                     $(this).find('span').text(selectedOptionText);
 
@@ -580,7 +614,8 @@
                         if (chosenMaterial.data('type') == '999' && chosenMaterial.data('name') == 'gold') {
                             chosenMaterial.text('золота 999,9');
                         }
-                    } else {
+                    }
+                    else {
                         $('.material .options .option').each(function (elem) {
                             if ($(this).data('type') == '999' && $(this).data('name') == 'gold') {
                                 $(this).find('span').text('золота 999');
@@ -591,6 +626,7 @@
                             $('.material .option.selected span').text('золота 999');
                         }
                     }
+                    getCardsByAjax();
 
                     modalOptionsHide();
                 });
@@ -780,6 +816,8 @@
                                     $(this).addClass('fadeInUp');
                                 });
                             }, 600);
+                            cardsToggle(params.titleWord);
+                            console.log(params.titleWord);
 
                             $('.sell-app').click(function () {
                                 setModalPopupParams($(this));

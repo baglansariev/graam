@@ -21,7 +21,7 @@
                
                <div class="main-choice-container">
                     <div class="wanna-sell">
-                        <span>Хочу <span class="main-sell-trigger">продать</span><i class="fas fa-sort-down"></i></span>
+                        <span>Хочу <span class="main-sell-trigger">продать</span><!--<i class="fas fa-sort-down"></i>--></span>
                         <input type="number" class="sell-weight text-right" placeholder="10">
                         <span class="main-weight-unit"></span>
                     </div>
@@ -30,7 +30,7 @@
                             <div class="chosen-container index">
                                 <span data-name="gold" data-type="585">золота 585</span> пробы
                             </div>
-                            <i class="fas fa-sort-down"></i>
+{{--                            <i class="fas fa-sort-down"></i>--}}
                         </div>
 
                     </div>
@@ -53,17 +53,17 @@
                 <div class="sell-content-params">
                     @component('modules.params_block')@endcomponent
                 </div>
-                <div class="sell-content-title text-center">
+                <div class="sell-content-title factory-title text-center">
                     <p>Через трейдера и заводы</p>
                 </div>
 {{--                 <div class="sell-content-title text-center">--}}
 {{--                 <p class="d-flex align-items-center justify-content-center flex-wrap">Продать <span class="active" data-type="fast">быстро</span><i class="fas fa-times"></i> и <span class="active" data-type="expensive">дорого</span><i class="fas fa-times"></i> через:</p>--}}
 {{--                 </div>--}}
                 <div class="sell-cards factory-cards d-flex"></div>
-                <div class="sell-content-title text-center mt-5">
+                <div class="sell-content-title lombard-title text-center mt-5">
                     <p>Через ломбарды</p>
                 </div>
-                <div class="lombard-switcher d-flex justify-content-center">
+                <div class="lombard-switcher">
                     <div class="switch-container d-flex justify-content-center">
                         <button class="list-switch active" data-switch="#lombardCards">Списком</button>
                         <button class="map-switch" data-switch="#mapCards">На карте</button>

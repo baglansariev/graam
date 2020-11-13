@@ -1,7 +1,7 @@
 @if (!empty($offers))
     @foreach($offers as $offer)
         @if (!in_array($loop->iteration, [2, 3, 6]))
-        <div class="card animated animatedFadeInUp @if(isset($offer['status']) && !$offer['status']) inactive @endif">
+        <div class="card @if($loop->iteration == 1) pudm-card @endif animated animatedFadeInUp @if(isset($offer['status']) && !$offer['status']) inactive @endif">
             <div class="card-wrapper">
                 <div class="card-title d-flex align-items-center">
                     <img src="{{ asset($offer['image']) }}" alt="" class="card-logo">
