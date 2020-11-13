@@ -84,6 +84,9 @@ header {
     letter-spacing: 0.8rem;
     font-weight: bolder;
 }
+.sticky-logo:hover {
+    color: #000;
+}
 .sticky-logo .logo-title {
     margin-bottom: 0;
 }
