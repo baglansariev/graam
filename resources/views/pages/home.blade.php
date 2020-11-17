@@ -60,23 +60,28 @@
 {{--                 <p class="d-flex align-items-center justify-content-center flex-wrap">Продать <span class="active" data-type="fast">быстро</span><i class="fas fa-times"></i> и <span class="active" data-type="expensive">дорого</span><i class="fas fa-times"></i> через:</p>--}}
 {{--                 </div>--}}
                 <div class="sell-cards factory-cards d-flex"></div>
-                <div class="sell-content-title lombard-title text-center mt-5">
-                    <p>Через ломбарды</p>
-                </div>
-                <div class="lombard-switcher">
-                    <div class="switch-container d-flex justify-content-center">
-                        <button class="list-switch active" data-switch="#lombardCards">Списком</button>
-                        <button class="map-switch" data-switch="#mapCards">На карте</button>
+                @if (isset($pawnshops) && $pawnshops->count())
+                    <div class="sell-content-title lombard-title text-center mt-5">
+                        <p>Через ломбарды</p>
                     </div>
-                </div>
-                <div class="switcher-cards">
-                    <div id="mapCards" class="map-cards">
-                        <div class="switcher-map"></div>
+                    <div class="lombard-switcher">
+                        <div class="switch-container d-flex justify-content-center">
+                            <button class="list-switch active" data-switch="#lombardCards">Списком</button>
+                            <button class="map-switch" data-switch="#mapCards">На карте</button>
+                        </div>
                     </div>
-                    <div id="lombardCards" class="sell-cards lombard-cards">
-                        @component('pages.elements.lombard-cards')@endcomponent
+                    <div class="switcher-cards">
+                        <div id="mapCards" class="map-cards">
+                            <div class="switcher-map">
+                                <iframe style="width: 100%; height: 100%;" src="https://yandex.ru/map-widget/v1/?um=constructor%3A4c240748fbfb9cb03a7ab32de4f62c692e56902ddc3466d30164a7e9c3de99f9&amp;source=constructor" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                        <div id="lombardCards" class="sell-cards lombard-cards">
+                            @component('pages.elements.lombard-cards', ['pawnshops' => $pawnshops])@endcomponent
+                        </div>
                     </div>
-                </div>
+                @endif
+
                 <div class="alternative-offer d-flex flex-column align-items-center">
                     <h3 class="text-center">Если не нашли выгодную сделку, то:</h3>
                     <button class="own-price-btn">Предложить свою</button>

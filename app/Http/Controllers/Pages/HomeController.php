@@ -9,6 +9,7 @@ use App\Http\Controllers\Modules\FeedbackFormController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\CompanyForReg;
 use Illuminate\Support\Facades\Cookie;
+use App\Models\Pawnshop;
 
 class HomeController extends Controller
 {
@@ -18,6 +19,7 @@ class HomeController extends Controller
             'currency'          => (new CurrencyController)->getRates(),
             'sell_form'         => (new FeedbackFormController)->getSellAppForm(),
             'own_price_form'    => (new FeedbackFormController)->getOwnPriceAppForm(),
+            'pawnshops'         => Pawnshop::all(),
         ];
         return view('pages.home', $data);
     }
