@@ -408,13 +408,18 @@
                     }
                 }
 
-                $('.sell-block').on('scroll', function (e) {
+                $('.sell-wrapper').on('scroll', function (e) {
+                    if ($(this).scrollTop() < 120) {
+                        $('.sell-wrapper').css('z-index', '11');
+                        // $('.sticky-header').css('transform', 'rotateX(0deg)');
+                    }
                     if ($(this).scrollTop() > 290) {
                         $('.sticky-header').show();
                         // $('.sticky-header').css('transform', 'rotateX(0deg)');
                     }
                     else {
                         $('.sticky-header').hide();
+                        $('.sell-wrapper').css('z-index', '99');
                         // $('.sticky-header').css('transform', 'rotateX(90deg)');
                     }
                 });
@@ -822,9 +827,9 @@
                                 card.each(function () {
                                     $(this).addClass('fadeInUp');
                                 });
-                            }, 600);
+                            }, 200);
                             cardsToggle(params.titleWord);
-                            console.log(params.titleWord);
+                            // console.log(params.titleWord);
 
                             $('.sell-app').click(function () {
                                 setModalPopupParams($(this));

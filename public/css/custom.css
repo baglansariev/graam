@@ -129,6 +129,7 @@ header {
 }
 
 .header-logo .main-logo {
+    display: flex;
     text-decoration: none;
     position: absolute;
     left: auto;
@@ -595,7 +596,7 @@ header {
     content: '';
     position: absolute;
     top: 50%;
-    right: -17%;
+    right: -13px;
     border: 5px solid transparent;
     border-top-color: #000;
 }

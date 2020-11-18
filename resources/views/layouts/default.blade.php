@@ -127,7 +127,7 @@
                     <div class="col-sm-4 col-6 d-flex justify-content-center align-items-center">
 
                         <div class="header-logo">
-                            <a href="/" class="main-logo d-flex justify-content-center align-items-center flex-column">
+                            <a href="/" class="main-logo justify-content-center align-items-center flex-column">
                                 <p class="logo-title"><span>G</span>RAAM</p>
                                 <p class="logo-subtitle text-center"><span>Один грамм,</span> <span>много возможностей</span></p>
                             </a>
