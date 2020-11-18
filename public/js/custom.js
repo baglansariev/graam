@@ -364,8 +364,8 @@
                         titleWord = 'покупку';
                         action = 'buy';
                     }
-                    else if ($('.sell-trigger').text() == 'займ за' || $('.main-sell-trigger').text() == 'займ за') {
-                        titleWord = 'займ за';
+                    else if ($('.sell-trigger').text() == 'займ' || $('.main-sell-trigger').text() == 'займ') {
+                        titleWord = 'займ';
                         action = 'loan';
                     }
 
@@ -657,7 +657,14 @@
                 $('#sell').click(function () {
                     $('.choice-block').animate({
                         marginTop: 150 + '%'
-                    }, 600);
+                    }, 600, function () {
+                        $('.header-actions').animate({
+                            opacity: 1
+                        });
+                        $('.head-currencies').animate({
+                            opacity: 1
+                        });
+                    });
 
                     setTimeout(function () {
                         $('.choice-block').css('display', 'none');
@@ -869,7 +876,7 @@
                     }
                 });
                 $('#sell').click(function () {
-                    $('footer').css('display', 'none');
+                    $('.main-footer').css('display', 'none');
                 });
                 
                 $('.sell-content-title').click(function () {

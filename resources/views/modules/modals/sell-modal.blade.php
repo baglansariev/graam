@@ -16,7 +16,7 @@
                             <span>купить</span>
                         </div>
                         <div class="option d-flex justify-content-between align-items-center">
-                            <span>займ за</span>
+                            <span>займ</span>
                         </div>
                     </div>
                 </div>

@@ -9,9 +9,9 @@
         <div class="progress-block text-center">
             <span>0</span> %
         </div>
-        <div class="block-text">
-            <p>Скупка золота и серебра, быстро, надежно и в срок</p>
-        </div>
+{{--        <div class="block-text">--}}
+{{--            <p>Скупка золота и серебра, быстро, надежно и в срок</p>--}}
+{{--        </div>--}}
     </div>
 
     <div class="choice-block">
@@ -38,7 +38,7 @@
                 <div class="action d-flex justify-content-center align-items-center">
                     <button type="button" id="sell">Продать</button>
                 </div>
-                <a class="why-link" href="#hp-content">Почему GRAAM?<img src="/images/why-link-bg.png" alt=""></a>
+                <a class="why-link" href="#hp-content">Почему у нас?<img src="/images/why-link-bg2.svg" alt=""></a>
                 
             </div>
             @component('home.content')@endcomponent
@@ -88,42 +88,15 @@
                 </div>
             </div>
         </div>
+        @component('pages.elements.footer')@endcomponent
 
     </div>
 
     @component('modules.modals.materials-modal')@endcomponent
     @component('modules.modals.sell-modal')@endcomponent
-
+    @component('pages.elements.footer', ['class' => 'main-footer'])@endcomponent
 </div>
 
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 d-flex justify-content-center">
-                <div class="soc-icons">
-                    <a href="https://www.instagram.com/graaam.ru/" class="insta-footer"></a>
-                    <a href="https://www.facebook.com/graam.ru" class="fb-footer"></a>
-                    <a href="https://vk.com/public197867126" class="vk-footer"></a>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8">
-                <div class="footer-links">
-                    <a href="#main">Продать&nbsp;золото&nbsp;или&nbsp;серебро</a>
-                    <a href="/login/">Войти&nbsp;в&nbsp;личный&nbsp;кабинет</a><br>
-                    <a class="small-text" href="/privacy-policy">Политика конфиденциальности</a>
-
-                </div>
-                <div class="copyright">© ООО «ПЮДМ», 2020</div>
-            </div>
-            <div class="col-md-4 footer-logo">
-                <img src="/images/logo-footer.svg" alt="Vasterra.com">
-                <span>Сделано в <a href="https://vasterra.com">Vasterra.com</a></span>
-            </div>
-        </div>
-    </div>
-</footer>
 <script>
     function playClick() {
         $('video')[0].play();

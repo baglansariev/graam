@@ -110,11 +110,11 @@
                             <div class="currency-block d-flex flex-column">
                                 <ul class="currencies">
                                     <li class="dollar">
-                                        <span><i class="fas fa-sort-up"></i> {{ $currency['USD']['Value'] }}</span>
+                                        <span><!--<i class="fas fa-sort-up"></i>--> {{ $currency['USD']['Value'] }}</span>
                                         <span>$ USD</span>
                                     </li>
                                     <li class="gold">
-                                        <span><i class="fas fa-sort-up"></i></span>
+                                        <span><!--<i class="fas fa-sort-up"></i>--></span>
                                         <span>золото</span>
                                     </li>
                                 </ul>
