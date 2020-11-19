@@ -1,4 +1,3 @@
-@php($metal_name = 'gold')
 @foreach($pawnshops as $pawnshop)
     <div class="card animated animatedFadeInUp">
         <div class="card-wrapper d-flex flex-column">
@@ -11,37 +10,45 @@
             </div>
             <div class="card-offer">
                 <div class="general-price">
-{{--                    @if (isset($pawnshop->price_585) && $metal_name !== 'silver')--}}
-{{--                        <div class="lombard-price d-flex align-items-end">--}}
-{{--                            <span class="price_585 mr-3">{{ number_format($pawnshop->price_585, 0, '', ' ') }} ₽</span>--}}
-{{--                            <span>585 пр.</span>--}}
-{{--                        </div>--}}
-{{--                    @endif--}}
-{{--                    @if (isset($pawnshop->price_999))--}}
-{{--                        <div class="lombard-price d-flex align-items-end">--}}
-{{--                            <span class="price_999 mr-3">{{ number_format($pawnshop->price_999, 0, '', ' ') }} ₽</span>--}}
-{{--                            <span>999 пр.</span>--}}
-{{--                        </div>--}}
-{{--                    @endif--}}
-{{--                    @if (isset($pawnshop->price_925) && $metal_name == 'silver')--}}
-
-{{--                        <div class="lombard-price d-flex align-items-end">--}}
-{{--                            <span class="price_925 mr-3">{{ number_format($pawnshop->price_925, 0, '', ' ') }} ₽</span>--}}
-{{--                            <span>925 пр.</span>--}}
-{{--                        </div>--}}
-{{--                    @endif--}}
-                    <div class="lombard-price d-flex align-items-end">
-                        <span class="price_585 mr-3">4 275 ₽</span>
-                        <span>585 пр.</span>
-                    </div>
-                    <div class="lombard-price d-flex align-items-end">
-                        <span class="price_999 mr-3">4 275 ₽</span>
-                        <span>999 пр.</span>
-                    </div>
-                    <div class="lombard-price d-flex align-items-end">
-                        <span class="price_925 mr-3">4 275 ₽</span>
-                        <span>925 пр.</span>
-                    </div>
+                    @if ($material == 'gold')
+                        @if (isset($pawnshop->price_gold_585))
+                            <div class="lombard-price d-flex align-items-end">
+                                <span class="price_585 mr-3">{{ number_format($pawnshop->price_gold_585, 0, '', ' ') }} ₽</span>
+                                <span>585 пр.</span>
+                            </div>
+                        @endif
+                        @if (isset($pawnshop->price_gold_999))
+                            <div class="lombard-price d-flex align-items-end">
+                                <span class="price_999 mr-3">{{ number_format($pawnshop->price_gold_999, 0, '', ' ') }} ₽</span>
+                                <span>999 пр.</span>
+                            </div>
+                        @endif
+                    @elseif($material == 'silver')
+                        @if (isset($pawnshop->price_silver_999))
+                            <div class="lombard-price d-flex align-items-end">
+                                <span class="price_999 mr-3">{{ number_format($pawnshop->price_silver_999, 0, '', ' ') }} ₽</span>
+                                <span>999 пр.</span>
+                            </div>
+                        @endif
+                        @if (isset($pawnshop->price_silver_925))
+                            <div class="lombard-price d-flex align-items-end">
+                                <span class="price_925 mr-3">{{ number_format($pawnshop->price_silver_925, 0, '', ' ') }} ₽</span>
+                                <span>925 пр.</span>
+                            </div>
+                        @endif
+                    @endif
+{{--                    <div class="lombard-price d-flex align-items-end">--}}
+{{--                        <span class="price_585 mr-3">4 275 ₽</span>--}}
+{{--                        <span>585 пр.</span>--}}
+{{--                    </div>--}}
+{{--                    <div class="lombard-price d-flex align-items-end">--}}
+{{--                        <span class="price_999 mr-3">4 275 ₽</span>--}}
+{{--                        <span>999 пр.</span>--}}
+{{--                    </div>--}}
+{{--                    <div class="lombard-price d-flex align-items-end">--}}
+{{--                        <span class="price_925 mr-3">4 275 ₽</span>--}}
+{{--                        <span>925 пр.</span>--}}
+{{--                    </div>--}}
                 </div>
             </div>
             <div class="card-actions d-flex flex-column justify-content-center">

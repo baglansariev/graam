@@ -50,36 +50,38 @@
         <div class="form-row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="inputPrice585">Цена в 585 пробе</label>
-                    <input id="inputPrice585" name="price_585" type="number" class="form-control" placeholder="Цена в 585 пробе" value="{{ $pawnshop->price_585 }}">
+                    <label for="inputPrice585">Цена в 585 пробе (Золото)</label>
+                    <input id="inputPrice585" name="price_gold_585" type="number" class="form-control" placeholder="Цена в 585 пробе" value="{{ $pawnshop->price_gold_585 ?? '' }}">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="inputPrice925">Цена в 925 пробе</label>
-                    <input id="inputPrice925" name="price_925" type="number" class="form-control" placeholder="Цена в 925 пробе" value="{{ $pawnshop->price_925 }}">
+                    <label for="inputPrice925">Цена в 999 пробе (Золото)</label>
+                    <input id="inputPrice925" name="price_gold_999" type="number" class="form-control" placeholder="Цена в 999 пробе" value="{{ $pawnshop->price_gold_999 ?? '' }}">
                 </div>
             </div>
         </div>
         <div class="form-row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="inputPrice999">Цена в 999 пробе</label>
-                    <input id="inputPrice999" name="price_999" type="number" class="form-control" placeholder="Цена в 999 пробе" value="{{ $pawnshop->price_999 }}">
+                    <label for="inputPrice999">Цена в 925 пробе (Серебро)</label>
+                    <input id="inputPrice999" name="price_silver_925" type="number" class="form-control" placeholder="Цена в 925 пробе" value="{{ $pawnshop->price_silver_925 ?? '' }}">
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="inputPrice999">Цена в 999 пробе (Серебро)</label>
+                    <input id="inputPrice999" name="price_silver_999" type="number" class="form-control" placeholder="Цена в 999 пробе" value="{{ $pawnshop->price_silver_999 ?? '' }}">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="inputLoanPercent">Процент займа</label>
                     <input id="inputLoanPercent" name="loan_percent" type="number" class="form-control" placeholder="Процент займа" value="{{ $pawnshop->loan_percent }}">
-                </div>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="inputPawnNote">Комментарий</label>
-                    <input id="inputPawnNote" name="notes" type="text" class="form-control" placeholder="Комментарий" value="{{ $pawnshop->notes ?? '' }}">
                 </div>
             </div>
             <div class="col-md-6">
@@ -90,6 +92,14 @@
                             <img src="{{ asset($pawnshop->image) }}" alt="">
                         </button>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="inputPawnNote">Комментарий</label>
+                    <textarea id="inputPawnNote" name="notes" class="form-control" placeholder="Комментарий">{{ $pawnshop->notes ?? '' }}</textarea>
                 </div>
             </div>
         </div>

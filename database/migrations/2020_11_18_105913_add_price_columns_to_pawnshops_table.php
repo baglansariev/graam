@@ -14,9 +14,11 @@ class AddPriceColumnsToPawnshopsTable extends Migration
     public function up()
     {
         Schema::table('pawnshops', function (Blueprint $table) {
-            $table->double('price_585')->nullable();
-            $table->double('price_999')->nullable();
-            $table->double('price_925')->nullable();
+            $table->double('price_gold_585')->nullable();
+            $table->double('price_gold_999')->nullable();
+            $table->double('price_silver_585')->nullable();
+            $table->double('price_silver_999')->nullable();
+            $table->double('price_silver_925')->nullable();
             $table->integer('loan_percent')->nullable();
         });
     }
@@ -29,9 +31,11 @@ class AddPriceColumnsToPawnshopsTable extends Migration
     public function down()
     {
         Schema::table('pawnshops', function (Blueprint $table) {
-            $table->dropColumn('price_585');
-            $table->dropColumn('price_999');
-            $table->dropColumn('price_925');
+            $table->dropColumn('price_gold_585');
+            $table->dropColumn('price_gold_999');
+            $table->dropColumn('price_silver_585');
+            $table->dropColumn('price_silver_999');
+            $table->dropColumn('price_silver_925');
             $table->dropColumn('loan_percent');
         });
     }

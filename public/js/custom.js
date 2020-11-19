@@ -808,27 +808,40 @@
                         success: function (result) {
                             $('.sell-cards.factory-cards').html(result);
 
-                            let delay = 0.3;
-                            let card = $('.card');
+                            $.ajax({
+                               url: '/ajax/pawnshops/' + params.name,
+                               type: 'GET',
+                               dataType: 'html',
+                                success: function (response) {
+                                    $('#lombardCards').html(response);
 
-                            card.each(function () {
-                                $(this).css({
-                                    'animation-delay': delay + 's',
-                                    '-webkit-animation-delay': delay + 's',
-                                    '-moz-animation-delay': delay + 's',
-                                });
-                                $(this).removeClass('fadeInUp');
+                                    let delay = 0.3;
+                                    let card = $('.card');
 
-                                delay += 0.3;
+                                    card.each(function () {
+                                        $(this).css({
+                                            'animation-delay': delay + 's',
+                                            '-webkit-animation-delay': delay + 's',
+                                            '-moz-animation-delay': delay + 's',
+                                        });
+                                        $(this).removeClass('fadeInUp');
+
+                                        delay += 0.3;
+                                    });
+
+                                    setTimeout(function () {
+                                        card.each(function () {
+                                            $(this).addClass('fadeInUp');
+                                        });
+                                    }, 200);
+                                },
+                                error: function (response) {
+                                    console.log(response);
+                                }
                             });
 
-                            setTimeout(function () {
-                                card.each(function () {
-                                    $(this).addClass('fadeInUp');
-                                });
-                            }, 200);
                             cardsToggle(params.titleWord);
-                            // console.log(params.titleWord);
+
 
                             $('.sell-app').click(function () {
                                 setModalPopupParams($(this));

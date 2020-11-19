@@ -49,42 +49,50 @@
         <div class="form-row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="inputPrice585">Цена в 585 пробе</label>
-                    <input id="inputPrice585" name="price_585" type="number" class="form-control" placeholder="Цена в 585 пробе">
+                    <label for="inputPrice585">Цена в 585 пробе (Золото)</label>
+                    <input id="inputPrice585" name="price_gold_585" type="number" class="form-control" placeholder="Цена в 585 пробе">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="inputPrice925">Цена в 925 пробе</label>
-                    <input id="inputPrice925" name="price_925" type="number" class="form-control" placeholder="Цена в 925 пробе">
+                    <label for="inputPrice925">Цена в 999 пробе (Золото)</label>
+                    <input id="inputPrice925" name="price_gold_999" type="number" class="form-control" placeholder="Цена в 999 пробе">
                 </div>
             </div>
         </div>
         <div class="form-row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="inputPrice999">Цена в 999 пробе</label>
-                    <input id="inputPrice999" name="price_999" type="number" class="form-control" placeholder="Цена в 999 пробе">
+                    <label for="inputPrice999">Цена в 925 пробе (Серебро)</label>
+                    <input id="inputPrice999" name="price_silver_925" type="number" class="form-control" placeholder="Цена в 925 пробе">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="inputLoanPercent">Процент займа</label>
+                    <label for="inputPrice999">Цена в 999 пробе (Серебро)</label>
+                    <input id="inputPrice999" name="price_silver_999" type="number" class="form-control" placeholder="Цена в 999 пробе">
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="inputLoanPercent">Процент займа в месяц</label>
                     <input id="inputLoanPercent" name="loan_percent" type="number" class="form-control" placeholder="Процент займа">
-                </div>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="inputPawnNote">Комментарий</label>
-                    <input id="inputPawnNote" name="notes" type="text" class="form-control" placeholder="Комментарий">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="inputPawnImg">Логотип (изображение)</label>
                     <input id="inputPawnImg" name="image" type="file" class="form-control" placeholder="Логотип (изображение)">
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="inputPawnNote">Комментарий</label>
+                    <textarea id="inputPawnNote" name="notes" class="form-control" placeholder="Комментарий"></textarea>
                 </div>
             </div>
         </div>

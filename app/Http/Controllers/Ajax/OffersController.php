@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Ajax;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Helpers\ClientHelper;
 use Illuminate\Http\Request;
+use App\Models\Pawnshop;
 
 class OffersController extends Controller
 {
@@ -35,5 +36,10 @@ class OffersController extends Controller
         $data = ['offers' => $offers, 'action' => $action, 'metal_name' => $name];
 
         return view('pages.elements.offer-cards', $data);
+    }
+
+    public function getPawnshops($material)
+    {
+        return view('pages.elements.lombard-cards', ['material' => $material, 'pawnshops' => Pawnshop::all()]);
     }
 }

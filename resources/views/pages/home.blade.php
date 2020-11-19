@@ -77,7 +77,7 @@
                             </div>
                         </div>
                         <div id="lombardCards" class="sell-cards lombard-cards">
-                            @component('pages.elements.lombard-cards', ['pawnshops' => $pawnshops])@endcomponent
+{{--                            @component('pages.elements.lombard-cards', ['pawnshops' => $pawnshops])@endcomponent--}}
                         </div>
                     </div>
                 @endif
