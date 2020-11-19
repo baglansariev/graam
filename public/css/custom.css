@@ -960,6 +960,9 @@ header {
     font-size: 22px;
     font-weight: 500;
 }
+.lombard-price span:nth-of-type(2) {
+    margin-bottom: 3px;
+}
 .lombard-switcher {
     margin-bottom: 50px;
     display: flex;
@@ -2694,7 +2697,7 @@ input[type=number] {
     padding-bottom: 30px;
     background: #000;
     border-radius: 50px 50px 0 0;
-    box-shadow: 0px 0px 25px 0px #ccc;
+    /*box-shadow: 0px 0px 25px 0px #ccc;*/
 }
 
 .home-content h2.heading {
