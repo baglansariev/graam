@@ -15,5 +15,9 @@ class Pawnshop extends Model
         'longitude',
         'latitude',
         'notes',
+        'price_585',
+        'price_999',
+        'price_925',
+        'loan_percent',
     ];
 }

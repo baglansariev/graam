@@ -202,7 +202,14 @@
                         marginTop: 120 + 'px'
                     }, 600).animate({
                         marginTop: 140 + 'px'
-                    }, 200);
+                    }, 200, function () {
+                        $('.header-actions').animate({
+                            opacity: 1
+                        });
+                        $('.head-currencies').animate({
+                            opacity: 1
+                        });
+                    });
                     $('.choice-block.privacy').animate({
                         marginTop: 120 + 'px'
                     }, 600).animate({
@@ -414,11 +421,11 @@
                         // $('.sticky-header').css('transform', 'rotateX(0deg)');
                     }
                     if ($(this).scrollTop() > 290) {
-                        $('.sticky-header').show();
+                        $('.sticky-header').css('display', 'flex');
                         // $('.sticky-header').css('transform', 'rotateX(0deg)');
                     }
                     else {
-                        $('.sticky-header').hide();
+                        $('.sticky-header').css('display', 'none');
                         $('.sell-wrapper').css('z-index', '99');
                         // $('.sticky-header').css('transform', 'rotateX(90deg)');
                     }
@@ -662,14 +669,7 @@
                 $('#sell').click(function () {
                     $('.choice-block').animate({
                         marginTop: 150 + '%'
-                    }, 600, function () {
-                        $('.header-actions').animate({
-                            opacity: 1
-                        });
-                        $('.head-currencies').animate({
-                            opacity: 1
-                        });
-                    });
+                    }, 600);
 
                     setTimeout(function () {
                         $('.choice-block').css('display', 'none');
