@@ -285,7 +285,8 @@ header {
     width: 95%;
     max-width: 1610px;
     min-height: 100%;
-    margin: 93% auto 0;
+    /*margin: 93% auto 0;*/
+    margin: 1000px auto 0;
     border-radius: 50px 50px 0 0;
     z-index: 9999;
 }
@@ -1388,6 +1389,7 @@ input[type=number] {
     /*    margin-right: 0;*/
     /*}*/
     .header-logo .main-logo .logo-subtitle {
+        display: flex;
         flex-direction: column !important;
     }
 }
@@ -1458,6 +1460,11 @@ input[type=number] {
         width: 100px;
         padding-right: 40px;
     }
+    .chosen-container.index::after, .main-sell-trigger::after {
+        border: 6px solid transparent !important;
+        border-top-color: #000 !important;
+        right: -15px !important;
+    }
 }
 @media screen and (max-width: 575px) {
     .params-head {
@@ -1520,7 +1527,7 @@ input[type=number] {
     }
 
     .header-logo .main-logo .logo-title {
-        font-size: 30px;
+        font-size: 28px;
     }
 }
 
@@ -1589,6 +1596,14 @@ input[type=number] {
 @media screen and (max-width: 400px) {
     .choice-block .choice-content .wanna-sell input[type=number] {
         padding-right: 30px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .chosen-container.index::after, .main-sell-trigger::after {
+        border: 4px solid transparent !important;
+        border-top-color: #000 !important;
+        right: -10px !important;
     }
 }
 
@@ -3301,7 +3316,7 @@ button.ml-1 {
     content: '';
     position: absolute;
     top: 50%;
-    right: -5%;
+    right: -25px;
     border: 10px solid transparent;
     border-top-color: #000;
 }
@@ -4156,11 +4171,60 @@ main#main.gold585 {
     }
     #coo-popup .popup .coo-close {
         margin-top: 20px;
-}
+    }
+    .header-logo .main-logo {
+        left: calc(9vw - 20px);
+    }
 
 }
-
-
+@media screen and (max-width: 680px) {
+    .header-logo .main-logo {
+        left: calc(6vw - 20px);
+    }
+}
+@media screen and (max-width: 600px) {
+    .header-logo .main-logo {
+        left: calc(4vw - 20px);
+    }
+}
+@media screen and (max-width: 570px) {
+    .header-logo .main-logo {
+        left: calc(2vw - 20px);
+    }
+}
+@media screen and (max-width: 545px) {
+    .header-logo .main-logo {
+        left: 0;
+    }
+}
+@media screen and (max-width: 520px) {
+    .header-logo .main-logo {
+        left: calc(-4vw - 20px);
+    }
+}
+@media screen and (max-width: 435px) {
+    .header-logo .main-logo {
+        left: calc(-10vw - 20px);
+    }
+    .header-container {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 410px) {
+    .header-logo .main-logo {
+        left: calc(-18vw - 20px);
+    }
+}
+@media screen and (max-width: 380px) {
+    .header-logo .main-logo {
+        left: calc(-22vw - 30px);
+    }
+}
+@media screen and (max-width: 335px) {
+    .header-logo .main-logo {
+        left: calc(-22vw - 40px);
+    }
+}
 @media (max-width: 1366px) and (min-width: 1024px) {
     .pm-img-wrap {
         display: none !important;

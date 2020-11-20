@@ -178,10 +178,20 @@
                     }
                 }, 10);
                 setTimeout(function () {
-                    $('.main-logo').animate({
+                    let logoAnimation = {
                         top: 0,
                         marginTop: 0,
-                    }, 600);
+                    };
+                    if (window.innerWidth <= 767 && window.innerWidth >= 415) {
+                        logoAnimation.left = -10 + 'vw';
+                    }
+                    else if (window.innerWidth < 415 && window.innerWidth >= 351) {
+                        logoAnimation.left = -17 + 'vw';
+                    }
+                    else if (window.innerWidth < 351) {
+                        logoAnimation.left = -22 + 'vw';
+                    }
+                    $('.main-logo').animate(logoAnimation, 600);
 
                     $('.main-logo .logo-title').animate({
                         fontSize: 32 + 'px',

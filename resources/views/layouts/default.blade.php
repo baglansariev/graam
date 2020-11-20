@@ -108,7 +108,7 @@
             <div class="header-container">
                 <div class="container-fluid">
                     <div class="row content-row">
-                        <div class="col-sm-4 d-sm-flex d-none align-items-center justify-content-start col-currency">
+                        <div class="col-md-4 d-md-flex d-none align-items-center justify-content-start col-currency">
                             <div class="head-currencies">
                                 <div class="currency-block d-flex flex-column">
                                     <ul class="currencies">
@@ -127,7 +127,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4 col-6 d-flex justify-content-center align-items-center">
+                        <div class="col-md-4 col-sm-6 col-6 d-flex justify-content-center align-items-center">
 
                             <div class="header-logo">
                                 <a href="/" class="main-logo justify-content-center align-items-center flex-column">
@@ -136,7 +136,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-sm-4 col-6 d-flex justify-content-end align-items-center">
+                        <div class="col-md-4 col-sm-6 col-6 d-flex justify-content-end align-items-center">
                             <div class="header-actions text-right">
                                 @guest
                                     <a href="{{ route('login') }}" class="login-btn">Вход</a>
