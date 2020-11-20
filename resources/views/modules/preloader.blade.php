@@ -36,7 +36,7 @@
         height: 200px;
     }
 
-    .container {
+    .main-preloader .container {
         display: flex;
         justify-content: center;
         align-items: center;
