@@ -80,7 +80,7 @@
         <div class="form-row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="inputLoanPercent">Процент займа</label>
+                    <label for="inputLoanPercent">Процент займа в месяц</label>
                     <input id="inputLoanPercent" name="loan_percent" type="number" class="form-control" placeholder="Процент займа" value="{{ $pawnshop->loan_percent }}">
                 </div>
             </div>

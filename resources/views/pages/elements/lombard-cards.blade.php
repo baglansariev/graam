@@ -37,6 +37,12 @@
                             </div>
                         @endif
                     @endif
+                    @if (isset($pawnshop->loan_percent))
+                        <div class="lombard-price mt-3 d-flex align-items-end">
+                            <span class="price_925 mr-3">{{ $pawnshop->loan_percent }} %</span>
+                            <span>в месяц</span>
+                        </div>
+                    @endif
 {{--                    <div class="lombard-price d-flex align-items-end">--}}
 {{--                        <span class="price_585 mr-3">4 275 ₽</span>--}}
 {{--                        <span>585 пр.</span>--}}
@@ -56,7 +62,7 @@
                     <p><a href="tel:{{ str_replace([' ', '(', ')', '-'], '', $pawnshop->phone) }}">{{ $pawnshop->phone }}</a></p>
                 </div>
                 <div class="apply text-left mb-3">
-                    <button type="button" class="sell-app d-flex">Оставить заявку</button>
+{{--                    <button type="button" class="sell-app d-flex">Оставить заявку</button>--}}
                 </div>
                 <div class="address text-left">
                     <i class="fas fa-map-marker-alt"></i>

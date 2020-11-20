@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abff2837-7468-434e-940d-e3b5389bc27b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Ajax/OffersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Ajax/OffersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Pawnshop.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Pawnshop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_18_105913_add_price_columns_to_pawnshops_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_18_105913_add_price_columns_to_pawnshops_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/modals/sell-modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modules/modals/sell-modal.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/elements/lombard-cards.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/elements/lombard-cards.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pawnshop/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pawnshop/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pawnshop/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pawnshop/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,11 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/custom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="835" column="44" selection-start-line="835" selection-start-column="44" selection-end-line="835" selection-end-column="44" />
+            <state relative-caret-position="120">
+              <caret line="901" column="19" selection-start-line="901" selection-start-column="19" selection-end-line="901" selection-end-column="19" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -71,10 +66,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/home.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/modules/modals/sell-modal.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="78" column="45" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="45" />
+            <state relative-caret-position="156">
+              <caret line="9" column="41" lean-forward="true" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -106,8 +101,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/elements/lombard-cards.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+            <state relative-caret-position="443">
+              <caret line="69" column="22" lean-forward="true" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/pawnshop/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="82" column="71" selection-start-line="82" selection-start-column="71" selection-end-line="82" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -137,9 +141,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getClientPreferences</find>
-      <find>card-actions</find>
-      <find>message</find>
       <find>inactive</find>
       <find>Скупка золота</find>
       <find>lombard-price</find>
@@ -157,16 +158,19 @@
       <find>main-logo {</find>
       <find>why</find>
       <find>(max-h</find>
-      <find>#sell</find>
       <find>scroll</find>
       <find>scrollba</find>
       <find>choice-block .choice-content .select .chosen .chosen-container</find>
       <find>90%</find>
       <find>sell-trigger::</find>
-      <find>lombard-p</find>
       <find>stick</find>
       <find>getoff</find>
+      <find>займ</find>
       <find>cards</find>
+      <find>lombard-p</find>
+      <find>займ'</find>
+      <find>#sell</find>
+      <find>sell-content-title</find>
     </findStrings>
     <replaceStrings>
       <replace>fa-telegram-plane</replace>
@@ -217,20 +221,20 @@
         <option value="$PROJECT_DIR$/resources/views/pawnshop/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Pages/HomeController.php" />
         <option value="$PROJECT_DIR$/storage/framework/views/494e4240064098b08b3469796129c047df7122c2.php" />
-        <option value="$PROJECT_DIR$/resources/views/modules/modals/sell-modal.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/elements/footer.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_11_16_114601_add_role_id_column_to_users_table.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/default.blade.php" />
         <option value="$PROJECT_DIR$/public/css/custom.css" />
         <option value="$PROJECT_DIR$/database/migrations/2020_11_18_105913_add_price_columns_to_pawnshops_table.php" />
         <option value="$PROJECT_DIR$/resources/views/pawnshop/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/pawnshop/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/Pawnshop.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/elements/lombard-cards.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Ajax/OffersController.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/home.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/modules/modals/sell-modal.blade.php" />
         <option value="$PROJECT_DIR$/public/js/custom.js" />
+        <option value="$PROJECT_DIR$/resources/views/pages/elements/lombard-cards.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pawnshop/edit.blade.php" />
       </list>
     </option>
   </component>
@@ -407,7 +411,7 @@
               <item name="graam.loc" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="pawnshop" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -508,12 +512,12 @@
       <workItem from="1604846425407" duration="12192000" />
       <workItem from="1604966543860" duration="27188000" />
       <workItem from="1605073374861" duration="27786000" />
-      <workItem from="1605504666420" duration="51017000" />
+      <workItem from="1605504666420" duration="54369000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="799898000" />
+    <option name="totallyTimeSpent" value="803250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -726,13 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/modules/modals/sell-modal.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2020_11_16_115119_create_roles_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -825,31 +822,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="925" column="21" selection-start-line="925" selection-start-column="21" selection-end-line="925" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pawnshop/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="66" column="128" selection-start-line="66" selection-start-column="128" selection-end-line="66" selection-end-column="128" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Pawnshop.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
           <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pawnshop/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2029">
-          <caret line="106" column="81" lean-forward="true" selection-start-line="106" selection-start-column="81" selection-end-line="106" selection-end-column="81" />
         </state>
       </provider>
     </entry>
@@ -887,13 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/elements/lombard-cards.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -913,18 +882,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="78" column="45" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="45" />
+        <state relative-caret-position="-812">
+          <caret line="56" column="42" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="925" column="21" selection-start-line="925" selection-start-column="21" selection-end-line="925" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/modules/modals/sell-modal.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="9" column="41" lean-forward="true" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="835" column="44" selection-start-line="835" selection-start-column="44" selection-end-line="835" selection-end-column="44" />
+        <state relative-caret-position="120">
+          <caret line="901" column="19" selection-start-line="901" selection-start-column="19" selection-end-line="901" selection-end-column="19" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pawnshop/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-129">
+          <caret line="66" column="128" selection-start-line="66" selection-start-column="128" selection-end-line="66" selection-end-column="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/elements/lombard-cards.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="69" column="22" lean-forward="true" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pawnshop/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="82" column="71" selection-start-line="82" selection-start-column="71" selection-end-line="82" selection-end-column="71" />
         </state>
       </provider>
     </entry>

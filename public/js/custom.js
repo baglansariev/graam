@@ -371,8 +371,8 @@
                         titleWord = 'покупку';
                         action = 'buy';
                     }
-                    else if ($('.sell-trigger').text() == 'займ' || $('.main-sell-trigger').text() == 'займ') {
-                        titleWord = 'займ';
+                    else if ($('.sell-trigger').text() == 'займ за' || $('.main-sell-trigger').text() == 'займ за') {
+                        titleWord = 'займ за';
                         action = 'loan';
                     }
 
@@ -572,7 +572,7 @@
 
                 function cardsToggle(action) {
                     if (action === 'купить' || action === 'buy' || action === 'покупку') {
-                        console.log(action);
+
                         $('.lombard-title').hide();
                         $('.lombard-cards').hide();
                         $('.lombard-switcher').hide();
@@ -582,7 +582,7 @@
                         $('.pudm-card').show();
                     }
                     else if (action === 'продать' || action === 'sell' || action === 'продажу') {
-                        console.log(action);
+
                         $('.lombard-title').show();
                         $('.lombard-cards').show();
                         $('.lombard-switcher').show();
@@ -592,8 +592,8 @@
                     }
                     // else if (action === 'займ за' || action === 'loan') {
                     else {
-                        console.log(action);
-                        $('#sell').text('получить займ');
+
+                        // $('#sell').text('получить займ');
                         $('.lombard-title').show();
                         $('.lombard-cards').show();
                         $('.lombard-switcher').show();
@@ -610,7 +610,12 @@
 
                     $('.main-sell-trigger').text(optionText);
                     selectedOption.text(optionText);
-                    $('#sell').text(optionText);
+                    if (optionText == 'займ за') {
+                        $('#sell').text('Получить займ');
+                    }
+                    else {
+                        $('#sell').text(optionText);
+                    }
                     $('.sell-trigger').text(optionText);
                     $(this).find('span').text(selectedOptionText);
 
@@ -894,10 +899,6 @@
                 });
                 $('#sell').click(function () {
                     $('.main-footer').css('display', 'none');
-                });
-                
-                $('.sell-content-title').click(function () {
-                    modalOptionsShow('material');
                 });
 
                 function infinityScroll() {
