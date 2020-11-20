@@ -59,7 +59,9 @@
 {{--                 <div class="sell-content-title text-center">--}}
 {{--                 <p class="d-flex align-items-center justify-content-center flex-wrap">Продать <span class="active" data-type="fast">быстро</span><i class="fas fa-times"></i> и <span class="active" data-type="expensive">дорого</span><i class="fas fa-times"></i> через:</p>--}}
 {{--                 </div>--}}
-                <div class="sell-cards factory-cards d-flex"></div>
+                <div class="sell-cards factory-cards d-flex">
+                    @component('modules.preloader', ['class' => 'front'])@endcomponent
+                </div>
                 @if (isset($pawnshops) && $pawnshops->count())
                     <div class="sell-content-title lombard-title text-center mt-5">
                         <p>Через ломбарды</p>

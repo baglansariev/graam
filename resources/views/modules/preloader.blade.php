@@ -1,4 +1,4 @@
-<div class="main-preloader">
+<div class="main-preloader @if(isset($class)) {{ $class }} @endif">
     <div class="container">
         <div class="circle circle-1"></div>
         <div class="circle circle-2"></div>
@@ -30,6 +30,11 @@
         height: 100%;
         z-index: 9999;
     }
+    .main-preloader.front {
+        display: block;
+        position: static;
+        height: 200px;
+    }
 
     .container {
         display: flex;
@@ -56,6 +61,11 @@
         opacity: 0.7;
         animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
     }
+    .circle::after {
+        position: absolute;
+        font-size: 25px;
+        color: #fff;
+    }
 
     .circle-1 {
         background-color: #eed968;
@@ -66,9 +76,6 @@
     }
     .circle-1:after {
         content: 'G';
-        position: absolute;
-        font-size: 25px;
-        color: #fff;
     }
 
     .circle-2 {
@@ -80,9 +87,6 @@
     }
     .circle-2:after {
         content: 'R';
-        position: absolute;
-        font-size: 25px;
-        color: #fff;
     }
 
     .circle-3 {
@@ -94,9 +98,6 @@
     }
     .circle-3:after {
         content: 'A';
-        position: absolute;
-        font-size: 25px;
-        color: #fff;
     }
 
     .circle-4 {
@@ -108,9 +109,6 @@
     }
     .circle-4:after {
         content: 'A';
-        position: absolute;
-        font-size: 25px;
-        color: #fff;
     }
 
     .circle-5 {
@@ -122,8 +120,34 @@
     }
     .circle-5:after {
         content: 'M';
-        position: absolute;
-        font-size: 25px;
-        color: #fff;
+    }
+
+    @media screen and (max-width: 767px) {
+        .circle {
+            width: 40px;
+            height: 40px;
+            margin: 25px;
+        }
+        .circle::after {
+            font-size: 18px;
+        }
+        .circle:before {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    @media screen and (max-width: 500px) {
+        .circle {
+            width: 30px;
+            height: 30px;
+            margin: 15px;
+        }
+        .circle::after {
+            font-size: 15px;
+        }
+        .circle:before {
+            width: 30px;
+            height: 30px;
+        }
     }
 </style>
