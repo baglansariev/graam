@@ -682,7 +682,7 @@
 
                 $('#sell').click(function () {
                     $('.choice-block').animate({
-                        marginTop: 1000 + 'px'
+                        marginTop: 120 + 'vh'
                     }, 600);
 
                     setTimeout(function () {

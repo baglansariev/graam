@@ -286,7 +286,7 @@ header {
     max-width: 1610px;
     min-height: 100%;
     /*margin: 93% auto 0;*/
-    margin: 1000px auto 0;
+    margin: 120vh auto 0;
     border-radius: 50px 50px 0 0;
     z-index: 9999;
 }
@@ -705,7 +705,7 @@ header {
 }
 
 .sell-wrapper .sell-block .sell-content {
-    margin-top: 1000px;
+    margin-top: 120vh;
     padding: 50px 42px;
     width: 100%;
     min-height: 120vh;
