@@ -32,11 +32,11 @@
                                                  @endforeach
                                              @else
                                                  <span>
-                                                     <form action="{{ route('documents.store') }}" method="post" enctype="multipart/form-data">
+                                                     <form action="{{ route('documents.store') }}" id="upload_file_{{ $loop->iteration }}" method="post" enctype="multipart/form-data">
                                                             @csrf
                                                          <label for="{{ $loop->iteration }}"><span class="upload-file">Загрузить файл</span> doc, pdf</label>
                                                                 <input type="text" name="doc_category" value="{{ $category['id'] }}" hidden>
-                                                                <input onchange="document.getElementById('upload_file').submit()"
+                                                                <input onchange="document.getElementById('upload_file_{{ $loop->iteration }}').submit()"
                                                                     type="file" name="documents[]" class="form-control file_input" id="{{ $loop->iteration }}"  multiple required>
 
 {{--                                                            <div class="form-group d-flex justify-content-between mt-5">--}}
