@@ -43,7 +43,9 @@
                 
             </div>
             @component('home.content')@endcomponent
+            
         </div>
+        
     </div>
     <div class="sell-wrapper">
         <div class="sell-parameters d-flex flex-column justify-content-between">
@@ -58,7 +60,10 @@
                         <span>золото 585</span> пр.
                         <i class="fas fa-sort-down"></i>
                     </div>
+                   @component('modules.modals.materials-modal')@endcomponent
+                   @component('modules.modals.sell-modal')@endcomponent  
                 </div>
+                
             </div>
             <div class="currency-block d-flex flex-column">
                 <ul class="currencies">
@@ -93,7 +98,9 @@
     </div>
 
 </div>
-
+<div class="btn-wrapper">
+<a href="#top" type="submit" class="sell-btn">Начать продавать</a>
+</div>
 <footer>
     <div class="container">
         <div class="row">

@@ -73,7 +73,8 @@ header {
 .header-logo .main-logo {
     text-decoration: none;
     position: absolute;
-    left: 39vw;
+/*    left: 39vw;*/
+    left: 50vw;
     top: 28vh;
     z-index: 3;
 }
@@ -189,6 +190,16 @@ header {
     z-index: 9999;
 }
 
+.home-content .choice-block {
+    border-radius: 50px;
+}
+
+.home-content .btn-wrapper {
+    margin: 120px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
 .choice-block.privacy {
     position: relative;
     margin-top: 150%;
@@ -265,7 +276,12 @@ header {
 
 .choice-block .choice-content .select .chosen .chosen-container,
 .main-sell-trigger {
-    border-bottom: 1px solid #10b6eb;
+    border-bottom: 1px solid #EDB947;
+}
+
+
+.main-sell-trigger:hover {
+    color: #EDB947;
 }
 
 .choice-block .choice-content .select .chosen .fa-sort-down {
@@ -276,7 +292,7 @@ header {
 .wanna-sell .main-sell-trigger + .fa-sort-down {
     font-size: 40px;
     margin-left: 5px;
-    color: #10b6eb;
+    color: #EDB947;
 }
 
 .choice-block .choice-content .select .chosen:hover {
@@ -287,7 +303,8 @@ header {
     border-color: #EDB947;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper {
+.choice-block .choice-content .select .modal-options-wrapper,
+.sell-wrapper .sell-parameters .select .modal-options-wrapper {
     display: none;
     position: fixed;
     width: 100%;
@@ -295,16 +312,18 @@ header {
     left: 0;
     top: 0;
     background-color: #FFF;
-    z-index: 9;
+    z-index: 999;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block {
+.choice-block .choice-content .select .modal-options-wrapper .options-block,
+.sell-wrapper .sell-parameters .select .modal-options-wrapper .options-block {
     width: 100%;
     height: 100%;
     position: relative;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close,
+.sell-wrapper .sell-parameters .select .modal-options-wrapper .options-block .modal-options-close {
     position: absolute;
     right: 40px;
     top: 60px;
@@ -314,7 +333,8 @@ header {
     z-index: 3;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close span {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close span,
+.sell-wrapper .sell-parameters .select .modal-options-wrapper .options-block .modal-options-close span {
     position: absolute;
     left: 0;
     top: 0;
@@ -324,19 +344,23 @@ header {
     background-color: #000;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close span:first-of-type {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close span:first-of-type,
+.sell-wrapper .sell-parameters .select .modal-options-wrapper .options-block .modal-options-close span:first-of-type {
     transform: rotateZ(45deg);
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close span:last-of-type {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close span:last-of-type,
+.sell-wrapper .sell-parameters .select .modal-options-wrapper .options-block .modal-options-close span:last-of-type {
     transform: rotateZ(-45deg);
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close:hover span {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .modal-options-close:hover span,
+.sell-wrapper .sell-parameters .select .modal-options-wrapper .options-block .modal-options-close:hover span {
     background-color: red;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content,
+.sell-wrapper .sell-parameters .select .modal-options-wrapper .options-block .options-content{
     margin: 0 auto;
     position: absolute;
     top: 20%;
@@ -345,24 +369,38 @@ header {
     padding-top: 235px;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content {
+.choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content,
+.sell-wrapper .sell-parameters .select .modal-options-wrapper .options-block .options-content {
     padding-top: 125px;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .option {
+.choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .option,
+.sell-wrapper .sell-parameters .select .modal-options-wrapper .options-block .options-content .option {
     padding-left: 140px;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .option {
-    cursor: pointer;
+.sell-wrapper .sell-parameters .select .modal-options-wrapper .options-block .options-content .modal-options .select {
+    cursor: none;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .option span {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .option,
+.sell-wrapper .sell-parameters .select .modal-options-wrapper .options-block .options-content .modal-options .options .option {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 50px;
+    color: #212529;
+}
+
+.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .option span,
+.sell-wrapper .sell-parameters .select .modal-options-wrapper .options-block .options-content .modal-options .options .option span {
     padding-bottom: 2px;
     border-bottom: 1px solid #CCC;
+    font-weight: 600;
+    font-size: 50px;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .option .color {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .option .color,
+.sell-wrapper .sell-parameters .select .modal-options-wrapper .options-block .options-content .modal-options .options .option .color {
     display: block;
     width: 10%;
     height: 1.2em;
@@ -370,24 +408,30 @@ header {
     margin-right: 22%;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options div:not(.selected):hover {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options div:not(.selected):hover,
+.sell-wrapper .sell-parameters .select .modal-options-wrapper .options-block .options-content .modal-options .options div:not(.selected):hover {
     color: #EDB947;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected,
+.sell-wrapper .sell-parameters .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected {
     color: #B1B1B1;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected span {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected span,
+.sell-wrapper .sell-parameters .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected span {
     border-bottom: none;
     margin-right: 12px;
+    font-weight: 600;
+    font-size: 50px;
 }
 
 .choice-block .choice-content .select .modal-options-wrapper.sell .options-block .options-content .modal-options .options .selected span {
     margin-right: 0;
 }
 
-.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
+.choice-block .choice-content .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up,
+.sell-wrapper .sell-parameters .select .modal-options-wrapper .options-block .options-content .modal-options .options .selected .fa-sort-up {
     font-size: 40px;
     margin: 16px 0 0 5px;
 }
@@ -480,10 +524,14 @@ header {
 }
 
 .sell-wrapper .sell-parameters .select {
-    cursor: pointer;
+/*    cursor: pointer;*/
     padding-bottom: 1px;
     margin-top: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sell-wrapper .sell-parameters .select .selected {
+    cursor: pointer;
 }
 
 .sell-wrapper .sell-parameters .select .chosen:hover {
@@ -2623,12 +2671,11 @@ input[type=number] {
 .home-content footer {
     bottom: 0;
     width: 100%;
-    margin-top: -60px;
+    margin-top: 120px;
     padding-top: 30px;
     padding-bottom: 30px;
     background: #000;
     border-radius: 50px 50px 0 0;
-    box-shadow: 0px 0px 25px 0px #ccc;
 }
 
 .home-content h2.heading {
@@ -2889,6 +2936,11 @@ footer {
     z-index: 999999;
 }
 
+footer .container {
+    width: 100%;
+    max-width: calc(100% - 140px);
+}
+
 
 footer .soc-icons {
     display: flex;
@@ -2899,18 +2951,22 @@ footer .soc-icons a {
     width: 52px;
     height: 52px;
     margin: 0 10px;
+    transition:;
 }
 
 .insta-footer {
     background: url("/images/footer-insta.png") no-repeat top center;
+    background-size: contain;
 }
 
 .vk-footer {
-    background: url("/images/footer-vk.png") no-repeat top center;
+    background: url("/images/vk-1.svg") no-repeat top center;
+    background-size: contain;
 }
 
 .fb-footer {
-    background: url("/images/footer-fb.png") no-repeat top center;
+    background: url("/images/fb-1.svg") no-repeat top center;
+    background-size: contain;
 }
 
 
@@ -2919,11 +2975,11 @@ footer .soc-icons a {
 }
 
 .vk-footer:hover {
-    background: url("/images/vk-hover.png") no-repeat top center;
+    background: url("/images/vk-hover-1.svg") no-repeat top center;
 }
 
 .fb-footer:hover {
-    background: url("/images/fb-hover.png") no-repeat top center;
+    background: url("/images/fb-hover-1.svg") no-repeat top center;
 }
 
 footer .footer-links {
@@ -3198,7 +3254,7 @@ button.ml-1 {
 }
 
 .chosen svg {
-    color: #10B6EB;
+    color: #EDB947;
     margin-left: 5px;
 }
 
@@ -3221,7 +3277,7 @@ button.ml-1 {
     font-family: inherit;
     font-size: 1rem;
     font-weight: 500;
-    border-bottom: 1px solid #10b6eb40;
+    border-bottom: 1px solid #EDB947;
 }
 
 .select .select-arrow {
@@ -3232,7 +3288,7 @@ button.ml-1 {
     right: -15px;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    border-top: 6px solid #10B6EB;
+    border-top: 6px solid #EDB947;
 }
 
 .chosen-container.index span {
@@ -3971,13 +4027,22 @@ main#main.gold585 {
     .home-content .content-wrapper {
         margin: 0 auto;
         width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
         flex: 0 0 100%;
         max-width: 100%;
         font-weight: 500;
         font-size: 14px;
         line-height: 20px;
         color: #000000;
+/*
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -o-flex-direction: column;
         flex-direction: column;
+*/
         justify-content: center;
         align-items: center;
     }

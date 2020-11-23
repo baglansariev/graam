@@ -13,7 +13,7 @@
         {
             return new Client([
                 'base_uri' => $base_uri,
-                'timeout' => 7,
+                'timeout' => 10,
             ]);
         }
 

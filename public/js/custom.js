@@ -395,12 +395,14 @@
                 }
 
                 $('.chosen, .left-chosen').click(function () {
+                    $('header').css('z-index', '1');
                     modalOptionsShow('material');
                 });
                 $('.main-sell-trigger').click(function () {
                     modalOptionsShow('sell');
                 });
                 $('.modal-options-close').click(function () {
+                    $('header').css('z-index', '99');
                     modalOptionsHide();
                 });
                 $('.login-btn').click(function (e) {

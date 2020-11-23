@@ -11,8 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('font-awesome/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/feedback-form.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}?<?=time();?>">
+    <link rel="stylesheet" href="{{ asset('css/feedback-form.css') }}?<?=time();?>">
     <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('js/jquery.coockie.js') }}"></script>
     <script src="{{ asset('font-awesome/js/all.min.js') }}"></script>
