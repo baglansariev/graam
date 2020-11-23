@@ -196,6 +196,9 @@
                     $('.main-logo .logo-title').animate({
                         fontSize: 32 + 'px',
                     }, 600);
+                    $('.header-logo .main-logo .img_front_logo').animate({
+                        width: 50 + '%',
+                    }, 600);
                     $('.main-logo .logo-subtitle').animate({
                         fontSize: 15 + 'px',
                         width: 300 + 'px',

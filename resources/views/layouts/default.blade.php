@@ -77,7 +77,8 @@
                         <div class="col-sm-4 col-6 d-flex justify-content-start">
                             <div class="sticky-header-logo">
                                 <a href="/" class="sticky-logo d-flex justify-content-center align-items-center flex-column">
-                                    <p class="logo-title"><span>G</span><i>RAAM</i></p>
+                                    <img src="{{ asset('images/graam_rus_black.png') }}" class="img_sticky_logo" alt="">
+{{--                                    <p class="logo-title"><span>G</span><i>RAAM</i></p>--}}
                                 </a>
                             </div>
                         </div>
@@ -131,7 +132,8 @@
 
                             <div class="header-logo">
                                 <a href="/" class="main-logo justify-content-center align-items-center flex-column">
-                                    <p class="logo-title"><span>G</span>RAAM</p>
+{{--                                    <p class="logo-title"><span>G</span>RAAM</p>--}}
+                                    <img src="{{ asset('images/graam_rus_white.png') }}" class="img_front_logo" alt="">
                                     <p class="logo-subtitle text-center"><span>Один грамм,</span> <span>много возможностей</span></p>
                                 </a>
                             </div>

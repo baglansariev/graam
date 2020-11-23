@@ -158,7 +158,7 @@ header {
 
 .header-logo .main-logo img,
 .header-logo .main-logo-personal img {
-    width: 120px;
+    width: 200px;
 }
 
 .header-logo .main-logo p {
@@ -230,6 +230,17 @@ header {
 .header-actions a:hover {
     text-decoration: none;
     border-bottom: 1px solid #FFF;
+}
+.header-logo .main-logo .img_front_logo {
+    width: 70%;
+    margin-bottom: 20px;
+}
+.img_sticky_logo {
+    width: 50%;
+}
+.sticky-header-logo {
+    display: flex;
+    align-items: center;
 }
 
 .wrapper {
@@ -1268,6 +1279,9 @@ input[type=number] {
     .sell-wrapper .sell-block {
         padding: 0;
     }
+    .img_sticky_logo {
+        width: 120px;
+    }
 }
 @media screen and (max-width: 1097px) {
     .header-logo .main-logo .logo-subtitle {
@@ -1592,6 +1606,9 @@ input[type=number] {
     .header-logo .main-logo .logo-subtitle {
         font-size: 17px;
     }
+    .header-logo .main-logo .img_front_logo {
+        width: 50%;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -1784,8 +1801,8 @@ input[type=number] {
 .personal .header-logo .main-logo-personal .logo-subtitle {
     color: #000;
     font-size: 15px;
-    margin-left: -20px;
-    margin-top: -8px;
+    /*margin-left: -20px;*/
+    /*margin-top: -8px;*/
 }
 
 .personal .header-logo .main-logo-personal .logo-title span::after {
