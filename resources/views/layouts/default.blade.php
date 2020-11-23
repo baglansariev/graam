@@ -133,7 +133,7 @@
                             <div class="header-logo">
                                 <a href="/" class="main-logo justify-content-center align-items-center flex-column">
 {{--                                    <p class="logo-title"><span>G</span>RAAM</p>--}}
-                                    <img src="{{ asset('images/graam_rus_white.png') }}" class="img_front_logo" alt="">
+                                    <img src="{{ asset('images/graam_rus_white2.png') }}" class="img_front_logo" alt="">
                                     <p class="logo-subtitle text-center"><span>Один грамм,</span> <span>много возможностей</span></p>
                                 </a>
                             </div>
