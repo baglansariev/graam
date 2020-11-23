@@ -590,6 +590,7 @@
                         $('.lombard-cards').hide();
                         $('.lombard-switcher').hide();
                         $('.factory-title').show();
+                        $('.factory-cards').css('min-height', 580 + 'px');
                         $('.factory-cards').show();
                         $('.factory-cards .card').hide();
                         $('.pudm-card').show();
@@ -600,6 +601,7 @@
                         $('.lombard-cards').show();
                         $('.lombard-switcher').show();
                         $('.factory-title').show();
+                        $('.factory-cards').css('min-height', 580 + 'px');
                         $('.factory-cards .card').show();
                         $('.factory-cards').show();
                     }
@@ -610,6 +612,7 @@
                         $('.lombard-title').show();
                         $('.lombard-cards').show();
                         $('.lombard-switcher').show();
+                        $('.factory-cards').css('min-height', 0);
                         $('.factory-title').hide();
                         $('.factory-cards').hide();
                         $('.factory-cards .card').hide();
