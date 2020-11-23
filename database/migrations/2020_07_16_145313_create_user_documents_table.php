@@ -16,10 +16,11 @@ class CreateUserDocumentsTable extends Migration
         Schema::create('user_documents', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
-            $table->integer('crm_id');
+            $table->integer('crm_id')->nullable();
             $table->integer('category_id');
             $table->string('name')->nullable();
             $table->string('size')->nullable();
+            $table->string('path')->nullable();
             $table->timestamps();
         });
     }
