@@ -15,9 +15,9 @@
                         <div class="option d-flex justify-content-between align-items-center">
                             <span>купить</span>
                         </div>
-                        <div class="option d-flex justify-content-between align-items-center">
-                            <span>займ за</span>
-                        </div>
+{{--                        <div class="option d-flex justify-content-between align-items-center">--}}
+{{--                            <span>займ за</span>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>

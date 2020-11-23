@@ -334,6 +334,6 @@
 </div>
 <!--  </div>-->
 
-
+<a href="#top" type="submit" class="sell-btn">Начать продавать</a>
 
 <!--</div>-->
