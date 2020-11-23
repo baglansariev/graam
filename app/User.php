@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'manager_id'
+        'name', 'email', 'password', 'manager_id', 'user_id'
     ];
 
     /**
@@ -71,5 +71,10 @@ class User extends Authenticatable
         $data = $this->getResponseFromClient('GET', '/contractor/get-doc/' . $doc_id);
 
         return json_decode($data);
+    }
+
+    public function role()
+    {
+        return $this->belongsTo('App\Models\Role');
     }
 }

@@ -1,7 +1,7 @@
 @if (!empty($offers))
     @foreach($offers as $offer)
         @if (!in_array($loop->iteration, [2, 3, 6]))
-        <div class="card animated animatedFadeInUp @if(isset($offer['status']) && !$offer['status']) inactive @endif">
+        <div class="card @if($loop->iteration == 1) pudm-card @endif animated animatedFadeInUp @if(isset($offer['status']) && !$offer['status']) inactive @endif">
             <div class="card-wrapper">
                 <div class="card-title d-flex align-items-center">
                     <img src="{{ asset($offer['image']) }}" alt="" class="card-logo">
@@ -15,23 +15,41 @@
 {{--                    </div>--}}
                     <div class="general-price">
                         @if ($loop->iteration !== 6)
-                            @if (isset($offer['price_585']) && $metal_name !== 'silver')
-                                <div class="gen-price d-flex justify-content-between">
-                                    <span>Цена в 585:</span>
-                                    <span class="price_585">{{ number_format($offer['price_585'], 0, '', ' ') }} ₽</span>
+                            @if(isset($offer['status']) && !$offer['status'])
+                                <div class="lombard-price d-flex align-items-end">
+                                    <span class="message text-center">{{ $offer['message'] }}</span>
                                 </div>
-                            @endif
-                            @if (isset($offer['price_999']))
-                                <div class="gen-price d-flex justify-content-between">
-                                    <span>Цена в 999:</span>
-                                    <span class="price_999">{{ number_format($offer['price_999'], 0, '', ' ') }} ₽</span>
-                                </div>
-                            @endif
-                            @if (isset($offer['price_925']) && $metal_name == 'silver')
-                                <div class="gen-price d-flex justify-content-between">
-                                    <span>Цена в 925:</span>
-                                    <span class="price_925">{{ number_format($offer['price_925'], 0, '', ' ') }} ₽</span>
-                                </div>
+                            @else
+                                @if (isset($offer['price_585']) && $metal_name !== 'silver')
+    {{--                                <div class="gen-price d-flex justify-content-between">--}}
+    {{--                                    <span>Цена в 585:</span>--}}
+    {{--                                    <span class="price_585">{{ number_format($offer['price_585'], 0, '', ' ') }} ₽</span>--}}
+    {{--                                </div>--}}
+                                    <div class="lombard-price d-flex align-items-end">
+                                        <span class="price_585 mr-3">{{ number_format($offer['price_585'], 0, '', ' ') }} ₽</span>
+                                        <span>585 пр.</span>
+                                    </div>
+                                @endif
+                                @if (isset($offer['price_999']))
+    {{--                                <div class="gen-price d-flex justify-content-between">--}}
+    {{--                                    <span>Цена в 999:</span>--}}
+    {{--                                    <span class="price_999">{{ number_format($offer['price_999'], 0, '', ' ') }} ₽</span>--}}
+    {{--                                </div>--}}
+                                        <div class="lombard-price d-flex align-items-end">
+                                            <span class="price_999 mr-3">{{ number_format($offer['price_999'], 0, '', ' ') }} ₽</span>
+                                            <span>999 пр.</span>
+                                        </div>
+                                @endif
+                                @if (isset($offer['price_925']) && $metal_name == 'silver')
+    {{--                                <div class="gen-price d-flex justify-content-between">--}}
+    {{--                                    <span>Цена в 925:</span>--}}
+    {{--                                    <span class="price_925">{{ number_format($offer['price_925'], 0, '', ' ') }} ₽</span>--}}
+    {{--                                </div>--}}
+                                        <div class="lombard-price d-flex align-items-end">
+                                            <span class="price_925 mr-3">{{ number_format($offer['price_925'], 0, '', ' ') }} ₽</span>
+                                            <span>925 пр.</span>
+                                        </div>
+                                @endif
                             @endif
                         @endif
                     </div>
@@ -44,7 +62,7 @@
                         <p><a href="tel:+79066662701">{{ $offer['phone'] }}</a></p>
                     </div>
                     <div class="apply text-left">
-                        @if ($loop->iteration !== 2 && $loop->iteration !== 3)
+                        @if ($loop->iteration !== 2 && $loop->iteration !== 3 && (isset($offer['status']) && $offer['status']))
                             <button type="button" class="sell-app d-flex" @if($loop->index == 4 || $loop->index == 5) style="opacity: 0" disabled @endif>Оставить заявку</button>
                         @endif
                     </div>

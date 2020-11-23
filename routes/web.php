@@ -48,11 +48,14 @@ Route::middleware('auth')->group(function() {
             Route::resource('deals', 'User\DealController');
             Route::put('update/{id}', 'User\UserController@update')->name('user.update');
         });
+
+        Route::resource('pawnshop', 'Helpers\PawnshopController');
     });
 });
 
 Route::prefix('ajax')->group(function () {
     Route::get('offers/product/{name}/{type}/{weight}/{sell_type}', 'Ajax\OffersController@getOffers');
+    Route::get('pawnshops/{material}', 'Ajax\OffersController@getPawnshops');
     Route::get('get-gold-rate', 'Ajax\MetalRateController@getGoldRate');
 });
 Route::prefix('form/send')->group(function () {
@@ -60,3 +63,4 @@ Route::prefix('form/send')->group(function () {
     Route::get('/own-price', 'Modules\FeedbackFormController@sendOwnPrice')->name('own-price');
     Route::get('/join-to-deal', 'Modules\FeedbackFormController@joinToDeal')->name('join-to-deal');
 });
+

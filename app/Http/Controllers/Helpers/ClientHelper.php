@@ -24,7 +24,8 @@
 
             if (request()->ip() == '127.0.0.1' || request()->getHost() == '5.101.119.123') {
                 $this->crm_client_api_url = 'http://5.101.119.123:8091/api';
-                $this->api_token = 'jM4E53HiO03uSLb19YDwqA1RRUtpfXwN6jP1STm1EZTRITXdpRbHnRBOFuxE4ICOgLEcywicOvMyopDm';
+//                $this->api_token = 'jM4E53HiO03uSLb19YDwqA1RRUtpfXwN6jP1STm1EZTRITXdpRbHnRBOFuxE4ICOgLEcywicOvMyopDm';
+                $this->api_token = 'g5dJ1MGVpfnqzWInj59byLyhF4yZECkKSfJoJLCoxIT5tqWHmKnD7G29kivlp1qtgRRSjPgyYEK4Mmcj';
             }
         }
         public function getResponseFromTestClient($method, $action, $params = [])

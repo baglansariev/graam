@@ -94,7 +94,7 @@ class DocumentsController extends Controller
             $document = Auth::user()->documents()->create([
                 'category_id'       => $request->input('doc_category'),
                 'name'              => $fileOriginalName,
-                'path'              => '',
+//                'path'              => '',
                 'size'              => $file->getSize(),
             ]);
 

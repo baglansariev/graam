@@ -71,7 +71,7 @@
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between align-items-center">
-                                    <span>Личный кабинет</span>
+                                    <span>{{ $title ?? '' }}</span>
 
                                     @auth
                                         <div class="dropdown show user-menu">
@@ -80,12 +80,12 @@
                                             </a>
 
                                             <ul class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="dropdownMenuLink">
-                                                <li class="nav-item">
-                                                    <a href="{{ route('home') }}" class="dropdown-item">Личный кабинет</a>
-                                                    <a href="{{ route('details.index') }}" class="dropdown-item">Личные данные</a>
-                                                    <a href="{{ route('documents.index') }}" class="dropdown-item">Документы</a>
-                                                    <a href="{{ route('deals.index') }}" class="dropdown-item">Сделки</a>
-                                                </li>
+{{--                                                <li class="nav-item">--}}
+{{--                                                    <a href="{{ route('home') }}" class="dropdown-item">Личный кабинет</a>--}}
+{{--                                                    <a href="{{ route('details.index') }}" class="dropdown-item">Личные данные</a>--}}
+{{--                                                    <a href="{{ route('documents.index') }}" class="dropdown-item">Документы</a>--}}
+{{--                                                    <a href="{{ route('deals.index') }}" class="dropdown-item">Сделки</a>--}}
+{{--                                                </li>--}}
                                                 <li class="nav-item">
                                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                                        onclick="event.preventDefault();
@@ -113,10 +113,39 @@
 
     </div>
 
+    <style>
+        .image_edit img {
+            width: 100px;
+            height: auto;
+        }
+        #img_change {
+            outline: none;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+            margin-bottom: 10px;
+        }
+
+    </style>
+
     <script>
-        // $('.user-menu').click(function () {
-        //     $('.user-dropdown').show();
-        // });
+        $(function () {
+            $('#img_change').click(function () {
+                var imageEdit = $('.image_edit');
+
+                if (imageEdit.children('#image').length === 0) {
+                    imageEdit.append('<input type="file" id="image" name="image">');
+                }
+
+                $('#image').change(function () {
+                    var reader = new FileReader();
+                    reader.addEventListener('load', function (e) {
+                        $('#img_change img').attr('src', e.target.result);
+                    });
+                    reader.readAsDataURL($('#image').prop('files')[0]);
+                });
+            });
+        });
     </script>
 </body>
 </html>

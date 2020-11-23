@@ -178,17 +178,30 @@
                     }
                 }, 10);
                 setTimeout(function () {
-                    $('.main-logo').animate({
-                        left: 2 + '%',
+                    let logoAnimation = {
                         top: 0,
-                        marginTop: 20 + 'px'
-                    }, 600);
+                        marginTop: 0,
+                    };
+                    if (window.innerWidth <= 767 && window.innerWidth >= 415) {
+                        logoAnimation.left = -10 + 'vw';
+                    }
+                    else if (window.innerWidth < 415 && window.innerWidth >= 351) {
+                        logoAnimation.left = -17 + 'vw';
+                    }
+                    else if (window.innerWidth < 351) {
+                        logoAnimation.left = -22 + 'vw';
+                    }
+                    $('.main-logo').animate(logoAnimation, 600);
+
                     $('.main-logo .logo-title').animate({
                         fontSize: 32 + 'px',
-                        marginLeft: 20 + 'px'
+                    }, 600);
+                    $('.header-logo .main-logo .img_front_logo').animate({
+                        width: 50 + '%',
                     }, 600);
                     $('.main-logo .logo-subtitle').animate({
-                        fontSize: 15 + 'px'
+                        fontSize: 15 + 'px',
+                        width: 300 + 'px',
                     }, 600);
                     $('.main-block').animate({
                         opacity: 0
@@ -202,7 +215,14 @@
                         marginTop: 120 + 'px'
                     }, 600).animate({
                         marginTop: 140 + 'px'
-                    }, 200);
+                    }, 200, function () {
+                        $('.header-actions').animate({
+                            opacity: 1
+                        });
+                        $('.head-currencies').animate({
+                            opacity: 1
+                        });
+                    });
                     $('.choice-block.privacy').animate({
                         marginTop: 120 + 'px'
                     }, 600).animate({
@@ -222,6 +242,16 @@
                         top: 120 + 'px'
                     }, 200);
                 }, 300);
+
+                let lombardSwitcherButton = $('.lombard-switcher button');
+                lombardSwitcherButton.click(function () {
+                    lombardSwitcherButton.removeClass('active');
+                    lombardSwitcherButton.each(function (key, elem) {
+                        $( $(elem).data('switch') ).hide();
+                    });
+                    $( $(this).data('switch') ).show();
+                    $(this).addClass('active');
+                });
 
                 if (getCookie('agreed') == undefined){
                     setTimeout(function () {
@@ -350,9 +380,13 @@
                     let titleWord = 'продажу';
                     let action = 'sell';
 
-                    if ($('.sell-trigger').text() == 'купить') {
+                    if ($('.sell-trigger').text() == 'купить' || $('.main-sell-trigger').text() == 'купить') {
                         titleWord = 'покупку';
                         action = 'buy';
+                    }
+                    else if ($('.sell-trigger').text() == 'займ за' || $('.main-sell-trigger').text() == 'займ за') {
+                        titleWord = 'займ за';
+                        action = 'loan';
                     }
 
 
@@ -394,11 +428,26 @@
                     }
                 }
 
+                $('.sell-wrapper').on('scroll', function (e) {
+                    if ($(this).scrollTop() > 120) {
+                        $('.sell-wrapper').css('z-index', '99');
+                    }
+                    else {
+                        $('.sell-wrapper').css('z-index', '11');
+                    }
+                    if ($(this).scrollTop() > 290) {
+                        $('.sticky-header').css('display', 'flex');
+                    }
+                    else {
+                        $('.sticky-header').css('display', 'none');
+                    }
+                });
+
                 $('.chosen, .left-chosen').click(function () {
                     $('header').css('z-index', '1');
                     modalOptionsShow('material');
                 });
-                $('.main-sell-trigger').click(function () {
+                $('.main-sell-trigger, .parameter-block .sell-trigger').click(function () {
                     modalOptionsShow('sell');
                 });
                 $('.modal-options-close').click(function () {
@@ -536,6 +585,42 @@
                     modalOptionsHide();
                 });
 
+                function cardsToggle(action) {
+                    if (action === 'купить' || action === 'buy' || action === 'покупку') {
+
+                        $('.lombard-title').hide();
+                        $('.lombard-cards').hide();
+                        $('.lombard-switcher').hide();
+                        $('.factory-title').show();
+                        $('.factory-cards').css('min-height', 580 + 'px');
+                        $('.factory-cards').show();
+                        $('.factory-cards .card').hide();
+                        $('.pudm-card').show();
+                    }
+                    else if (action === 'продать' || action === 'sell' || action === 'продажу') {
+
+                        $('.lombard-title').show();
+                        $('.lombard-cards').show();
+                        $('.lombard-switcher').show();
+                        $('.factory-title').show();
+                        $('.factory-cards').css('min-height', 580 + 'px');
+                        $('.factory-cards .card').show();
+                        $('.factory-cards').show();
+                    }
+                    // else if (action === 'займ за' || action === 'loan') {
+                    else {
+
+                        // $('#sell').text('получить займ');
+                        $('.lombard-title').show();
+                        $('.lombard-cards').show();
+                        $('.lombard-switcher').show();
+                        $('.factory-cards').css('min-height', 0);
+                        $('.factory-title').hide();
+                        $('.factory-cards').hide();
+                        $('.factory-cards .card').hide();
+                    }
+                }
+
                 $('.sell .options .option').not('.selected').click(function () {
                     let optionText = $(this).find('span').text();
                     let selectedOption = $('.sell .options .option.selected span');
@@ -543,7 +628,12 @@
 
                     $('.main-sell-trigger').text(optionText);
                     selectedOption.text(optionText);
-                    $('#sell').text(optionText);
+                    if (optionText == 'займ за') {
+                        $('#sell').text('Получить займ');
+                    }
+                    else {
+                        $('#sell').text(optionText);
+                    }
                     $('.sell-trigger').text(optionText);
                     $(this).find('span').text(selectedOptionText);
 
@@ -558,7 +648,8 @@
                         if (chosenMaterial.data('type') == '999' && chosenMaterial.data('name') == 'gold') {
                             chosenMaterial.text('золота 999,9');
                         }
-                    } else {
+                    }
+                    else {
                         $('.material .options .option').each(function (elem) {
                             if ($(this).data('type') == '999' && $(this).data('name') == 'gold') {
                                 $(this).find('span').text('золота 999');
@@ -569,6 +660,7 @@
                             $('.material .option.selected span').text('золота 999');
                         }
                     }
+                    getCardsByAjax();
 
                     modalOptionsHide();
                 });
@@ -598,7 +690,7 @@
 
                 $('#sell').click(function () {
                     $('.choice-block').animate({
-                        marginTop: 150 + '%'
+                        marginTop: 120 + 'vh'
                     }, 600);
 
                     setTimeout(function () {
@@ -612,18 +704,13 @@
                             marginTop: 142 + 'px'
                         }, 300);
                     }, 350);
-                    setTimeout(function () {
-                        $('.sell-parameters').animate({
-                            opacity: 1
-                        }, 400);
-                    }, 1200);
                 });
+                getGoldRate();
                 $('.sell-weight').change(function () {
                     var inputVal = $(this).val();
                     $('.sell-weight').val(inputVal);
                 });
                 $('#sell').click(function () {
-                    getGoldRate();
                     getCardsByAjax();
                 });
                 $('.param-weight').on('change', function () {
@@ -742,27 +829,42 @@
                         type: 'GET',
                         dataType: 'html',
                         success: function (result) {
-                            $('.sell-cards').html(result);
+                            $('.sell-cards.factory-cards').html(result);
 
-                            let delay = 0.3;
-                            let card = $('.card');
+                            $.ajax({
+                               url: '/ajax/pawnshops/' + params.name,
+                               type: 'GET',
+                               dataType: 'html',
+                                success: function (response) {
+                                    $('#lombardCards').html(response);
 
-                            card.each(function () {
-                                $(this).css({
-                                    'animation-delay': delay + 's',
-                                    '-webkit-animation-delay': delay + 's',
-                                    '-moz-animation-delay': delay + 's',
-                                });
-                                $(this).removeClass('fadeInUp');
+                                    let delay = 0.3;
+                                    let card = $('.card');
 
-                                delay += 0.3;
+                                    card.each(function () {
+                                        $(this).css({
+                                            'animation-delay': delay + 's',
+                                            '-webkit-animation-delay': delay + 's',
+                                            '-moz-animation-delay': delay + 's',
+                                        });
+                                        $(this).removeClass('fadeInUp');
+
+                                        delay += 0.3;
+                                    });
+
+                                    setTimeout(function () {
+                                        card.each(function () {
+                                            $(this).addClass('fadeInUp');
+                                        });
+                                    }, 200);
+                                },
+                                error: function (response) {
+                                    console.log(response);
+                                }
                             });
 
-                            setTimeout(function () {
-                                card.each(function () {
-                                    $(this).addClass('fadeInUp');
-                                });
-                            }, 600);
+                            cardsToggle(params.titleWord);
+
 
                             $('.sell-app').click(function () {
                                 setModalPopupParams($(this));
@@ -814,7 +916,7 @@
                     }
                 });
                 $('#sell').click(function () {
-                    $('footer').css('display', 'none');
+                    $('.main-footer').css('display', 'none');
                 });
 
                 function infinityScroll() {

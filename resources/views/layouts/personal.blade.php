@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ $title ?? 'GRAAM' }}</title>
+    <title>{{ $title ?? 'ГРААМ' }}</title>
     <link rel="shortcut icon" href="{{ asset('images/template/favicon.ico') }}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
@@ -184,7 +184,8 @@
                     <header>
                         <div class="header-logo">
                             <a href="/" class="main-logo-personal d-flex justify-content-center align-items-center flex-column">
-                                <p class="logo-title"><span>G</span>RAAM</p>
+                                <img src="{{ asset('images/graam_rus_black.png') }}" class="img_personal_logo" alt="">
+{{--                                <p class="logo-title"><span>G</span>RAAM</p>--}}
                                 <p class="logo-subtitle text-center" style="line-height: 1.1">Один грамм, <br> много возможностей</p>
                             </a>
                         </div>
