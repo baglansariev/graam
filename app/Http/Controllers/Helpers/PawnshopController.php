@@ -5,10 +5,17 @@ namespace App\Http\Controllers\Helpers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pawnshop;
+use Illuminate\Support\Facades\Auth;
 
 class PawnshopController extends Controller
 {
     public $image_dir = 'images/pawnshops/';
+
+    public function __construct()
+    {
+        $this->middleware('admin_role');
+    }
+
     /**
      * Display a listing of the resource.
      *
