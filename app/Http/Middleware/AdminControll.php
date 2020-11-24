@@ -16,7 +16,7 @@ class AdminControll
      */
     public function handle($request, Closure $next)
     {
-        if (empty(Auth::user()->role) || !isset(Auth::user()->role->name) || Auth::user()->role->name !== 'Администратор') {
+        if (empty(Auth::user()->role) || !isset(Auth::user()->role->name) || !isset(Auth::user()->role) || Auth::user()->role->name !== 'Администратор') {
             return redirect('/');
         }
         return $next($request);
