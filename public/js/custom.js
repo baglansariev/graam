@@ -599,12 +599,9 @@
                     }
                     else if (action === 'продать' || action === 'sell' || action === 'продажу') {
 
-                        // $('.lombard-title').show();
-                        // $('.lombard-cards').show();
-                        // $('.lombard-switcher').show();
-                        $('.lombard-title').hide();
-                        $('.lombard-cards').hide();
-                        $('.lombard-switcher').hide();
+                        $('.lombard-title').show();
+                        $('.lombard-cards').show();
+                        $('.lombard-switcher').show();
 
                         $('.factory-title').show();
                         $('.factory-cards').css('min-height', 580 + 'px');
@@ -612,16 +609,16 @@
                         $('.factory-cards').show();
                     }
                     // else if (action === 'займ за' || action === 'loan') {
-                    // else {
-                    //
-                    //     $('.lombard-title').show();
-                    //     $('.lombard-cards').show();
-                    //     $('.lombard-switcher').show();
-                    //     $('.factory-cards').css('min-height', 0);
-                    //     $('.factory-title').hide();
-                    //     $('.factory-cards').hide();
-                    //     $('.factory-cards .card').hide();
-                    // }
+                    else {
+
+                        $('.lombard-title').show();
+                        $('.lombard-cards').show();
+                        $('.lombard-switcher').show();
+                        $('.factory-cards').css('min-height', 0);
+                        $('.factory-title').hide();
+                        $('.factory-cards').hide();
+                        $('.factory-cards .card').hide();
+                    }
                 }
 
                 $('.sell .options .option').not('.selected').click(function () {
@@ -839,7 +836,7 @@
                                type: 'GET',
                                dataType: 'html',
                                 success: function (response) {
-                                    // $('#lombardCards').html(response);
+                                    $('#lombardCards').html(response);
 
                                     let delay = 0.3;
                                     let card = $('.card');

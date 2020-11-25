@@ -38,7 +38,7 @@
                 <div class="action d-flex justify-content-center align-items-center">
                     <button type="button" id="sell">Продать</button>
                 </div>
-                <a class="why-link" href="#hp-content">Почему у нас?<img src="/images/why-link-bg2.svg" alt=""></a>
+                <a class="why-link" href="#hp-content">Почему Граам?<img src="/images/why-link-bg2.svg" alt=""></a>
                 
             </div>
             @component('home.content')@endcomponent
