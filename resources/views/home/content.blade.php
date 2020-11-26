@@ -117,7 +117,6 @@
                     <div class="question">
                         <span class="quest-text">Какие есть специальные перевозчики?</span>
                         <div class="answer">
-                            <span>Всего на сегодняшний день в списке, утвержденном Президентом РФ, 12 заводов, которые имеют право делать аффинаж золотосодержащего сырья. Мы выделим наиболее активных переработчиков ювелирного сырья.</span>
                             <ul style="list-style-type: none">
                                 <li>- <a href="https://www.brinks.ru/">БРИНКС</a></li>
                                 <li>- <a href="https://www.cccb.ru/">СпецСвязь</a></li>
