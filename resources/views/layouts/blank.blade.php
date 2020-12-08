@@ -46,10 +46,10 @@
     @endif
 </head>
 <body>
-<main id="main" class="white personal">   
-     
+<main id="main" class="white personal">
+
     @yield('content')
-                            
+
 </main>
 <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/feedback-form.js') }}"></script>

@@ -92,6 +92,7 @@ $(function () {
             hiddenPrice.val(params.price);
         }
     }
+    $('.select2').select2({theme: 'bootstrap4'})
 
     $('.chosen, .left-chosen').click(function () {
         modalOptionsShow('material');
@@ -138,7 +139,7 @@ $(function () {
 
         modalOptionsHide();
     });
-    
+
     $('.material .options .option').not('.selected').click(function () {
 
         let main        = $('main');
@@ -215,8 +216,8 @@ $(function () {
         let formData = $('.modal-own-price .popup-form').serialize();
         popupAjax('/form/send/own-price', formData);
     });
-    
-    
+
+
     function getGoldRate() {
         $.ajax({
             url: '/ajax/get-gold-rate',

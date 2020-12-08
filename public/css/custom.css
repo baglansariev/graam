@@ -55,6 +55,9 @@ main {
     opacity: 0;
 }
 
+.city-label{
+    margin-left: 1.4rem;
+}
 
 header {
     display: flex;
@@ -2358,9 +2361,9 @@ input[type=number] {
 }
 
 .modal-popup.reg-form .popup-wrapper .popup-content {
-    height: 100vh;
+    /*height: 100vh;*/
     align-items: center;
-    margin-top: 0 !important;
+    margin-top: 50px !important;
 }
 
 .modal-popup.reg-form .popup-wrapper .popup-content .content .popup-form {
@@ -2372,6 +2375,13 @@ input[type=number] {
 .modal-popup.reg-form,
 .modal-popup.login-form {
     display: block;
+}
+
+.price-input-container .form-group{
+    width: 100%;
+}
+.price-input-container .form-group .form-control{
+    width: 100%;
 }
 
 .login-form .title h3 {
@@ -3896,13 +3906,13 @@ main#main.gold585 {
     #coo-popup .popup {
         max-width: 90%;
          justify-content: center;
-    }    
-    
+    }
+
     #coo-popup .popup .coo-close {
         margin-top: 20px;
 }
 
-   
+
 
     /*
     .select .modal-options-wrapper .options-block .options-content {

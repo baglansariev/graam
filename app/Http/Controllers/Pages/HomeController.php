@@ -234,9 +234,15 @@ class HomeController extends Controller
         setcookie('manager', $id, time() + 365 * 3 * 24 * 60 * 60, '/');
         return redirect('/');
     }
-    
-    public function getPrivacyPage()    
-    { 
-        return view('pages.privacy-policy');
+
+    public function getPrivacyPage()
+    {
+        $data = [
+            'currency'          => (new CurrencyController)->getRates(),
+            'sell_form'         => (new FeedbackFormController)->getSellAppForm(),
+            'own_price_form'    => (new FeedbackFormController)->getOwnPriceAppForm(),
+            'pawnshops'         => Pawnshop::all(),
+        ];
+        return view('pages.privacy-policy',$data);
     }
 }

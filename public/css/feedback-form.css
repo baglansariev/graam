@@ -98,7 +98,8 @@
     width: 100%;
 }
 
-.modal-popup .popup-wrapper .popup-content .content .popup-form input {
+.modal-popup .popup-wrapper .popup-content .content .popup-form input,
+.modal-popup .popup-wrapper .popup-content .content .popup-form select {
     padding: 13px 20px;
     margin-bottom: 20px;
     border: 1px solid #CCC;

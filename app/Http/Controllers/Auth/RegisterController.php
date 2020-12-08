@@ -54,14 +54,17 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        $validator = Validator::make($data, [
             'name' => ['string', 'max:255'],
-            'phone' => ['required', 'string', 'max:255'],
+            'phone' => ['unique:users', 'UniquePhoneCRM', 'required', 'string', 'max:255'],
+            'city' => ['required', 'string', 'max:255'],
             'entity_type' => ['required', 'max:1'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
+        return $validator;
     }
+
 
     /**
      * Create a new user instance after a valid registration.
@@ -71,26 +74,25 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-         $user = User::create([
-            'email'     => $data['email'],
-            'password'  => Hash::make($data['password']),
-         ]);
+        $user = User::create([
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
 
-         $contractor                    = [];
-         $contractor['id']              = $user->id;
-         $contractor['company_name']    = isset($data['company_name']) ? $data['company_name'] : false;
-         $contractor['name']            = isset($data['name']) ? $data['name'] : false;
-         $contractor['entity_type']     = $data['entity_type'];
-         $contractor['email']           = $data['email'];
-         $contractor['phone']           = $data['phone'];
+        $contractor = [];
+        $contractor['id'] = $user->id;
+        $contractor['company_name'] = isset($data['company_name']) ? $data['company_name'] : false;
+        $contractor['name'] = isset($data['name']) ? $data['name'] : false;
+        $contractor['entity_type'] = $data['entity_type'];
+        $contractor['email'] = $data['email'];
+        $contractor['phone'] = $data['phone'];
 
-         if ($data['entity_type'] == 1 && isset($data['name'])) {
-             $user->name  = $data['name'];
-             $user->phone = $data['phone'];
-         }
-         else {
-             $contractor['company_name'] = isset($data['name']) ? $data['name'] : false;
-         }
+        if ($data['entity_type'] == 1 && isset($data['name'])) {
+            $user->name = $data['name'];
+            $user->phone = $data['phone'];
+        } else {
+            $contractor['company_name'] = isset($data['name']) ? $data['name'] : false;
+        }
 
         // Передача данных в CRM
         $this->setClientData();
@@ -109,9 +111,14 @@ class RegisterController extends Controller
             $user->regged_by = $_COOKIE['manager'];
         }
 
+        if ($data['city'] && $data['city'] !== '') {
+            $user->city = $data['city'];
+        }
+
         $user->save();
 
         return $user;
+
     }
 
     public function registered(Request $request, $user)

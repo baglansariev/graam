@@ -88,7 +88,7 @@
                         <div class="col-sm-4 col-6 d-flex align-items-center justify-content-end">
                             <div class="header-actions text-right">
                                 @guest
-                                    <a href="{{ route('login') }}" class="login-btn">Вход</a>
+                                    <span style="color:#fff"><a href="{{ route('login') }}" class="login-btn">Вход</a> / <a class="login-btn" href="{{ route('register') }}">Регистрация</a>
                                 @endguest
                                 @auth
                                     @if (isset(Auth::user()->name) && Auth::user()->name !== '')
@@ -141,7 +141,7 @@
                         <div class="col-md-4 col-sm-6 col-6 d-flex justify-content-end align-items-center">
                             <div class="header-actions text-right">
                                 @guest
-                                    <a href="{{ route('login') }}" class="login-btn">Вход</a>
+                                    <span style="color:#fff"><a href="{{ route('login') }}" class="login-btn">Вход</a> / <a class="login-btn" href="{{ route('register') }}">Регистрация</a>
                                 @endguest
                                 @auth
                                     @if (isset(Auth::user()->name) && Auth::user()->name !== '')
@@ -159,14 +159,14 @@
             </div>
         </header>
         @yield('content', 'Default Content')
-       
+
     </main>
     <div id="coo-popup">
     <div class="popup">
         <p>Этот сайт использует файлы cookies для обеспечения работоспособности и улучшения качества обслуживания. Продолжая использовать наш сайт, вы автоматически соглашаетесь с использованием данных технологий.</p>
         <a class="coo-close" title="Закрыть" id="privatePolicyBtn">Согласен</a>
     </div>
-</div>  
+</div>
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/feedback-form.js') }}"></script>
 
