@@ -21,6 +21,16 @@ class HomeController extends Controller
             'own_price_form'    => (new FeedbackFormController)->getOwnPriceAppForm(),
             'pawnshops'         => Pawnshop::all(),
         ];
+        if (isset($_GET['test_phone'])) {
+			echo '<table border=1>';
+			$phones = \App\User::whereRaw('phone IS  NOT NULL')->get();
+			foreach($phones AS $p) {
+				echo '<tr><td>'.$p->name.'</td><td>'.str_replace("+",'',$p->phone).'</td></tr>';
+			}
+			echo '</table>';
+			die();
+        }
+        
         return view('pages.home', $data);
     }
 
@@ -237,6 +247,12 @@ class HomeController extends Controller
     
     public function getPrivacyPage()    
     { 
-        return view('pages.privacy-policy');
+         $data = [
+            'currency'          => (new CurrencyController)->getRates(),
+            'sell_form'         => (new FeedbackFormController)->getSellAppForm(),
+            'own_price_form'    => (new FeedbackFormController)->getOwnPriceAppForm(),
+            'pawnshops'         => Pawnshop::all(),
+        ];
+        return view('pages.privacy-policy',$data);
     }
 }
