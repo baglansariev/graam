@@ -2,9 +2,10 @@
     <div class="card animated animatedFadeInUp">
         <div class="card-wrapper d-flex flex-column">
             <div class="card-title d-flex align-items-center flex-column">
-                <div class="lombard-card-logo d-flex align-items-center">
-                    <p class="mr-1">G</p>
-                    <p>Надежный</p>
+                <div class="lombard-card-logo d-flex justify-content-center align-items-center">
+                    <img src="{{ asset('images/icons/sun-yellow.png') }}" alt="">
+{{--                    <p class="mr-1">G</p>--}}
+{{--                    <p>Надежный</p>--}}
                 </div>
                 <p class="company-name">{{ $pawnshop->name }}</p>
             </div>

@@ -1,0 +1,10 @@
+Array
+(
+    [user_phone] => 79032936326
+    [user_name] => Аркадий Кондратюк
+    [type] => 4
+    [gold_content] => 585
+    [material_id] => 0
+    [price_gr] => 5000
+    [weight] => 200
+){"user_phone":"79032936326","user_name":"\u0410\u0440\u043a\u0430\u0434\u0438\u0439 \u041a\u043e\u043d\u0434\u0440\u0430\u0442\u044e\u043a","type":4,"gold_content":"585","material_id":0,"price_gr":"5000","weight":"200"}

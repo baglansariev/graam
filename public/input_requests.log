@@ -1,0 +1,334 @@
+Array
+(
+    [typeWebhook] => incomingMessageReceived
+    [instanceData] => Array
+        (
+            [idInstance] => 9689
+            [wid] => 79032936326@c.us
+            [typeInstance] => whatsapp
+        )
+
+    [timestamp] => 1603275606
+    [idMessage] => 0F6C52EFB7C94D901AEA5DB9E8E6E10D
+    [senderData] => Array
+        (
+            [chatId] => 79168450220-1561828729@g.us
+            [sender] => 79160978549@c.us
+            [senderName] => Саша
+        )
+
+    [messageData] => Array
+        (
+            [typeMessage] => imageMessage
+            [fileMessageData] => Array
+                (
+                    [downloadUrl] => https://api.green-api.com/waInstance9689/downloadFile/0F6C52EFB7C94D901AEA5DB9E8E6E10D
+                )
+
+        )
+
+)
+
+Array
+(
+    [typeWebhook] => deviceInfo
+    [instanceData] => Array
+        (
+            [idInstance] => 9689
+            [wid] => 79032936326@c.us
+            [typeInstance] => whatsapp
+        )
+
+    [timestamp] => 1603275439
+    [deviceData] => Array
+        (
+            [platform] => android
+            [deviceManufacturer] => Xiaomi
+            [deviceModel] => lavender
+            [osVersion] => 10
+            [waVersion] => 2.20.198.15
+            [battery] => 78
+        )
+
+)
+
+Array
+(
+    [typeWebhook] => incomingMessageReceived
+    [instanceData] => Array
+        (
+            [idInstance] => 9689
+            [wid] => 79032936326@c.us
+            [typeInstance] => whatsapp
+        )
+
+    [timestamp] => 1603275606
+    [idMessage] => 0F6C52EFB7C94D901AEA5DB9E8E6E10D
+    [senderData] => Array
+        (
+            [chatId] => 79168450220-1561828729@g.us
+            [sender] => 79160978549@c.us
+            [senderName] => Саша
+        )
+
+    [messageData] => Array
+        (
+            [typeMessage] => imageMessage
+            [fileMessageData] => Array
+                (
+                    [downloadUrl] => https://api.green-api.com/waInstance9689/downloadFile/0F6C52EFB7C94D901AEA5DB9E8E6E10D
+                )
+
+        )
+
+)
+
+
+
+Array
+(
+    [typeWebhook] => incomingMessageReceived
+    [instanceData] => Array
+        (
+            [idInstance] => 9689
+            [wid] => 79032936326@c.us
+            [typeInstance] => whatsapp
+        )
+
+    [timestamp] => 1603275606
+    [idMessage] => 0F6C52EFB7C94D901AEA5DB9E8E6E10D
+    [senderData] => Array
+        (
+            [chatId] => 79168450220-1561828729@g.us
+            [sender] => 79160978549@c.us
+            [senderName] => Саша
+        )
+
+    [messageData] => Array
+        (
+            [typeMessage] => imageMessage
+            [fileMessageData] => Array
+                (
+                    [downloadUrl] => https://api.green-api.com/waInstance9689/downloadFile/0F6C52EFB7C94D901AEA5DB9E8E6E10D
+                )
+
+        )
+
+)
+
+Array
+(
+    [typeWebhook] => incomingMessageReceived
+    [instanceData] => Array
+        (
+            [idInstance] => 9689
+            [wid] => 79032936326@c.us
+            [typeInstance] => whatsapp
+        )
+
+    [timestamp] => 1603275606
+    [idMessage] => 0F6C52EFB7C94D901AEA5DB9E8E6E10D
+    [senderData] => Array
+        (
+            [chatId] => 79168450220-1561828729@g.us
+            [sender] => 79160978549@c.us
+            [senderName] => Саша
+        )
+
+    [messageData] => Array
+        (
+            [typeMessage] => imageMessage
+            [fileMessageData] => Array
+                (
+                    [downloadUrl] => https://api.green-api.com/waInstance9689/downloadFile/0F6C52EFB7C94D901AEA5DB9E8E6E10D
+                )
+
+        )
+
+)
+
+Array
+(
+    [typeWebhook] => incomingMessageReceived
+    [instanceData] => Array
+        (
+            [idInstance] => 9689
+            [wid] => 79032936326@c.us
+            [typeInstance] => whatsapp
+        )
+
+    [timestamp] => 1603275606
+    [idMessage] => 0F6C52EFB7C94D901AEA5DB9E8E6E10D
+    [senderData] => Array
+        (
+            [chatId] => 79168450220-1561828729@g.us
+            [sender] => 79160978549@c.us
+            [senderName] => Саша
+        )
+
+    [messageData] => Array
+        (
+            [typeMessage] => imageMessage
+            [fileMessageData] => Array
+                (
+                    [downloadUrl] => https://api.green-api.com/waInstance9689/downloadFile/0F6C52EFB7C94D901AEA5DB9E8E6E10D
+                )
+
+        )
+
+)
+
+
+
+Array
+(
+    [typeWebhook] => incomingMessageReceived
+    [instanceData] => Array
+        (
+            [idInstance] => 9689
+            [wid] => 79032936326@c.us
+            [typeInstance] => whatsapp
+        )
+
+    [timestamp] => 1603276069
+    [idMessage] => 9DDE90C465A22FB4DBDBE0E2744CEC2B
+    [senderData] => Array
+        (
+            [chatId] => 79168450220-1561828729@g.us
+            [sender] => 79160978549@c.us
+            [senderName] => Саша
+        )
+
+    [messageData] => Array
+        (
+            [typeMessage] => textMessage
+            [textMessageData] => Array
+                (
+                    [textMessage] => 🌹Ольга поздравляем!!!🌹
+Пусть  мечты твои всегда сбываются.
+                   (от Юли и Шуры)
+                )
+
+        )
+
+)
+
+Array
+(
+    [typeWebhook] => incomingMessageReceived
+    [instanceData] => Array
+        (
+            [idInstance] => 9689
+            [wid] => 79032936326@c.us
+            [typeInstance] => whatsapp
+        )
+
+    [timestamp] => 1603276069
+    [idMessage] => 9DDE90C465A22FB4DBDBE0E2744CEC2B
+    [senderData] => Array
+        (
+            [chatId] => 79168450220-1561828729@g.us
+            [sender] => 79160978549@c.us
+            [senderName] => Саша
+        )
+
+    [messageData] => Array
+        (
+            [typeMessage] => textMessage
+            [textMessageData] => Array
+                (
+                    [textMessage] => 🌹Ольга поздравляем!!!🌹
+Пусть  мечты твои всегда сбываются.
+                   (от Юли и Шуры)
+                )
+
+        )
+
+)
+
+Array
+(
+    [typeWebhook] => incomingMessageReceived
+    [instanceData] => Array
+        (
+            [idInstance] => 9689
+            [wid] => 79032936326@c.us
+            [typeInstance] => whatsapp
+        )
+
+    [timestamp] => 1603276069
+    [idMessage] => 9DDE90C465A22FB4DBDBE0E2744CEC2B
+    [senderData] => Array
+        (
+            [chatId] => 79168450220-1561828729@g.us
+            [sender] => 79160978549@c.us
+            [senderName] => Саша
+        )
+
+    [messageData] => Array
+        (
+            [typeMessage] => textMessage
+            [textMessageData] => Array
+                (
+                    [textMessage] => 🌹Ольга поздравляем!!!🌹
+Пусть  мечты твои всегда сбываются.
+                   (от Юли и Шуры)
+                )
+
+        )
+
+)
+
+
+
+Array
+(
+    [typeWebhook] => outgoingMessageStatus
+    [instanceData] => Array
+        (
+            [idInstance] => 9689
+            [wid] => 79032936326@c.us
+            [typeInstance] => whatsapp
+        )
+
+    [timestamp] => 1603276493
+    [idMessage] => 3EB0A315F52A89970F0F
+    [status] => sent
+)
+
+Array
+(
+    [typeWebhook] => outgoingMessageStatus
+    [instanceData] => Array
+        (
+            [idInstance] => 9689
+            [wid] => 79032936326@c.us
+            [typeInstance] => whatsapp
+        )
+
+    [timestamp] => 1603276493
+    [idMessage] => 3EB0A315F52A89970F0F
+    [status] => sent
+)
+
+Array
+(
+    [typeWebhook] => outgoingMessageStatus
+    [instanceData] => Array
+        (
+            [idInstance] => 9689
+            [wid] => 79032936326@c.us
+            [typeInstance] => whatsapp
+        )
+
+    [timestamp] => 1603276493
+    [idMessage] => 3EB0A315F52A89970F0F
+    [status] => sent
+)
+
+
+
+
+
+
+

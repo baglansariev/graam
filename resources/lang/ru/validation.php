@@ -29,6 +29,7 @@ return [
         'string' => 'The :attribute must be between :min and :max characters.',
         'array' => 'The :attribute must have between :min and :max items.',
     ],
+    'UniquePhoneCRM' => 'Этот телефон уже зарегистрирован в системе',
     'boolean' => 'The :attribute field must be true or false.',
     'confirmed' => 'Пароли не совпадают',
     'date' => 'The :attribute is not a valid date.',

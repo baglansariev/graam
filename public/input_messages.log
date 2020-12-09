@@ -1,0 +1,393 @@
+array(6) {
+  ["typeWebhook"]=>
+  string(23) "incomingMessageReceived"
+  ["instanceData"]=>
+  array(3) {
+    ["idInstance"]=>
+    int(9689)
+    ["wid"]=>
+    string(16) "79032936326@c.us"
+    ["typeInstance"]=>
+    string(8) "whatsapp"
+  }
+  ["timestamp"]=>
+  int(1603275606)
+  ["idMessage"]=>
+  string(32) "0F6C52EFB7C94D901AEA5DB9E8E6E10D"
+  ["senderData"]=>
+  array(3) {
+    ["chatId"]=>
+    string(27) "79168450220-1561828729@g.us"
+    ["sender"]=>
+    string(16) "79160978549@c.us"
+    ["senderName"]=>
+    string(8) "Саша"
+  }
+  ["messageData"]=>
+  array(2) {
+    ["typeMessage"]=>
+    string(12) "imageMessage"
+    ["fileMessageData"]=>
+    array(1) {
+      ["downloadUrl"]=>
+      string(86) "https://api.green-api.com/waInstance9689/downloadFile/0F6C52EFB7C94D901AEA5DB9E8E6E10D"
+    }
+  }
+}
+
+array(4) {
+  ["typeWebhook"]=>
+  string(10) "deviceInfo"
+  ["instanceData"]=>
+  array(3) {
+    ["idInstance"]=>
+    int(9689)
+    ["wid"]=>
+    string(16) "79032936326@c.us"
+    ["typeInstance"]=>
+    string(8) "whatsapp"
+  }
+  ["timestamp"]=>
+  int(1603275439)
+  ["deviceData"]=>
+  array(6) {
+    ["platform"]=>
+    string(7) "android"
+    ["deviceManufacturer"]=>
+    string(6) "Xiaomi"
+    ["deviceModel"]=>
+    string(8) "lavender"
+    ["osVersion"]=>
+    string(2) "10"
+    ["waVersion"]=>
+    string(11) "2.20.198.15"
+    ["battery"]=>
+    int(78)
+  }
+}
+
+array(6) {
+  ["typeWebhook"]=>
+  string(23) "incomingMessageReceived"
+  ["instanceData"]=>
+  array(3) {
+    ["idInstance"]=>
+    int(9689)
+    ["wid"]=>
+    string(16) "79032936326@c.us"
+    ["typeInstance"]=>
+    string(8) "whatsapp"
+  }
+  ["timestamp"]=>
+  int(1603275606)
+  ["idMessage"]=>
+  string(32) "0F6C52EFB7C94D901AEA5DB9E8E6E10D"
+  ["senderData"]=>
+  array(3) {
+    ["chatId"]=>
+    string(27) "79168450220-1561828729@g.us"
+    ["sender"]=>
+    string(16) "79160978549@c.us"
+    ["senderName"]=>
+    string(8) "Саша"
+  }
+  ["messageData"]=>
+  array(2) {
+    ["typeMessage"]=>
+    string(12) "imageMessage"
+    ["fileMessageData"]=>
+    array(1) {
+      ["downloadUrl"]=>
+      string(86) "https://api.green-api.com/waInstance9689/downloadFile/0F6C52EFB7C94D901AEA5DB9E8E6E10D"
+    }
+  }
+}
+
+array(6) {
+  ["typeWebhook"]=>
+  string(23) "incomingMessageReceived"
+  ["instanceData"]=>
+  array(3) {
+    ["idInstance"]=>
+    int(9689)
+    ["wid"]=>
+    string(16) "79032936326@c.us"
+    ["typeInstance"]=>
+    string(8) "whatsapp"
+  }
+  ["timestamp"]=>
+  int(1603275606)
+  ["idMessage"]=>
+  string(32) "0F6C52EFB7C94D901AEA5DB9E8E6E10D"
+  ["senderData"]=>
+  array(3) {
+    ["chatId"]=>
+    string(27) "79168450220-1561828729@g.us"
+    ["sender"]=>
+    string(16) "79160978549@c.us"
+    ["senderName"]=>
+    string(8) "Саша"
+  }
+  ["messageData"]=>
+  array(2) {
+    ["typeMessage"]=>
+    string(12) "imageMessage"
+    ["fileMessageData"]=>
+    array(1) {
+      ["downloadUrl"]=>
+      string(86) "https://api.green-api.com/waInstance9689/downloadFile/0F6C52EFB7C94D901AEA5DB9E8E6E10D"
+    }
+  }
+}
+
+array(6) {
+  ["typeWebhook"]=>
+  string(23) "incomingMessageReceived"
+  ["instanceData"]=>
+  array(3) {
+    ["idInstance"]=>
+    int(9689)
+    ["wid"]=>
+    string(16) "79032936326@c.us"
+    ["typeInstance"]=>
+    string(8) "whatsapp"
+  }
+  ["timestamp"]=>
+  int(1603275606)
+  ["idMessage"]=>
+  string(32) "0F6C52EFB7C94D901AEA5DB9E8E6E10D"
+  ["senderData"]=>
+  array(3) {
+    ["chatId"]=>
+    string(27) "79168450220-1561828729@g.us"
+    ["sender"]=>
+    string(16) "79160978549@c.us"
+    ["senderName"]=>
+    string(8) "Саша"
+  }
+  ["messageData"]=>
+  array(2) {
+    ["typeMessage"]=>
+    string(12) "imageMessage"
+    ["fileMessageData"]=>
+    array(1) {
+      ["downloadUrl"]=>
+      string(86) "https://api.green-api.com/waInstance9689/downloadFile/0F6C52EFB7C94D901AEA5DB9E8E6E10D"
+    }
+  }
+}
+
+array(6) {
+  ["typeWebhook"]=>
+  string(23) "incomingMessageReceived"
+  ["instanceData"]=>
+  array(3) {
+    ["idInstance"]=>
+    int(9689)
+    ["wid"]=>
+    string(16) "79032936326@c.us"
+    ["typeInstance"]=>
+    string(8) "whatsapp"
+  }
+  ["timestamp"]=>
+  int(1603275606)
+  ["idMessage"]=>
+  string(32) "0F6C52EFB7C94D901AEA5DB9E8E6E10D"
+  ["senderData"]=>
+  array(3) {
+    ["chatId"]=>
+    string(27) "79168450220-1561828729@g.us"
+    ["sender"]=>
+    string(16) "79160978549@c.us"
+    ["senderName"]=>
+    string(8) "Саша"
+  }
+  ["messageData"]=>
+  array(2) {
+    ["typeMessage"]=>
+    string(12) "imageMessage"
+    ["fileMessageData"]=>
+    array(1) {
+      ["downloadUrl"]=>
+      string(86) "https://api.green-api.com/waInstance9689/downloadFile/0F6C52EFB7C94D901AEA5DB9E8E6E10D"
+    }
+  }
+}
+
+array(6) {
+  ["typeWebhook"]=>
+  string(23) "incomingMessageReceived"
+  ["instanceData"]=>
+  array(3) {
+    ["idInstance"]=>
+    int(9689)
+    ["wid"]=>
+    string(16) "79032936326@c.us"
+    ["typeInstance"]=>
+    string(8) "whatsapp"
+  }
+  ["timestamp"]=>
+  int(1603276069)
+  ["idMessage"]=>
+  string(32) "9DDE90C465A22FB4DBDBE0E2744CEC2B"
+  ["senderData"]=>
+  array(3) {
+    ["chatId"]=>
+    string(27) "79168450220-1561828729@g.us"
+    ["sender"]=>
+    string(16) "79160978549@c.us"
+    ["senderName"]=>
+    string(8) "Саша"
+  }
+  ["messageData"]=>
+  array(2) {
+    ["typeMessage"]=>
+    string(11) "textMessage"
+    ["textMessageData"]=>
+    array(1) {
+      ["textMessage"]=>
+      string(154) "🌹Ольга поздравляем!!!🌹
+Пусть  мечты твои всегда сбываются.
+                   (от Юли и Шуры)"
+    }
+  }
+}
+
+array(6) {
+  ["typeWebhook"]=>
+  string(23) "incomingMessageReceived"
+  ["instanceData"]=>
+  array(3) {
+    ["idInstance"]=>
+    int(9689)
+    ["wid"]=>
+    string(16) "79032936326@c.us"
+    ["typeInstance"]=>
+    string(8) "whatsapp"
+  }
+  ["timestamp"]=>
+  int(1603276069)
+  ["idMessage"]=>
+  string(32) "9DDE90C465A22FB4DBDBE0E2744CEC2B"
+  ["senderData"]=>
+  array(3) {
+    ["chatId"]=>
+    string(27) "79168450220-1561828729@g.us"
+    ["sender"]=>
+    string(16) "79160978549@c.us"
+    ["senderName"]=>
+    string(8) "Саша"
+  }
+  ["messageData"]=>
+  array(2) {
+    ["typeMessage"]=>
+    string(11) "textMessage"
+    ["textMessageData"]=>
+    array(1) {
+      ["textMessage"]=>
+      string(154) "🌹Ольга поздравляем!!!🌹
+Пусть  мечты твои всегда сбываются.
+                   (от Юли и Шуры)"
+    }
+  }
+}
+
+array(6) {
+  ["typeWebhook"]=>
+  string(23) "incomingMessageReceived"
+  ["instanceData"]=>
+  array(3) {
+    ["idInstance"]=>
+    int(9689)
+    ["wid"]=>
+    string(16) "79032936326@c.us"
+    ["typeInstance"]=>
+    string(8) "whatsapp"
+  }
+  ["timestamp"]=>
+  int(1603276069)
+  ["idMessage"]=>
+  string(32) "9DDE90C465A22FB4DBDBE0E2744CEC2B"
+  ["senderData"]=>
+  array(3) {
+    ["chatId"]=>
+    string(27) "79168450220-1561828729@g.us"
+    ["sender"]=>
+    string(16) "79160978549@c.us"
+    ["senderName"]=>
+    string(8) "Саша"
+  }
+  ["messageData"]=>
+  array(2) {
+    ["typeMessage"]=>
+    string(11) "textMessage"
+    ["textMessageData"]=>
+    array(1) {
+      ["textMessage"]=>
+      string(154) "🌹Ольга поздравляем!!!🌹
+Пусть  мечты твои всегда сбываются.
+                   (от Юли и Шуры)"
+    }
+  }
+}
+
+array(5) {
+  ["typeWebhook"]=>
+  string(21) "outgoingMessageStatus"
+  ["instanceData"]=>
+  array(3) {
+    ["idInstance"]=>
+    int(9689)
+    ["wid"]=>
+    string(16) "79032936326@c.us"
+    ["typeInstance"]=>
+    string(8) "whatsapp"
+  }
+  ["timestamp"]=>
+  int(1603276493)
+  ["idMessage"]=>
+  string(20) "3EB0A315F52A89970F0F"
+  ["status"]=>
+  string(4) "sent"
+}
+
+array(5) {
+  ["typeWebhook"]=>
+  string(21) "outgoingMessageStatus"
+  ["instanceData"]=>
+  array(3) {
+    ["idInstance"]=>
+    int(9689)
+    ["wid"]=>
+    string(16) "79032936326@c.us"
+    ["typeInstance"]=>
+    string(8) "whatsapp"
+  }
+  ["timestamp"]=>
+  int(1603276493)
+  ["idMessage"]=>
+  string(20) "3EB0A315F52A89970F0F"
+  ["status"]=>
+  string(4) "sent"
+}
+
+array(5) {
+  ["typeWebhook"]=>
+  string(21) "outgoingMessageStatus"
+  ["instanceData"]=>
+  array(3) {
+    ["idInstance"]=>
+    int(9689)
+    ["wid"]=>
+    string(16) "79032936326@c.us"
+    ["typeInstance"]=>
+    string(8) "whatsapp"
+  }
+  ["timestamp"]=>
+  int(1603276493)
+  ["idMessage"]=>
+  string(20) "3EB0A315F52A89970F0F"
+  ["status"]=>
+  string(4) "sent"
+}
+

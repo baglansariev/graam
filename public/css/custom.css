@@ -55,6 +55,9 @@ main {
     opacity: 0;
 }
 
+.city-label{
+    margin-left: 1.4rem;
+}
 
 header {
     display: flex;
@@ -955,6 +958,16 @@ header {
     border-radius: 20px;
     overflow: hidden;
 }
+.lombard-info {
+    margin-bottom: 40px;
+    /*width: 100%;*/
+}
+.lombard-info .info {
+    margin-bottom: 10px;
+}
+.lombard-info .info img {
+    width: 40px;
+}
 .lombard-cards {
     display: flex;
 }
@@ -966,6 +979,9 @@ header {
 }
 .lombard-cards .lombard-card-logo {
     margin-bottom: 10px;
+}
+.lombard-cards .lombard-card-logo img {
+    width: 35px;
 }
 .lombard-cards .card {
     min-height: 360px !important;
@@ -1346,9 +1362,9 @@ input[type=number] {
         min-width: 550px;
     }
 
-    .wrapper .modal-options-wrapper.sell .options-block .options-content .option {
-        padding-left: 120px;
-    }
+    /*.wrapper .modal-options-wrapper.sell .options-block .options-content .option {*/
+    /*    padding-left: 120px;*/
+    /*}*/
 }
 
 @media screen and (max-width: 775px) {
@@ -1404,9 +1420,9 @@ input[type=number] {
         font-size: 35px;
     }
 
-    .wrapper .modal-options-wrapper.sell .options-block .options-content .option {
-        padding-left: 100px;
-    }
+    /*.wrapper .modal-options-wrapper.sell .options-block .options-content .option {*/
+    /*    padding-left: 100px;*/
+    /*}*/
 }
 
 @media screen and (max-width: 698px) {
@@ -1429,6 +1445,17 @@ input[type=number] {
 @media screen and (max-width: 650px) {
     .sticky-logo {
         letter-spacing: 0.4rem;
+    }
+}
+@media screen and (max-width: 625px) {
+    .wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .option {
+        font-size: 35px;
+    }
+    .wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .selected span {
+        font-size: 35px;
+    }
+    .wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .option span {
+        font-size: 35px;
     }
 }
 
@@ -1484,9 +1511,9 @@ input[type=number] {
         margin-top: 10px;
     }
 
-    .wrapper .modal-options-wrapper.sell .options-block .options-content .option {
-        padding-left: 65px;
-    }
+    /*.wrapper .modal-options-wrapper.sell .options-block .options-content .option {*/
+    /*    padding-left: 65px;*/
+    /*}*/
 
     .choice-block .choice-content .wanna-sell input[type=number] {
         width: 100px;
@@ -1562,7 +1589,17 @@ input[type=number] {
         font-size: 28px;
     }
 }
-
+@media screen and (max-width: 445px) {
+    .wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .option {
+        font-size: 25px;
+    }
+    .wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .selected span {
+        font-size: 25px;
+    }
+    .wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .option span {
+        font-size: 25px;
+    }
+}
 @media screen and (max-width: 430px) {
 
     .header-logo .main-logo .logo-title {
@@ -1718,6 +1755,16 @@ input[type=number] {
     .choice-block .choice-content .wanna-sell input[type=number] {
         width: 80px;
     }
+
+    .wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .option {
+        font-size: 20px;
+    }
+    .wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .selected span {
+        font-size: 20px;
+    }
+    .wrapper .modal-options-wrapper .options-block .options-content .modal-options .options .option span {
+        font-size: 20px;
+    }
 }
 
 @media screen and (max-height: 725px) {
@@ -1728,9 +1775,6 @@ input[type=number] {
     /*.wrapper .modal-options-wrapper.sell .options-block .options-content {*/
     /*    top: 20%;*/
     /*}*/
-    .choice-block .choice-content .fullheight .why-link {
-        bottom: -40%;
-    }
 }
 
 /*@media screen and (max-height: 715px) {*/
@@ -1742,6 +1786,14 @@ input[type=number] {
 @media screen and (max-height: 660px) {
     .wrapper .modal-options-wrapper .options-block .options-content {
         top: 5%;
+    }
+}
+@media screen and (max-height: 645px) {
+    .main-choice-container {
+        margin-bottom: 55px;
+    }
+    .choice-block .choice-content .fullheight .why-link {
+        bottom: -6%;
     }
 }
 
@@ -2358,9 +2410,9 @@ input[type=number] {
 }
 
 .modal-popup.reg-form .popup-wrapper .popup-content {
-    height: 100vh;
+    /*height: 100vh;*/
     align-items: center;
-    margin-top: 0 !important;
+    margin-top: 50px !important;
 }
 
 .modal-popup.reg-form .popup-wrapper .popup-content .content .popup-form {
@@ -2372,6 +2424,13 @@ input[type=number] {
 .modal-popup.reg-form,
 .modal-popup.login-form {
     display: block;
+}
+
+.price-input-container .form-group{
+    width: 100%;
+}
+.price-input-container .form-group .form-control{
+    width: 100%;
 }
 
 .login-form .title h3 {
@@ -3896,13 +3955,13 @@ main#main.gold585 {
     #coo-popup .popup {
         max-width: 90%;
          justify-content: center;
-    }    
-    
+    }
+
     #coo-popup .popup .coo-close {
         margin-top: 20px;
 }
 
-   
+
 
     /*
     .select .modal-options-wrapper .options-block .options-content {

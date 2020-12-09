@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.yandex.com'),
+    'host' => env('MAIL_HOST', 'smtp.yandex.ru'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => 'graam999@ya.ru',
+        'address' => 'graamGraamov@yandex.ru',
         'name' => 'Graam.ru',
     ],
 
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME','graam999@ya.ru'),
+    'username' => env('MAIL_USERNAME','graamGraamov@yandex.ru'),
 
-    'password' => env('MAIL_PASSWORD', 'oUa7kRmb0R9x1C5M'),
+    'password' => env('MAIL_PASSWORD', 'ooV9ootu'),
 
     /*
     |--------------------------------------------------------------------------

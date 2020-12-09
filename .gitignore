@@ -1,4 +1,5 @@
 /node_modules
+/.idea
 /public/hot
 /public/applications.txt
 public/applications.txt
@@ -18,5 +19,4 @@ yarn-error.log
 /public/video
 /public/images
 public/video
-.idea
 applications.txt

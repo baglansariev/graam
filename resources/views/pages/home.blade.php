@@ -74,6 +74,20 @@
                             <button class="map-switch" data-switch="#mapCards">На карте</button>
                         </div>
                     </div>
+                    <div class="lombard-info">
+                        <div class="info d-flex justify-content-start align-items-center">
+                            <img src="{{ asset('/images/icons/sun-yellow.png') }}" alt="">
+                            <span class="ml-2">Проверенный</span>
+                        </div>
+                        <div class="info d-flex justify-content-start align-items-center">
+                            <img src="{{ asset('/images/icons/sun-white.png') }}" alt="">
+                            <span class="ml-2">Зарегистрированный на граам</span>
+                        </div>
+                        <div class="info d-flex justify-content-start align-items-center">
+                            <img src="{{ asset('/images/icons/sun-none.png') }}" alt="">
+                            <span class="ml-2">Неизвестный граам</span>
+                        </div>
+                    </div>
                     <div class="switcher-cards">
                         <div id="mapCards" class="map-cards">
                             <div class="switcher-map">

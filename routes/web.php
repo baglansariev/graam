@@ -64,3 +64,5 @@ Route::prefix('form/send')->group(function () {
     Route::get('/join-to-deal', 'Modules\FeedbackFormController@joinToDeal')->name('join-to-deal');
 });
 
+Route::any('/send-crmid', 'User\CrmIdController@index');
+Route::any('/send-userinfo', 'User\CrmIdController@getUserById');
