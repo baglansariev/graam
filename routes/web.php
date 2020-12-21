@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Artisan::call('view:clear');
 Route::get('/', 'Pages\HomeController@index');
 
 Auth::routes();
