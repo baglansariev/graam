@@ -10,37 +10,12 @@
 }
 
 select#city{
-    appearance: none;
-    -moz-appearance: none;
+    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #fff;
     -webkit-appearance: none;
+    background-position-x: 315px;
     cursor: pointer;
-    position: relative;
-}
-select#city:after {
-    content: "\F0D7";
-    font-family: "FontAwesome", FontAwesome;
-    position: absolute;
-    right: 0;
-    top: -5px;
-    color: #d2d6df !important;
-    font-size: 2em;
-    z-index: 1;
-    color: #00af87;
-    padding: 15px 18px;
 }
 
-select#city:before {
-    content: "\f0ca";
-    font-family: "FontAwesome", FontAwesome;
-    position: absolute;
-    left: 0;
-    top: 5px;
-    font-size: 1em;
-    z-index: 1;
-    color: green;
-    padding: 15px 18px;
-
-}
 
 .modal-popup .popup-wrapper {
     width: 100%;
