@@ -23,14 +23,14 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $manager = new ManagerController();
-
+        $manager = json_decode($manager->getManagerInfo($user->crm_id));
         $this->setClientData();
         $response = $this->getResponseFromClient('GET', '/contractor/get-transactions/' . $user->id);
         $transactions = json_decode($response, true);
 
         $data = [
             'transactions' => $transactions,
-            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'manager' => $manager,
             'user_details' => $user->detailsFromCrm(),
         ];
 
@@ -43,9 +43,9 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $manager = new ManagerController();
-
+        $manager = json_decode($manager->getManagerInfo($user->crm_id));
         $data = [
-            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'manager' => $manager,
         ];
         return view('user/discount', $data);
     }
@@ -54,8 +54,9 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $manager = new ManagerController();
+        $manager = json_decode($manager->getManagerInfo($user->crm_id));
         $data = [
-            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'manager' => $manager,
         ];
         return view('user/archive', $data);
     }
@@ -64,8 +65,9 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $manager = new ManagerController();
+        $manager = json_decode($manager->getManagerInfo($user->crm_id));
         $data = [
-            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'manager' => $manager,
             'docs' => UserDocument::all()->toArray(),
         ];
         return view('user/docs', $data);
@@ -75,8 +77,9 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $manager = new ManagerController();
+        $manager = json_decode($manager->getManagerInfo($user->crm_id));
         $data = [
-            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'manager' => $manager,
             'user' => $user,
             'user_details' => $user->detailsFromCrm(),
         ];
@@ -87,8 +90,9 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $manager = new ManagerController();
+        $manager = json_decode($manager->getManagerInfo($user->crm_id));
         $data = [
-            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'manager' => $manager,
             'user' => $user,
         ];
         return view('home/content', $data);

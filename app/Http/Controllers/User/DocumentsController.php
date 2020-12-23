@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Helpers\ClientHelper;
+use App\Http\Controllers\User\ManagerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserDocument;
@@ -29,8 +30,9 @@ class DocumentsController extends Controller
      */
     public function index()
     {
-        $manager                = new ManagerController();
         $user                   = Auth::user();
+        $manager                = new ManagerController();
+        $manager                = json_decode($manager->getManagerInfo($user->crm_id));
         $document_categories    = DocumentCategory::all();
         $categories             = [];
         $index                  = 0;
@@ -54,7 +56,7 @@ class DocumentsController extends Controller
             'categories' => $categories,
             'doc_count'  => $doc_count,
             'user'       => $user,
-            'manager'    => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'manager'    => $manager,
         ];
        // return view('admin.user.documents.index', $data);
         return view('user.docs', $data);
@@ -69,10 +71,10 @@ class DocumentsController extends Controller
     {
         $user = Auth::user();
         $manager = new ManagerController();
-
+        $manager = json_decode($manager->getManagerInfo($user->crm_id));
         $data = [
             'doc_categories' => DocumentCategory::all(),
-            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'manager' => $manager,
         ];
         return view('admin.user.documents.create', $data);
     }
@@ -166,11 +168,11 @@ class DocumentsController extends Controller
     {
         $user = Auth::user();
         $manager = new ManagerController();
-
+        $manager = json_decode($manager->getManagerInfo($user->crm_id));
         $data = [
             'doc_categories'    => DocumentCategory::all(),
             'document'          => UserDocument::find($id),
-            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'manager' => $manager,
         ];
 
         return view('admin.user.documents.edit', $data);

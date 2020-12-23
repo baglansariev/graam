@@ -18,11 +18,11 @@ class DetailsController extends Controller
     {
         $user = Auth::user();
         $manager = new ManagerController();
-
+        $manager                = json_decode($manager->getManagerInfo($user->crm_id));
         $data = [
             'has_details' => $user->details()->count(),
             'user' => $user,
-            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'manager' => $manager,
         ];
        return view('admin.user.details.index', $data);
        // return view('user.info', $data);
@@ -78,10 +78,10 @@ class DetailsController extends Controller
     {
         $user = Auth::user();
         $manager = new ManagerController();
-
+        $manager                = json_decode($manager->getManagerInfo($user->crm_id));
         $data = [
             'user' => $user,
-            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'manager' => $manager,
         ];
         return view('admin.user.details.edit', $data);
     }
