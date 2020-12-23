@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserDocument;
 use App\Models\DocumentCategory;
-use App\Http\Controllers\User\ManagerController;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class DocumentsController extends Controller
