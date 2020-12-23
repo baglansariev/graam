@@ -27,9 +27,10 @@ class DealController extends Controller
         $transactions =  json_decode($this->getUserTransactions($request), true);
         $transactions_count = !empty($transactions) ? count($transactions) : 0;
         $manager = new ManagerController();
+        $manager = json_decode($manager->getManagerInfo($user->crm_id));
 
         $data = [
-            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'manager' => $manager,
             'transactions' => $transactions,
             'transactions_count' => $transactions_count
         ];

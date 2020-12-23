@@ -23,4 +23,9 @@ class ManagerController extends Controller
 
         return json_decode($this->getResponseFromTestClient('GET', $action), true);
     }
+
+    public function getManagerInfo($crm_id){
+        return $this->getResponeToCRM('GET','/graam/getManager/'. $crm_id);
+    }
+
 }
