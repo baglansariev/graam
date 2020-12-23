@@ -45,6 +45,15 @@
             return $response->getBody()->getContents();
         }
 
+        public function getResponeToCRM($method, $action, $params=[]){
+            $this->crm_client_api_url = 'http://system.graam.ru/api';
+            $this->api_token = 'jM4E53HiO03uSLb19YDwqA1RRUtpfXwN6jP1STm1EZTRITXdpRbHnRBOFuxE4ICOgLEcywicOvMyopDm';
+            $client = $this->clientInit($this->crm_client_api_url);
+            $action = $this->addApiTokenToUrl($action);
+            $response = $client->request($method, $this->crm_client_api_url . $action, $params);
+            return $response->getBody()->getContents();
+        }
+
         public function getResponseFromClientByQuery($method, $action, $params = [])
         {
             $client = $this->clientInit($this->crm_client_api_url);

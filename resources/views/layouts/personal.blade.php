@@ -81,20 +81,20 @@
                                 if (data.price_type_1 == 0 && data.price_type_2 != 0) {
                                     content += '<span>Цена золота 999 <strong>' + data.gold_price + '</strong> ₽/г</span><br><span>Средняя цена покупки гранул 999 <strong>' + data.price_type_2 + '</strong> ₽/г</span>';
                                 }
-                                
+
                                 if (data.price_type_1 != 0 && data.price_type_2 == 0) {
                                     content += '<span>Цена золота 999 <strong>' + data.gold_price + '</strong> ₽/г</span><br><span>Средняя цена продажи лома 585 <strong>' + data.price_type_1 + '</strong> ₽/г</span>';
                                 }
                                 if (data.price_type_1 != 0 && data.price_type_2 != 0) {
                                     content += '<span>Цена золота 999 <strong>' + data.gold_price + '</strong> ₽/г</span><br><span>Средняя цена продажи лома 585 <strong>' + data.price_type_1 + '</strong> ₽/г</span><br><span>Средняя цена покупки гранул 999 <strong>' + data.price_type_2 + '</strong> ₽/г</span>';
                                 }
-                                
+
                             });
                         }
                         $(".stock-infos").html(content);
 
-                    }                
-                
+                    }
+
             })
         });
 
@@ -155,10 +155,10 @@
                 <div class="pm-wrapper">
                     <div class="contact-pm">
                         <div class="pm-img-wrap">
-                            <img class="pm-img" src="{{ asset('images/manager1.png') }}" alt=""></div>
+                            <img class="pm-img" src="{{ asset('images/manager'. $manager->id .'.png') }}" alt=""></div>
                         <p class="logo-subtitle">Ваш личный менеджер</p>
-                        <span class="pm-name">Виктория</span>
-                        <span class="pm-phone">+7 (906) 666 27 01</span>
+                        <span class="pm-name">{{$manager->name}}</span>
+                        <span class="pm-phone">{{$manager->phone}}</span>
                     </div>
                     <!--
                             <div class="contact-pm-form">
