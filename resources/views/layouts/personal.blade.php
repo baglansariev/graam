@@ -150,6 +150,7 @@
                     </ul>
 
                 </nav>
+		
                 <div class="stock-infos">
                         </div>
                 <div class="pm-wrapper">
@@ -242,10 +243,10 @@
                         <div class="pm-wrapper">
                             <div class="contact-pm">
                                 <div class="pm-img-wrap">
-                                    <img class="pm-img" src="{{ asset('images/manager1.png') }}" alt=""></div>
+                                    <img class="pm-img" src="{{ asset('images/manager'.$manager->id.'.png') }}" alt=""></div>
                                 <p class="logo-subtitle">Ваш личный менеджер</p>
-                                <span class="pm-name">Виктория</span>
-                                <span class="pm-phone">+7 (906) 666 27 01</span>
+                                <span class="pm-name">{{$manager->name}}</span>
+                                <span class="pm-phone">{{$manager->phone}}</span>
                             </div>
                             <!--
                             <div class="contact-pm-form">
