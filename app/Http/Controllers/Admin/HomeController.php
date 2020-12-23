@@ -29,14 +29,15 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $manager = new ManagerController();
+
         $user = Auth::user();
         $transactions = json_decode($this->getAllTransactions($request), true);
 
         $transactions_count = !empty($transactions) ? count($transactions) : 0;
-
+        $manager                = new ManagerController();
+        $manager                = json_decode($manager->getManagerInfo($user->crm_id));
         $data = [
-            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'manager' => $manager,
             'transactions' => $transactions,
             'transactions_count' => $transactions_count,
             'user_details' => $user->detailsFromCrm(),
@@ -66,12 +67,12 @@ class HomeController extends Controller
 
         if ($user = Auth::user()) {
             $transactions   = [];
-            $data           = json_decode($response, true);            
+            $data           = json_decode($response, true);
             $index          = 0;
             $user_details   = $user->detailsFromCrm();
             $user_data      = [];
-            
-            
+
+
             foreach ($data as $item) {
                 $transactions[$index] = $item;
                 $user_data = [
@@ -95,12 +96,13 @@ class HomeController extends Controller
     {
         $manager = new ManagerController();
         $user = Auth::user();
+        $manager                = json_decode($manager->getManagerInfo($user->crm_id));
         $transactions = json_decode($this->getGPTransactions($request), true);
 
         $transactions_count = !empty($transactions) ? count($transactions) : 0;
 
         $data = [
-            'manager' => $manager->getManager($user->manager_id)['manager'] ?? [],
+            'manager' => $manager,
             'transactions' => $transactions,
             'transactions_count' => $transactions_count,
             'user_details' => $user->detailsFromCrm(),
@@ -129,12 +131,12 @@ class HomeController extends Controller
         $response = $this->getResponseFromClient('GET', '/transaction' . $action);
         if ($user = Auth::user()) {
             $transactions   = [];
-            $data           = json_decode($response, true);            
+            $data           = json_decode($response, true);
             $index          = 0;
             $user_details   = $user->detailsFromCrm();
             $user_data      = [];
-            
-            
+
+
             foreach ($data as $item) {
                 $transactions[$index] = $item;
                 $user_data = [
@@ -154,22 +156,22 @@ class HomeController extends Controller
 
         return $response;
     }
-    
-   
-    
-    
-    public function getStockInfos(Request $request) 
+
+
+
+
+    public function getStockInfos(Request $request)
     {
-    
+
         $this->setClientData();
         $response = $this->getResponseFromClient('GET', '/stock');
 
         if ($user = Auth::user()) {
             $stock_prices   = [];
-            $data           = json_decode($response, true);            
-            $index          = 0;          
-            
-            
+            $data           = json_decode($response, true);
+            $index          = 0;
+
+
             foreach ($data as $item) {
                 $stock_prices[$index] = $item;
                 $index++;
@@ -178,8 +180,8 @@ class HomeController extends Controller
             return json_encode($stock_prices);
         }
 
-        return $response;        
-        
+        return $response;
+
     }
-    
+
 }
